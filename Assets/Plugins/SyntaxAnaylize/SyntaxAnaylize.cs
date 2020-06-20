@@ -5,26 +5,36 @@ using System.Text.RegularExpressions;
 
 namespace SyntaxAnaylize
 {
-    internal class Syntax
+    public class Syntax
     {
-        internal static MultiItem Anaylize(string script)
+        static int line;
+
+        public static MultiItem Anaylize(string script)
         {
-            MultiItem rslt = new MultiItem();
 
-            string key = "";
-
-            int charIndex = 0;
-
-            var trim = Regex.Replace(script, @"[\s]+$", "");
-
-            while (charIndex < trim.Length)
+            try
             {
-                int offset;
-                rslt.AddRange(Anaylize(trim.Substring(charIndex), out offset).Select(x=> x as Item));
-                charIndex += offset;
-            }
+                MultiItem rslt = new MultiItem();
 
-            return rslt;
+                int charIndex = 0;
+
+                var trim = Regex.Replace(script, @"[\s]+$", "");
+
+                line = 1;
+
+                while (charIndex < trim.Length)
+                {
+                    int offset;
+                    rslt.AddRange(Anaylize(trim.Substring(charIndex), out offset).Select(x => x as Item));
+                    charIndex += offset;
+                }
+
+                return rslt;
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"exception in line {line}", e);
+            }
         }
 
         internal static IEnumerable<Value> Anaylize(string script, out int offset)
@@ -36,12 +46,15 @@ namespace SyntaxAnaylize
 
             string key = "";
 
-            while(true)
+            while (true)
             {
                 int endIndex;
                 ELEM_TYPE elemType = Match(script, charIndex, out endIndex);
                 switch (elemType)
                 {
+                    case ELEM_TYPE.CR:
+                        line++;
+                        break;
                     case ELEM_TYPE.SPACE:
                         break;
                     case ELEM_TYPE.STRING:
@@ -53,11 +66,11 @@ namespace SyntaxAnaylize
                         {
                             var value = script.Substring(charIndex, endIndex - charIndex);
 
-                            if(multiItem != null)
+                            if (multiItem != null)
                             {
                                 multiItem.Add(new Item(key, value));
                             }
-                            if(multiValue != null)
+                            if (multiValue != null)
                             {
                                 multiValue.Add(new SingleValue(key));
                                 multiValue.Add(new SingleValue(value));
@@ -106,7 +119,7 @@ namespace SyntaxAnaylize
                                 return multiValue;
                             }
 
-                            if(multiItem != null)
+                            if (multiItem != null)
                             {
                                 if (key != "")
                                 {
@@ -140,6 +153,7 @@ namespace SyntaxAnaylize
 
                 charIndex = endIndex;
             }
+            
         }
 
         private static ELEM_TYPE Match(string script, int charIndex, out int endIndex)
@@ -151,7 +165,13 @@ namespace SyntaxAnaylize
                 return ELEM_TYPE.PARSE_END;
             }
 
-            var rslt = Regex.Match(curr, @"^[\s]+");
+            if (curr[0] == '\n')
+            {
+                endIndex = charIndex + 1;
+                return ELEM_TYPE.CR;
+            }
+
+            var rslt = Regex.Match(curr, @"^[ \f\r\t\v]+");
             if (rslt.Success)
             {
                 endIndex = charIndex + rslt.Length;
@@ -186,7 +206,7 @@ namespace SyntaxAnaylize
                 return ELEM_TYPE.BRACE_CLOSE;
             }
 
-            rslt = Regex.Match(curr, @"^[\+\-]*\w+[\.\+\-\*/]*\w+");
+            rslt = Regex.Match(curr, @"^[\+\-]*[A-Za-z0-9_\.-]+[\+\-\*/]*[A-Za-z0-9_\.-]+");
             if (rslt.Success)
             {
                 endIndex = charIndex + rslt.Length;
@@ -198,6 +218,7 @@ namespace SyntaxAnaylize
 
         enum ELEM_TYPE
         {
+            CR,
             ASSIGN,
             BRACE_OPEN,
             BRACE_CLOSE,
@@ -208,15 +229,15 @@ namespace SyntaxAnaylize
         }
     }
 
-    class Value
+    public class Value
     {
 
     }
 
-    class Item : Value
+    public class Item : Value
     {
-        string key;
-        Value value;
+        public readonly string key;
+        public readonly Value value;
 
         public Item(string key, string value)
         {
@@ -249,9 +270,9 @@ namespace SyntaxAnaylize
         }
     }
 
-    class MultiItem : Value
+    public class MultiItem : Value
     {
-        List<Item> elems;
+       public readonly List<Item> elems;
 
         public MultiItem()
         {
@@ -261,6 +282,22 @@ namespace SyntaxAnaylize
         public MultiItem(IEnumerable<Item> value)
         {
             this.elems = value.ToList();
+        }
+
+        public object Get(string name, Type fieldType)
+        {
+            var item = elems.SingleOrDefault(x => x.key == name);
+            if(item == null)
+            {
+                throw new Exception($"can not find '{name}'");
+            }
+
+            if(fieldType == typeof(bool))
+            {
+                return bool.Parse((item.value as SingleValue).ToString());
+            }
+
+            throw new Exception();
         }
 
         public override string ToString()
@@ -274,7 +311,7 @@ namespace SyntaxAnaylize
         }
     }
 
-    class SingleValue : Value
+    public class SingleValue : Value
     {
         public SingleValue(string value)
         {
@@ -286,10 +323,10 @@ namespace SyntaxAnaylize
             return value;
         }
 
-        string value;
+        public readonly string value;
     }
 
-    class MultiValue : Value
+    public class MultiValue : Value
     {
         public MultiValue(IEnumerable<SingleValue> value)
         {

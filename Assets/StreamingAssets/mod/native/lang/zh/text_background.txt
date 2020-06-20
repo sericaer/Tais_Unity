@@ -1,0 +1,3 @@
+SHIZU:士族
+SHANGGU:商贾
+HUANGUAN:宦官

@@ -1,0 +1,21 @@
+is_first = true
+
+options = 
+{
+    OPTION_1 =
+    {
+        selected = 
+        {
+            set.value = {init_data.taishou.background, SHIZU}
+        }
+            
+    }
+    
+    OPTION_2 =
+    {
+        selected = 
+        {
+            set.value = {init_data.taishou.background, HUANGUAN}
+        }
+    }
+}

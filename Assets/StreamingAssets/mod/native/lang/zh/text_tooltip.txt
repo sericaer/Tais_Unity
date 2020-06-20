@@ -1,0 +1,6 @@
+VALID_DAYS_SPAN:{0}天内只能调整一次，预计可用日期{1}
+TAISHOU_YEAR_SCORE:太守年度考评结果 {0}
+CHAOTING_PRESTIGE_CHANGED:朝廷威信{0:+#;-#;+0}
+DEPART_BUFFER_VAILD:{0} 新增状态 {1}
+DEPART_BUFFER_INVAILD:{0} 移除状态 {1}
+ECONOMY_CHANGED:钱粮{0:+#;-#;+0}

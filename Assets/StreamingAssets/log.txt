@@ -1,0 +1,827 @@
+20200620 15:36:21 [88198] [INFO] !!!!!APPLICATION START!!!!!
+20200620 15:36:21 [88198] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 15:36:21 [88198] [INFO] {
+    "lang":"zh"
+}
+20200620 15:36:21 [88198] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 15:36:21 [88198] [INFO] Load mod content D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 15:36:21 [88198] [INFO] Load mod finish 
+20200620 15:49:16 [50410] [INFO] !!!!!APPLICATION START!!!!!
+20200620 15:49:16 [50410] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 15:49:16 [50410] [INFO] {
+    "lang":"zh"
+}
+20200620 15:49:16 [50410] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 15:49:16 [50410] [INFO] Load mod content start
+20200620 15:49:16 [50410] [INFO] Load mod content finish
+20200620 15:49:39 [10370] [INFO] !!!!!APPLICATION START!!!!!
+20200620 15:49:39 [10370] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 15:49:39 [10370] [INFO] {
+    "lang":"zh"
+}
+20200620 15:49:39 [10370] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 15:49:39 [10370] [INFO] Load mod content start
+20200620 15:49:52 [10370] [INFO] Load mod content finish
+20200620 15:54:16 [39989] [INFO] !!!!!APPLICATION START!!!!!
+20200620 15:54:16 [39989] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 15:54:16 [39989] [INFO] {
+    "lang":"zh"
+}
+20200620 15:54:16 [39989] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 15:54:16 [39989] [INFO] Load mod content start
+20200620 15:54:16 [39989] [INFO] Load mod content finish
+20200620 16:01:54 [32256] [INFO] !!!!!APPLICATION START!!!!!
+20200620 16:01:54 [32256] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 16:01:54 [32256] [INFO] {
+    "lang":"zh"
+}
+20200620 16:01:55 [32256] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 16:01:55 [32256] [INFO] Load mod content start
+20200620 16:01:55 [32256] [INFO] Load mod content finish
+20200620 16:01:55 [32256] [ERRO] Exception: can not find 'Mod' in local string!
+TaisEngine.ModManager.LocalString.Get (System.String arg) (at Assets/Scripts/ModManager/LocalString.cs:26)
+UnityEngine.UI.Extensions.LocalText.Start () (at Assets/Plugins/UIExtensions/Assets/Script/LocalText.cs:66)
+
+
+20200620 16:02:32 [93943] [INFO] !!!!!APPLICATION START!!!!!
+20200620 16:02:32 [93943] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 16:02:32 [93943] [INFO] {
+    "lang":"zh"
+}
+20200620 16:02:32 [93943] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 16:02:32 [93943] [INFO] Load mod content start
+20200620 16:02:32 [93943] [INFO] Load mod content finish
+20200620 16:02:32 [93943] [ERRO] Exception: can not find 'Mod' in local string!
+TaisEngine.ModManager.LocalString.Get (System.String arg) (at Assets/Scripts/ModManager/LocalString.cs:26)
+UnityEngine.UI.Extensions.LocalText.Start () (at Assets/Plugins/UIExtensions/Assets/Script/LocalText.cs:66)
+
+
+20200620 16:03:21 [48612] [INFO] !!!!!APPLICATION START!!!!!
+20200620 16:03:21 [48612] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 16:03:21 [48612] [INFO] {
+    "lang":"zh"
+}
+20200620 16:03:21 [48612] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 16:03:21 [48612] [INFO] Load mod content start
+20200620 16:03:21 [48612] [INFO] Load mod content finish
+20200620 16:03:39 [48612] [ERRO] Exception: can not find 'Mod' in local string!
+TaisEngine.ModManager.LocalString.Get (System.String arg) (at Assets/Scripts/ModManager/LocalString.cs:26)
+UnityEngine.UI.Extensions.LocalText.Start () (at Assets/Plugins/UIExtensions/Assets/Script/LocalText.cs:66)
+
+
+20200620 16:04:04 [64682] [INFO] !!!!!APPLICATION START!!!!!
+20200620 16:04:04 [64682] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 16:04:04 [64682] [INFO] {
+    "lang":"zh"
+}
+20200620 16:04:04 [64682] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 16:04:04 [64682] [INFO] Load mod content start
+20200620 16:04:04 [64682] [INFO] Load mod content finish
+20200620 16:09:35 [90960] [INFO] !!!!!APPLICATION START!!!!!
+20200620 16:09:35 [90960] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 16:09:35 [90960] [INFO] {
+    "lang":"zh"
+}
+20200620 16:09:35 [90960] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 16:09:35 [90960] [INFO] Load mod content start
+20200620 16:09:35 [90960] [INFO] Load mod content finish
+20200620 16:09:36 [90960] [ERRO] UnassignedReferenceException: The variable modSelectPanl of StartScene has not been assigned.
+You probably need to assign the modSelectPanl variable of the StartScene script in the inspector.
+StartScene.OnMod () (at Assets/Scripts/MonoBehaviour/StartScene.cs:36)
+UnityEngine.Events.InvokableCall.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.UI.Button.Press () (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:68)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:110)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update() (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs:377)
+
+
+20200620 16:10:45 [52850] [INFO] !!!!!APPLICATION START!!!!!
+20200620 16:10:45 [52850] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 16:10:45 [52850] [INFO] {
+    "lang":"zh"
+}
+20200620 16:10:45 [52850] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 16:10:45 [52850] [INFO] Load mod content start
+20200620 16:10:45 [52850] [INFO] Load mod content finish
+20200620 16:10:46 [52850] [ERRO] UnassignedReferenceException: The variable modSelectPanl of StartScene has not been assigned.
+You probably need to assign the modSelectPanl variable of the StartScene script in the inspector.
+StartScene.OnMod () (at Assets/Scripts/MonoBehaviour/StartScene.cs:36)
+UnityEngine.Events.InvokableCall.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.UI.Button.Press () (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:68)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:110)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update() (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs:377)
+
+
+20200620 16:11:37 [90487] [INFO] !!!!!APPLICATION START!!!!!
+20200620 16:11:37 [90487] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 16:11:37 [90487] [INFO] {
+    "lang":"zh"
+}
+20200620 16:11:37 [90487] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 16:11:37 [90487] [INFO] Load mod content start
+20200620 16:11:37 [90487] [INFO] Load mod content finish
+20200620 16:11:45 [90487] [ERRO] NullReferenceException: Object reference not set to an instance of an object
+ModSelectPanel.Start () (at Assets/Scripts/MonoBehaviour/StartScene/ModSelectPanel.cs:29)
+
+
+20200620 16:12:53 [92208] [INFO] !!!!!APPLICATION START!!!!!
+20200620 16:12:53 [92208] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 16:12:53 [92208] [INFO] {
+    "lang":"zh"
+}
+20200620 16:12:53 [92208] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 16:12:53 [92208] [INFO] Load mod content start
+20200620 16:12:53 [92208] [INFO] Load mod content finish
+20200620 16:14:26 [30277] [INFO] !!!!!APPLICATION START!!!!!
+20200620 16:14:26 [30277] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 16:14:26 [30277] [INFO] {
+    "lang":"zh"
+}
+20200620 16:14:26 [30277] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 16:14:26 [30277] [INFO] Load mod content start
+20200620 16:14:27 [30277] [INFO] Load mod content finish
+20200620 16:14:30 [30277] [INFO] select mod native
+20200620 16:15:09 [19432] [INFO] !!!!!APPLICATION START!!!!!
+20200620 16:15:09 [19432] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 16:15:09 [19432] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 16:15:09 [19432] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 16:15:09 [19432] [INFO] Load mod content start
+20200620 16:15:09 [19432] [INFO] Load mod content finish
+20200620 16:15:12 [19432] [INFO] select mod native
+20200620 16:15:14 [19432] [INFO] select mod native
+20200620 16:15:17 [19432] [INFO] select mod native
+20200620 16:15:49 [53674] [INFO] !!!!!APPLICATION START!!!!!
+20200620 16:15:49 [53674] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 16:15:49 [53674] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 16:15:49 [53674] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 16:15:49 [53674] [INFO] Load mod content start
+20200620 16:15:49 [53674] [INFO] Load mod content finish
+20200620 16:15:49 [53674] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200620 16:15:53 [53674] [INFO] select mod native,test
+20200620 16:16:16 [46170] [INFO] !!!!!APPLICATION START!!!!!
+20200620 16:16:16 [46170] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 16:16:16 [46170] [INFO] {"lang":"zh","select_mods":["native","test"]}
+20200620 16:16:16 [46170] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 16:16:16 [46170] [INFO] Load mod content start
+20200620 16:16:16 [46170] [INFO] Load mod content finish
+20200620 16:16:16 [46170] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200620 16:16:16 [46170] [INFO] Load mod content start
+20200620 16:16:16 [46170] [INFO] Load mod content finish
+20200620 16:16:18 [46170] [INFO] select mod native,test
+20200620 16:16:21 [46170] [INFO] select mod native
+20200620 16:16:22 [46170] [INFO] !!!!!APPLICATION START!!!!!
+20200620 16:16:22 [46170] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 16:16:22 [46170] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 16:16:22 [46170] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 16:16:22 [46170] [INFO] Load mod content start
+20200620 16:16:22 [46170] [INFO] Load mod content finish
+20200620 16:16:22 [46170] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200620 16:16:26 [46170] [INFO] select mod native,test
+20200620 16:16:27 [46170] [INFO] !!!!!APPLICATION START!!!!!
+20200620 16:16:27 [46170] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 16:16:27 [46170] [INFO] {"lang":"zh","select_mods":["native","test"]}
+20200620 16:16:27 [46170] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 16:16:27 [46170] [INFO] Load mod content start
+20200620 16:16:27 [46170] [INFO] Load mod content finish
+20200620 16:16:27 [46170] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200620 16:16:27 [46170] [INFO] Load mod content start
+20200620 16:16:27 [46170] [INFO] Load mod content finish
+20200620 16:57:43 [25765] [INFO] !!!!!APPLICATION START!!!!!
+20200620 16:57:43 [25765] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 16:57:43 [25765] [INFO] {"lang":"zh","select_mods":["native","test"]}
+20200620 16:57:43 [25765] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 16:57:43 [25765] [INFO] Load mod content start
+20200620 16:57:44 [25765] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 16:57:44 [25765] [ERRO] Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.Syntax.Match (System.String script, System.Int32 charIndex, System.Int32& endIndex) [0x00113] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:194 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00013] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:40 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x0010d] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:83 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x0010d] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:83 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x0010d] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:83 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x0010d] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:83 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script) [0x0001d] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:21 
+  at TaisEngine.ModManager.Mod.Parse[T] (System.String name, System.String content) [0x00001] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:48 
+  at TaisEngine.ModManager.InitSelectDef..ctor (System.String path) [0x0002f] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\InitSelectDef.cs:26 
+  at TaisEngine.ModManager.Mod+Content..ctor (System.String path) [0x00029] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:184 
+  at TaisEngine.ModManager.Mod..ctor (System.String modPath) [0x00035] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:134 
+  at TaisEngine.ModManager.Mod.Load () [0x00044] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:36 
+
+20200620 16:57:44 [25765] [ERRO] UnassignedReferenceException: The variable loadErrorPanel of LoadScene has not been assigned.
+You probably need to assign the loadErrorPanel variable of the LoadScene script in the inspector.
+LoadScene.Start () (at Assets/Scripts/MonoBehaviour/LoadScene.cs:47)
+
+
+20200620 16:58:05 [90930] [INFO] !!!!!APPLICATION START!!!!!
+20200620 16:58:05 [90930] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 16:58:05 [90930] [INFO] {"lang":"zh","select_mods":["native","test"]}
+20200620 16:58:06 [90930] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 16:58:06 [90930] [INFO] Load mod content start
+20200620 16:58:15 [90930] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 16:58:47 [90930] [ERRO] Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.Syntax.Match (System.String script, System.Int32 charIndex, System.Int32& endIndex) [0x00113] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:194 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00013] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:40 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x0010d] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:83 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x0010d] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:83 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x0010d] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:83 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x0010d] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:83 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script) [0x0001d] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:21 
+  at TaisEngine.ModManager.Mod.Parse[T] (System.String name, System.String content) [0x00001] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:48 
+  at TaisEngine.ModManager.InitSelectDef..ctor (System.String path) [0x0002f] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\InitSelectDef.cs:26 
+  at TaisEngine.ModManager.Mod+Content..ctor (System.String path) [0x00029] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:184 
+  at TaisEngine.ModManager.Mod..ctor (System.String modPath) [0x00035] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:134 
+  at TaisEngine.ModManager.Mod.Load () [0x00044] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:36 
+
+20200620 16:58:47 [90930] [ERRO] UnassignedReferenceException: The variable loadErrorPanel of LoadScene has not been assigned.
+You probably need to assign the loadErrorPanel variable of the LoadScene script in the inspector.
+LoadScene.Start () (at Assets/Scripts/MonoBehaviour/LoadScene.cs:47)
+
+
+20200620 17:04:31 [83938] [INFO] !!!!!APPLICATION START!!!!!
+20200620 17:04:31 [83938] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 17:04:31 [83938] [INFO] {"lang":"zh","select_mods":["native","test"]}
+20200620 17:04:31 [83938] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 17:04:31 [83938] [INFO] Load mod content start
+20200620 17:04:31 [83938] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 17:04:31 [83938] [ERRO] exception in line 1exception in line 1exception in line 1exception in line 1exception in line 1Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.Syntax.Match (System.String script, System.Int32 charIndex, System.Int32& endIndex) [0x00131] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:213 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00017] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:44 
+
+20200620 17:04:31 [83938] [ERRO] UnassignedReferenceException: The variable loadErrorPanel of LoadScene has not been assigned.
+You probably need to assign the loadErrorPanel variable of the LoadScene script in the inspector.
+LoadScene.Start () (at Assets/Scripts/MonoBehaviour/LoadScene.cs:47)
+
+
+20200620 17:04:42 [85979] [INFO] !!!!!APPLICATION START!!!!!
+20200620 17:04:42 [85979] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 17:04:42 [85979] [INFO] {"lang":"zh","select_mods":["native","test"]}
+20200620 17:04:42 [85979] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 17:04:42 [85979] [INFO] Load mod content start
+20200620 17:04:42 [85979] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 17:04:42 [85979] [ERRO] exception in line 1exception in line 1exception in line 1exception in line 1exception in line 1Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.Syntax.Match (System.String script, System.Int32 charIndex, System.Int32& endIndex) [0x00131] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:213 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00017] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:44 
+
+20200620 17:04:42 [85979] [ERRO] UnassignedReferenceException: The variable loadErrorPanel of LoadScene has not been assigned.
+You probably need to assign the loadErrorPanel variable of the LoadScene script in the inspector.
+LoadScene.Start () (at Assets/Scripts/MonoBehaviour/LoadScene.cs:47)
+
+
+20200620 17:04:56 [29112] [INFO] !!!!!APPLICATION START!!!!!
+20200620 17:04:56 [29112] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 17:04:56 [29112] [INFO] {"lang":"zh","select_mods":["native","test"]}
+20200620 17:04:56 [29112] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 17:04:56 [29112] [INFO] Load mod content start
+20200620 17:05:19 [29112] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 17:05:19 [29112] [ERRO] exception in line 1exception in line 1exception in line 1exception in line 1exception in line 1Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.Syntax.Match (System.String script, System.Int32 charIndex, System.Int32& endIndex) [0x00131] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:213 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00017] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:44 
+
+20200620 17:05:19 [29112] [ERRO] UnassignedReferenceException: The variable loadErrorPanel of LoadScene has not been assigned.
+You probably need to assign the loadErrorPanel variable of the LoadScene script in the inspector.
+LoadScene.Start () (at Assets/Scripts/MonoBehaviour/LoadScene.cs:47)
+
+
+20200620 17:05:36 [86773] [INFO] !!!!!APPLICATION START!!!!!
+20200620 17:05:36 [86773] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 17:05:36 [86773] [INFO] {"lang":"zh","select_mods":["native","test"]}
+20200620 17:05:36 [86773] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 17:05:36 [86773] [INFO] Load mod content start
+20200620 17:07:34 [86773] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 17:07:34 [86773] [ERRO] exception in line 1exception in line 1exception in line 1exception in line 1exception in line 1Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.Syntax.Match (System.String script, System.Int32 charIndex, System.Int32& endIndex) [0x00131] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:213 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00017] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:44 
+
+20200620 17:07:34 [86773] [ERRO] UnassignedReferenceException: The variable loadErrorPanel of LoadScene has not been assigned.
+You probably need to assign the loadErrorPanel variable of the LoadScene script in the inspector.
+LoadScene.Start () (at Assets/Scripts/MonoBehaviour/LoadScene.cs:47)
+
+
+20200620 17:09:06 [35583] [INFO] !!!!!APPLICATION START!!!!!
+20200620 17:09:06 [35583] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 17:09:06 [35583] [INFO] {"lang":"zh","select_mods":["native","test"]}
+20200620 17:09:06 [35583] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 17:09:06 [35583] [INFO] Load mod content start
+20200620 17:09:06 [35583] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 17:09:06 [35583] [ERRO] exception in line 1Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.Syntax.Match (System.String script, System.Int32 charIndex, System.Int32& endIndex) [0x00131] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:213 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00017] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:44 
+
+20200620 17:09:06 [35583] [ERRO] UnassignedReferenceException: The variable loadErrorPanel of LoadScene has not been assigned.
+You probably need to assign the loadErrorPanel variable of the LoadScene script in the inspector.
+LoadScene.Start () (at Assets/Scripts/MonoBehaviour/LoadScene.cs:47)
+
+
+20200620 17:09:19 [42725] [INFO] !!!!!APPLICATION START!!!!!
+20200620 17:09:19 [42725] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 17:09:19 [42725] [INFO] {"lang":"zh","select_mods":["native","test"]}
+20200620 17:09:19 [42725] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 17:09:19 [42725] [INFO] Load mod content start
+20200620 17:09:30 [42725] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 17:09:43 [42725] [ERRO] exception in line 1Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.Syntax.Match (System.String script, System.Int32 charIndex, System.Int32& endIndex) [0x00131] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:213 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00017] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:44 
+
+20200620 17:09:43 [42725] [ERRO] UnassignedReferenceException: The variable loadErrorPanel of LoadScene has not been assigned.
+You probably need to assign the loadErrorPanel variable of the LoadScene script in the inspector.
+LoadScene.Start () (at Assets/Scripts/MonoBehaviour/LoadScene.cs:47)
+
+
+20200620 17:10:08 [73332] [INFO] !!!!!APPLICATION START!!!!!
+20200620 17:10:08 [73332] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 17:10:08 [73332] [INFO] {"lang":"zh","select_mods":["native","test"]}
+20200620 17:10:08 [73332] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 17:10:08 [73332] [INFO] Load mod content start
+20200620 17:10:43 [73332] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 17:10:43 [73332] [ERRO] exception in line 1Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.Syntax.Match (System.String script, System.Int32 charIndex, System.Int32& endIndex) [0x00131] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:213 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00017] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:44 
+
+20200620 17:10:43 [73332] [ERRO] UnassignedReferenceException: The variable loadErrorPanel of LoadScene has not been assigned.
+You probably need to assign the loadErrorPanel variable of the LoadScene script in the inspector.
+LoadScene.Start () (at Assets/Scripts/MonoBehaviour/LoadScene.cs:47)
+
+
+20200620 17:10:51 [45824] [INFO] !!!!!APPLICATION START!!!!!
+20200620 17:10:51 [45824] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 17:10:51 [45824] [INFO] {"lang":"zh","select_mods":["native","test"]}
+20200620 17:10:52 [45824] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 17:10:52 [45824] [INFO] Load mod content start
+20200620 17:11:14 [45824] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 17:11:14 [45824] [ERRO] exception in line 1Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.Syntax.Match (System.String script, System.Int32 charIndex, System.Int32& endIndex) [0x00131] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:213 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00017] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:44 
+
+20200620 17:11:14 [45824] [ERRO] UnassignedReferenceException: The variable loadErrorPanel of LoadScene has not been assigned.
+You probably need to assign the loadErrorPanel variable of the LoadScene script in the inspector.
+LoadScene.Start () (at Assets/Scripts/MonoBehaviour/LoadScene.cs:47)
+
+
+20200620 17:11:18 [31415] [INFO] !!!!!APPLICATION START!!!!!
+20200620 17:11:18 [31415] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 17:11:18 [31415] [INFO] {"lang":"zh","select_mods":["native","test"]}
+20200620 17:11:18 [31415] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 17:11:18 [31415] [INFO] Load mod content start
+20200620 17:13:27 [31415] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 17:13:27 [31415] [ERRO] exception in line 1Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.Syntax.Match (System.String script, System.Int32 charIndex, System.Int32& endIndex) [0x00131] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:213 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00017] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:44 
+
+20200620 17:13:27 [31415] [ERRO] UnassignedReferenceException: The variable loadErrorPanel of LoadScene has not been assigned.
+You probably need to assign the loadErrorPanel variable of the LoadScene script in the inspector.
+LoadScene.Start () (at Assets/Scripts/MonoBehaviour/LoadScene.cs:47)
+
+
+20200620 17:13:38 [56647] [INFO] !!!!!APPLICATION START!!!!!
+20200620 17:13:38 [56647] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 17:13:38 [56647] [INFO] {"lang":"zh","select_mods":["native","test"]}
+20200620 17:13:38 [56647] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 17:13:38 [56647] [INFO] Load mod content start
+20200620 17:13:38 [56647] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 17:13:38 [56647] [ERRO] exception in line 4exception in line 3exception in line 3exception in line 2exception in line 1Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.Syntax.Match (System.String script, System.Int32 charIndex, System.Int32& endIndex) [0x00131] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:213 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00017] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:44 
+
+20200620 17:13:38 [56647] [ERRO] UnassignedReferenceException: The variable loadErrorPanel of LoadScene has not been assigned.
+You probably need to assign the loadErrorPanel variable of the LoadScene script in the inspector.
+LoadScene.Start () (at Assets/Scripts/MonoBehaviour/LoadScene.cs:47)
+
+
+20200620 17:13:51 [92148] [INFO] !!!!!APPLICATION START!!!!!
+20200620 17:13:51 [92148] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 17:13:51 [92148] [INFO] {"lang":"zh","select_mods":["native","test"]}
+20200620 17:13:51 [92148] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 17:13:51 [92148] [INFO] Load mod content start
+20200620 17:14:08 [92148] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 17:14:08 [92148] [ERRO] exception in line 4exception in line 3exception in line 3exception in line 2exception in line 1Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.Syntax.Match (System.String script, System.Int32 charIndex, System.Int32& endIndex) [0x00131] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:213 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00017] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:44 
+
+20200620 17:14:08 [92148] [ERRO] UnassignedReferenceException: The variable loadErrorPanel of LoadScene has not been assigned.
+You probably need to assign the loadErrorPanel variable of the LoadScene script in the inspector.
+LoadScene.Start () (at Assets/Scripts/MonoBehaviour/LoadScene.cs:47)
+
+
+20200620 17:14:53 [90166] [INFO] !!!!!APPLICATION START!!!!!
+20200620 17:14:53 [90166] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 17:14:53 [90166] [INFO] {"lang":"zh","select_mods":["native","test"]}
+20200620 17:14:54 [90166] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 17:14:54 [90166] [INFO] Load mod content start
+20200620 17:14:54 [90166] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 17:14:54 [90166] [ERRO] exception in line 9exception in line 9exception in line 9exception in line 9exception in line 9Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.Syntax.Match (System.String script, System.Int32 charIndex, System.Int32& endIndex) [0x00131] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:217 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00014] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:48 
+
+20200620 17:14:54 [90166] [ERRO] UnassignedReferenceException: The variable loadErrorPanel of LoadScene has not been assigned.
+You probably need to assign the loadErrorPanel variable of the LoadScene script in the inspector.
+LoadScene.Start () (at Assets/Scripts/MonoBehaviour/LoadScene.cs:47)
+
+
+20200620 17:16:19 [61317] [INFO] !!!!!APPLICATION START!!!!!
+20200620 17:16:19 [61317] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 17:16:19 [61317] [INFO] {"lang":"zh","select_mods":["native","test"]}
+20200620 17:16:19 [61317] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 17:16:19 [61317] [INFO] Load mod content start
+20200620 17:16:19 [61317] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 17:16:19 [61317] [ERRO] exception in line 9exception in line 9exception in line 9exception in line 9exception in line 9Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.Syntax.Match (System.String script, System.Int32 charIndex, System.Int32& endIndex) [0x00131] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:217 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00014] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:48 
+
+20200620 17:17:09 [92145] [INFO] !!!!!APPLICATION START!!!!!
+20200620 17:17:09 [92145] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 17:17:09 [92145] [INFO] {"lang":"zh","select_mods":["native","test"]}
+20200620 17:17:09 [92145] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 17:17:09 [92145] [INFO] Load mod content start
+20200620 17:18:53 [92145] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 17:18:53 [92145] [ERRO] exception in line 9exception in line 9exception in line 9exception in line 9exception in line 9Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.Syntax.Match (System.String script, System.Int32 charIndex, System.Int32& endIndex) [0x00131] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:217 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00014] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:48 
+
+20200620 17:18:57 [94257] [INFO] !!!!!APPLICATION START!!!!!
+20200620 17:18:57 [94257] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 17:18:57 [94257] [INFO] {"lang":"zh","select_mods":["native","test"]}
+20200620 17:18:57 [94257] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 17:18:57 [94257] [INFO] Load mod content start
+20200620 17:20:32 [94257] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 17:20:32 [94257] [ERRO] exception in line 9exception in line 9exception in line 9exception in line 9exception in line 9Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.Syntax.Match (System.String script, System.Int32 charIndex, System.Int32& endIndex) [0x00131] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:217 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00014] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:48 
+
+20200620 17:21:29 [46177] [INFO] !!!!!APPLICATION START!!!!!
+20200620 17:21:29 [46177] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 17:21:29 [46177] [INFO] {"lang":"zh","select_mods":["native","test"]}
+20200620 17:21:29 [46177] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 17:21:29 [46177] [INFO] Load mod content start
+20200620 17:21:29 [46177] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 17:21:29 [46177] [ERRO] exception in line 9Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.Syntax.Match (System.String script, System.Int32 charIndex, System.Int32& endIndex) [0x00131] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:217 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00013] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:53 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00122] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:99 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00122] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:99 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00122] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:99 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script) [0x00024] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:28 
+
+20200620 17:22:01 [39365] [INFO] !!!!!APPLICATION START!!!!!
+20200620 17:22:01 [39365] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 17:22:01 [39365] [INFO] {"lang":"zh","select_mods":["native","test"]}
+20200620 17:22:01 [39365] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 17:22:01 [39365] [INFO] Load mod content start
+20200620 17:22:24 [39365] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 17:22:24 [39365] [ERRO] exception in line 9Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.Syntax.Match (System.String script, System.Int32 charIndex, System.Int32& endIndex) [0x00131] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:216 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00013] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:52 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00122] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:98 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00122] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:98 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00122] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:98 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script) [0x00024] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:28 
+
+20200620 17:24:40 [40164] [INFO] !!!!!APPLICATION START!!!!!
+20200620 17:24:40 [40164] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 17:24:40 [40164] [INFO] {"lang":"zh","select_mods":["native","test"]}
+20200620 17:24:40 [40164] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 17:24:40 [40164] [INFO] Load mod content start
+20200620 17:24:41 [40164] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 17:24:41 [40164] [ERRO] exception in line 9Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.Syntax.Match (System.String script, System.Int32 charIndex, System.Int32& endIndex) [0x00131] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:216 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00013] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:52 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00122] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:98 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00122] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:98 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00122] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:98 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00122] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:98 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script) [0x00024] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:28 
+
+20200620 17:31:29 [78993] [INFO] !!!!!APPLICATION START!!!!!
+20200620 17:31:29 [78993] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 17:31:29 [78993] [INFO] {"lang":"zh","select_mods":["native","test"]}
+20200620 17:31:29 [78993] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 17:31:29 [78993] [INFO] Load mod content start
+20200620 17:34:59 [78993] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 17:34:59 [78993] [ERRO] exception in line 9Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.Syntax.Match (System.String script, System.Int32 charIndex, System.Int32& endIndex) [0x00131] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:216 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00013] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:52 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00122] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:98 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00122] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:98 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00122] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:98 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00122] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:98 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script) [0x00024] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:28 
+
+20200620 17:39:44 [91546] [INFO] !!!!!APPLICATION START!!!!!
+20200620 17:39:44 [91546] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 17:39:44 [91546] [INFO] {"lang":"zh","select_mods":["native","test"]}
+20200620 17:39:44 [91546] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 17:39:44 [91546] [INFO] Load mod content start
+20200620 17:39:44 [91546] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 17:39:44 [91546] [ERRO] Sequence contains no matching element  at System.Linq.Enumerable.Single[TSource] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] predicate) [0x00070] in <351e49e2a5bf4fd6beabb458ce2255f3>:0 
+  at SyntaxAnaylize.MultiItem.Get (System.String name, System.Type fieldType) [0x0000e] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:289 
+  at TaisEngine.ModManager.Mod.Parse[T] (System.String name, System.String content) [0x00029] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:54 
+  at TaisEngine.ModManager.InitSelectDef..ctor (System.String path) [0x0002f] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\InitSelectDef.cs:26 
+  at TaisEngine.ModManager.Mod+Content..ctor (System.String path) [0x00029] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:184 
+  at TaisEngine.ModManager.Mod..ctor (System.String modPath) [0x00035] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:134 
+  at TaisEngine.ModManager.Mod.Load () [0x00044] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:36 
+
+20200620 17:40:44 [14515] [INFO] !!!!!APPLICATION START!!!!!
+20200620 17:40:44 [14515] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 17:40:44 [14515] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 17:40:44 [14515] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 17:40:44 [14515] [INFO] Load mod content start
+20200620 17:48:27 [14515] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 17:48:27 [14515] [ERRO] Sequence contains no matching element  at System.Linq.Enumerable.Single[TSource] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] predicate) [0x00070] in <351e49e2a5bf4fd6beabb458ce2255f3>:0 
+  at SyntaxAnaylize.MultiItem.Get (System.String name, System.Type fieldType) [0x0000e] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:289 
+  at TaisEngine.ModManager.Mod.Parse[T] (System.String name, System.String content) [0x00029] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:54 
+  at TaisEngine.ModManager.InitSelectDef..ctor (System.String path) [0x0002f] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\InitSelectDef.cs:26 
+  at TaisEngine.ModManager.Mod+Content..ctor (System.String path) [0x00029] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:184 
+  at TaisEngine.ModManager.Mod..ctor (System.String modPath) [0x00035] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:134 
+  at TaisEngine.ModManager.Mod.Load () [0x00044] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:36 
+
+20200620 17:49:57 [40221] [INFO] !!!!!APPLICATION START!!!!!
+20200620 17:49:57 [40221] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 17:49:57 [40221] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 17:49:57 [40221] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 17:49:57 [40221] [INFO] Load mod content start
+20200620 17:49:57 [40221] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 17:49:57 [40221] [ERRO] can not find desc  at SyntaxAnaylize.MultiItem.Get (System.String name, System.Type fieldType) [0x0002f] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:292 
+  at TaisEngine.ModManager.Mod.Parse[T] (System.String name, System.String content) [0x00029] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:54 
+  at TaisEngine.ModManager.InitSelectDef..ctor (System.String path) [0x0002f] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\InitSelectDef.cs:26 
+  at TaisEngine.ModManager.Mod+Content..ctor (System.String path) [0x00029] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:184 
+  at TaisEngine.ModManager.Mod..ctor (System.String modPath) [0x00035] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:134 
+  at TaisEngine.ModManager.Mod.Load () [0x00044] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:36 
+
+20200620 17:50:14 [65187] [INFO] !!!!!APPLICATION START!!!!!
+20200620 17:50:14 [65187] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 17:50:14 [65187] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 17:50:14 [65187] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 17:50:14 [65187] [INFO] Load mod content start
+20200620 17:50:14 [65187] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 17:50:14 [65187] [ERRO] can not find 'desc'  at SyntaxAnaylize.MultiItem.Get (System.String name, System.Type fieldType) [0x0002f] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:292 
+  at TaisEngine.ModManager.Mod.Parse[T] (System.String name, System.String content) [0x00029] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:54 
+  at TaisEngine.ModManager.InitSelectDef..ctor (System.String path) [0x0002f] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\InitSelectDef.cs:26 
+  at TaisEngine.ModManager.Mod+Content..ctor (System.String path) [0x00029] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:184 
+  at TaisEngine.ModManager.Mod..ctor (System.String modPath) [0x00035] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:134 
+  at TaisEngine.ModManager.Mod.Load () [0x00044] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:36 
+
+20200620 17:51:47 [85490] [INFO] !!!!!APPLICATION START!!!!!
+20200620 17:51:47 [85490] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 17:51:47 [85490] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 17:51:48 [85490] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 17:51:48 [85490] [INFO] Load mod content start
+20200620 17:51:48 [85490] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 17:51:48 [85490] [ERRO] parse file SELECT_BACKGROUND failed!can not find 'desc'  at SyntaxAnaylize.MultiItem.Get (System.String name, System.Type fieldType) [0x0002f] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:292 
+  at TaisEngine.ModManager.Mod.Parse[T] (System.String name, System.String content) [0x0002a] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:56 
+
+20200620 17:52:04 [82581] [INFO] !!!!!APPLICATION START!!!!!
+20200620 17:52:04 [82581] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 17:52:04 [82581] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 17:52:04 [82581] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 17:52:04 [82581] [INFO] Load mod content start
+20200620 17:52:04 [82581] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 17:52:04 [82581] [ERRO] parse file SELECT_BACKGROUND failed!can not find 'desc'  at SyntaxAnaylize.MultiItem.Get (System.String name, System.Type fieldType) [0x0002f] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:292 
+  at TaisEngine.ModManager.Mod.Parse[T] (System.String name, System.String content) [0x0002a] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:56 
+
+20200620 22:06:06 [48987] [INFO] !!!!!APPLICATION START!!!!!
+20200620 22:06:06 [48987] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 22:06:06 [48987] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 22:06:06 [48987] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 22:06:06 [48987] [INFO] Load mod content start
+20200620 22:06:06 [48987] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 22:06:06 [48987] [ERRO] exception in line 1Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.Syntax.Match (System.String script, System.Int32 charIndex, System.Int32& endIndex) [0x00131] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:216 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00013] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:52 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script) [0x00024] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:28 
+
+20200620 22:06:33 [50929] [INFO] !!!!!APPLICATION START!!!!!
+20200620 22:06:33 [50929] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 22:06:33 [50929] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 22:06:33 [50929] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 22:06:33 [50929] [INFO] Load mod content start
+20200620 22:07:01 [50929] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 22:07:01 [50929] [ERRO] exception in line 1Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.Syntax.Match (System.String script, System.Int32 charIndex, System.Int32& endIndex) [0x00131] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:216 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script, System.Int32& offset) [0x00013] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:52 
+  at SyntaxAnaylize.Syntax.Anaylize (System.String script) [0x00024] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:28 
+
+20200620 22:07:35 [23152] [INFO] !!!!!APPLICATION START!!!!!
+20200620 22:07:35 [23152] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 22:07:35 [23152] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 22:07:35 [23152] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 22:07:35 [23152] [INFO] Load mod content start
+20200620 22:08:03 [23152] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 22:08:03 [23152] [ERRO] parse file SELECT_BACKGROUND failed!Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.MultiItem.Get (System.String name, System.Type fieldType) [0x0007d] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:300 
+  at TaisEngine.ModManager.Mod.Parse[T] (System.String name, System.String content) [0x0002a] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:56 
+
+20200620 22:08:12 [73392] [INFO] !!!!!APPLICATION START!!!!!
+20200620 22:08:12 [73392] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 22:08:12 [73392] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 22:08:13 [73392] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 22:08:13 [73392] [INFO] Load mod content start
+20200620 22:08:29 [73392] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 22:08:29 [73392] [ERRO] parse file SELECT_BACKGROUND failed!Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.MultiItem.Get (System.String name, System.Type fieldType) [0x0007d] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:300 
+  at TaisEngine.ModManager.Mod.Parse[T] (System.String name, System.String content) [0x0002a] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:56 
+
+20200620 22:10:30 [39473] [INFO] !!!!!APPLICATION START!!!!!
+20200620 22:10:30 [39473] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 22:10:30 [39473] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 22:10:30 [39473] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 22:10:30 [39473] [INFO] Load mod content start
+20200620 22:10:41 [39473] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 22:10:41 [39473] [ERRO] Exception of type 'System.Exception' was thrown.  at TaisEngine.ModManager.Converter.GetFunc[T] (System.String value) [0x0005f] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\InitSelectDef.cs:120 
+  at TaisEngine.ModManager.EvalFactor`1[T]..ctor (SyntaxAnaylize.SingleValue modValue) [0x0000f] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\InitSelectDef.cs:59 
+  at TaisEngine.ModManager.EvalFactor`1[T].Parse (SyntaxAnaylize.SingleValue modValue) [0x00001] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\InitSelectDef.cs:64 
+  at TaisEngine.ModManager.Eval`1[T].Parse (SyntaxAnaylize.Value modValue) [0x0000f] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\InitSelectDef.cs:45 
+  at TaisEngine.ModManager.InitSelectDef..ctor (System.String path) [0x0006d] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\InitSelectDef.cs:32 
+  at TaisEngine.ModManager.Mod+Content..ctor (System.String path) [0x00029] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:192 
+  at TaisEngine.ModManager.Mod..ctor (System.String modPath) [0x00035] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:142 
+  at TaisEngine.ModManager.Mod.Load () [0x00044] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:36 
+
+20200620 22:11:57 [76904] [INFO] !!!!!APPLICATION START!!!!!
+20200620 22:11:57 [76904] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 22:11:57 [76904] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 22:11:57 [76904] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 22:11:57 [76904] [INFO] Load mod content start
+20200620 22:12:14 [76904] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 22:12:14 [76904] [ERRO] parse file SELECT_BACKGROUND failed!Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.MultiItem.Get (System.String name, System.Type fieldType) [0x0007d] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:300 
+  at TaisEngine.ModManager.Mod.Parse[T] (System.String name, System.String content) [0x0002a] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:56 
+
+20200620 22:13:46 [69588] [INFO] !!!!!APPLICATION START!!!!!
+20200620 22:13:46 [69588] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 22:13:46 [69588] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 22:13:46 [69588] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 22:13:46 [69588] [INFO] Load mod content start
+20200620 22:14:08 [69588] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 22:14:09 [69588] [ERRO] parse file SELECT_BACKGROUND failed!Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.MultiItem.Get (System.String name, System.Type fieldType) [0x0007d] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:300 
+  at TaisEngine.ModManager.Mod.Parse[T] (System.String name, System.String content) [0x0002a] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:56 
+
+20200620 22:26:31 [23097] [INFO] !!!!!APPLICATION START!!!!!
+20200620 22:26:31 [23097] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 22:26:31 [23097] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 22:26:31 [23097] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 22:26:31 [23097] [INFO] Load mod content start
+20200620 22:26:31 [23097] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 22:26:31 [23097] [ERRO] parse file SELECT_BACKGROUND failed!Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.MultiItem.Get (System.String name, System.Type fieldType) [0x0007d] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:300 
+  at TaisEngine.ModManager.Mod.Parse[T] (System.String name, System.String content) [0x0002a] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:56 
+
+20200620 22:26:42 [25297] [INFO] !!!!!APPLICATION START!!!!!
+20200620 22:26:42 [25297] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 22:26:42 [25297] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 22:26:42 [25297] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 22:26:42 [25297] [INFO] Load mod content start
+20200620 22:26:47 [25297] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 22:26:47 [25297] [ERRO] parse file SELECT_BACKGROUND failed!Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.MultiItem.Get (System.String name, System.Type fieldType) [0x0007d] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:300 
+  at TaisEngine.ModManager.Mod.Parse[T] (System.String name, System.String content) [0x0002a] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:56 
+
+20200620 22:27:06 [86349] [INFO] !!!!!APPLICATION START!!!!!
+20200620 22:27:06 [86349] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 22:27:06 [86349] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 22:27:06 [86349] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 22:27:06 [86349] [INFO] Load mod content start
+20200620 22:27:16 [86349] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200620 22:27:16 [86349] [ERRO] parse file SELECT_BACKGROUND failed!Exception of type 'System.Exception' was thrown.  at SyntaxAnaylize.MultiItem.Get (System.String name, System.Type fieldType) [0x0007d] in D:\MyProject\Git\Tais\Assets\Plugins\SyntaxAnaylize\SyntaxAnaylize.cs:300 
+  at TaisEngine.ModManager.Mod.Parse[T] (System.String name, System.String content) [0x0002a] in D:\MyProject\Git\Tais\Assets\Scripts\ModManager\Mod.cs:56 
+
+20200620 22:28:32 [22543] [INFO] !!!!!APPLICATION START!!!!!
+20200620 22:28:32 [22543] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 22:28:32 [22543] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 22:28:33 [22543] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 22:28:33 [22543] [INFO] Load mod content start
+20200620 22:28:33 [22543] [INFO] Load mod content finish
+20200620 22:28:33 [22543] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200620 22:29:32 [23352] [INFO] !!!!!APPLICATION START!!!!!
+20200620 22:29:32 [23352] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 22:29:32 [23352] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 22:29:32 [23352] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 22:29:32 [23352] [INFO] Load mod content start
+20200620 22:29:34 [23352] [INFO] Load mod content finish
+20200620 22:30:11 [23352] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200620 22:57:51 [90040] [INFO] !!!!!APPLICATION START!!!!!
+20200620 22:57:51 [90040] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 22:57:51 [90040] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 22:57:51 [90040] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 22:57:51 [90040] [INFO] Load mod content start
+20200620 22:57:51 [90040] [INFO] Load mod content finish
+20200620 22:57:51 [90040] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200620 22:58:02 [98043] [INFO] !!!!!APPLICATION START!!!!!
+20200620 22:58:02 [98043] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 22:58:02 [98043] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 22:58:02 [98043] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 22:58:02 [98043] [INFO] Load mod content start
+20200620 22:58:04 [98043] [INFO] Load mod content finish
+20200620 22:58:04 [98043] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200620 22:58:17 [27725] [INFO] !!!!!APPLICATION START!!!!!
+20200620 22:58:17 [27725] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 22:58:17 [27725] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 22:58:17 [27725] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 22:58:17 [27725] [INFO] Load mod content start
+20200620 22:58:19 [27725] [INFO] Load mod content finish
+20200620 22:58:49 [27725] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200620 23:10:03 [89176] [INFO] !!!!!APPLICATION START!!!!!
+20200620 23:10:03 [89176] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 23:10:03 [89176] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 23:10:03 [89176] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 23:10:03 [89176] [INFO] Load mod content start
+20200620 23:10:03 [89176] [INFO] Load mod content finish
+20200620 23:10:03 [89176] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200620 23:10:41 [42850] [INFO] !!!!!APPLICATION START!!!!!
+20200620 23:10:41 [42850] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 23:10:41 [42850] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 23:10:41 [42850] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 23:10:41 [42850] [INFO] Load mod content start
+20200620 23:10:41 [42850] [INFO] Load mod content finish
+20200620 23:10:41 [42850] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200620 23:11:19 [37907] [INFO] !!!!!APPLICATION START!!!!!
+20200620 23:11:19 [37907] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 23:11:19 [37907] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 23:11:19 [37907] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 23:11:19 [37907] [INFO] Load mod content start
+20200620 23:11:19 [37907] [INFO] Load mod content finish
+20200620 23:11:19 [37907] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200620 23:12:29 [35206] [INFO] !!!!!APPLICATION START!!!!!
+20200620 23:12:29 [35206] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 23:12:29 [35206] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 23:12:29 [35206] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 23:12:29 [35206] [INFO] Load mod content start
+20200620 23:12:29 [35206] [INFO] Load mod content finish
+20200620 23:12:29 [35206] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200620 23:18:48 [93397] [INFO] !!!!!APPLICATION START!!!!!
+20200620 23:18:48 [93397] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 23:18:48 [93397] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 23:18:48 [93397] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 23:18:48 [93397] [INFO] Load mod content start
+20200620 23:18:48 [93397] [INFO] Load mod content finish
+20200620 23:18:48 [93397] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200620 23:18:50 [93397] [ERRO] UnassignedReferenceException: The variable selectPanel of InitScene has not been assigned.
+You probably need to assign the selectPanel variable of the InitScene script in the inspector.
+UnityEngine.Object.Instantiate (UnityEngine.Object original, UnityEngine.Transform parent, System.Boolean instantiateInWorldSpace) (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.Object.Instantiate[T] (T original, UnityEngine.Transform parent, System.Boolean worldPositionStays) (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.Object.Instantiate[T] (T original, UnityEngine.Transform parent) (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+InitScene.CreateSelectPanel (TaisEngine.ModManager.InitSelectDef+Element selectDef) (at Assets/Scripts/MonoBehaviour/InitScene.cs:22)
+NameAgePanel.onConfirm () (at Assets/Scripts/MonoBehaviour/InitScene/NameAgePanel.cs:56)
+UnityEngine.Events.InvokableCall.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.UI.Button.Press () (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:68)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:110)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update() (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs:377)
+
+
+20200620 23:20:13 [88172] [INFO] !!!!!APPLICATION START!!!!!
+20200620 23:20:13 [88172] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 23:20:13 [88172] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 23:20:13 [88172] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 23:20:13 [88172] [INFO] Load mod content start
+20200620 23:20:13 [88172] [INFO] Load mod content finish
+20200620 23:20:13 [88172] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200620 23:20:14 [88172] [ERRO] UnassignedReferenceException: The variable selectPanel of InitScene has not been assigned.
+You probably need to assign the selectPanel variable of the InitScene script in the inspector.
+UnityEngine.Object.Instantiate (UnityEngine.Object original, UnityEngine.Transform parent, System.Boolean instantiateInWorldSpace) (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.Object.Instantiate[T] (T original, UnityEngine.Transform parent, System.Boolean worldPositionStays) (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.Object.Instantiate[T] (T original, UnityEngine.Transform parent) (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+InitScene.CreateSelectPanel (TaisEngine.ModManager.InitSelectDef+Element selectDef) (at Assets/Scripts/MonoBehaviour/InitScene.cs:22)
+NameAgePanel.onConfirm () (at Assets/Scripts/MonoBehaviour/InitScene/NameAgePanel.cs:56)
+UnityEngine.Events.InvokableCall.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.UI.Button.Press () (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:68)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:110)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update() (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs:377)
+
+
+20200620 23:21:01 [96122] [INFO] !!!!!APPLICATION START!!!!!
+20200620 23:21:01 [96122] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 23:21:01 [96122] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 23:21:02 [96122] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 23:21:02 [96122] [INFO] Load mod content start
+20200620 23:21:02 [96122] [INFO] Load mod content finish
+20200620 23:21:02 [96122] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200620 23:24:06 [26401] [INFO] !!!!!APPLICATION START!!!!!
+20200620 23:24:06 [26401] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 23:24:06 [26401] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 23:24:06 [26401] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 23:24:06 [26401] [INFO] Load mod content start
+20200620 23:24:06 [26401] [INFO] Load mod content finish
+20200620 23:24:06 [26401] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200620 23:26:31 [34746] [INFO] !!!!!APPLICATION START!!!!!
+20200620 23:26:31 [34746] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200620 23:26:31 [34746] [INFO] {"lang":"zh","select_mods":["native"]}
+20200620 23:26:31 [34746] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200620 23:26:31 [34746] [INFO] Load mod content start
+20200620 23:26:31 [34746] [INFO] Load mod content finish
+20200620 23:26:31 [34746] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
