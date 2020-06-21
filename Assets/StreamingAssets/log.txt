@@ -872,3 +872,503 @@ UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target
 UnityEngine.EventSystems.EventSystem:Update() (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs:377)
 
 
+20200621 18:47:03 [55568] [INFO] !!!!!APPLICATION START!!!!!
+20200621 18:47:03 [55568] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 18:47:03 [55568] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 18:47:03 [55568] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 18:47:03 [55568] [INFO] Load mod content start
+20200621 18:47:03 [55568] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200621 18:47:03 [55568] [ERRO] Parse failed! 'init' in 'init_data.taishou.background' Exception of type 'System.Exception' was thrown.  at ModVisitor.Visitor.Parse (System.String script, ModVisitor.Visitor+VisitType vistType) [0x00097] in D:\MyProject\Git\Tais\Assets\Plugins\ModVisitor\ModVisitor.cs:124 
+
+20200621 18:47:38 [83522] [INFO] !!!!!APPLICATION START!!!!!
+20200621 18:47:38 [83522] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 18:47:38 [83522] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 18:47:38 [83522] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 18:47:38 [83522] [INFO] Load mod content start
+20200621 18:47:38 [83522] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200621 18:47:38 [83522] [ERRO] Parse failed! 'init_data' in 'init_data.taishou.background' Exception of type 'System.Exception' was thrown.  at ModVisitor.Visitor.Parse (System.String script, ModVisitor.Visitor+VisitType vistType) [0x00097] in D:\MyProject\Git\Tais\Assets\Plugins\ModVisitor\ModVisitor.cs:124 
+
+20200621 18:48:12 [10865] [INFO] !!!!!APPLICATION START!!!!!
+20200621 18:48:12 [10865] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 18:48:12 [10865] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 18:48:12 [10865] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 18:48:12 [10865] [INFO] Load mod content start
+20200621 18:48:41 [10865] [ERRO] load mod D:/MyProject/Git/Tais/Assets/StreamingAssets/mod/native failed!
+
+20200621 18:48:41 [10865] [ERRO] Parse failed! 'init_data' in 'init_data.taishou.background' Exception of type 'System.Exception' was thrown.  at ModVisitor.Visitor.Parse (System.String script, ModVisitor.Visitor+VisitType vistType) [0x00097] in D:\MyProject\Git\Tais\Assets\Plugins\ModVisitor\ModVisitor.cs:124 
+
+20200621 18:53:12 [48767] [INFO] !!!!!APPLICATION START!!!!!
+20200621 18:53:12 [48767] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 18:53:12 [48767] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 18:53:12 [48767] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 18:53:12 [48767] [INFO] Load mod content start
+20200621 18:53:12 [48767] [INFO] Load mod content finish
+20200621 18:53:12 [48767] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 18:53:15 [48767] [ERRO] NullReferenceException: Object reference not set to an instance of an object
+TaisEngine.ModManager.OperationSetValue.Do () (at Assets/Scripts/ModManager/InitSelectDef.cs:153)
+TaisEngine.ModManager.EvalSelected.Run () (at Assets/Scripts/ModManager/InitSelectDef.cs:115)
+SelectPanel+<>c__DisplayClass3_0.<Start>b__0 () (at Assets/Scripts/MonoBehaviour/InitScene/SelectPanel.cs:33)
+UnityEngine.Events.InvokableCall.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.UI.Button.Press () (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:68)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:110)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update() (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs:377)
+
+
+20200621 18:53:51 [68002] [INFO] !!!!!APPLICATION START!!!!!
+20200621 18:53:51 [68002] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 18:53:51 [68002] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 18:53:51 [68002] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 18:53:51 [68002] [INFO] Load mod content start
+20200621 18:53:51 [68002] [INFO] Load mod content finish
+20200621 18:53:51 [68002] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 18:54:00 [71153] [INFO] !!!!!APPLICATION START!!!!!
+20200621 18:54:00 [71153] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 18:54:00 [71153] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 18:54:00 [71153] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 18:54:00 [71153] [INFO] Load mod content start
+20200621 18:54:07 [71153] [INFO] Load mod content finish
+20200621 18:54:07 [71153] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 18:54:20 [14837] [INFO] !!!!!APPLICATION START!!!!!
+20200621 18:54:20 [14837] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 18:54:20 [14837] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 18:54:20 [14837] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 18:54:20 [14837] [INFO] Load mod content start
+20200621 18:54:20 [14837] [INFO] Load mod content finish
+20200621 18:54:20 [14837] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 18:54:23 [14837] [ERRO] KeyNotFoundException: The given key was not present in the dictionary.
+System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) (at <437ba245d8404784b9fbab9b439ac908>:0)
+ModVisitor.Setter.set (System.Object value) (at Assets/Plugins/ModVisitor/ModVisitor.cs:25)
+TaisEngine.ModManager.OperationSetValue.Do () (at Assets/Scripts/ModManager/InitSelectDef.cs:153)
+TaisEngine.ModManager.EvalSelected.Run () (at Assets/Scripts/ModManager/InitSelectDef.cs:115)
+SelectPanel+<>c__DisplayClass3_0.<Start>b__0 () (at Assets/Scripts/MonoBehaviour/InitScene/SelectPanel.cs:33)
+UnityEngine.Events.InvokableCall.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.UI.Button.Press () (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:68)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:110)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update() (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs:377)
+
+
+20200621 20:28:14 [27101] [INFO] !!!!!APPLICATION START!!!!!
+20200621 20:28:14 [27101] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 20:28:14 [27101] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 20:28:14 [27101] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 20:28:14 [27101] [INFO] Load mod content start
+20200621 20:28:14 [27101] [INFO] Load mod content finish
+20200621 20:28:14 [27101] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 20:28:16 [27101] [ERRO] TargetException: Non-static field requires a target
+System.Reflection.MonoField.SetValue (System.Object obj, System.Object val, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Globalization.CultureInfo culture) (at <437ba245d8404784b9fbab9b439ac908>:0)
+System.Reflection.FieldInfo.SetValue (System.Object obj, System.Object value) (at <437ba245d8404784b9fbab9b439ac908>:0)
+ModVisitor.Setter.set (System.Object value) (at Assets/Plugins/ModVisitor/ModVisitor.cs:33)
+TaisEngine.ModManager.OperationSetValue.Do () (at Assets/Scripts/ModManager/InitSelectDef.cs:153)
+TaisEngine.ModManager.EvalSelected.Run () (at Assets/Scripts/ModManager/InitSelectDef.cs:115)
+SelectPanel+<>c__DisplayClass3_0.<Start>b__0 () (at Assets/Scripts/MonoBehaviour/InitScene/SelectPanel.cs:33)
+UnityEngine.Events.InvokableCall.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.UI.Button.Press () (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:68)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:110)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update() (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs:377)
+
+
+20200621 20:28:46 [93999] [INFO] !!!!!APPLICATION START!!!!!
+20200621 20:28:46 [93999] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 20:28:46 [93999] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 20:28:46 [93999] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 20:28:46 [93999] [INFO] Load mod content start
+20200621 20:28:46 [93999] [INFO] Load mod content finish
+20200621 20:28:46 [93999] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 20:28:53 [77425] [INFO] !!!!!APPLICATION START!!!!!
+20200621 20:28:53 [77425] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 20:28:53 [77425] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 20:28:53 [77425] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 20:28:53 [77425] [INFO] Load mod content start
+20200621 20:28:53 [77425] [INFO] Load mod content finish
+20200621 20:28:53 [77425] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 20:29:30 [77425] [ERRO] TargetException: Non-static field requires a target
+System.Reflection.MonoField.SetValue (System.Object obj, System.Object val, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Globalization.CultureInfo culture) (at <437ba245d8404784b9fbab9b439ac908>:0)
+System.Reflection.FieldInfo.SetValue (System.Object obj, System.Object value) (at <437ba245d8404784b9fbab9b439ac908>:0)
+ModVisitor.Setter.set (System.Object value) (at Assets/Plugins/ModVisitor/ModVisitor.cs:33)
+TaisEngine.ModManager.OperationSetValue.Do () (at Assets/Scripts/ModManager/InitSelectDef.cs:153)
+TaisEngine.ModManager.EvalSelected.Run () (at Assets/Scripts/ModManager/InitSelectDef.cs:115)
+SelectPanel+<>c__DisplayClass3_0.<Start>b__0 () (at Assets/Scripts/MonoBehaviour/InitScene/SelectPanel.cs:33)
+UnityEngine.Events.InvokableCall.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.UI.Button.Press () (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:68)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:110)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update() (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs:377)
+
+
+20200621 20:29:43 [56500] [INFO] !!!!!APPLICATION START!!!!!
+20200621 20:29:43 [56500] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 20:29:43 [56500] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 20:29:43 [56500] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 20:29:43 [56500] [INFO] Load mod content start
+20200621 20:29:43 [56500] [INFO] Load mod content finish
+20200621 20:29:43 [56500] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 20:30:08 [56500] [ERRO] TargetException: Non-static field requires a target
+System.Reflection.MonoField.SetValue (System.Object obj, System.Object val, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Globalization.CultureInfo culture) (at <437ba245d8404784b9fbab9b439ac908>:0)
+System.Reflection.FieldInfo.SetValue (System.Object obj, System.Object value) (at <437ba245d8404784b9fbab9b439ac908>:0)
+ModVisitor.Setter.set (System.Object value) (at Assets/Plugins/ModVisitor/ModVisitor.cs:33)
+TaisEngine.ModManager.OperationSetValue.Do () (at Assets/Scripts/ModManager/InitSelectDef.cs:153)
+TaisEngine.ModManager.EvalSelected.Run () (at Assets/Scripts/ModManager/InitSelectDef.cs:115)
+SelectPanel+<>c__DisplayClass3_0.<Start>b__0 () (at Assets/Scripts/MonoBehaviour/InitScene/SelectPanel.cs:33)
+UnityEngine.Events.InvokableCall.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.UI.Button.Press () (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:68)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:110)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update() (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs:377)
+
+
+20200621 20:30:56 [79208] [INFO] !!!!!APPLICATION START!!!!!
+20200621 20:30:56 [79208] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 20:30:56 [79208] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 20:30:56 [79208] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 20:30:56 [79208] [INFO] Load mod content start
+20200621 20:30:56 [79208] [INFO] Load mod content finish
+20200621 20:30:56 [79208] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 20:45:05 [51142] [INFO] !!!!!APPLICATION START!!!!!
+20200621 20:45:05 [51142] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 20:45:05 [51142] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 20:45:05 [51142] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 20:45:05 [51142] [INFO] Load mod content start
+20200621 20:45:05 [51142] [INFO] Load mod content finish
+20200621 20:45:05 [51142] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 20:45:08 [51142] [ERRO] UnassignedReferenceException: The variable reportPanel of InitScene has not been assigned.
+You probably need to assign the reportPanel variable of the InitScene script in the inspector.
+UnityEngine.Object.Instantiate (UnityEngine.Object original, UnityEngine.Transform parent, System.Boolean instantiateInWorldSpace) (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.Object.Instantiate[T] (T original, UnityEngine.Transform parent, System.Boolean worldPositionStays) (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.Object.Instantiate[T] (T original, UnityEngine.Transform parent) (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+InitScene.CreateReportPanel () (at Assets/Scripts/MonoBehaviour/InitScene.cs:32)
+SelectPanel+<>c__DisplayClass3_0.<Start>b__0 () (at Assets/Scripts/MonoBehaviour/InitScene/SelectPanel.cs:44)
+UnityEngine.Events.InvokableCall.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.UI.Button.Press () (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:68)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:110)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update() (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs:377)
+
+
+20200621 20:56:25 [40399] [INFO] !!!!!APPLICATION START!!!!!
+20200621 20:56:25 [40399] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 20:56:25 [40399] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 20:56:25 [40399] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 20:56:25 [40399] [INFO] Load mod content start
+20200621 20:56:25 [40399] [INFO] Load mod content finish
+20200621 20:56:25 [40399] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 20:56:28 [40399] [ERRO] UnassignedReferenceException: The variable reportPanel of InitScene has not been assigned.
+You probably need to assign the reportPanel variable of the InitScene script in the inspector.
+UnityEngine.Object.Instantiate (UnityEngine.Object original, UnityEngine.Transform parent, System.Boolean instantiateInWorldSpace) (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.Object.Instantiate[T] (T original, UnityEngine.Transform parent, System.Boolean worldPositionStays) (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.Object.Instantiate[T] (T original, UnityEngine.Transform parent) (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+InitScene.CreateReportPanel () (at Assets/Scripts/MonoBehaviour/InitScene.cs:32)
+SelectPanel+<>c__DisplayClass3_0.<Start>b__0 () (at Assets/Scripts/MonoBehaviour/InitScene/SelectPanel.cs:44)
+UnityEngine.Events.InvokableCall.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.UI.Button.Press () (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:68)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:110)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update() (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs:377)
+
+
+20200621 20:57:04 [82588] [INFO] !!!!!APPLICATION START!!!!!
+20200621 20:57:04 [82588] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 20:57:04 [82588] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 20:57:04 [82588] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 20:57:04 [82588] [INFO] Load mod content start
+20200621 20:57:04 [82588] [INFO] Load mod content finish
+20200621 20:57:04 [82588] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 21:26:26 [75685] [INFO] !!!!!APPLICATION START!!!!!
+20200621 21:26:26 [75685] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 21:26:26 [75685] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 21:26:26 [75685] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 21:26:26 [75685] [INFO] Load mod content start
+20200621 21:26:26 [75685] [INFO] Load mod content finish
+20200621 21:26:26 [75685] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 21:49:31 [56750] [INFO] !!!!!APPLICATION START!!!!!
+20200621 21:49:31 [56750] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 21:49:31 [56750] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 21:49:31 [56750] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 21:49:31 [56750] [INFO] Load mod content start
+20200621 21:49:31 [56750] [INFO] Load mod content finish
+20200621 21:49:31 [56750] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 21:50:28 [77275] [INFO] !!!!!APPLICATION START!!!!!
+20200621 21:50:28 [77275] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 21:50:28 [77275] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 21:50:28 [77275] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 21:50:28 [77275] [INFO] Load mod content start
+20200621 21:50:28 [77275] [INFO] Load mod content finish
+20200621 21:50:28 [77275] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 21:50:57 [49023] [INFO] !!!!!APPLICATION START!!!!!
+20200621 21:50:57 [49023] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 21:50:57 [49023] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 21:50:57 [49023] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 21:50:57 [49023] [INFO] Load mod content start
+20200621 21:50:57 [49023] [INFO] Load mod content finish
+20200621 21:50:57 [49023] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 22:04:27 [57506] [INFO] !!!!!APPLICATION START!!!!!
+20200621 22:04:27 [57506] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 22:04:27 [57506] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 22:04:27 [57506] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 22:04:27 [57506] [INFO] Load mod content start
+20200621 22:04:27 [57506] [INFO] Load mod content finish
+20200621 22:04:27 [57506] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 22:04:34 [57506] [ERRO] NullReferenceException: Object reference not set to an instance of an object
+DialogSave.OnEnable () (at Assets/Scripts/MonoBehaviour/MainScene/dialog/DialogSave.cs:48)
+UnityEngine.GameObject:SetActive(Boolean)
+DialogEsc:onClickSave() (at Assets/Scripts/MonoBehaviour/MainScene/dialog/DialogEsc.cs:13)
+UnityEngine.EventSystems.EventSystem:Update() (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs:377)
+
+
+20200621 22:08:26 [52265] [INFO] !!!!!APPLICATION START!!!!!
+20200621 22:08:26 [52265] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 22:08:26 [52265] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 22:08:26 [52265] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 22:08:26 [52265] [INFO] Load mod content start
+20200621 22:08:26 [52265] [INFO] Load mod content finish
+20200621 22:08:26 [52265] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 22:08:37 [52265] [ERRO] DirectoryNotFoundException: Could not find a part of the path 'D:\MyProject\Git\Tais\Assets\StreamingAssets\save'.
+System.IO.__Error.WinIOError (System.Int32 errorCode, System.String maybeFullPath) (at <437ba245d8404784b9fbab9b439ac908>:0)
+System.IO.FileSystemEnumerableIterator`1[TSource].HandleError (System.Int32 hr, System.String path) (at <437ba245d8404784b9fbab9b439ac908>:0)
+System.IO.FileSystemEnumerableIterator`1[TSource].CommonInit () (at <437ba245d8404784b9fbab9b439ac908>:0)
+System.IO.FileSystemEnumerableIterator`1[TSource]..ctor (System.String path, System.String originalUserPath, System.String searchPattern, System.IO.SearchOption searchOption, System.IO.SearchResultHandler`1[TSource] resultHandler, System.Boolean checkHost) (at <437ba245d8404784b9fbab9b439ac908>:0)
+System.IO.FileSystemEnumerableFactory.CreateFileNameIterator (System.String path, System.String originalUserPath, System.String searchPattern, System.Boolean includeFiles, System.Boolean includeDirs, System.IO.SearchOption searchOption, System.Boolean checkHost) (at <437ba245d8404784b9fbab9b439ac908>:0)
+System.IO.Directory.EnumerateFileSystemNames (System.String path, System.String searchPattern, System.IO.SearchOption searchOption, System.Boolean includeFiles, System.Boolean includeDirs) (at <437ba245d8404784b9fbab9b439ac908>:0)
+System.IO.Directory.InternalEnumerateFiles (System.String path, System.String searchPattern, System.IO.SearchOption searchOption) (at <437ba245d8404784b9fbab9b439ac908>:0)
+System.IO.Directory.EnumerateFiles (System.String path, System.String searchPattern) (at <437ba245d8404784b9fbab9b439ac908>:0)
+SaveFileContent.RefreshSave () (at Assets/Scripts/MonoBehaviour/MainScene/dialog/SaveFileContent.cs:35)
+SaveFileContent.OnEnable () (at Assets/Scripts/MonoBehaviour/MainScene/dialog/SaveFileContent.cs:18)
+UnityEngine.GameObject:SetActive(Boolean)
+DialogEsc:onClickSave() (at Assets/Scripts/MonoBehaviour/MainScene/dialog/DialogEsc.cs:13)
+UnityEngine.EventSystems.EventSystem:Update() (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs:377)
+
+
+20200621 22:10:20 [22336] [INFO] !!!!!APPLICATION START!!!!!
+20200621 22:10:20 [22336] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 22:10:20 [22336] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 22:10:20 [22336] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 22:10:20 [22336] [INFO] Load mod content start
+20200621 22:10:20 [22336] [INFO] Load mod content finish
+20200621 22:10:20 [22336] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 22:10:29 [22336] [INFO] save game path D:/MyProject/Git/Tais/Assets/StreamingAssets/save/20200621221027.save
+20200621 22:10:33 [22336] [INFO] save game path D:/MyProject/Git/Tais/Assets/StreamingAssets/save/20200621221027.save
+20200621 22:15:16 [41886] [INFO] !!!!!APPLICATION START!!!!!
+20200621 22:15:16 [41886] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 22:15:16 [41886] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 22:15:16 [41886] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 22:15:16 [41886] [INFO] Load mod content start
+20200621 22:15:16 [41886] [INFO] Load mod content finish
+20200621 22:15:16 [41886] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 22:15:21 [41886] [INFO] load game path D:/MyProject/Git/Tais/Assets/StreamingAssets/save/20200621221027.save
+20200621 22:15:21 [41886] [ERRO] NullReferenceException: Object reference not set to an instance of an object
+TaisEngine.Run.Taishou..ctor (TaisEngine.Init.Taishou initdata) (at Assets/Scripts/RunData/Taishou.cs:33)
+System.Reflection.MonoCMethod.InternalInvoke (System.Object obj, System.Object[] parameters) (at <437ba245d8404784b9fbab9b439ac908>:0)
+Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
+System.Reflection.MonoCMethod.InternalInvoke (System.Object obj, System.Object[] parameters) (at <437ba245d8404784b9fbab9b439ac908>:0)
+System.Reflection.MonoCMethod.DoInvoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) (at <437ba245d8404784b9fbab9b439ac908>:0)
+System.Reflection.MonoCMethod.Invoke (System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) (at <437ba245d8404784b9fbab9b439ac908>:0)
+System.Reflection.ConstructorInfo.Invoke (System.Object[] parameters) (at <437ba245d8404784b9fbab9b439ac908>:0)
+Newtonsoft.Json.Utilities.LateBoundReflectionDelegateFactory+<>c__DisplayClass3_0.<CreateParameterizedConstructor>b__0 (System.Object[] a) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObjectUsingCreatorWithParameters (Newtonsoft.Json.JsonReader reader, Newtonsoft.Json.Serialization.JsonObjectContract contract, Newtonsoft.Json.Serialization.JsonProperty containerProperty, Newtonsoft.Json.Serialization.ObjectConstructor`1[T] creator, System.String id) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateNewObject (Newtonsoft.Json.JsonReader reader, Newtonsoft.Json.Serialization.JsonObjectContract objectContract, Newtonsoft.Json.Serialization.JsonProperty containerMember, Newtonsoft.Json.Serialization.JsonProperty containerProperty, System.String id, System.Boolean& createdFromNonDefaultCreator) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject (Newtonsoft.Json.JsonReader reader, System.Type objectType, Newtonsoft.Json.Serialization.JsonContract contract, Newtonsoft.Json.Serialization.JsonProperty member, Newtonsoft.Json.Serialization.JsonContainerContract containerContract, Newtonsoft.Json.Serialization.JsonProperty containerMember, System.Object existingValue) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal (Newtonsoft.Json.JsonReader reader, System.Type objectType, Newtonsoft.Json.Serialization.JsonContract contract, Newtonsoft.Json.Serialization.JsonProperty member, Newtonsoft.Json.Serialization.JsonContainerContract containerContract, Newtonsoft.Json.Serialization.JsonProperty containerMember, System.Object existingValue) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.ResolvePropertyAndCreatorValues (Newtonsoft.Json.Serialization.JsonObjectContract contract, Newtonsoft.Json.Serialization.JsonProperty containerProperty, Newtonsoft.Json.JsonReader reader, System.Type objectType) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObjectUsingCreatorWithParameters (Newtonsoft.Json.JsonReader reader, Newtonsoft.Json.Serialization.JsonObjectContract contract, Newtonsoft.Json.Serialization.JsonProperty containerProperty, Newtonsoft.Json.Serialization.ObjectConstructor`1[T] creator, System.String id) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateNewObject (Newtonsoft.Json.JsonReader reader, Newtonsoft.Json.Serialization.JsonObjectContract objectContract, Newtonsoft.Json.Serialization.JsonProperty containerMember, Newtonsoft.Json.Serialization.JsonProperty containerProperty, System.String id, System.Boolean& createdFromNonDefaultCreator) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject (Newtonsoft.Json.JsonReader reader, System.Type objectType, Newtonsoft.Json.Serialization.JsonContract contract, Newtonsoft.Json.Serialization.JsonProperty member, Newtonsoft.Json.Serialization.JsonContainerContract containerContract, Newtonsoft.Json.Serialization.JsonProperty containerMember, System.Object existingValue) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal (Newtonsoft.Json.JsonReader reader, System.Type objectType, Newtonsoft.Json.Serialization.JsonContract contract, Newtonsoft.Json.Serialization.JsonProperty member, Newtonsoft.Json.Serialization.JsonContainerContract containerContract, Newtonsoft.Json.Serialization.JsonProperty containerMember, System.Object existingValue) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize (Newtonsoft.Json.JsonReader reader, System.Type objectType, System.Boolean checkAdditionalContent) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.JsonSerializer.DeserializeInternal (Newtonsoft.Json.JsonReader reader, System.Type objectType) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.JsonSerializer.Deserialize (Newtonsoft.Json.JsonReader reader, System.Type objectType) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.JsonConvert.DeserializeObject (System.String value, System.Type type, Newtonsoft.Json.JsonSerializerSettings settings) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.JsonConvert.DeserializeObject[T] (System.String value, Newtonsoft.Json.JsonSerializerSettings settings) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.JsonConvert.DeserializeObject[T] (System.String value) (at <fdee1383db0f4513952862f91d61e502>:0)
+TaisEngine.Serialize.GMSerialize.Load (System.String saveFileName) (at Assets/Scripts/Serialize/GMSerialize.cs:39)
+SaveSelectPanel.OnConfirm () (at Assets/Scripts/MonoBehaviour/StartScene/SaveSelectPanel.cs:46)
+UnityEngine.Events.InvokableCall.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.UI.Button.Press () (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:68)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:110)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update() (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs:377)
+
+
+20200621 22:16:35 [48906] [INFO] !!!!!APPLICATION START!!!!!
+20200621 22:16:35 [48906] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 22:16:35 [48906] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 22:16:35 [48906] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 22:16:35 [48906] [INFO] Load mod content start
+20200621 22:16:35 [48906] [INFO] Load mod content finish
+20200621 22:16:35 [48906] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 22:16:38 [48906] [INFO] load game path D:/MyProject/Git/Tais/Assets/StreamingAssets/save/20200621221027.save
+20200621 22:17:06 [48906] [ERRO] NullReferenceException: Object reference not set to an instance of an object
+TaisEngine.Run.Taishou..ctor (TaisEngine.Init.Taishou initdata) (at Assets/Scripts/RunData/Taishou.cs:33)
+System.Reflection.MonoCMethod.InternalInvoke (System.Object obj, System.Object[] parameters) (at <437ba245d8404784b9fbab9b439ac908>:0)
+Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
+System.Reflection.MonoCMethod.InternalInvoke (System.Object obj, System.Object[] parameters) (at <437ba245d8404784b9fbab9b439ac908>:0)
+System.Reflection.MonoCMethod.DoInvoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) (at <437ba245d8404784b9fbab9b439ac908>:0)
+System.Reflection.MonoCMethod.Invoke (System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) (at <437ba245d8404784b9fbab9b439ac908>:0)
+System.Reflection.ConstructorInfo.Invoke (System.Object[] parameters) (at <437ba245d8404784b9fbab9b439ac908>:0)
+Newtonsoft.Json.Utilities.LateBoundReflectionDelegateFactory+<>c__DisplayClass3_0.<CreateParameterizedConstructor>b__0 (System.Object[] a) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObjectUsingCreatorWithParameters (Newtonsoft.Json.JsonReader reader, Newtonsoft.Json.Serialization.JsonObjectContract contract, Newtonsoft.Json.Serialization.JsonProperty containerProperty, Newtonsoft.Json.Serialization.ObjectConstructor`1[T] creator, System.String id) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateNewObject (Newtonsoft.Json.JsonReader reader, Newtonsoft.Json.Serialization.JsonObjectContract objectContract, Newtonsoft.Json.Serialization.JsonProperty containerMember, Newtonsoft.Json.Serialization.JsonProperty containerProperty, System.String id, System.Boolean& createdFromNonDefaultCreator) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject (Newtonsoft.Json.JsonReader reader, System.Type objectType, Newtonsoft.Json.Serialization.JsonContract contract, Newtonsoft.Json.Serialization.JsonProperty member, Newtonsoft.Json.Serialization.JsonContainerContract containerContract, Newtonsoft.Json.Serialization.JsonProperty containerMember, System.Object existingValue) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal (Newtonsoft.Json.JsonReader reader, System.Type objectType, Newtonsoft.Json.Serialization.JsonContract contract, Newtonsoft.Json.Serialization.JsonProperty member, Newtonsoft.Json.Serialization.JsonContainerContract containerContract, Newtonsoft.Json.Serialization.JsonProperty containerMember, System.Object existingValue) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.ResolvePropertyAndCreatorValues (Newtonsoft.Json.Serialization.JsonObjectContract contract, Newtonsoft.Json.Serialization.JsonProperty containerProperty, Newtonsoft.Json.JsonReader reader, System.Type objectType) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObjectUsingCreatorWithParameters (Newtonsoft.Json.JsonReader reader, Newtonsoft.Json.Serialization.JsonObjectContract contract, Newtonsoft.Json.Serialization.JsonProperty containerProperty, Newtonsoft.Json.Serialization.ObjectConstructor`1[T] creator, System.String id) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateNewObject (Newtonsoft.Json.JsonReader reader, Newtonsoft.Json.Serialization.JsonObjectContract objectContract, Newtonsoft.Json.Serialization.JsonProperty containerMember, Newtonsoft.Json.Serialization.JsonProperty containerProperty, System.String id, System.Boolean& createdFromNonDefaultCreator) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject (Newtonsoft.Json.JsonReader reader, System.Type objectType, Newtonsoft.Json.Serialization.JsonContract contract, Newtonsoft.Json.Serialization.JsonProperty member, Newtonsoft.Json.Serialization.JsonContainerContract containerContract, Newtonsoft.Json.Serialization.JsonProperty containerMember, System.Object existingValue) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal (Newtonsoft.Json.JsonReader reader, System.Type objectType, Newtonsoft.Json.Serialization.JsonContract contract, Newtonsoft.Json.Serialization.JsonProperty member, Newtonsoft.Json.Serialization.JsonContainerContract containerContract, Newtonsoft.Json.Serialization.JsonProperty containerMember, System.Object existingValue) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize (Newtonsoft.Json.JsonReader reader, System.Type objectType, System.Boolean checkAdditionalContent) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.JsonSerializer.DeserializeInternal (Newtonsoft.Json.JsonReader reader, System.Type objectType) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.JsonSerializer.Deserialize (Newtonsoft.Json.JsonReader reader, System.Type objectType) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.JsonConvert.DeserializeObject (System.String value, System.Type type, Newtonsoft.Json.JsonSerializerSettings settings) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.JsonConvert.DeserializeObject[T] (System.String value, Newtonsoft.Json.JsonSerializerSettings settings) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.JsonConvert.DeserializeObject[T] (System.String value) (at <fdee1383db0f4513952862f91d61e502>:0)
+TaisEngine.Serialize.GMSerialize.Load (System.String saveFileName) (at Assets/Scripts/Serialize/GMSerialize.cs:39)
+SaveSelectPanel.OnConfirm () (at Assets/Scripts/MonoBehaviour/StartScene/SaveSelectPanel.cs:46)
+UnityEngine.Events.InvokableCall.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.UI.Button.Press () (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:68)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:110)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update() (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs:377)
+
+
+20200621 22:17:27 [73063] [INFO] !!!!!APPLICATION START!!!!!
+20200621 22:17:27 [73063] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 22:17:27 [73063] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 22:17:27 [73063] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 22:17:27 [73063] [INFO] Load mod content start
+20200621 22:17:27 [73063] [INFO] Load mod content finish
+20200621 22:17:27 [73063] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 22:17:37 [73063] [INFO] load game path D:/MyProject/Git/Tais/Assets/StreamingAssets/save/20200621221027.save
+20200621 22:17:37 [73063] [ERRO] NullReferenceException: Object reference not set to an instance of an object
+TaisEngine.Run.RunData..ctor (TaisEngine.Init.InitData initData) (at Assets/Scripts/RunData/RunData.cs:26)
+System.Reflection.MonoCMethod.InternalInvoke (System.Object obj, System.Object[] parameters) (at <437ba245d8404784b9fbab9b439ac908>:0)
+Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
+System.Reflection.MonoCMethod.InternalInvoke (System.Object obj, System.Object[] parameters) (at <437ba245d8404784b9fbab9b439ac908>:0)
+System.Reflection.MonoCMethod.DoInvoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) (at <437ba245d8404784b9fbab9b439ac908>:0)
+System.Reflection.MonoCMethod.Invoke (System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) (at <437ba245d8404784b9fbab9b439ac908>:0)
+System.Reflection.ConstructorInfo.Invoke (System.Object[] parameters) (at <437ba245d8404784b9fbab9b439ac908>:0)
+Newtonsoft.Json.Utilities.LateBoundReflectionDelegateFactory+<>c__DisplayClass3_0.<CreateParameterizedConstructor>b__0 (System.Object[] a) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObjectUsingCreatorWithParameters (Newtonsoft.Json.JsonReader reader, Newtonsoft.Json.Serialization.JsonObjectContract contract, Newtonsoft.Json.Serialization.JsonProperty containerProperty, Newtonsoft.Json.Serialization.ObjectConstructor`1[T] creator, System.String id) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateNewObject (Newtonsoft.Json.JsonReader reader, Newtonsoft.Json.Serialization.JsonObjectContract objectContract, Newtonsoft.Json.Serialization.JsonProperty containerMember, Newtonsoft.Json.Serialization.JsonProperty containerProperty, System.String id, System.Boolean& createdFromNonDefaultCreator) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject (Newtonsoft.Json.JsonReader reader, System.Type objectType, Newtonsoft.Json.Serialization.JsonContract contract, Newtonsoft.Json.Serialization.JsonProperty member, Newtonsoft.Json.Serialization.JsonContainerContract containerContract, Newtonsoft.Json.Serialization.JsonProperty containerMember, System.Object existingValue) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal (Newtonsoft.Json.JsonReader reader, System.Type objectType, Newtonsoft.Json.Serialization.JsonContract contract, Newtonsoft.Json.Serialization.JsonProperty member, Newtonsoft.Json.Serialization.JsonContainerContract containerContract, Newtonsoft.Json.Serialization.JsonProperty containerMember, System.Object existingValue) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize (Newtonsoft.Json.JsonReader reader, System.Type objectType, System.Boolean checkAdditionalContent) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.JsonSerializer.DeserializeInternal (Newtonsoft.Json.JsonReader reader, System.Type objectType) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.JsonSerializer.Deserialize (Newtonsoft.Json.JsonReader reader, System.Type objectType) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.JsonConvert.DeserializeObject (System.String value, System.Type type, Newtonsoft.Json.JsonSerializerSettings settings) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.JsonConvert.DeserializeObject[T] (System.String value, Newtonsoft.Json.JsonSerializerSettings settings) (at <fdee1383db0f4513952862f91d61e502>:0)
+Newtonsoft.Json.JsonConvert.DeserializeObject[T] (System.String value) (at <fdee1383db0f4513952862f91d61e502>:0)
+TaisEngine.Serialize.GMSerialize.Load (System.String saveFileName) (at Assets/Scripts/Serialize/GMSerialize.cs:39)
+SaveSelectPanel.OnConfirm () (at Assets/Scripts/MonoBehaviour/StartScene/SaveSelectPanel.cs:46)
+UnityEngine.Events.InvokableCall.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.UI.Button.Press () (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:68)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:110)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update() (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs:377)
+
+
+20200621 22:18:23 [97201] [INFO] !!!!!APPLICATION START!!!!!
+20200621 22:18:23 [97201] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 22:18:23 [97201] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 22:18:23 [97201] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 22:18:23 [97201] [INFO] Load mod content start
+20200621 22:18:23 [97201] [INFO] Load mod content finish
+20200621 22:18:23 [97201] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 22:18:27 [97201] [INFO] load game path D:/MyProject/Git/Tais/Assets/StreamingAssets/save/20200621221027.save
+20200621 22:19:06 [22495] [INFO] !!!!!APPLICATION START!!!!!
+20200621 22:19:06 [22495] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 22:19:06 [22495] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 22:19:06 [22495] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 22:19:06 [22495] [INFO] Load mod content start
+20200621 22:19:06 [22495] [INFO] Load mod content finish
+20200621 22:19:06 [22495] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 22:19:09 [22495] [INFO] load game path D:/MyProject/Git/Tais/Assets/StreamingAssets/save/20200621221027.save
+20200621 22:19:26 [22495] [INFO] load game path D:/MyProject/Git/Tais/Assets/StreamingAssets/save/20200621221027.save
+20200621 22:19:26 [22495] [ERRO] FileNotFoundException: Could not find file "D:\MyProject\Git\Tais\Assets\StreamingAssets\save\20200621221027.save"
+System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) (at <437ba245d8404784b9fbab9b439ac908>:0)
+System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options, System.String msgPath, System.Boolean bFromProxy, System.Boolean useLongPath, System.Boolean checkHost) (at <437ba245d8404784b9fbab9b439ac908>:0)
+(wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions,string,bool,bool,bool)
+System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, System.Boolean detectEncodingFromByteOrderMarks, System.Int32 bufferSize, System.Boolean checkHost) (at <437ba245d8404784b9fbab9b439ac908>:0)
+System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, System.Boolean detectEncodingFromByteOrderMarks, System.Int32 bufferSize) (at <437ba245d8404784b9fbab9b439ac908>:0)
+System.IO.StreamReader..ctor (System.String path, System.Boolean detectEncodingFromByteOrderMarks) (at <437ba245d8404784b9fbab9b439ac908>:0)
+System.IO.StreamReader..ctor (System.String path) (at <437ba245d8404784b9fbab9b439ac908>:0)
+(wrapper remoting-invoke-with-check) System.IO.StreamReader..ctor(string)
+System.IO.File.ReadAllText (System.String path) (at <437ba245d8404784b9fbab9b439ac908>:0)
+TaisEngine.Serialize.GMSerialize.Load (System.String saveFileName) (at Assets/Scripts/Serialize/GMSerialize.cs:37)
+SaveSelectPanel.OnConfirm () (at Assets/Scripts/MonoBehaviour/StartScene/SaveSelectPanel.cs:46)
+UnityEngine.Events.InvokableCall.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.UI.Button.Press () (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:68)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:110)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update() (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs:377)
+
+
+20200621 22:19:36 [53140] [INFO] !!!!!APPLICATION START!!!!!
+20200621 22:19:36 [53140] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 22:19:36 [53140] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 22:19:36 [53140] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 22:19:36 [53140] [INFO] Load mod content start
+20200621 22:19:36 [53140] [INFO] Load mod content finish
+20200621 22:19:36 [53140] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 22:19:50 [53140] [ERRO] ArgumentException: An item with the same key has already been added. Key: init_data
+System.Collections.Generic.Dictionary`2[TKey,TValue].TryInsert (TKey key, TValue value, System.Collections.Generic.InsertionBehavior behavior) (at <437ba245d8404784b9fbab9b439ac908>:0)
+System.Collections.Generic.Dictionary`2[TKey,TValue].Add (TKey key, TValue value) (at <437ba245d8404784b9fbab9b439ac908>:0)
+ModVisitor.Visitor.InitData (System.String key, System.Object gmdata) (at Assets/Plugins/ModVisitor/ModVisitor.cs:77)
+InitScene.Start () (at Assets/Scripts/MonoBehaviour/InitScene.cs:19)
+
+
+20200621 22:19:58 [49166] [INFO] !!!!!APPLICATION START!!!!!
+20200621 22:19:58 [49166] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 22:19:58 [49166] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 22:19:58 [49166] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 22:19:58 [49166] [INFO] Load mod content start
+20200621 22:19:58 [49166] [INFO] Load mod content finish
+20200621 22:19:58 [49166] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 22:20:08 [49166] [ERRO] ArgumentException: An item with the same key has already been added. Key: init_data
+System.Collections.Generic.Dictionary`2[TKey,TValue].TryInsert (TKey key, TValue value, System.Collections.Generic.InsertionBehavior behavior) (at <437ba245d8404784b9fbab9b439ac908>:0)
+System.Collections.Generic.Dictionary`2[TKey,TValue].Add (TKey key, TValue value) (at <437ba245d8404784b9fbab9b439ac908>:0)
+ModVisitor.Visitor.InitData (System.String key, System.Object gmdata) (at Assets/Plugins/ModVisitor/ModVisitor.cs:77)
+InitScene.Start () (at Assets/Scripts/MonoBehaviour/InitScene.cs:19)
+
+
+20200621 22:22:38 [61280] [INFO] !!!!!APPLICATION START!!!!!
+20200621 22:22:38 [61280] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 22:22:38 [61280] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 22:22:38 [61280] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 22:22:38 [61280] [INFO] Load mod content start
+20200621 22:22:38 [61280] [INFO] Load mod content finish
+20200621 22:22:38 [61280] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 22:22:51 [61280] [INFO] save game path D:/MyProject/Git/Tais/Assets/StreamingAssets/save/20200621222249.save
+20200621 22:24:40 [35226] [INFO] !!!!!APPLICATION START!!!!!
+20200621 22:24:40 [35226] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 22:24:40 [35226] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 22:24:40 [35226] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 22:24:40 [35226] [INFO] Load mod content start
+20200621 22:24:40 [35226] [INFO] Load mod content finish
+20200621 22:24:40 [35226] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 22:24:52 [35226] [INFO] save game path D:/MyProject/Git/Tais/Assets/StreamingAssets/save/20200621222451.save
+20200621 22:25:00 [35226] [INFO] load game path D:/MyProject/Git/Tais/Assets/StreamingAssets/save/20200621222451.save

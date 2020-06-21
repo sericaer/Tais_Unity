@@ -19,7 +19,7 @@ public class StartScene : MonoBehaviour
         TaisEngine.GMData.New(TaisEngine.InitData.Random());
         //aisEngine.Mod.SetData(TaisEngine.GMData.inst);
 
-        SceneManager.LoadScene("sceneMain");
+        SceneManager.LoadScene("MainScene");
 #else
         SceneManager.LoadScene("InitScene");
 #endif
@@ -28,7 +28,7 @@ public class StartScene : MonoBehaviour
 
     public void onLoad()
     {
-        //saveSelectPanl.SetActive(true);
+        saveSelectPanl.SetActive(true);
     }
 
     public void OnMod()

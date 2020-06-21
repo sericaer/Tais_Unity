@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Linq;
+using TaisEngine.Init;
 using TaisEngine.ModManager;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,10 +26,10 @@ public class NameAgePanel : MonoBehaviour
         
         ageValue += 5;
 
-        //if (ageValue > TaisEngine.InitDataTaishou.ageRange.max)
-        //{
-        //    ageValue = TaisEngine.InitDataTaishou.ageRange.max;
-        //}
+        if (ageValue > Taishou.ageRange.max)
+        {
+            ageValue = Taishou.ageRange.max;
+        }
 
         age.text = ageValue.ToString();
     }
@@ -37,18 +38,18 @@ public class NameAgePanel : MonoBehaviour
     {
         ageValue -= 5;
 
-        //if(ageValue < TaisEngine.InitDataTaishou.ageRange.min)
-        //{
-        //    ageValue = TaisEngine.InitDataTaishou.ageRange.min;
-        //}
+        if (ageValue < Taishou.ageRange.min)
+        {
+            ageValue = Taishou.ageRange.min;
+        }
 
         age.text = ageValue.ToString();
     }
 
     public void onConfirm()
     {
-        //TaisEngine.InitData.inst.taishou.name = name.text;
-        //TaisEngine.InitData.inst.taishou.age = ageValue;
+        InitData.inst.taishou.name = taishouName.text;
+        InitData.inst.taishou.age = ageValue;
 
         gameObject.SetActive(false);
 

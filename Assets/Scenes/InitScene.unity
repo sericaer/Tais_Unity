@@ -174,7 +174,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectPanel: {fileID: 3584597026978738113, guid: c5582f2b734b3c64db17a196dbbee84b,
     type: 3}
-  reportPanel: {fileID: 0}
+  reportPanel: {fileID: 6882437774762363253, guid: fbb320a271990d94db93724d498104d3,
+    type: 3}
   nameAgePanel: {fileID: 1521165458536940273, guid: 548f5d4dc346e45409b9d8dd3e26e2c6,
     type: 3}
 --- !u!114 &1132902966

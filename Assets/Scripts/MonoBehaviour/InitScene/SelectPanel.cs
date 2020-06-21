@@ -32,17 +32,17 @@ public class SelectPanel : MonoBehaviour
             {
                 opt.selected.Run();
 
-                //Destroy(this.gameObject);
+                Destroy(this.gameObject);
 
-                //var next = opt.next_select.Result();
-                //if (next != "")
-                //{
-                //    //GetComponentInParent<sceneInit>().CreateSelectPanel(next);
-                //}
-                //else
-                //{
-                //    GetComponentInParent<InitScene>().CreateReportPanel();
-                //}
+                var next = opt.next_select.Result();
+                if (next != "")
+                {
+                    GetComponentInParent<InitScene>().CreateSelectPanel(InitSelectDef.Find(next));
+                }
+                else
+                {
+                    GetComponentInParent<InitScene>().CreateReportPanel();
+                }
             });
         }
     }

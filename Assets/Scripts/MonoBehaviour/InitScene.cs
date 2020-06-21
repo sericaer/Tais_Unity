@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Dynamic;
 using System.Linq;
+using TaisEngine.Init;
 using TaisEngine.ModManager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,7 +14,11 @@ public class InitScene : MonoBehaviour
 
     void Start()
     {
-        //TaisEngine.InitData.Generate();
+        InitData.Generate();
+
+        ModVisitor.Visitor.ClearData();
+        ModVisitor.Visitor.InitData("init_data", InitData.inst);
+
         CreateNameAgePanel();
     }
 

@@ -9,6 +9,8 @@ using TaisEngine.ModManager;
 using TaisEngine.ConfigManager;
 
 using Tools;
+using TaisEngine.Init;
+using TaisEngine.Serialize;
 
 public class LoadScene : MonoBehaviour
 {
@@ -25,7 +27,8 @@ public class LoadScene : MonoBehaviour
 
         try
         {
-            //Directory.CreateDirectory(GMSerialize.savePath);
+            Directory.CreateDirectory(GMSerialize.savePath);
+            ModVisitor.Visitor.InitReflect("init_data", typeof(InitData));
 
             Mod.Load();
         }

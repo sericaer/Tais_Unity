@@ -7,10 +7,11 @@ using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using ModVisitor;
 
 namespace TaisEngine.ModManager
 {
-    class InitSelectDef
+    internal class InitSelectDef
     {
         internal class Element
         {
@@ -36,6 +37,20 @@ namespace TaisEngine.ModManager
             }
         }
 
+        static internal Element Find(string name)
+        {
+            foreach (var mod in Mod.listMod.Where(x => x.content != null))
+            {
+                var finded = mod.content.initSelectDef.lists.Find(x => x.name == name);
+                if(finded != null)
+                {
+                    return finded;
+                }
+            }
+
+            throw new Exception("can not find INIT_SELECT:" + name);
+        }
+
         static internal IEnumerable<Element> Enumerate()
         {
             foreach(var mod in Mod.listMod.Where(x=>x.content != null))
@@ -49,20 +64,20 @@ namespace TaisEngine.ModManager
 
         internal List<Element> lists = new List<Element>();
 
-        internal InitSelectDef(string path)
+        public InitSelectDef(SyntaxMod syntaxMod)
         {
-            lists = new List<Element>();
-
-            foreach (var file in Directory.EnumerateFiles(path, "*.txt"))
+            var modElems = syntaxMod.GetElements("init_select");
+            if(modElems == null)
             {
-                MultiItem modItems = Syntax.Anaylize(File.ReadAllText(file));
+                return;
+            }
 
-                var elem = new Element(Path.GetFileNameWithoutExtension(file), modItems);
-
+            foreach(var modElem in modElems)
+            {
+                var elem = new Element(modElem.name, modElem.multiItem);
                 lists.Add(elem);
             }
         }
-
     }
 
     internal class OptionDef
@@ -70,6 +85,7 @@ namespace TaisEngine.ModManager
         public string name;
         public Eval<string> desc;
         public EvalSelected selected;
+        public Eval<string> next_select;
 
         private Value opRaw;
 
@@ -78,10 +94,11 @@ namespace TaisEngine.ModManager
             this.name = name;
             this.desc = Eval<string>.Parse("desc", opRaw as MultiItem, $"{name}_DESC");
             this.selected = EvalSelected.Parse("selected", opRaw as MultiItem);
-
+            this.next_select = Eval<string>.Parse("next_select", opRaw as MultiItem, "");
             this.opRaw = opRaw;
         }
     }
+
 
     public class EvalSelected
     {
@@ -129,6 +146,8 @@ namespace TaisEngine.ModManager
     internal class OperationSetValue : Operation
     {
         private MultiValue multiValue;
+        private Setter setter;
+        private Getter getter;
 
         public OperationSetValue(MultiValue multiValue)
         {
@@ -141,67 +160,13 @@ namespace TaisEngine.ModManager
             var dest = setValueParam.elems[0];
             var src = setValueParam.elems[1];
 
-            var setter = new Setter(dest.value);
-            var getter = new Getter(src.value);
-
-            
+            setter = new Setter(dest.value);
+            getter = new Getter(src.value);
         }
 
         internal override void Do()
         {
-            setter.set(getter.value());
-        }
-    }
-
-    internal class Getter
-    {
-        private string raw;
-
-        public Getter(string value)
-        {
-            this.raw = value;
-        }
-
-        internal object value()
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-    internal class Setter
-    {
-        private string raw;
-
-        public Setter(string value)
-        {
-            raw = value;
-
-            int start = 0;
-            while(start < raw.Length)
-            {
-                var matched = Regex.Match(raw.Substring(start), @"^[A-Za-z]+\.*");
-                if(!matched.Success)
-                {
-                    throw new Exception();
-                }
-
-                var currProperty = GetType().GetProperty(matched.Value);
-
-                ;
-
-                start += rslt.Length;
-            }
-            
-            if (rslt.Success)
-            {
-                endIndex = charIndex + rslt.Length;
-                return ELEM_TYPE.STRING;
-            }
-        }
-
-        internal void set(object value)
-        {
-            throw new NotImplementedException();
+            setter.set(getter.get());
         }
     }
 }
