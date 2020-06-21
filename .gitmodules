@@ -1,0 +1,3 @@
+[submodule "Assets/Plugins/ModVisitor"]
+	path = Assets/Plugins/ModVisitor
+	url = https://github.com/sericaer/ModVisitor.git
