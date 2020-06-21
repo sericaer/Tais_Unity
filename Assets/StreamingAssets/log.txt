@@ -3,6 +3,7 @@
 20200620 15:36:21 [88198] [INFO] {
     "lang":"zh"
 }
+啊大师傅
 20200620 15:36:21 [88198] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
 20200620 15:36:21 [88198] [INFO] Load mod content D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
 20200620 15:36:21 [88198] [INFO] Load mod finish 
