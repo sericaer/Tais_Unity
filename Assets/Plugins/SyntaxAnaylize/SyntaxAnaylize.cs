@@ -333,7 +333,7 @@ namespace SyntaxAnaylize
             this.elems = value.ToList();
         }
 
-        List<SingleValue> elems;
+        public readonly List<SingleValue> elems;
 
         public override string ToString()
         {

@@ -271,7 +271,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textDesc: {fileID: 6075276370916634284}
-  btns: []
+  btns:
+  - {fileID: 6166077798568073015}
+  - {fileID: 1642902368553377831}
+  - {fileID: 3832185837120775104}
+  - {fileID: 5607435501845032979}
+  - {fileID: 4241730333990630639}
 --- !u!1 &3698240289094953399
 GameObject:
   m_ObjectHideFlags: 0

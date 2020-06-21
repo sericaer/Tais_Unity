@@ -825,3 +825,50 @@ UnityEngine.EventSystems.EventSystem:Update() (at C:/Program Files/Unity/Hub/Edi
 20200620 23:26:31 [34746] [INFO] Load mod content start
 20200620 23:26:31 [34746] [INFO] Load mod content finish
 20200620 23:26:31 [34746] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 12:30:24 [92490] [INFO] !!!!!APPLICATION START!!!!!
+20200621 12:30:24 [92490] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 12:30:24 [92490] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 12:30:24 [92490] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 12:30:24 [92490] [INFO] Load mod content start
+20200621 12:30:25 [92490] [INFO] Load mod content finish
+20200621 12:30:25 [92490] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 12:53:46 [99831] [INFO] !!!!!APPLICATION START!!!!!
+20200621 12:53:46 [99831] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 12:53:46 [99831] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 12:53:46 [99831] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 12:53:46 [99831] [INFO] Load mod content start
+20200621 12:53:46 [99831] [INFO] Load mod content finish
+20200621 12:53:46 [99831] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 12:53:49 [99831] [ERRO] ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+System.ThrowHelper.ThrowArgumentOutOfRangeException (System.ExceptionArgument argument, System.ExceptionResource resource) (at <437ba245d8404784b9fbab9b439ac908>:0)
+System.ThrowHelper.ThrowArgumentOutOfRangeException () (at <437ba245d8404784b9fbab9b439ac908>:0)
+System.Collections.Generic.List`1[T].get_Item (System.Int32 index) (at <437ba245d8404784b9fbab9b439ac908>:0)
+SelectPanel.Start () (at Assets/Scripts/MonoBehaviour/InitScene/SelectPanel.cs:26)
+
+
+20200621 12:54:43 [84770] [INFO] !!!!!APPLICATION START!!!!!
+20200621 12:54:43 [84770] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 12:54:43 [84770] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 12:54:43 [84770] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 12:54:43 [84770] [INFO] Load mod content start
+20200621 12:54:43 [84770] [INFO] Load mod content finish
+20200621 12:54:43 [84770] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 12:55:30 [38780] [INFO] !!!!!APPLICATION START!!!!!
+20200621 12:55:30 [38780] [INFO] Read config:D:/MyProject/Git/Tais/Assets/StreamingAssets/config.json 
+20200621 12:55:30 [38780] [INFO] {"lang":"zh","select_mods":["native"]}
+20200621 12:55:30 [38780] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\native 
+20200621 12:55:30 [38780] [INFO] Load mod content start
+20200621 12:55:30 [38780] [INFO] Load mod content finish
+20200621 12:55:30 [38780] [INFO] Read mod info D:\MyProject\Git\Tais\Assets\StreamingAssets\mod\test 
+20200621 12:55:33 [38780] [ERRO] NullReferenceException: Object reference not set to an instance of an object
+SelectPanel+<>c__DisplayClass3_0.<Start>b__0 () (at Assets/Scripts/MonoBehaviour/InitScene/SelectPanel.cs:33)
+UnityEngine.Events.InvokableCall.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.Events.UnityEvent.Invoke () (at <f44e57e4965f4efaac783455b4a81a8e>:0)
+UnityEngine.UI.Button.Press () (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:68)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs:110)
+UnityEngine.EventSystems.ExecuteEvents.Execute (UnityEngine.EventSystems.IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[T] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.ExecuteEvents+EventFunction`1[T1] functor) (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update() (at C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs:377)
+
+

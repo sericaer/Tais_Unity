@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace TaisEngine.ModManager
@@ -14,14 +15,24 @@ namespace TaisEngine.ModManager
         internal class Element
         {
             public string name;
+
             public Eval<bool> is_first;
             public Eval<string> desc;
 
+            public List<OptionDef> options;
+
             public Element(string name, MultiItem modItems)
             {
-                this.name = name ;
+                this.name = name.ToUpper();
                 this.is_first = Eval<bool>.Parse("is_first", modItems, false);
                 this.desc = Eval<string>.Parse("desc", modItems, $"{name}_DESC");
+
+                this.options = new List<OptionDef>();
+                var rawOptions = modItems.elems.Where(x => x.key == "option").ToArray();
+                for (int i=0; i< rawOptions.Count(); i++)
+                {
+                    this.options.Add(new OptionDef($"{name}_OPTION_{i+1}", rawOptions[i].value));
+                }
             }
         }
 
@@ -54,107 +65,143 @@ namespace TaisEngine.ModManager
 
     }
 
-    public class Eval<T>
+    internal class OptionDef
     {
-        public static Eval<T> Parse(string key, MultiItem modItems, T defaultValue)
+        public string name;
+        public Eval<string> desc;
+        public EvalSelected selected;
+
+        private Value opRaw;
+
+        public OptionDef(string name, Value opRaw)
         {
-            var modItem = modItems.elems.SingleOrDefault(x=>x.key == key);
-            if (modItem == null)
-            {
-                var ret = new Eval<T>();
-                ret.staticValue = defaultValue;
-                ret._Result = () =>
-                {
-                    return ret.staticValue;
-                };
+            this.name = name;
+            this.desc = Eval<string>.Parse("desc", opRaw as MultiItem, $"{name}_DESC");
+            this.selected = EvalSelected.Parse("selected", opRaw as MultiItem);
 
-                return ret;
-            }
-
-            return Parse(modItem.value);
+            this.opRaw = opRaw;
         }
-
-        public static Eval<T> Parse(Value modValue)
-        {
-            if (modValue is SingleValue)
-            {
-                return new EvalFactor<T>(modValue as SingleValue);
-            }
-
-            throw new Exception();
-        }
-
-        public T Result()
-        {
-            return _Result == null ? staticValue : _Result();
-        }
-        
-        public T staticValue;
-
-        protected Func<T> _Result;
     }
 
-    public class EvalFactor<T> : Eval<T>
+    public class EvalSelected
     {
-        public EvalFactor(SingleValue modValue)
+        internal static EvalSelected Parse(string key, MultiItem multiItem)
         {
-            this.modValue = modValue;
-            this._Result = Converter.GetFunc<T>(modValue.value);
-
-        }
-
-        internal SingleValue modValue;
-    }
-
-    public abstract class EvalExpr<T> : Eval<T>
-    {
-        internal List<Eval<object>> evals;
-    }
-
-    //public abstract class EvalExpr_And : EvalExpr<bool>
-    //{
-    //    public override bool Result()
-    //    {
-    //        return !evals.Any(x => !((bool)x.Result()));
-    //    }
-    //}
-
-    public class Converter
-    {
-        public static void Convert(string raw, out bool ret)
-        {
-            if(raw == "true")
-            {
-                ret = true;
-            }
-            else if(raw == "false")
-            {
-                ret = false;
-            }
-            else
-            {
-                throw new Exception($"{raw} must be 'true' or 'false'");
-            }
-        }
-
-
-        public static Func<T> GetFunc<T>(string value)
-        {
-            Type[] paramTypes = { typeof(string), typeof(T).MakeByRefType() };
-
-            var method = typeof(Converter).GetMethod("Convert", BindingFlags.Static| BindingFlags.Public, null, paramTypes, null);
-            if(method == null)
+            var rawSelected = multiItem.elems.SingleOrDefault(x => x.key == key);
+            if (rawSelected == null)
             {
                 throw new Exception();
             }
 
-            return () =>
+            return new EvalSelected(rawSelected.value as MultiItem);
+        }
+
+        internal EvalSelected(MultiItem rawSelected)
+        {
+            this.rawSelected = rawSelected;
+
+            var setValue = rawSelected.elems.SingleOrDefault(x => x.key == "set.value");
+            if(setValue != null)
             {
-                var args = new object[] { value, null };
-                method.Invoke(null, args);
-                return (T)args[1];
-            };
+                operations.Add(new OperationSetValue(setValue.value as MultiValue));
+            }
+        }
+
+        internal void Run()
+        {
+            foreach(var op in operations)
+            {
+                op.Do();
+            }
+        }
+
+        List<Operation> operations = new List<Operation>();
+
+        Action _Run;
+        private Value rawSelected;
+    }
+
+    internal abstract class Operation
+    {
+        internal abstract void Do();
+    }
+
+    internal class OperationSetValue : Operation
+    {
+        private MultiValue multiValue;
+
+        public OperationSetValue(MultiValue multiValue)
+        {
+            var setValueParam = multiValue;
+            if (setValueParam.elems.Count() != 2)
+            {
+                throw new Exception();
+            }
+
+            var dest = setValueParam.elems[0];
+            var src = setValueParam.elems[1];
+
+            var setter = new Setter(dest.value);
+            var getter = new Getter(src.value);
+
+            
+        }
+
+        internal override void Do()
+        {
+            setter.set(getter.value());
         }
     }
 
+    internal class Getter
+    {
+        private string raw;
+
+        public Getter(string value)
+        {
+            this.raw = value;
+        }
+
+        internal object value()
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    internal class Setter
+    {
+        private string raw;
+
+        public Setter(string value)
+        {
+            raw = value;
+
+            int start = 0;
+            while(start < raw.Length)
+            {
+                var matched = Regex.Match(raw.Substring(start), @"^[A-Za-z]+\.*");
+                if(!matched.Success)
+                {
+                    throw new Exception();
+                }
+
+                var currProperty = GetType().GetProperty(matched.Value);
+
+                ;
+
+                start += rslt.Length;
+            }
+            
+            if (rslt.Success)
+            {
+                endIndex = charIndex + rslt.Length;
+                return ELEM_TYPE.STRING;
+            }
+        }
+
+        internal void set(object value)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
