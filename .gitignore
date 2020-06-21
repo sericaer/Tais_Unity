@@ -12,6 +12,9 @@
 /[Mm]emoryCaptures/
 
 /[Aa]ssets/**/save
+/[Aa]ssets/**/save.meta
+/[Aa]ssets/**/log.txt
+/[Aa]ssets/**/log.txt.meta
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
