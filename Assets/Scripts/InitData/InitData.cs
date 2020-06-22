@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TaisEngine.ModManager;
 using TaisEngine.Run;
+using Tools;
 
 namespace TaisEngine.Init
 {
@@ -24,6 +26,14 @@ namespace TaisEngine.Init
         {
             taishou = new Taishou();
         }
+
+        internal static InitData Random()
+        {
+            return new InitData()
+            {
+                taishou = Taishou.Random()
+            };
+        }
     }
 
     public class Taishou
@@ -38,5 +48,15 @@ namespace TaisEngine.Init
         public int age;
 
         public static (int min, int max) ageRange = (25, 55);
+
+        internal static Taishou Random()
+        {
+            return new Taishou()
+            {
+                name = PersonName.RandomFull,
+                background = "SHIZU",
+                age = GRandom.getNum(ageRange.min, ageRange.max)
+            };
+        }
     }
 }

@@ -5,6 +5,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+using TaisEngine.Run;
+using TaisEngine.Init;
+
 public class StartScene : MonoBehaviour
 {
     public GameObject modSelectPanl;
@@ -12,13 +15,9 @@ public class StartScene : MonoBehaviour
 
     public void onNew()
     {
-        //TaisEngine.GMData.New("native.SHIZU");
-        //TaisEngine.Mod.SetData(TaisEngine.GMData.inst);
 
 #if UNITY_EDITOR_OSX
-        TaisEngine.GMData.New(TaisEngine.InitData.Random());
-        //aisEngine.Mod.SetData(TaisEngine.GMData.inst);
-
+        RunData.New(InitData.Random());
         SceneManager.LoadScene("MainScene");
 #else
         SceneManager.LoadScene("InitScene");
