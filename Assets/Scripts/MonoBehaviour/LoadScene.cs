@@ -55,7 +55,7 @@ public class LoadScene : MonoBehaviour
             return;
         }
 
-        LocalText.getLocalString = LocalString.Get;
+        LocalText.getLocalString = (format) => { return LocalString.Get(format); };
 
         SceneManager.LoadScene("StartScene");
     }

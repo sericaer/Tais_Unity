@@ -5490,9 +5490,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 840889741}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb5024d5e68121f419abf4b50f63676b, type: 3}
+  m_Script: {fileID: 11500000, guid: 4bf96965d4d0d4591aae87fbb3075cb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  btnInc: {fileID: 255107538}
+  btnDec: {fileID: 810657117}
+  togPause: {fileID: 1826714723}
+  isUserPause: 0
 --- !u!114 &840889743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7598,7 +7602,7 @@ GameObject:
   - component: {fileID: 1287286083}
   - component: {fileID: 1287286085}
   m_Layer: 5
-  m_Name: timer
+  m_Name: date
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7749,12 +7753,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1287286077}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4c60f026949f44f4bd48cd63bc21a7b, type: 3}
+  m_Script: {fileID: 11500000, guid: c708d4234859a4cea867e11bcd9c7607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   date: {fileID: 1504262002}
-  btnInc: {fileID: 255107538}
-  btnDec: {fileID: 810657117}
 --- !u!1001 &1361000535
 PrefabInstance:
   m_ObjectHideFlags: 0

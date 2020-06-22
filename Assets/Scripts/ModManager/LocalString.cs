@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using TaisEngine.ConfigManager;
 
@@ -12,18 +10,20 @@ namespace TaisEngine.ModManager
     class LocalString
     {
 
-        internal static string Get(string arg)
+        internal static string Get(string format, params object[] objs)
         {
-            
+
+            var rslt = format;
             foreach (var mod in Mod.listMod.Where(x=>x.content != null && x.content.localString.dictlang.ContainsKey(Config.inst.lang)))
             {
-                if(mod.content.localString.dictlang[Config.inst.lang].ContainsKey(arg))
+                if(mod.content.localString.dictlang[Config.inst.lang].ContainsKey(format))
                 {
-                    return mod.content.localString.dictlang[Config.inst.lang][arg];
+                    rslt = string.Format(mod.content.localString.dictlang[Config.inst.lang][format], 
+                                            objs.Select(y => y is string ? Get(y as string) : y).ToArray());
                 }
             }
 
-            return arg;
+            return rslt;
         }
 
         Dictionary<string, Dictionary<string, string>> dictlang;
