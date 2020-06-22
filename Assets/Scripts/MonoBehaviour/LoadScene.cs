@@ -11,6 +11,7 @@ using TaisEngine.ConfigManager;
 using Tools;
 using TaisEngine.Init;
 using TaisEngine.Serialize;
+using TaisEngine.Run;
 
 public class LoadScene : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class LoadScene : MonoBehaviour
         {
             Directory.CreateDirectory(GMSerialize.savePath);
             ModVisitor.Visitor.InitReflect("init_data", typeof(InitData));
+            ModVisitor.Visitor.InitReflect("gm.common", typeof(RunData));
 
             Mod.Load();
         }

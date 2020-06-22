@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using ModVisitor;
 
 namespace SyntaxAnaylize
 {
@@ -33,8 +34,12 @@ namespace SyntaxAnaylize
             {
                 return new EvalFactor<T>(modValue as SingleValue);
             }
+            if(modValue is Item)
+            {
+                return EvalExpr<T>.Parse(modValue as Item);
+            }
 
-            throw new Exception();
+            throw new NotImplementedException();
         }
 
         public T Result()
@@ -61,7 +66,59 @@ namespace SyntaxAnaylize
 
     public abstract class EvalExpr<T> : Eval<T>
     {
-        internal List<Eval<object>> evals;
+        public static EvalExpr<T> Parse(Item modItem)
+        {
+            if (modItem.key == "is.equal")
+            {
+                if(typeof(T) != typeof(bool))
+                {
+                    throw new Exception("'is.equal' expect 'bool' type, but curr is " + typeof(T).Name);
+                }
+
+                return new EvalExpr_Equal<T>(modItem.value);
+            }
+
+            throw new NotImplementedException();
+        }
+    }
+
+    public class EvalExpr_Equal<T> : EvalExpr<T>
+    {
+        private Value value;
+
+        public EvalExpr_Equal(Value value)
+        {
+            this.value = value;
+            if(!(value is MultiValue))
+            {
+                throw new Exception("'EvalExpr_Equal' value expect 'MultiValue' but curr is " + value.GetType().Name);
+            }
+
+            var elements = ((MultiValue)value).elems;
+            if(elements.Count() != 2)
+            {
+                throw new Exception("'EvalExpr_Equal' value expect have 2 elements but curr is " + elements.Count());
+            }
+
+            left = new Getter(elements[0].value);
+            right = new Getter(elements[1].value);
+
+            _Result = () =>
+            {
+                var l = left.get();
+                var r = right.get();
+                if(l.GetType() != r.GetType())
+                {
+                    throw new Exception($"EvalExpr_Equal left type is {l.GetType().Name}, but right type is {r.GetType().Name}");
+                }
+
+                object rslt = (l == r);
+                return (T)rslt;
+            };
+        }
+
+        private Getter left;
+        private Getter right;
     }
 
     //public abstract class EvalExpr_And : EvalExpr<bool>

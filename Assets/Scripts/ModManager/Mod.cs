@@ -16,7 +16,18 @@ namespace TaisEngine.ModManager
     partial class Mod
     {
 
+        static Mod()
+        {
+            modStructDict = new Dictionary<string, Action<Content, List<SyntaxMod.Element>>>();
+
+            modStructDict.Add("init_select",  (content, modElemnts) => { content.CreateInitSelect(modElemnts); });
+            modStructDict.Add("event/common", (content, modElemnts) => { content.CreateCommonEvent(modElemnts); });
+        }
+
+
         internal static string modRootPath = Application.streamingAssetsPath + "/mod/";
+        internal static Dictionary<string, Action<Content, List<SyntaxMod.Element>>> modStructDict;
+
         internal static List<Mod> listMod = new List<Mod>();
 
         internal static void Load()
@@ -88,6 +99,7 @@ namespace TaisEngine.ModManager
 
             internal LocalString localString;
             internal InitSelectDef initSelectDef;
+            internal EventDef eventDef;
 
             //internal BackgroundDef backgroundDef;
             //internal DepartDef departDef;
@@ -110,9 +122,27 @@ namespace TaisEngine.ModManager
 
                 syntaxMod = new SyntaxMod(path);
 
-                initSelectDef = new InitSelectDef(syntaxMod);
+                foreach(var elem in Mod.modStructDict)
+                {
+                    elem.Value(this, syntaxMod.GetElements(elem.Key));
+                }
 
                 Log.INFO("Load mod content finish");
+            }
+
+            internal void CreateInitSelect(List<SyntaxMod.Element> modElements)
+            {
+                initSelectDef = new InitSelectDef(modElements);
+            }
+
+            internal void CreateCommonEvent(List<SyntaxMod.Element> modElements)
+            {
+                if(eventDef == null)
+                {
+                    eventDef = new EventDef();
+                }
+
+                eventDef.CreateCommons(modElements);
             }
 
             //internal void Load(string mod, LuaEnv luaenv)
@@ -125,6 +155,12 @@ namespace TaisEngine.ModManager
             //    bufferDef = new BufferDef(mod, luaenv.Global.Get<LuaTable>("BUFFER"));
             //    defines = new Defines(mod, luaenv.Global.Get<LuaTable>("DEFINES"));
             //}
+        }
+
+        enum MOD_STRUCT
+        {
+            INIT_SELECT,
+
         }
     }
 }

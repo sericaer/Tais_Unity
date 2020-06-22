@@ -7,6 +7,8 @@ namespace TaisEngine.ModManager
 {
     internal class SyntaxMod
     {
+        internal string path;
+
         internal class Element
         {
             internal string name;
@@ -15,9 +17,19 @@ namespace TaisEngine.ModManager
 
         internal SyntaxMod(string path)
         {
+            this.path = path;
+
             dict = new Dictionary<string, List<Element>>();
 
-            var subpath = $"{path}/init_select/";
+            foreach(var dir in Mod.modStructDict.Keys)
+            {
+                SyntaxDir(dir);
+            }
+        }
+
+        private void SyntaxDir(string dir)
+        {
+            var subpath = $"{path}/{dir}/";
 
             List<Element> elements = new List<Element>();
             foreach (var file in Directory.EnumerateFiles(subpath, "*.txt"))
@@ -31,7 +43,7 @@ namespace TaisEngine.ModManager
                 elements.Add(element);
             }
 
-            dict.Add("init_select", elements);
+            dict.Add(dir, elements);
         }
 
         internal List<Element> GetElements(string name)

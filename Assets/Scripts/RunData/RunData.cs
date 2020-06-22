@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using ModVisitor;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,7 @@ namespace TaisEngine.Run
         [JsonProperty]
         public Taishou taishou;
 
+        [ModVisit]
         public GMDate date;
 
         internal bool end_flag;

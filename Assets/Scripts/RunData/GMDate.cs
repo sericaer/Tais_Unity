@@ -1,4 +1,5 @@
 ﻿using System;
+using ModVisitor;
 using TaisEngine.ModManager;
 using UnityEngine.UI.Extensions;
 
@@ -43,6 +44,7 @@ namespace TaisEngine.Run
             }
         }
 
+        [ModVisit]
         public int year
         {
             get
@@ -52,6 +54,7 @@ namespace TaisEngine.Run
 
         }
 
+        [ModVisit]
         public int month
         {
             get
@@ -60,6 +63,7 @@ namespace TaisEngine.Run
             }
         }
 
+        [ModVisit]
         public int day
         {
             get

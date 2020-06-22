@@ -1,0 +1,17 @@
+trigger = 
+{
+    is.equal = {gm.common.date.day, 10}
+}
+
+occur_days = 
+{
+    base_value = 1
+}
+
+option = 
+{
+    selected = 
+    {
+
+    }
+}

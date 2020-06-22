@@ -64,38 +64,18 @@ namespace TaisEngine.ModManager
 
         internal List<Element> lists = new List<Element>();
 
-        public InitSelectDef(SyntaxMod syntaxMod)
+        public InitSelectDef(List<SyntaxMod.Element> modElements)
         {
-            var modElems = syntaxMod.GetElements("init_select");
-            if(modElems == null)
+            if(modElements == null)
             {
                 return;
             }
 
-            foreach(var modElem in modElems)
+            foreach(var modElem in modElements)
             {
                 var elem = new Element(modElem.name, modElem.multiItem);
                 lists.Add(elem);
             }
-        }
-    }
-
-    internal class OptionDef
-    {
-        public string name;
-        public Eval<string> desc;
-        public EvalSelected selected;
-        public Eval<string> next_select;
-
-        private Value opRaw;
-
-        public OptionDef(string name, Value opRaw)
-        {
-            this.name = name;
-            this.desc = Eval<string>.Parse("desc", opRaw as MultiItem, $"{name}_DESC");
-            this.selected = EvalSelected.Parse("selected", opRaw as MultiItem);
-            this.next_select = Eval<string>.Parse("next_select", opRaw as MultiItem, "");
-            this.opRaw = opRaw;
         }
     }
 

@@ -206,6 +206,7 @@ namespace SyntaxAnaylize
                 return ELEM_TYPE.BRACE_CLOSE;
             }
 
+            //^[A-Za-z]+[A-Za-z0-9_]*(\.?[A-Za-z0-9_]+)*[ \f\r\t\v]
             rslt = Regex.Match(curr, @"^[\+\-]*[A-Za-z0-9_\.-]+[\+\-\*/]*[A-Za-z0-9_\.-]+");
             if (rslt.Success)
             {

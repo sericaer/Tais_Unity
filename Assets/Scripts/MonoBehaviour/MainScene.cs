@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using TaisEngine;
+using TaisEngine.Run;
 using UniRx.Async;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,15 +18,17 @@ public class MainScene : MonoBehaviour
     //public FamilyTop familyTop;
     //public GameObject familyContent;
 
-    //// Use this for initialization
-    //void Start()
-    //{
-    //    foreach(var family in TaisEngine.GMData.inst.familys)
-    //    {
-    //        var familyTopObj = Instantiate(familyTop, familyContent.transform);
-    //        familyTopObj.family = family;
-    //    }
-    //}
+    // Use this for initialization
+    void Start()
+    {
+        ModVisitor.Visitor.InitData("gm.common", RunData.inst);
+
+        //foreach(var family in TaisEngine.GMData.inst.familys)
+        //{
+        //    var familyTopObj = Instantiate(familyTop, familyContent.transform);
+        //    familyTopObj.family = family;
+        //}
+    }
 
     // Update is called once per frame
     void Update()
