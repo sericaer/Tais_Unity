@@ -21,7 +21,7 @@ public class MainScene : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        ModVisitor.Visitor.InitData("gm.common", RunData.inst);
+        ModVisitor.Visitor.InitData("gm", RunData.inst);
 
         //foreach(var family in TaisEngine.GMData.inst.familys)
         //{

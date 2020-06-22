@@ -30,7 +30,7 @@ public class LoadScene : MonoBehaviour
         {
             Directory.CreateDirectory(GMSerialize.savePath);
             ModVisitor.Visitor.InitReflect("init_data", typeof(InitData));
-            ModVisitor.Visitor.InitReflect("gm.common", typeof(RunData));
+            ModVisitor.Visitor.InitReflect("gm", typeof(RunData));
 
             Mod.Load();
         }

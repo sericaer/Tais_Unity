@@ -1,6 +1,6 @@
 trigger = 
 {
-    is.equal = {gm.common.date.day, 10}
+    is.equal = {gm.date.day, 10}
 }
 
 occur_days = 
@@ -12,6 +12,6 @@ option =
 {
     selected = 
     {
-
+        nop
     }
 }

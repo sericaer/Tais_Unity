@@ -40,7 +40,7 @@ options =
     }
 }
 ";
-        MultiItem modItems = Syntax.Anaylize(script);
+        MultiItem modItems = Syntax.Anaylize("", script);
 
         var str = modItems.ToString();
 

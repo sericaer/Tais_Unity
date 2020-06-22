@@ -9,7 +9,7 @@ namespace SyntaxAnaylize
     {
         static int line;
 
-        public static MultiItem Anaylize(string script)
+        public static MultiItem Anaylize(string filename, string script)
         {
 
             try
@@ -33,7 +33,7 @@ namespace SyntaxAnaylize
             }
             catch (Exception e)
             {
-                throw new Exception($"exception in line {line}", e);
+                throw new Exception($"exception in {filename}:{line}", e);
             }
         }
 
@@ -109,24 +109,22 @@ namespace SyntaxAnaylize
                         {
                             offset = endIndex;
 
-                            if (multiValue != null)
+                            if (multiItem != null && key == "")
                             {
-                                if (key != "")
-                                {
-                                    multiValue.Add(new SingleValue(key));
-                                }
+                                return multiItem;
+                            }
+
+                            if (multiValue == null && key != "")
+                            {
+                                multiValue = new List<SingleValue>();
+                                multiValue.Add(new SingleValue(key));
 
                                 return multiValue;
                             }
 
-                            if (multiItem != null)
+                            if(multiValue != null && key == "")
                             {
-                                if (key != "")
-                                {
-                                    throw new Exception();
-                                }
-
-                                return multiItem;
+                                return multiValue;
                             }
 
                             throw new Exception();
@@ -206,8 +204,24 @@ namespace SyntaxAnaylize
                 return ELEM_TYPE.BRACE_CLOSE;
             }
 
-            //^[A-Za-z]+[A-Za-z0-9_]*(\.?[A-Za-z0-9_]+)*[ \f\r\t\v]
-            rslt = Regex.Match(curr, @"^[\+\-]*[A-Za-z0-9_\.-]+[\+\-\*/]*[A-Za-z0-9_\.-]+");
+            //数字表达式
+            rslt = Regex.Match(curr, @"^[\+\-]?[0-9]+\.?[0-9]+([ \f\r\t\v]*[\+\-\*/]?[ \f\r\t\v]*[0-9]+\.?[0-9]+[ \f\r\t\v]*)*");
+            if (rslt.Success)
+            {
+                endIndex = charIndex + rslt.Length;
+                return ELEM_TYPE.STRING;
+            }
+
+            //标识符开始表达式
+            rslt = Regex.Match(curr, @"^[A-Za-z]+[A-Za-z0-9_]*(\.?[A-Za-z]+[A-Za-z0-9_])*([ \f\r\t\v]*[\+\-\*/]?[ \f\r\t\v]*[\+\-]?[0-9]+(\.?[0-9]+)?[ \f\r\t\v]*)*");
+            if (rslt.Success)
+            {
+                endIndex = charIndex + rslt.Length;
+                return ELEM_TYPE.STRING;
+            }
+
+            //数字开始表达式
+            rslt = Regex.Match(curr, @"^[\+\-]?[0-9]+(\.?[0-9]+)?([ \f\r\t\v]*[\+\-\*/]?[ \f\r\t\v]*[A-Za-z]+[A-Za-z0-9_]*(\.?[A-Za-z]+[A-Za-z0-9_])+[ \f\r\t\v]*)*");
             if (rslt.Success)
             {
                 endIndex = charIndex + rslt.Length;

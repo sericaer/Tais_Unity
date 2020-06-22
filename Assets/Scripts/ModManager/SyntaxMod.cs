@@ -37,7 +37,7 @@ namespace TaisEngine.ModManager
                 Element element = new Element()
                 {
                     name = Path.GetFileNameWithoutExtension(file),
-                    multiItem = Syntax.Anaylize(File.ReadAllText(file))
+                    multiItem = Syntax.Anaylize(file, File.ReadAllText(file))
                 };
 
                 elements.Add(element);

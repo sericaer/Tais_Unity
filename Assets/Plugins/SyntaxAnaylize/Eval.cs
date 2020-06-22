@@ -34,9 +34,14 @@ namespace SyntaxAnaylize
             {
                 return new EvalFactor<T>(modValue as SingleValue);
             }
-            if(modValue is Item)
+            if(modValue is MultiItem)
             {
-                return EvalExpr<T>.Parse(modValue as Item);
+                if(((MultiItem)modValue).elems.Count() != 1)
+                {
+                    throw new Exception("eval modValue should have 1 elem, curr is " + ((MultiItem)modValue).elems.Count());
+                }
+
+                return EvalExpr<T>.Parse(((MultiItem)modValue).elems[0] as Item);
             }
 
             throw new NotImplementedException();
