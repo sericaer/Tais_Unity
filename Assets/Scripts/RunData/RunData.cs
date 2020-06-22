@@ -20,19 +20,15 @@ namespace TaisEngine.Run
         }
 
         [JsonProperty]
-        public int days;
-
-        [JsonProperty]
         public Taishou taishou;
 
-        [ModVisit]
+        [JsonProperty, ModVisit]
         public GMDate date;
 
         internal bool end_flag;
 
         public RunData(InitData initData)
         {
-            days = 1;
             taishou = new Taishou(initData.taishou);
 
             date = new GMDate();
@@ -44,7 +40,7 @@ namespace TaisEngine.Run
 
         internal void DaysInc()
         {
-            days++;
+            date++;
         }
     }
 }

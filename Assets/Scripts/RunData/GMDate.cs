@@ -1,110 +1,61 @@
+
 ﻿using System;
 using ModVisitor;
+﻿using Newtonsoft.Json;
 using TaisEngine.ModManager;
 using UnityEngine.UI.Extensions;
 
 namespace TaisEngine.Run
 {
+    [JsonObject(MemberSerialization.OptIn)]
     public class GMDate
     {
-        //internal bool isSpring
-        //{
-        //    get
-        //    {
-        //        return (month < 4);
-        //    }
-        //}
-        //internal bool isSummer
-        //{
-        //    get
-        //    {
-        //        return (month < 7 && month >=4);
-        //    }
-        //}
-        //internal bool isAutumn
-        //{
-        //    get
-        //    {
-        //        return (month < 10 && month >= 7);
-        //    }
-        //}
-        //internal bool isWinter
-        //{
-        //    get
-        //    {
-        //        return (month <= 12 && month >= 10);
-        //    }
-        //}
+        [JsonProperty, ModVisit]
+        public int year;
+
+        [JsonProperty, ModVisit]
+        public int month;
+
+        [JsonProperty, ModVisit]
+        public int day;
+
+        public static GMDate operator++(GMDate date)
+        {
+            if(date.day != 30)
+            {
+                date.day++;
+                return date;
+            }
+
+            if(date.month != 12)
+            {
+                date.month++;
+                return date;
+            }
+            
+            date.year++;
+            return date;
+        }
+
 
         public int total_days
         {
             get
             {
-                return RunData.inst.days;
+                return day + (month-1)*12 + (year-1)*360;
             }
         }
 
-        [ModVisit]
-        public int year
+        public GMDate()
         {
-            get
-            {
-                return _year(total_days);
-            }
-
-        }
-
-        [ModVisit]
-        public int month
-        {
-            get
-            {
-                return _month(total_days);
-            }
-        }
-
-        [ModVisit]
-        public int day
-        {
-            get
-            {
-                return _day(total_days);
-            }
+            year = 1;
+            month = 1;
+            day = 1;
         }
 
         public override string ToString()
-        {
-            if (total_days == 0)
-            {
-                return "--";
-            }
-
+        { 
             return LocalString.Get("date", year, month, day);
-        }
-
-        //public static string ToString(int days)
-        //{
-        //    if (days == 0)
-        //    {
-        //        return "--";
-        //    }
-
-        //    return Mod.GetLocalString("date", _year(days), _month(days), _day(days));
-        //}
-
-        internal static int _day(int days)
-        {
-            return days % 30 == 0 ? 30 : days % 30;
-        }
-
-        internal static int _month(int days)
-        {
-            return days % 30 == 0 ? (days % 360 == 0 ? 360 : days % 360) / 30 : days % 360 / 30 + 1;
-        }
-
-        internal static int _year(int days)
-        {
-            return days % 360 == 0 ? days / 360 : days / 360 + 1;
         }
     }
 }
