@@ -29,10 +29,11 @@ namespace TaisEngine.Run
 
             if(date.month != 12)
             {
+                date.day = 1;
                 date.month++;
                 return date;
             }
-            
+            date.month = 1;
             date.year++;
             return date;
         }

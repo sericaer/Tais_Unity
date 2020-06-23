@@ -5594,7 +5594,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 803830fc8dcd35e41a3f130f3a780179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogCommon: {fileID: 0}
+  dialogCommon: {fileID: 4336496583370955433, guid: 2b9d51fcc7e9d0d42ae1eae337f44fc9,
+    type: 3}
   reportCollectTax: {fileID: 0}
   dialogException: {fileID: 0}
 --- !u!1 &843834514

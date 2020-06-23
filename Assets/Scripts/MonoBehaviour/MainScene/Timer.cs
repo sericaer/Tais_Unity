@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using TaisEngine;
+using TaisEngine.ModManager;
 using TaisEngine.Run;
 using Tools;
 using UniRx.Async;
@@ -65,7 +66,7 @@ public class Timer : MonoBehaviour
         pauseCount--;
     }
 
-    async UniTaskVoid Start()
+    async void Start()
     {
 #if UNITY_EDITOR
         _currSpeed = 10;
@@ -84,15 +85,13 @@ public class Timer : MonoBehaviour
                 {
                     await UniTask.WaitUntil(() => !isPaused);
 
-                    RunData.inst.DaysInc();
-
-                    //await RunData.inst.DaysInc(CreateDialog);
+                    await RunData.inst.DaysInc(CreateDialog);
 
                     await UniTask.Delay(1000/currSpeed, true);
 
                 }
 
-                SceneManager.LoadSceneAsync("EndScene");
+                await SceneManager.LoadSceneAsync("EndScene");
             }
             catch(Exception e)
             {
@@ -103,20 +102,19 @@ public class Timer : MonoBehaviour
         });
     }
 
-    //public async UniTask CreateDialog(EventDef.Interface gevent)
-    //{
-    //    if (gevent != null)
-    //    {
+    internal async UniTask CreateDialog(EventDef.Element gevent)
+    {
+        if (gevent != null)
+        {
 
-    //        {
-    //            await UniTask.SwitchToMainThread();
-    //            GetComponentInParent<sceneMain>().CreateEventDialogAsync(gevent);
-    //        }
+            {
+                await UniTask.SwitchToMainThread();
+                GetComponentInParent<MainScene>().CreateEventDialogAsync(gevent);
+            }
 
-
-    //        await UniTask.WaitUntil(() => !isPaused);
-    //    }
-    //}
+            await UniTask.WaitUntil(() => !isPaused);
+        }
+    }
 
     private bool isPaused
     {

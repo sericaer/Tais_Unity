@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using TaisEngine;
+using TaisEngine.ModManager;
 using TaisEngine.Run;
 using UniRx.Async;
 using UnityEngine;
@@ -21,6 +22,7 @@ public class MainScene : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        ModVisitor.Visitor.ClearData("gm");
         ModVisitor.Visitor.InitData("gm", RunData.inst);
 
         //foreach(var family in TaisEngine.GMData.inst.familys)
@@ -45,27 +47,27 @@ public class MainScene : MonoBehaviour
     //    panelDialog.GetComponentInChildren<Text>().text = error;
     //}
 
-    //internal async UniTask CreateEventDialogAsync(EventDef.Interface eventobj)
-    //{
-    //    List<object> eventTitleParams = eventobj.title();
-    //    msgPanel.AddMessage(Mod.GetLocalString(eventTitleParams[0] as string, eventTitleParams.Skip(1).ToArray()));
+    internal async UniTask CreateEventDialogAsync(EventDef.Element eventobj)
+    {
+        object[] eventTitleParams = eventobj.title.Result();
+        //msgPanel.AddMessage(LocalString.Get(eventTitleParams[0] as string, eventTitleParams.Skip(1).ToArray()));
 
-    //    if (eventobj.hide)
-    //    {
-    //        var opt = eventobj.options["OPTION_1"];
-    //        opt.selected();
+        //if (eventobj.hide.Result())
+        //{
+        //    var opt = eventobj.options[0];
+        //    opt.selected.Run();
 
-    //        var next = opt.next_event();
-    //        if (next != "" && next != null)
-    //        {
-    //            await CreateEventDialogAsync(EventDef.find(next));
-    //        }
-    //        return;
-    //    }
+        //    var next = opt.next.Get();
+        //    if (next != "" && next != null)
+        //    {
+        //        await CreateEventDialogAsync(EventDef.find(next));
+        //    }
+        //    return;
+        //}
 
-    //    var panelDialog = Instantiate(dialogCommon, this.transform) as GameObject;
-    //    panelDialog.GetComponentInChildren<DialogCommon>().gEvent = eventobj;
-    //}
+        var panelDialog = Instantiate(dialogCommon, this.transform) as GameObject;
+        panelDialog.GetComponentInChildren<DialogCommon>().gEvent = eventobj;
+    }
 
     //internal void CreateTaskCollectTaxReport()
     //{

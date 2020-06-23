@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TaisEngine.Init;
+using TaisEngine.ModManager;
+using UniRx.Async;
 
 namespace TaisEngine.Run
 {
@@ -38,8 +40,13 @@ namespace TaisEngine.Run
         {
         }
 
-        internal void DaysInc()
+        async internal UniTask DaysInc(Func<EventDef.Element, UniTask> act)
         {
+            foreach (var gevent in EventDef.Generate())
+            {
+                await act(gevent);
+            }
+
             date++;
         }
     }
