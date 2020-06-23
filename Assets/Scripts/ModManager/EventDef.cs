@@ -11,26 +11,31 @@ namespace TaisEngine.ModManager
         {
             public string name;
 
-            public Eval<string> title;
-            public Eval<string> desc;
-            public Eval<bool> trigger;
-            public Eval<int> occur_days;
+            public EvalExpr_MultiValue title;
+            public EvalExpr_MultiValue desc;
+            public EvalExpr_Condition trigger;
+            public EvalExpr_ModifierGroup occur_days;
 
             public List<OptionDef> options;
 
             public Element(string name, MultiItem modItems)
             {
                 this.name = name.ToUpper();
-                this.title = Eval<string>.Parse("title", modItems, $"{name}_TITLE");
-                this.desc = Eval<string>.Parse("desc", modItems, $"{name}_DESC");
-                this.trigger = Eval<bool>.Parse("trigger", modItems, false);
-                this.occur_days = Eval<int>.Parse("occur_days", modItems, 1);
+
+                object[] defTitle = { $"{name}_TITLE" };
+                this.title = EvalExpr_MultiValue.Parse(modItems, "title", defTitle);
+
+                object[] defDesc = { $"{name}_DESC" };
+                this.desc = EvalExpr_MultiValue.Parse(modItems, "desc", defDesc);
+
+                this.trigger = EvalExpr_Condition.Parse(modItems, "trigger", false);
+                this.occur_days = EvalExpr_ModifierGroup.Parse(modItems, "occur_days", 1);
 
                 this.options = new List<OptionDef>();
                 var rawOptions = modItems.elems.Where(x => x.key == "option").ToArray();
                 for (int i = 0; i < rawOptions.Count(); i++)
                 {
-                    this.options.Add(new OptionDef($"{name}_OPTION_{i + 1}", rawOptions[i].value));
+                    this.options.Add(new OptionDef($"{name}_OPTION_{i + 1}", rawOptions[i].value as MultiItem));
                 }
             }
         }

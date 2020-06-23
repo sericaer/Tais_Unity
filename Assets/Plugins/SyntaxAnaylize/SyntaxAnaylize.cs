@@ -14,7 +14,7 @@ namespace SyntaxAnaylize
 
             try
             {
-                MultiItem rslt = new MultiItem();
+                MultiItem rslt = new MultiItem(0);
 
                 int charIndex = 0;
 
@@ -68,12 +68,12 @@ namespace SyntaxAnaylize
 
                             if (multiItem != null)
                             {
-                                multiItem.Add(new Item(key, value));
+                                multiItem.Add(new Item(key, value, line));
                             }
                             if (multiValue != null)
                             {
-                                multiValue.Add(new SingleValue(key));
-                                multiValue.Add(new SingleValue(value));
+                                multiValue.Add(new SingleValue(key, line));
+                                multiValue.Add(new SingleValue(value, line));
                             }
                             key = "";
                         }
@@ -98,7 +98,7 @@ namespace SyntaxAnaylize
                             IEnumerable<Value> sub = Anaylize(script.Substring(endIndex), out offset_sub);
                             charIndex = endIndex + offset_sub;
 
-                            multiItem.Add(new Item(key, sub.Select(x => x as Value)));
+                            multiItem.Add(new Item(key, sub.Select(x => x as Value), line));
 
                             key = "";
 
@@ -117,7 +117,7 @@ namespace SyntaxAnaylize
                             if (multiValue == null && key != "")
                             {
                                 multiValue = new List<SingleValue>();
-                                multiValue.Add(new SingleValue(key));
+                                multiValue.Add(new SingleValue(key, line));
 
                                 return multiValue;
                             }
@@ -204,29 +204,36 @@ namespace SyntaxAnaylize
                 return ELEM_TYPE.BRACE_CLOSE;
             }
 
-            //数字表达式
-            rslt = Regex.Match(curr, @"^[\+\-]?[0-9]+\.?[0-9]+([ \f\r\t\v]*[\+\-\*/]?[ \f\r\t\v]*[0-9]+\.?[0-9]+[ \f\r\t\v]*)*");
+            rslt = Regex.Match(curr, @"([ ]*[A-Za-z0-9_\.\+\-\*/]+)+");
             if (rslt.Success)
             {
                 endIndex = charIndex + rslt.Length;
                 return ELEM_TYPE.STRING;
             }
 
-            //标识符开始表达式
-            rslt = Regex.Match(curr, @"^[A-Za-z]+[A-Za-z0-9_]*(\.?[A-Za-z]+[A-Za-z0-9_])*([ \f\r\t\v]*[\+\-\*/]?[ \f\r\t\v]*[\+\-]?[0-9]+(\.?[0-9]+)?[ \f\r\t\v]*)*");
-            if (rslt.Success)
-            {
-                endIndex = charIndex + rslt.Length;
-                return ELEM_TYPE.STRING;
-            }
+            ////数字表达式
+            //rslt = Regex.Match(curr, @" ^[\+\-]?[0-9]+\.?[0-9]+([ \f\r\t\v]*[\+\-\*/]?[ \f\r\t\v]*[0-9]+\.?[0-9]+[ \f\r\t\v]*)*");
+            //if (rslt.Success)
+            //{
+            //    endIndex = charIndex + rslt.Length;
+            //    return ELEM_TYPE.STRING;
+            //}
 
-            //数字开始表达式
-            rslt = Regex.Match(curr, @"^[\+\-]?[0-9]+(\.?[0-9]+)?([ \f\r\t\v]*[\+\-\*/]?[ \f\r\t\v]*[A-Za-z]+[A-Za-z0-9_]*(\.?[A-Za-z]+[A-Za-z0-9_])+[ \f\r\t\v]*)*");
-            if (rslt.Success)
-            {
-                endIndex = charIndex + rslt.Length;
-                return ELEM_TYPE.STRING;
-            }
+            ////标识符开始表达式
+            //rslt = Regex.Match(curr, @"^[A-Za-z]+[A-Za-z0-9_]*(\.?[A-Za-z]+[A-Za-z0-9_])*([ \f\r\t\v]*[\+\-\*/]?[ \f\r\t\v]*[\+\-]?[0-9]+(\.?[0-9]+)?[ \f\r\t\v]*)*");
+            //if (rslt.Success)
+            //{
+            //    endIndex = charIndex + rslt.Length;
+            //    return ELEM_TYPE.STRING;
+            //}
+
+            ////数字开始表达式
+            //rslt = Regex.Match(curr, @"^[\+\-]?[0-9]+(\.?[0-9]+)?([ \f\r\t\v]*[\+\-\*/]?[ \f\r\t\v]*[A-Za-z]+[A-Za-z0-9_]*(\.?[A-Za-z]+[A-Za-z0-9_])+[ \f\r\t\v]*)*");
+            //if (rslt.Success)
+            //{
+            //    endIndex = charIndex + rslt.Length;
+            //    return ELEM_TYPE.STRING;
+            //}
 
             throw new Exception();
         }
@@ -246,7 +253,11 @@ namespace SyntaxAnaylize
 
     public class Value
     {
-
+        public int line;
+        public Value(int line)
+        {
+            this.line = line;
+        }
     }
 
     public class Item : Value
@@ -254,23 +265,23 @@ namespace SyntaxAnaylize
         public readonly string key;
         public readonly Value value;
 
-        public Item(string key, string value)
+        public Item(string key, string value, int line) : base(line)
         {
             this.key = key;
-            this.value = new SingleValue(value);
+            this.value = new SingleValue(value, line);
         }
 
-        public Item(string key, IEnumerable<Value> value)
+        public Item(string key, IEnumerable<Value> value, int line) : base(line)
         {
             this.key = key;
 
             if (value.All(x => x is Item))
             {
-                this.value = new MultiItem(value.Select(x => x as Item));
+                this.value = new MultiItem(value.Select(x => x as Item), line);
             }
             else if (value.All(x => x is SingleValue))
             {
-                this.value = new MultiValue(value.Select(x => x as SingleValue));
+                this.value = new MultiValue(value.Select(x => x as SingleValue), line);
             }
             else
             {
@@ -289,30 +300,46 @@ namespace SyntaxAnaylize
     {
        public readonly List<Item> elems;
 
-        public MultiItem()
+        public MultiItem(int line) : base(line)
         {
             this.elems = new List<Item>();
         }
 
-        public MultiItem(IEnumerable<Item> value)
+        public MultiItem(IEnumerable<Item> value, int line) : base(line)
         {
             this.elems = value.ToList();
         }
 
-        public object Get(string name, Type fieldType)
+        public T Find<T>(string name) where T : Value
         {
-            var item = elems.SingleOrDefault(x => x.key == name);
-            if(item == null)
+            var rslt = elems.FirstOrDefault(x => x.key == name);
+            if (rslt == null)
             {
-                throw new Exception($"can not find '{name}'");
+                throw new Exception($"can not find {name} in {this.ToString()}");
             }
 
-            if(fieldType == typeof(bool))
+            if (!(rslt.value is T))
             {
-                return bool.Parse((item.value as SingleValue).ToString());
+                throw new Exception($"{name} is not {typeof(T).Name}");
             }
 
-            throw new Exception();
+            return rslt.value as T;
+        }
+
+        public T TryFind<T>(string name) where T : Value
+        {
+            var rslt = elems.FirstOrDefault(x => x.key == name);
+            if (rslt == null)
+            {
+                return null;
+            }
+
+            if (!(rslt.value is T))
+            {
+                return null;
+            }
+
+            return rslt.value as T;
         }
 
         public override string ToString()
@@ -328,7 +355,7 @@ namespace SyntaxAnaylize
 
     public class SingleValue : Value
     {
-        public SingleValue(string value)
+        public SingleValue(string value, int line) : base(line)
         {
             this.value = value;
         }
@@ -343,7 +370,7 @@ namespace SyntaxAnaylize
 
     public class MultiValue : Value
     {
-        public MultiValue(IEnumerable<SingleValue> value)
+        public MultiValue(IEnumerable<SingleValue> value, int line) : base(line)
         {
             this.elems = value.ToList();
         }

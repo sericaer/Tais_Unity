@@ -10,120 +10,231 @@ namespace SyntaxAnaylize
 {
     public class Eval<T>
     {
-        public static Eval<T> Parse(string key, MultiItem modItems, T defaultValue)
-        {
-            var modItem = modItems.elems.SingleOrDefault(x => x.key == key);
-            if (modItem == null)
-            {
-                var ret = new Eval<T>();
-                ret.staticValue = defaultValue;
-                ret._Result = () =>
-                {
-                    return ret.staticValue;
-                };
-
-                return ret;
-            }
-
-            return Parse(modItem.value);
-        }
-
-        public static Eval<T> Parse(Value modValue)
-        {
-            if (modValue is SingleValue)
-            {
-                return new EvalFactor<T>(modValue as SingleValue);
-            }
-            if(modValue is MultiItem)
-            {
-                if(((MultiItem)modValue).elems.Count() != 1)
-                {
-                    throw new Exception("eval modValue should have 1 elem, curr is " + ((MultiItem)modValue).elems.Count());
-                }
-
-                return EvalExpr<T>.Parse(((MultiItem)modValue).elems[0] as Item);
-            }
-
-            throw new NotImplementedException();
-        }
-
         public T Result()
         {
-            return _Result == null ? staticValue : _Result();
+            return _Result == null ? defaultValue : _Result();
         }
 
-        public T staticValue;
+        public T defaultValue;
+        public Value modValue;
 
         protected Func<T> _Result;
     }
 
-    public class EvalFactor<T> : Eval<T>
+    public class EvalExpr_ModifierGroup : Eval<double>
     {
-        public EvalFactor(SingleValue modValue)
+        public static EvalExpr_ModifierGroup Parse(MultiItem modItems, string key, double? defVale)
         {
-            this.modValue = modValue;
-            this._Result = Converter.GetFunc<T>(modValue.value);
-
-        }
-
-        internal SingleValue modValue;
-    }
-
-    public abstract class EvalExpr<T> : Eval<T>
-    {
-        public static EvalExpr<T> Parse(Item modItem)
-        {
-            if (modItem.key == "is.equal")
+            var find = modItems.TryFind<MultiItem>(key);
+            if(find == null)
             {
-                if(typeof(T) != typeof(bool))
+                if(defVale == null)
                 {
-                    throw new Exception("'is.equal' expect 'bool' type, but curr is " + typeof(T).Name);
+                    throw new Exception($"can not find {key} in {modItems}");
                 }
 
-                return new EvalExpr_Equal<T>(modItem.value);
+                return new EvalExpr_ModifierGroup() { defaultValue = defVale.Value };
             }
 
-            throw new NotImplementedException();
+            return new EvalExpr_ModifierGroup(find);
+        }
+
+
+        internal EvalExpr_SINGLE<double> baseValue;
+        internal List<EvalExpr_Modifier> modifiers = new List<EvalExpr_Modifier>();
+
+        public EvalExpr_ModifierGroup(MultiItem modItem)
+        {
+            var modBaseValue = modItem.Find<SingleValue>("base_value");
+
+            baseValue = new EvalExpr_SINGLE<double>(modBaseValue, EvalExpr_SINGLE<double>.OPType.READ);
+            foreach(var elem in modItem.elems.Where(x=>x.key == "modifier"))
+            {
+                modifiers.Add(new EvalExpr_Modifier(elem.value as MultiItem));
+            }
+
+            _Result = () =>
+            {
+                return baseValue.Result() + modifiers.Select(x => x.Result()).Sum();
+            };
+        }
+
+        public EvalExpr_ModifierGroup()
+        {
         }
     }
 
-    public class EvalExpr_Equal<T> : EvalExpr<T>
+    public class EvalExpr_Modifier : Eval<double>
     {
-        private Value value;
+        internal EvalExpr_SINGLE<double> value;
+        internal EvalExpr_Condition condition;
 
-        public EvalExpr_Equal(Value value)
+        public EvalExpr_Modifier(MultiItem modItem)
         {
-            this.value = value;
-            if(!(value is MultiValue))
+            var currValue = modItem.Find<SingleValue>("value");
+            value = new EvalExpr_SINGLE<double>(currValue, EvalExpr_SINGLE<double>.OPType.READ);
+
+            var modCondition = modItem.Find<MultiItem>("condition");
+            if(modCondition.elems.Count() != 1)
             {
-                throw new Exception("'EvalExpr_Equal' value expect 'MultiValue' but curr is " + value.GetType().Name);
+                throw new Exception();
             }
 
-            var elements = ((MultiValue)value).elems;
-            if(elements.Count() != 2)
+            condition = EvalExpr_Condition.Parse(modCondition.elems[0]);
+        }
+    }
+
+    public class EvalExpr_MultiValue : Eval<object[]>
+    {
+        public static EvalExpr_MultiValue Parse(MultiItem multiItem, string name, object[] defValue)
+        {
+            var multiValue = multiItem.TryFind<MultiValue>(name);
+            if (multiValue == null)
+            {
+                if (defValue != null)
+                {
+                    return new EvalExpr_MultiValue(defValue);
+                }
+                throw new Exception();
+            }
+
+            return new EvalExpr_MultiValue(multiValue);
+        }
+
+        public EvalExpr_MultiValue(object[] defValue) 
+        {
+            defaultValue = defValue;
+        }
+
+        public EvalExpr_MultiValue(MultiValue multiValue)
+        {
+            expr_singleList = multiValue.elems.Select(x => new EvalExpr_SINGLE<object>(x, EvalExpr_SINGLE<object>.OPType.READ)).ToList();
+            _Result = () =>
+            {
+                return expr_singleList.Select(x => x.Result()).ToArray();
+            };
+        }
+
+        List<EvalExpr_SINGLE<object>> expr_singleList;
+    }
+
+    public class EvalExpr_Condition : Eval<bool>
+    { 
+        public static EvalExpr_Condition Parse(MultiItem multiItem, string name, bool? defValue)
+        {
+            var itemValue = multiItem.TryFind<MultiItem>(name);
+            if(itemValue == null)
+            {
+                if(defValue != null)
+                {
+                    return new EvalExpr_Condition() { defaultValue = defValue.Value };
+                }
+                throw new Exception();
+            }
+
+            return Parse(itemValue);
+        }
+
+        public static EvalExpr_Condition Parse(Value modValue)
+        {
+            if(modValue is Item)
+            {
+                var item = modValue as Item;
+                if (item.key == "is.equal")
+                {
+                    return new EvalExpr_EUQAL(item.value as MultiValue);
+                }
+
+                throw new Exception("not support " + item.key);
+            }
+            else if(modValue is SingleValue)
+            {
+                var single = modValue as SingleValue;
+                return new EvalExpr_Condition() { defaultValue = bool.Parse(single.value) };
+            }
+
+            throw new Exception("not support type" + modValue.GetType().Name);
+        }
+    }
+
+    public class EvalExpr_EUQAL : EvalExpr_Condition
+    {
+        public EvalExpr_EUQAL(MultiValue multiItem)
+        {
+            this.modValue = multiItem;
+
+            var elements = multiItem.elems;
+            if (elements.Count() != 2)
             {
                 throw new Exception("'EvalExpr_Equal' value expect have 2 elements but curr is " + elements.Count());
             }
 
-            left = new Getter(elements[0].value);
-            right = new Getter(elements[1].value);
+            left = new EvalExpr_SINGLE<object>(elements[0], EvalExpr_SINGLE<object>.OPType.READ);
+            right = new EvalExpr_SINGLE<object>(elements[1], EvalExpr_SINGLE<object>.OPType.READ);
 
             _Result = () =>
             {
-                var l = left.get();
-                var r = right.get();
-                if(l.GetType() != r.GetType())
+                var l = left.Result();
+                var r = right.Result();
+                if (l.GetType() != r.GetType())
                 {
                     throw new Exception($"EvalExpr_Equal left type is {l.GetType().Name}, but right type is {r.GetType().Name}");
                 }
 
-                object rslt = (l == r);
-                return (T)rslt;
+                return  (l.Equals(r));
             };
         }
 
-        private Getter left;
-        private Getter right;
+        private EvalExpr_SINGLE<object> left;
+        private EvalExpr_SINGLE<object> right;
+    }
+
+    public class EvalExpr_SINGLE<T> : Eval<T>
+    {
+        //public static EvalExpr_SINGLE<T> ParseRead(string name, MultiItem multiItem)
+        //{
+        //    var itemValue = multiItem.Find<SingleValue>(name);
+        //    return new EvalExpr_SINGLE<T>(itemValue, OPType.READ);
+        //}
+
+        //public static EvalExpr_SINGLE<T> ParseRead(string name, MultiItem multiItem, T defaultValue)
+        //{
+        //    var itemValue = multiItem.TryFind<SingleValue>(name);
+        //    if(itemValue == null)
+        //    {
+        //        return new EvalExpr_SINGLE<T>(defaultValue);
+        //    }
+
+        //    return new EvalExpr_SINGLE<T>(itemValue, OPType.READ);
+        //}
+
+        public EvalExpr_SINGLE(SingleValue value, OPType optype)
+        {
+            this.modValue = value;
+            if(((int)optype & (int)OPType.READ) != 0)
+            {
+                getter = new Getter(value.value);
+
+                _Result = () =>
+                {
+                    return (T)getter.get();
+                };
+            }
+            if(((int)optype & (int)OPType.WRITE) != 0)
+            {
+                setter = new Setter(value.value);
+            }
+        }
+
+        public enum OPType
+        {
+            READ = 0x01,
+            WRITE = 0x10,
+            READ_WRITE = (int)READ | (int)WRITE
+        }
+
+        public Getter getter;
+        public Setter setter;
     }
 
     //public abstract class EvalExpr_And : EvalExpr<bool>

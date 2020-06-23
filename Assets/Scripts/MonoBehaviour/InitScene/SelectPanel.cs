@@ -17,7 +17,7 @@ public class SelectPanel : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        textDesc.format = initSelectDef.desc.Result();
+        textDesc.format = initSelectDef.desc.Result()[0].ToString();
 
         for(int i= 0; i< initSelectDef.options.Count(); i++)
         {
@@ -26,7 +26,7 @@ public class SelectPanel : MonoBehaviour
             var btn = btns[i];
             btn.gameObject.SetActive(true);
 
-            btn.GetComponentInChildren<LocalText>().format = opt.desc.Result();
+            btn.GetComponentInChildren<LocalText>().format = opt.desc.Result()[0].ToString();
 
             btn.onClick.AddListener(() =>
             {
@@ -34,7 +34,7 @@ public class SelectPanel : MonoBehaviour
 
                 Destroy(this.gameObject);
 
-                var next = opt.next_select.Result();
+                var next = opt.next.Get();
                 if (next != "")
                 {
                     GetComponentInParent<InitScene>().CreateSelectPanel(InitSelectDef.Find(next));
