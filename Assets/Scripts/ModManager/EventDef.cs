@@ -47,8 +47,8 @@ namespace TaisEngine.ModManager
         {
             foreach (var modElem in modElements)
             {
-                var elem = new Element(modElem.name, modElem.multiItem);
-                commons.Add(elem);
+                //var elem = new Element(modElem.name, modElem.multiItem);
+                //commons.Add(elem);
             }
         }
 

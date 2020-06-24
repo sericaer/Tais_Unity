@@ -11,7 +11,7 @@ namespace TaisEngine.ModManager
 
         internal class Element
         {
-            internal string name;
+            internal string filePath;
             internal MultiItem multiItem;
         }
 
@@ -36,7 +36,7 @@ namespace TaisEngine.ModManager
             {
                 Element element = new Element()
                 {
-                    name = Path.GetFileNameWithoutExtension(file),
+                    filePath = file,
                     multiItem = Syntax.Anaylize(file, File.ReadAllText(file))
                 };
 

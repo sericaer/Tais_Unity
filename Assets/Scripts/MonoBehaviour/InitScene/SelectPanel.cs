@@ -19,32 +19,32 @@ public class SelectPanel : MonoBehaviour
     {
         textDesc.format = initSelectDef.desc.Result()[0].ToString();
 
-        for(int i= 0; i< initSelectDef.options.Count(); i++)
-        {
-            var opt = initSelectDef.options[i];
+        //for(int i= 0; i< initSelectDef.options.Count(); i++)
+        //{
+        //    var opt = initSelectDef.options[i];
 
-            var btn = btns[i];
-            btn.gameObject.SetActive(true);
+        //    var btn = btns[i];
+        //    btn.gameObject.SetActive(true);
 
-            btn.GetComponentInChildren<LocalText>().format = opt.desc.Result()[0].ToString();
+        //    btn.GetComponentInChildren<LocalText>().format = opt.desc.Result()[0].ToString();
 
-            btn.onClick.AddListener(() =>
-            {
-                opt.selected.Run();
+        //    btn.onClick.AddListener(() =>
+        //    {
+        //        opt.selected.Run();
 
-                Destroy(this.gameObject);
+        //        Destroy(this.gameObject);
 
-                var next = opt.next.Get();
-                if (next != "")
-                {
-                    GetComponentInParent<InitScene>().CreateSelectPanel(InitSelectDef.Find(next));
-                }
-                else
-                {
-                    GetComponentInParent<InitScene>().CreateReportPanel();
-                }
-            });
-        }
+        //        var next = opt.next.Get();
+        //        if (next != "")
+        //        {
+        //            GetComponentInParent<InitScene>().CreateSelectPanel(InitSelectDef.Find(next));
+        //        }
+        //        else
+        //        {
+        //            GetComponentInParent<InitScene>().CreateReportPanel();
+        //        }
+        //    });
+        //}
     }
 
     // Update is called once per frame

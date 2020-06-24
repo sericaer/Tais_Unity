@@ -9,24 +9,50 @@ namespace TaisEngine.ModManager
     internal class OptionDef
     {
         public string name;
-        public EvalExpr_MultiValue desc;
+
+        public Expr_MultiValue desc;
 
         public OptionSelected selected;
+
         public NextSelect next;
 
-        private Value raw;
-
-        public OptionDef(string name, MultiItem opRaw)
+        public OptionDef(string name, Value raw)
         {
+            if(!(raw is MultiValue))
+            {
+                throw new Exception($"option not support {raw}");
+            }
+
             this.name = name;
 
+            var opRaw = raw as MultiItem;
+
             object[] defValue = { name };
-            this.desc = EvalExpr_MultiValue.Parse(opRaw, "desc", defValue);
+            this.desc = Expr_MultiValue.Parse(opRaw, "desc", defValue);
 
             this.selected = new OptionSelected(opRaw, "selected");
             this.next = new NextSelect(opRaw, "next");
 
-            this.raw = opRaw;
+        }
+
+        internal static List<OptionDef> ParseList(SyntaxMod.Element mod, string key, string parent)
+        {
+            try
+            {
+                var rslt = new List<OptionDef>();
+
+                var rawElems = mod.multiItem.elems.Where(x => x.key == key).ToArray();
+                for (int i = 0; i < rawElems.Count(); i++)
+                {
+                    rslt.Add(new OptionDef($"{parent}_OPTION_{i + 1}_DESC", rawElems[i].value));
+                }
+
+                return rslt;
+            }
+            catch(Exception e)
+            {
+                throw new Exception($"parse file faild! {mod.filePath}", e);
+            }
         }
     }
 
@@ -78,17 +104,18 @@ namespace TaisEngine.ModManager
     {
         internal static Operation Parse(Item item)
         {
-            if(item.key == "set.value")
+            switch(item.key)
             {
-                if(!(item.value is MultiValue))
-                {
-                    throw new Exception("not multi value");
-                }
+                case "SET":
+                    if (!(item.value is MultiValue))
+                    {
+                        throw new Exception($"'SET' not support {item.value}");
+                    }
 
-                return new OperationSetValue(item.value as MultiValue);
+                    return new OperationSetValue(item.value as MultiValue);
+                default:
+                    throw new Expr_Exception($"not support operation {item.key}", item);
             }
-
-            throw new Exception();
         }
 
         internal abstract void Do();
@@ -96,28 +123,26 @@ namespace TaisEngine.ModManager
 
     internal class OperationSetValue : Operation
     {
-        private MultiValue raw;
-        private EvalExpr_SINGLE<object> left;
-        private EvalExpr_SINGLE<object> right;
+        private Factor<object> left;
+        private Factor<object> right;
 
         public OperationSetValue(MultiValue multiValue)
         {
-            raw = multiValue;
-            if (raw.elems.Count() != 2)
+            if (multiValue.elems.Count() != 2)
             {
-                throw new Exception();
+                throw new Expr_Exception("'SET' operation only support 2 element", multiValue);
             }
 
-            var dest = raw.elems[0];
-            var src = raw.elems[1];
+            var dest = multiValue.elems[0];
+            var src = multiValue.elems[1];
 
-            left = new EvalExpr_SINGLE<object>(dest, EvalExpr_SINGLE<object>.OPType.WRITE);
-            right = new EvalExpr_SINGLE<object>(src, EvalExpr_SINGLE<object>.OPType.READ);
+            left = new Factor<object>(dest, Visitor.Type.WRITE);
+            right = new Factor<object>(src, Visitor.Type.READ);
         }
 
         internal override void Do()
         {
-            left.setter.set(right.getter.get());
+            left.Write(right.Read());
         }
     }
 }

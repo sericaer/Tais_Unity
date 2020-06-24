@@ -17,25 +17,27 @@ namespace TaisEngine.ModManager
         {
             public string name;
 
-            public EvalExpr_Condition is_first;
-            public EvalExpr_MultiValue desc;
+            public Expr_Condition is_first;
+            public Expr_MultiValue desc;
 
             public List<OptionDef> options;
 
-            public Element(string name, MultiItem modItems)
+            public Element(SyntaxMod.Element modElem)
             {
-                this.name = name.ToUpper();
-                this.is_first = EvalExpr_Condition.Parse(modItems, "is_first", false);
+                this.name = Path.GetFileNameWithoutExtension(modElem.filePath).ToUpper();
+
+                this.is_first = Expr_Condition.Parse(modElem, "is_first", false);
 
                 object[] defDesc = { this.name + "_DESC" };
-                this.desc = EvalExpr_MultiValue.Parse(modItems, "desc", defDesc);
+                this.desc = Expr_MultiValue.Parse(modElem, "desc", defDesc);
 
-                this.options = new List<OptionDef>();
-                var rawOptions = modItems.elems.Where(x => x.key == "option").ToArray();
-                for (int i=0; i< rawOptions.Count(); i++)
-                {
-                    this.options.Add(new OptionDef($"{name}_OPTION_{i+1}_DESC", rawOptions[i].value as MultiItem));
-                }
+                this.options = OptionDef.ParseList(modElem, "option"); 
+                //new List<OptionDef>();
+                //var rawOptions = modElem.multiItem.elems.Where(x => x.key == "option").ToArray();
+                //for (int i=0; i< rawOptions.Count(); i++)
+                //{
+                //    this.options.Add(new OptionDef($"{name}_OPTION_{i+1}_DESC", rawOptions[i].value as MultiItem));
+                //}
             }
         }
 
@@ -75,7 +77,7 @@ namespace TaisEngine.ModManager
 
             foreach(var modElem in modElements)
             {
-                var elem = new Element(modElem.name, modElem.multiItem);
+                var elem = new Element(modElem);
                 lists.Add(elem);
             }
         }
