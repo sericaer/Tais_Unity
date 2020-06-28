@@ -71,11 +71,11 @@ namespace TaisEngine.ModManager
             double value = 0.0;
 
             int start = 0;
-            while (start < raw.Length)
+            while (start < convert.Length)
             {
                 if (start == 0)
                 {
-                    var matched_head = Regex.Match(raw.Substring(start), @"^[\+\-]?[0-9]+(\.?[0-9]+)*");
+                    var matched_head = Regex.Match(convert.Substring(start), @"^[\+\-]?[0-9]+(\.?[0-9]+)*");
                     if (!matched_head.Success)
                     {
                         return false;
@@ -86,7 +86,7 @@ namespace TaisEngine.ModManager
                     continue;
                 }
 
-                var matched = Regex.Match(raw.Substring(start), @"^[\+\-\*/][0-9]+(\.?[0-9]+)*");
+                var matched = Regex.Match(convert.Substring(start), @"^[\+\-\*/][0-9]+(\.?[0-9]+)*");
                 if (!matched.Success)
                 {
                     return false;

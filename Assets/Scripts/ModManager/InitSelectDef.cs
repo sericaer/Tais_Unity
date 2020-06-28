@@ -31,7 +31,7 @@ namespace TaisEngine.ModManager
                 object[] defDesc = { this.name + "_DESC" };
                 this.desc = Expr_MultiValue.Parse(modElem, "desc", defDesc);
 
-                this.options = OptionDef.ParseList(modElem, "option"); 
+                this.options = OptionDef.ParseList(modElem, "option", name); 
                 //new List<OptionDef>();
                 //var rawOptions = modElem.multiItem.elems.Where(x => x.key == "option").ToArray();
                 //for (int i=0; i< rawOptions.Count(); i++)

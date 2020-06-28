@@ -4,7 +4,7 @@ option =
 {
     selected = 
     {
-        set.value = {init_data.taishou.background, SHIZU}
+        set.value = {taishou.background, SHIZU}
     }
 }
 
@@ -12,6 +12,6 @@ option =
 {
     selected = 
     {
-        set.value = {init_data.taishou.background, HUANGUAN}
+        set.value = {taishou.background, HUANGUAN}
     }
 }
