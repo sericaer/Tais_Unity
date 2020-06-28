@@ -1,5 +1,4 @@
-﻿using ModVisitor;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,10 +20,17 @@ namespace TaisEngine.Run
             inst = new RunData(init);
         }
 
+        internal static void AssocVisitor()
+        {
+            Visitor.Add("gm.day", () => (double)inst.date.day, null, typeof(double));
+            Visitor.Add("gm.year", () => (double)inst.date.year, null, typeof(double));
+            Visitor.Add("gm.month", () => (double)inst.date.month, null, typeof(double));
+        }
+
         [JsonProperty]
         public Taishou taishou;
 
-        [JsonProperty, ModVisit]
+        [JsonProperty]
         public GMDate date;
 
         internal bool end_flag;

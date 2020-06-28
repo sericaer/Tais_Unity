@@ -143,8 +143,8 @@ namespace TaisEngine.ModManager
             var dest = multiValue.elems[0];
             var src = multiValue.elems[1];
 
-            left = new Factor<object>(dest, Visitor.Type.WRITE);
-            right = new Factor<object>(src, Visitor.Type.READ);
+            left = new Factor<object>(dest, Visitor.VType.WRITE);
+            right = new Factor<object>(src, Visitor.VType.READ);
         }
 
         internal override void Do()

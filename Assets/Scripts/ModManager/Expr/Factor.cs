@@ -1,10 +1,11 @@
-﻿using SyntaxAnaylize;
+﻿using System;
+using SyntaxAnaylize;
 
 namespace TaisEngine.ModManager
 {
     internal class Factor<T>
     {
-        internal Factor(SingleValue modValue, Visitor.Type vtype)
+        internal Factor(SingleValue modValue, Visitor.VType vtype)
         {
             this.raw = modValue.value;
 
@@ -24,6 +25,16 @@ namespace TaisEngine.ModManager
         internal void Write(T obj)
         {
             Visitor.Write<T>(raw, obj);
+        }
+
+        internal Type GetValueType()
+        {
+            if(staticReadValue != null)
+            {
+                return staticReadValue.GetType();
+            }
+
+            return Visitor.GetValueType(raw);
         }
 
         public object staticReadValue;

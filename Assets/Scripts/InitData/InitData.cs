@@ -20,7 +20,7 @@ namespace TaisEngine.Init
 
         internal static void AssocVisitor()
         {
-            Visitor.Add("init.taishou.background", () => inst.taishou.background, (obj) => inst.taishou.background = obj as string);
+            Visitor.Add("init.taishou.background", () => inst.taishou.background, (obj) => inst.taishou.background = obj as string, typeof(string));
         }
                 
         public Taishou taishou;

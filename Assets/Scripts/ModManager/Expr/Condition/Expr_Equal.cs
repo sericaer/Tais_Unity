@@ -5,7 +5,7 @@ namespace TaisEngine.ModManager
 {
     internal class Expr_Equal : Expr_Condition
     {
-        internal static string key;
+        internal static string key = "is.equal";
 
         internal Expr_Equal(Value value) : base(value)
         {
@@ -20,8 +20,13 @@ namespace TaisEngine.ModManager
                 throw new Expr_Exception($"{key} only support 2 element", value);
             }
 
-            left = new Factor<object>(multiValue.elems[0], Visitor.Type.READ);
-            right = new Factor<object>(multiValue.elems[1], Visitor.Type.READ);
+            left = new Factor<object>(multiValue.elems[0], Visitor.VType.READ);
+            right = new Factor<object>(multiValue.elems[1], Visitor.VType.READ);
+
+            if(left.GetValueType() != right.GetValueType())
+            {
+                throw new Expr_Exception($"left type {left.GetValueType()} not same right {right.GetValueType()}", value);
+            }
         }
 
         internal override bool ResultImp()

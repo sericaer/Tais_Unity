@@ -66,7 +66,7 @@ public class Timer : MonoBehaviour
         pauseCount--;
     }
 
-    async void Start()
+    async UniTaskVoid Start()
     {
 #if UNITY_EDITOR
         _currSpeed = 10;
@@ -97,7 +97,7 @@ public class Timer : MonoBehaviour
             {
                 //await UniTask.SwitchToMainThread();
                 //GetComponentInParent<MainScene>().CreatErrorDialog(e.Message);
-                Log.ERRO(e.Message);
+                Log.ERRO(e.Message + "\n" + e.StackTrace);
             }
         });
     }
@@ -109,7 +109,7 @@ public class Timer : MonoBehaviour
 
             {
                 await UniTask.SwitchToMainThread();
-                GetComponentInParent<MainScene>().CreateEventDialogAsync(gevent);
+                await GetComponentInParent<MainScene>().CreateEventDialogAsync(gevent);
             }
 
             await UniTask.WaitUntil(() => !isPaused);

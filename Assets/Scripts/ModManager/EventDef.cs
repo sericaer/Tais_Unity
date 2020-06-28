@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using SyntaxAnaylize;
 
@@ -11,32 +12,27 @@ namespace TaisEngine.ModManager
         {
             public string name;
 
-            public EvalExpr_MultiValue title;
-            public EvalExpr_MultiValue desc;
-            public EvalExpr_Condition trigger;
-            public EvalExpr_ModifierGroup occur_days;
+            public Expr<object[]> title;
+            public Expr<object[]> desc;
+            public Expr<bool> trigger;
+            public Expr<double> occur_days;
 
             public List<OptionDef> options;
 
-            public Element(string name, MultiItem modItems)
+            public Element(SyntaxMod.Element modElem)
             {
-                this.name = name.ToUpper();
+                this.name = Path.GetFileNameWithoutExtension(modElem.filePath).ToUpper();
 
                 object[] defTitle = { $"{name}_TITLE" };
-                this.title = EvalExpr_MultiValue.Parse(modItems, "title", defTitle);
+                this.title = Expr_MultiValue.Parse(modElem, "title", defTitle);
 
                 object[] defDesc = { $"{name}_DESC" };
-                this.desc = EvalExpr_MultiValue.Parse(modItems, "desc", defDesc);
+                this.desc = Expr_MultiValue.Parse(modElem, "desc", defDesc);
 
-                this.trigger = EvalExpr_Condition.Parse(modItems, "trigger", false);
-                this.occur_days = EvalExpr_ModifierGroup.Parse(modItems, "occur_days", 1);
+                this.trigger = Expr_Condition.Parse(modElem, "trigger", false);
+                this.occur_days = Expr_ModifierGroup.Parse(modElem, "occur_days", 1);
 
-                this.options = new List<OptionDef>();
-                var rawOptions = modItems.elems.Where(x => x.key == "option").ToArray();
-                for (int i = 0; i < rawOptions.Count(); i++)
-                {
-                    this.options.Add(new OptionDef($"{name}_OPTION_{i + 1}", rawOptions[i].value as MultiItem));
-                }
+                this.options = OptionDef.ParseList(modElem, "option", name);
             }
         }
 
@@ -47,8 +43,8 @@ namespace TaisEngine.ModManager
         {
             foreach (var modElem in modElements)
             {
-                //var elem = new Element(modElem.name, modElem.multiItem);
-                //commons.Add(elem);
+                var elem = new Element(modElem);
+                commons.Add(elem);
             }
         }
 

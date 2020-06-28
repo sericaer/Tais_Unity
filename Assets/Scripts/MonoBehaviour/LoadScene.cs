@@ -33,6 +33,7 @@ public class LoadScene : MonoBehaviour
             //ModVisitor.Visitor.InitReflect("gm", typeof(RunData));
 
             InitData.AssocVisitor();
+            RunData.AssocVisitor();
 
             Mod.Load();
         }

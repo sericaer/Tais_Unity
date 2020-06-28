@@ -1,6 +1,6 @@
 trigger = 
 {
-    is.equal = {gm.date.day, 10}
+    is.equal = {gm.day, 10}
 }
 
 occur_days = 

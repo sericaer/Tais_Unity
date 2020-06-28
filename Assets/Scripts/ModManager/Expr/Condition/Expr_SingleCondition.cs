@@ -12,7 +12,7 @@ namespace TaisEngine.ModManager
 
         internal Expr_SingleCondition(SingleValue modValue) : base(modValue)
         {
-            factor = new Factor<bool>(modValue, Visitor.Type.READ);
+            factor = new Factor<bool>(modValue, Visitor.VType.READ);
         }
 
         Factor<bool> factor;

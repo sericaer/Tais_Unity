@@ -13,32 +13,36 @@ namespace TaisEngine.ModManager
         {
             try
             {
-                var modValue = mod.multiItem.TryFind(name);
-                if (modValue == null)
-                {
-                    if (defValue != null)
-                    {
-                        return new ExprDefault<bool>(defValue.Value);
-                    }
-
-                    throw new Exception();
-                }
-
-                switch (modValue)
-                {
-                    case MultiItem multi:
-                        return ParseMulti(multi);
-                    case SingleValue single:
-                        return ParseSingle(single);
-                    default:
-                        throw new Exception($"EvalExpr_Condition not support {modValue} ");
-                }
+                return Parse(mod.multiItem, name, defValue);
             }
             catch (Exception e)
             {
                 throw new Exception($"parse file faild! {mod.filePath}", e);
             }
+        }
 
+        internal static Expr<bool> Parse(MultiItem multiItem, string name, bool? defValue)
+        {
+            var modValue = multiItem.TryFind(name);
+            if (modValue == null)
+            {
+                if (defValue != null)
+                {
+                    return new ExprDefault<bool>(defValue.Value);
+                }
+
+                throw new Exception();
+            }
+
+            switch (modValue)
+            {
+                case MultiItem multi:
+                    return ParseMulti(multi);
+                case SingleValue single:
+                    return ParseSingle(single);
+                default:
+                    throw new Exception($"EvalExpr_Condition not support {modValue} ");
+            }
         }
 
         private static Expr_Condition ParseSingle(SingleValue single)
