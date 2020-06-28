@@ -8,11 +8,23 @@ internal class Expr_Exception : Exception
 
     }
 
+    internal Expr_Exception(string info, Value value, Exception parent) : base(info, parent)
+    {
+
+    }
+
     public override string Message
     {
         get
         {
-            return $"{base.Message} when parse {value}";
+            if(value != null)
+            {
+                return $"{base.Message} when parse {value} in line:{value.line}";
+            }
+            else
+            {
+                return base.Message;
+            }
         }
     }
 

@@ -24,7 +24,7 @@ namespace TaisEngine.ModManager
             right = new Factor<object>(multiValue.elems[1], Visitor.Type.READ);
         }
 
-        internal override bool Result()
+        internal override bool ResultImp()
         {
             dynamic leftValue = left.Read();
             dynamic rightValue = right.Read();

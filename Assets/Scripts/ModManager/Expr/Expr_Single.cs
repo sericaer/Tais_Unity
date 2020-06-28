@@ -3,13 +3,13 @@ using SyntaxAnaylize;
 
 namespace TaisEngine.ModManager
 {
-    internal class Expr_Single<T> : Expr<T>
-    {
-        public Expr_Single(SingleValue singleValue) :base(singleValue)
-        {
+    //internal class Expr_Single<T> : Expr<T>
+    //{
+    //    public Expr_Single(SingleValue singleValue) :base(singleValue)
+    //    {
 
-        }
-    }
+    //    }
+    //}
 
     //public class EvalExpr_ModifierGroup : Eval<double>
     //{

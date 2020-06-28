@@ -3,20 +3,40 @@ using SyntaxAnaylize;
 
 namespace TaisEngine.ModManager
 {
-    internal class Expr<T>
+    internal abstract class Expr<T>
     {
         internal Expr(Value value)
         {
             modValue = value;
         }
 
-        internal virtual T Result()
+        internal T Result()
         {
-            return defaultValue;
+            if(defaultValue != null)
+            {
+                return (T)defaultValue;
+            }
+
+            return ResultImp();
         }
 
-        internal T defaultValue;
+        internal abstract T ResultImp();
+
+        internal object defaultValue;
         internal Value modValue;
+    }
+
+    internal class ExprDefault<T> : Expr<T>
+    {
+        internal ExprDefault(T defValue) : base(null)
+        {
+            defaultValue = defValue;
+        }
+
+        internal override T ResultImp()
+        {
+            throw new Exception();
+        }
     }
 
     //public class EvalExpr_ModifierGroup : Eval<double>
@@ -40,7 +60,7 @@ namespace TaisEngine.ModManager
 
     //    internal EvalExpr_SINGLE<double> baseValue;
     //    internal List<EvalExpr_Modifier> modifiers = new List<EvalExpr_Modifier>();
-        
+
     //    public EvalExpr_ModifierGroup(MultiItem modItem)
     //    {
     //        var modBaseValue = modItem.Find<SingleValue>("base_value");

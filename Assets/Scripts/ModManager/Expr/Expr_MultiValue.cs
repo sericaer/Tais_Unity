@@ -30,7 +30,7 @@ namespace TaisEngine.ModManager
             {
                 if (defValue != null)
                 {
-                    return new Expr_MultiValue(null) { defaultValue = defValue };
+                    return new Expr_MultiValue(defValue);
                 }
 
                 throw new Expr_Exception($"can not find {name}", multiItem);
@@ -41,13 +41,18 @@ namespace TaisEngine.ModManager
                 case MultiValue multi:
                     return new Expr_MultiValue(multi);
                 default:
-                    throw new Exception($"EvalExpr_Condition not support {modValue} ");
+                    throw new Expr_Exception($"EvalExpr_Condition not support {modValue} ", modValue);
             }
         }
 
-        internal override object[] Result()
+        internal override object[] ResultImp()
         {
             return factors.Select(x => x.Read()).ToArray();
+        }
+
+        internal Expr_MultiValue(object[] defaultValue) : base(null)
+        {
+            this.defaultValue = defaultValue;
         }
 
         internal Expr_MultiValue(MultiValue multi) : base(multi)

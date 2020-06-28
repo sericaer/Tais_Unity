@@ -5,7 +5,7 @@ namespace TaisEngine.ModManager
 {
     internal class Expr_SingleCondition : Expr_Condition
     {
-        internal override bool Result()
+        internal override bool ResultImp()
         {
             return factor.Read();
         }

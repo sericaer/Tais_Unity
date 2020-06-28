@@ -19,6 +19,11 @@ namespace TaisEngine.ModManager
             WRITE
         }
 
+        internal static void Add(string key, Func<object> reader, Action<object> write)
+        {
+            dictMethod.Add(key, (reader, write));
+        }
+
         internal static void TryParse(string key, ref object staticReadValue, Visitor.Type vType)
         {
             if(vType == Type.READ)
@@ -31,16 +36,27 @@ namespace TaisEngine.ModManager
                 if (key == "true")
                 {
                     staticReadValue = true;
+                    return;
                 }
                 if (key == "false")
                 {
                     staticReadValue = false;
+                    return;
+                }
+
+                if(!dictMethod.ContainsKey(key))
+                {
+                    staticReadValue = key;
+                    return;
                 }
             }
 
             if (vType == Type.WRITE)
             {
-                throw new Exception($"{key} not support write");
+                if (!dictMethod.ContainsKey(key) || dictMethod[key].write == null)
+                {
+                    throw new Exception($"{key} not support write");
+                }
             }
         }
 

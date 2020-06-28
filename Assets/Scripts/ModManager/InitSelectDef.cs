@@ -17,8 +17,8 @@ namespace TaisEngine.ModManager
         {
             public string name;
 
-            public Expr_Condition is_first;
-            public Expr_MultiValue desc;
+            public Expr<bool> is_first;
+            public Expr<object[]> desc;
 
             public List<OptionDef> options;
 

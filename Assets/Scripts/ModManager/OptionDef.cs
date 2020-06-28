@@ -10,7 +10,7 @@ namespace TaisEngine.ModManager
     {
         public string name;
 
-        public Expr_MultiValue desc;
+        public Expr<object[]> desc;
 
         public OptionSelected selected;
 
@@ -18,7 +18,7 @@ namespace TaisEngine.ModManager
 
         public OptionDef(string name, Value raw)
         {
-            if(!(raw is MultiValue))
+            if(!(raw is MultiItem))
             {
                 throw new Exception($"option not support {raw}");
             }
@@ -73,12 +73,11 @@ namespace TaisEngine.ModManager
 
     public class OptionSelected
     {
-        public MultiItem raw;
         internal List<Operation> operations = new List<Operation>();
 
         public OptionSelected(MultiItem opRaw, string key)
         {
-            raw = opRaw.TryFind<MultiItem>(key);
+            var raw = opRaw.TryFind<MultiItem>(key);
             if(raw == null)
             {
                 return;
@@ -102,20 +101,22 @@ namespace TaisEngine.ModManager
 
     internal abstract class Operation
     {
+        protected Item opRaw;
+
         internal static Operation Parse(Item item)
         {
-            switch(item.key)
+            switch (item.key)
             {
-                case "SET":
-                    if (!(item.value is MultiValue))
-                    {
-                        throw new Exception($"'SET' not support {item.value}");
-                    }
-
-                    return new OperationSetValue(item.value as MultiValue);
+                case "set.value":
+                    return new OperationSetValue(item);
                 default:
                     throw new Expr_Exception($"not support operation {item.key}", item);
             }
+        }
+
+        internal Operation(Item item)
+        {
+            this.opRaw = item;
         }
 
         internal abstract void Do();
@@ -126,8 +127,14 @@ namespace TaisEngine.ModManager
         private Factor<object> left;
         private Factor<object> right;
 
-        public OperationSetValue(MultiValue multiValue)
+        public OperationSetValue(Item item) : base(item)
         {
+            if (!(item.value is MultiValue))
+            {
+                throw new Exception($"'set.value' not support {item.value}");
+            }
+
+            var multiValue = item.value as MultiValue;
             if (multiValue.elems.Count() != 2)
             {
                 throw new Expr_Exception("'SET' operation only support 2 element", multiValue);

@@ -16,9 +16,6 @@ public class InitScene : MonoBehaviour
     {
         InitData.Generate();
 
-        ModVisitor.Visitor.ClearData("init_data");
-        ModVisitor.Visitor.InitData("init_data", InitData.inst);
-
         CreateNameAgePanel();
     }
 

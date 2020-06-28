@@ -1,5 +1,4 @@
-﻿using ModVisitor;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +18,11 @@ namespace TaisEngine.Init
             inst = new InitData();
         }
 
-        [ModVisit]
+        internal static void AssocVisitor()
+        {
+            Visitor.Add("init.taishou.background", () => inst.taishou.background, (obj) => inst.taishou.background = obj as string);
+        }
+                
         public Taishou taishou;
 
         public InitData()
@@ -38,13 +41,11 @@ namespace TaisEngine.Init
 
     public class Taishou
     {
-        [ModVisit]
+
         public string background;
 
-        [ModVisit]
         public string name;
 
-        [ModVisit]
         public int age;
 
         public static (int min, int max) ageRange = (25, 55);

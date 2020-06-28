@@ -3,13 +3,13 @@ using SyntaxAnaylize;
 
 namespace TaisEngine.ModManager
 {
-    internal class Expr_Condition : Expr<bool>
+    internal abstract class Expr_Condition : Expr<bool>
     {
         internal Expr_Condition(Value value) : base(value)
         {
         }
 
-        internal static Expr_Condition Parse(SyntaxMod.Element mod, string name, bool? defValue)
+        internal static Expr<bool> Parse(SyntaxMod.Element mod, string name, bool? defValue)
         {
             try
             {
@@ -18,7 +18,7 @@ namespace TaisEngine.ModManager
                 {
                     if (defValue != null)
                     {
-                        return new Expr_Condition(null) { defaultValue = defValue.Value };
+                        return new ExprDefault<bool>(defValue.Value);
                     }
 
                     throw new Exception();
@@ -55,7 +55,7 @@ namespace TaisEngine.ModManager
 
             switch (items.elems[0].key)
             {
-                case "EQUAL":
+                case "is.equal":
                     return new Expr_Equal(items.elems[0].value);
                 default:
                     throw new Exception();
