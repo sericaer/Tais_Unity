@@ -23,7 +23,7 @@ public class Depart : MonoBehaviour
     public GameObject buffPrefabs;
     public GameObject buffContent;
 
-    internal TaisEngine.Depart gmDepart;
+    internal TaisEngine.Run.Depart gmDepart;
 
     public void OnClickConfirm()
     {
@@ -35,16 +35,16 @@ public class Depart : MonoBehaviour
     {
         name.format = gmDepart.def.name;
 
-        //foreach (var pop in gmDepart.pops.OrderBy(x=>x.def.sort))
-        //{
-        //    var gameObject = Instantiate(popPrefabs, popContent.transform);
+        foreach (var pop in gmDepart.pops)
+        {
+            var gameObj = Instantiate(popPrefabs, popContent.transform);
 
-        //    var departPop = gameObject.GetComponent<DepartPop>();
-        //    listDepartPops.Add(departPop);
+            var departPop = gameObj.GetComponent<DepartPop>();
+            listDepartPops.Add(departPop);
 
-        //    departPop.gmPop = pop;
-        //    departPop.gameObject.SetActive(false);
-        //}
+            departPop.gmPop = pop;
+            departPop.gameObject.SetActive(false);
+        }
 
         //var cropGrowingToolTip = cropGrowing.transform.GetComponent<TooltipTrigger>();
         //cropGrowingToolTip.funcGetTooltipStr = () =>
@@ -71,10 +71,10 @@ public class Depart : MonoBehaviour
 
         //cropGrowing.transform.Find("value").GetComponent<Text>().text = gmDepart.is_crop_growing ? gmDepart.crop_grow_percent.ToString("N2") : "--";
 
-        //foreach (var pop in listDepartPops)
-        //{
-        //    pop.gameObject.SetActive(pop.gmPop.num > 0);
-        //}
+        foreach (var pop in listDepartPops)
+        {
+            pop.gameObject.SetActive(pop.gmPop.num > 0);
+        }
 
         //UpdateBuffers();
     }
@@ -101,6 +101,6 @@ public class Depart : MonoBehaviour
         //}
     }
 
-    //private List<DepartPop> listDepartPops = new List<DepartPop>();
+    private List<DepartPop> listDepartPops = new List<DepartPop>();
     //private List<BufferPanel> listBufferPanels = new List<BufferPanel>();
 }

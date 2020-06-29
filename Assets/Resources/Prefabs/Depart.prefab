@@ -3397,8 +3397,9 @@ MonoBehaviour:
   name: {fileID: 1263403268967003239}
   popNum: {fileID: 0}
   cropGrowing: {fileID: 0}
-  popPrefabs: {fileID: 0}
-  popContent: {fileID: 0}
+  popPrefabs: {fileID: 7003351842002278686, guid: e5e7cd53750cd4c5cb3e4c9cd0f32403,
+    type: 3}
+  popContent: {fileID: 7227523827765936357}
   buffPrefabs: {fileID: 0}
   buffContent: {fileID: 0}
 --- !u!1 &7078100566191627734

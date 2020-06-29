@@ -34,7 +34,10 @@ namespace TaisEngine.Run
         public GMDate date;
 
         [JsonProperty]
-        internal Depart[] departs;
+        internal List<Depart> departs;
+
+        [JsonProperty]
+        internal List<Pop> pops;
 
         [JsonProperty]
         internal List<string> recordMsg = new List<string>();
@@ -47,7 +50,17 @@ namespace TaisEngine.Run
 
             taishou = new Taishou(initData.taishou);
 
-            departs = DepartDef.Enumerate().Select(x => new Depart(x)).ToArray();
+            departs = DepartDef.Enumerate().Select(x => new Depart(x)).ToList();
+
+            pops = new List<Pop>();
+            foreach (var depart in departs)
+            {
+                foreach(var def in PopDef.Enumerate())
+                {
+                    var num = depart.def.popInitDict.ContainsKey(def.name) ? depart.def.popInitDict[def.name] : 0;
+                    pops.Add(new Pop(def, depart.name, num));
+                }
+            }
 
         }
 

@@ -8,7 +8,7 @@ using TaisEngine.ModManager;
 using Tools;
 using UnityEngine;
 
-namespace TaisEngine
+namespace TaisEngine.Run
 {
 
     //[JsonConverter(typeof(DepartConverter))]
@@ -27,13 +27,13 @@ namespace TaisEngine
         //    yield break;
         //}
 
-        //public IEnumerable<Pop> pops
-        //{
-        //    get
-        //    {
-        //        return GMData.inst.pops.Where(x=>x.depart_name == name);
-        //    }
-        //}
+        public IEnumerable<Pop> pops
+        {
+            get
+            {
+                return RunData.inst.pops.Where(x=>x.depart_name == name);
+            }
+        }
 
 
         ////public List<Buffer> buffers = new List<Buffer>();
@@ -100,11 +100,6 @@ namespace TaisEngine
 
            //GMData.inst.allBuffers.Add(this.buffers);
 
-            //foreach (var elem in PopDef.Enumerate())
-            //{
-            //    double num = def.pop_init.ContainsKey(elem.name) ? def.pop_init[elem.name] : 0;
-            //    new Pop(elem, this.name, num);
-            //}
 
             //foreach (var elem in BufferDef.BufferDepartDef.Enumerate())
             //{

@@ -11,29 +11,26 @@ using ModVisitor;
 
 namespace TaisEngine.ModManager
 {
-    internal class DepartDef
+    internal class PopDef
     {
         internal class Element
         {
             internal string name;
 
-            internal string color;
-
-            internal Dictionary<string, int> popInitDict;
+            internal bool is_tax;
 
             public Element(SyntaxMod.Element modElem)
             {
                 this.name = Path.GetFileNameWithoutExtension(modElem.filePath).ToUpper();
+                this.is_tax = Expr<bool>.staticParse(modElem, "is_tax");
 
-                var colorObj = Expr<object[]>.staticParse(modElem, "color");
-                if(colorObj.Count() !=3)
-                {
-                    throw new Exception();
-                }
+                //var colorObj = Expr_MultiValue.Parse(modElem, "color", null).Result();
+                //if(colorObj.Count() !=3)
+                //{
+                //    throw new Exception();
+                //}
 
-                color = string.Join(",", colorObj);
-
-                popInitDict = Expr<Dictionary<string, string>>.staticParse(modElem, "pop_init").ToDictionary(k => k.Key, v => int.Parse(v.Value));
+                //color = string.Join(",", colorObj);
             }
 
             internal void Check()
@@ -46,7 +43,7 @@ namespace TaisEngine.ModManager
         {
             foreach (var mod in Mod.listMod.Where(x => x.content != null))
             {
-                var finded = mod.content.departDef.lists.Find(x => x.name == name);
+                var finded = mod.content.popDef.lists.Find(x => x.name == name);
                 if(finded != null)
                 {
                     return finded;
@@ -60,7 +57,7 @@ namespace TaisEngine.ModManager
         {
             foreach(var mod in Mod.listMod.Where(x=>x.content != null))
             {
-                foreach(var elem in mod.content.departDef.lists)
+                foreach(var elem in mod.content.popDef.lists)
                 {
                     yield return elem;
                 }
@@ -69,7 +66,7 @@ namespace TaisEngine.ModManager
 
         internal List<Element> lists = new List<Element>();
 
-        internal DepartDef(List<SyntaxMod.Element> modElements)
+        internal PopDef(List<SyntaxMod.Element> modElements)
         {
             if(modElements == null)
             {

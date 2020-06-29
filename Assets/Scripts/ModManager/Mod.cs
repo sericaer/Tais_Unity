@@ -23,6 +23,7 @@ namespace TaisEngine.ModManager
             modStructDict.Add("init_select",  (content, modElemnts) => { content.initSelectDef = new InitSelectDef(modElemnts); });
             modStructDict.Add("event/common", (content, modElemnts) => { content.CreateCommonEvent(modElemnts); });
             modStructDict.Add("depart",       (content, modElemnts) => { content.departDef = new DepartDef(modElemnts); });
+            modStructDict.Add("pop",          (content, modElemnts) => { content.popDef = new PopDef(modElemnts); });
         }
 
 
@@ -102,6 +103,7 @@ namespace TaisEngine.ModManager
             internal InitSelectDef initSelectDef;
             internal EventDef eventDef;
             internal DepartDef departDef;
+            internal PopDef popDef;
 
             //internal BackgroundDef backgroundDef;
             //internal DepartDef departDef;
