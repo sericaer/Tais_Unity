@@ -34,15 +34,21 @@ namespace TaisEngine.Run
         public GMDate date;
 
         [JsonProperty]
+        internal Depart[] departs;
+
+        [JsonProperty]
         internal List<string> recordMsg = new List<string>();
 
         internal bool end_flag;
 
         public RunData(InitData initData)
         {
+            date = new GMDate();
+
             taishou = new Taishou(initData.taishou);
 
-            date = new GMDate();
+            departs = DepartDef.Enumerate().Select(x => new Depart(x)).ToArray();
+
         }
 
         public RunData()

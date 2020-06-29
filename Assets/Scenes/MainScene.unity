@@ -11640,7 +11640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 982963902}
-  depart: {fileID: 0}
+  depart: {fileID: 7227523826985585043, guid: 2db4aeb17629d49dfadbe994d42c4e68, type: 3}
 --- !u!1 &1854235690
 GameObject:
   m_ObjectHideFlags: 0

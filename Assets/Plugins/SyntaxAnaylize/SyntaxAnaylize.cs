@@ -122,8 +122,12 @@ namespace SyntaxAnaylize
                                 return multiValue;
                             }
 
-                            if(multiValue != null && key == "")
+                            if(multiValue != null)
                             {
+                                if(key != "")
+                                {
+                                    multiValue.Add(new SingleValue(key, line));
+                                }
                                 return multiValue;
                             }
 
@@ -131,18 +135,20 @@ namespace SyntaxAnaylize
                         }
                     case ELEM_TYPE.COMMA:
                         {
-                            if (key == "")
+                            if(multiValue == null)
                             {
-                                throw new Exception();
-                            }
-                            if (multiItem != null)
-                            {
-                                throw new Exception();
-                            }
-                            if (multiValue == null)
-                            {
+                                if (key == "")
+                                {
+                                    throw new Exception();
+                                }
+                                if (multiItem != null)
+                                {
+                                    throw new Exception();
+                                }
+
                                 multiValue = new List<SingleValue>();
                             }
+                           
                         }
                         break;
                     default:

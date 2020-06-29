@@ -20,8 +20,9 @@ namespace TaisEngine.ModManager
         {
             modStructDict = new Dictionary<string, Action<Content, List<SyntaxMod.Element>>>();
 
-            modStructDict.Add("init_select",  (content, modElemnts) => { content.CreateInitSelect(modElemnts); });
+            modStructDict.Add("init_select",  (content, modElemnts) => { content.initSelectDef = new InitSelectDef(modElemnts); });
             modStructDict.Add("event/common", (content, modElemnts) => { content.CreateCommonEvent(modElemnts); });
+            modStructDict.Add("depart",       (content, modElemnts) => { content.departDef = new DepartDef(modElemnts); });
         }
 
 
@@ -100,6 +101,7 @@ namespace TaisEngine.ModManager
             internal LocalString localString;
             internal InitSelectDef initSelectDef;
             internal EventDef eventDef;
+            internal DepartDef departDef;
 
             //internal BackgroundDef backgroundDef;
             //internal DepartDef departDef;
@@ -127,12 +129,16 @@ namespace TaisEngine.ModManager
                     elem.Value(this, syntaxMod.GetElements(elem.Key));
                 }
 
+                CheckMod();
+
                 Log.INFO("Load mod content finish");
             }
 
-            internal void CreateInitSelect(List<SyntaxMod.Element> modElements)
+            private void CheckMod()
             {
-                initSelectDef = new InitSelectDef(modElements);
+                //initSelectDef.Check();
+                //eventDef.Check();
+                departDef.Check();
             }
 
             internal void CreateCommonEvent(List<SyntaxMod.Element> modElements)
@@ -144,6 +150,7 @@ namespace TaisEngine.ModManager
 
                 eventDef.CreateCommons(modElements);
             }
+
 
             //internal void Load(string mod, LuaEnv luaenv)
             //{

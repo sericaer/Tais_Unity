@@ -1,5 +1,6 @@
 ﻿using System;
-
+using TaisEngine.Extensions;
+using TaisEngine.Run;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,17 +25,17 @@ public class Map : MonoBehaviour
 
         var color = (image.mainTexture as Texture2D).GetPixel(Convert.ToInt32(px), Convert.ToInt32(py));
 
-        var strColor = string.Format("({0:0}, {1:0}, {2:0})", color.r * 255, color.g * 255, color.b * 255);
+        var strColor = string.Format("{0:0},{1:0},{2:0}", color.r * 255, color.g * 255, color.b * 255);
 
         Debug.Log(strColor);
 
-        //var gmDepart = TaisEngine.GMData.inst.FindDepartByColor(strColor);
-        //if (gmDepart == null)
-        //{
-        //    return;
-        //}
+        var gmDepart = RunData.inst.departs.FindByColor(strColor);
+        if (gmDepart == null)
+        {
+            return;
+        }
 
-        //var gameObj = Instantiate(depart, GetComponentInParent<Canvas>().transform);
-        //gameObj.GetComponentInChildren<Depart>().gmDepart = gmDepart;
+        var gameObj = Instantiate(depart, GetComponentInParent<Canvas>().transform);
+        gameObj.GetComponentInChildren<Depart>().gmDepart = gmDepart;
     }
 }
