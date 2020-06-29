@@ -14,7 +14,7 @@ public class MainScene : MonoBehaviour
     public GameObject reportCollectTax;
     public GameObject dialogException;
 
-    //public MsgPanel msgPanel;
+    public MsgPanel msgPanel;
 
     //public FamilyTop familyTop;
     //public GameObject familyContent;
@@ -50,7 +50,7 @@ public class MainScene : MonoBehaviour
     internal async UniTask CreateEventDialogAsync(EventDef.Element eventobj)
     {
         object[] eventTitleParams = eventobj.title.Result();
-        //msgPanel.AddMessage(LocalString.Get(eventTitleParams[0] as string, eventTitleParams.Skip(1).ToArray()));
+        msgPanel.AddMessage(LocalString.Get(eventTitleParams[0] as string, eventTitleParams.Skip(1).ToArray()));
 
         //if (eventobj.hide.Result())
         //{

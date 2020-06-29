@@ -1682,10 +1682,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 285238174}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ef193249df50cf408808f9f23814eef, type: 3}
+  m_Script: {fileID: 11500000, guid: 91b20aad64b5140dbaa55f3e15f04f33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  msgElemtPrefabs: {fileID: 1805397585196859359, guid: de4dcf760bddc6441af9ed9d56ec3f05,
+  msgElemtPrefabs: {fileID: 1805397585196859359, guid: 005c5812057a1417cbb1ddb11a3efcce,
     type: 3}
 --- !u!1 &286830356
 GameObject:
@@ -5598,6 +5598,7 @@ MonoBehaviour:
     type: 3}
   reportCollectTax: {fileID: 0}
   dialogException: {fileID: 0}
+  msgPanel: {fileID: 285238178}
 --- !u!1 &843834514
 GameObject:
   m_ObjectHideFlags: 0

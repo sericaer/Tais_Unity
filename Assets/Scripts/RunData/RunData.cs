@@ -33,6 +33,9 @@ namespace TaisEngine.Run
         [JsonProperty]
         public GMDate date;
 
+        [JsonProperty]
+        internal List<string> recordMsg = new List<string>();
+
         internal bool end_flag;
 
         public RunData(InitData initData)
