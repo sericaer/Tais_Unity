@@ -49,10 +49,13 @@ namespace TaisEngine.ModManager
                     return;
                 }
 
-                if (key.StartsWith("gm.") || key.StartsWith("init."))
+                if (!key.StartsWith("gm.") && !key.StartsWith("init."))
                 {
-                    throw new Exception($"can not find {key} in data visitor");
+                    staticReadValue = key;
+                    return;
                 }
+
+                throw new Exception($"can not find {key} in data visitor");
             }
 
             if (vType == VType.WRITE)

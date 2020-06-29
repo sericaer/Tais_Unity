@@ -5,17 +5,17 @@ using TaisEngine;
 using UnityEngine.UI.Extensions;
 using System;
 using TaisEngine.Run;
+using UnityEngine.SceneManagement;
 
 public class MsgPanel : MonoBehaviour
 {
     public GameObject msgElemtPrefabs;
 
-    // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
-        if(transform.childCount == 0)
+        if (transform.childCount != RunData.inst.recordMsg.Count)
         {
-            for(int i=0; i< RunData.inst.recordMsg.Count; i++)
+            for (int i = 0; i < RunData.inst.recordMsg.Count; i++)
             {
                 var gmObj = Instantiate(msgElemtPrefabs, this.transform) as GameObject;
                 gmObj.GetComponent<LocalText>().format = RunData.inst.recordMsg[i];
@@ -32,11 +32,14 @@ public class MsgPanel : MonoBehaviour
 
     internal void AddMessage(string title)
     {
-        var item = RunData.inst.date + " " + title;
-        RunData.inst.recordMsg.Add(item);
+        if(this.gameObject.activeInHierarchy)
+        {
+            var item = RunData.inst.date + " " + title;
+            RunData.inst.recordMsg.Add(item);
 
-        var gmObj = Instantiate(msgElemtPrefabs, this.transform) as GameObject;
-        gmObj.GetComponent<LocalText>().format = item;
-        gmObj.transform.SetAsFirstSibling();
+            var gmObj = Instantiate(msgElemtPrefabs, this.transform) as GameObject;
+            gmObj.GetComponent<LocalText>().format = item;
+            gmObj.transform.SetAsFirstSibling();
+        }
     }
 }

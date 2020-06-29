@@ -16,7 +16,10 @@ public class DialogEsc : MonoBehaviour
     public void onClickQuit()
     {
         //GMData.inst.end_flag = true;
-        SceneManager.LoadScene("StartScene");
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        SceneManager.LoadSceneAsync("StartScene");
+        
+        
     }
 
     public void onClickCancel()

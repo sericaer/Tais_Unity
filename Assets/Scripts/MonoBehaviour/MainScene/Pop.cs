@@ -5,9 +5,9 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI.Extensions;
 
-using ModelShark;
+//using ModelShark;
 using Tools;
-using UnityUITable;
+//using UnityUITable;
 using System;
 
 public class Pop : MonoBehaviour
@@ -29,7 +29,7 @@ public class Pop : MonoBehaviour
 
     //public Buffer bufferPrefabs;
 
-    public TaisEngine.Pop gmPop;
+    public TaisEngine.Run.Pop gmPop;
 
     //public class PERSON_INFO
     //{
@@ -58,20 +58,20 @@ public class Pop : MonoBehaviour
         name.format = gmPop.name;
         depart.format = gmPop.depart.name;
 
-        if (gmPop.is_consume)
-        {
-            consume.GetComponent<TooltipTrigger>().funcGetTooltipStr = () =>
-            {
-                var detail = string.Join("\n", gmPop.consumeDetail.Select(x => $"<color={(x.value < 0 ? "red" : "green")}>{TaisEngine.Mod.GetLocalString(x.name)} {x.value.ToString("N2")} </color>"));
-                return ("consume", detail);
-            };
-        }
+        //if (gmPop.is_consume)
+        //{
+        //    consume.GetComponent<TooltipTrigger>().funcGetTooltipStr = () =>
+        //    {
+        //        var detail = string.Join("\n", gmPop.consumeDetail.Select(x => $"<color={(x.value < 0 ? "red" : "green")}>{TaisEngine.Mod.GetLocalString(x.name)} {x.value.ToString("N2")} </color>"));
+        //        return ("consume", detail);
+        //    };
+        //}
 
-        if (gmPop.family != null)
-        {
-            familyPanel.SetActive(true);
-            familyPanel.GetComponent<FamilyPanel>().gmFamily = gmPop.family;
-        }
+        //if (gmPop.family != null)
+        //{
+        //    familyPanel.SetActive(true);
+        //    familyPanel.GetComponent<FamilyPanel>().gmFamily = gmPop.family;
+        //}
 
         //personTable.SetActive(pop.);
         //if (pop.familyValid)
@@ -93,14 +93,14 @@ public class Pop : MonoBehaviour
     {
         num.format = gmPop.num.ToString("N0");
 
-        if(gmPop.is_consume)
-        {
-            consume.transform.Find("value").GetComponent<LocalText>().format = gmPop.consume.ToString();
-        }
-        else
-        {
-            consume.SetActive(false);
-        }
+        //if(gmPop.is_consume)
+        //{
+        //    consume.transform.Find("value").GetComponent<LocalText>().format = gmPop.consume.ToString();
+        //}
+        //else
+        //{
+        //    consume.SetActive(false);
+        //}
 
         //if(pop.farmVaild)
         //{
@@ -152,27 +152,27 @@ public class Pop : MonoBehaviour
 
     private void UpdateBuffers()
     {
-        var needDestroys = listBufferPanels.Where(x => gmPop.buffers.All(y=>y!= x.gmBuffer)).ToArray();
-        foreach (var elem in needDestroys)
-        {
-            Destroy(elem.gameObject);
+        //var needDestroys = listBufferPanels.Where(x => gmPop.buffers.All(y=>y!= x.gmBuffer)).ToArray();
+        //foreach (var elem in needDestroys)
+        //{
+        //    Destroy(elem.gameObject);
 
-            listBufferPanels.Remove(elem);
-        }
+        //    listBufferPanels.Remove(elem);
+        //}
 
-        var needCreate = gmPop.buffers.Where(x => listBufferPanels.All(y => y.gmBuffer != x)).ToArray();
-        foreach (var elem in needCreate)
-        {
-            var taskObj = Instantiate(buffPrefabs, buffContent.transform);
+        //var needCreate = gmPop.buffers.Where(x => listBufferPanels.All(y => y.gmBuffer != x)).ToArray();
+        //foreach (var elem in needCreate)
+        //{
+        //    var taskObj = Instantiate(buffPrefabs, buffContent.transform);
 
-            taskObj.name = elem.name;
-            taskObj.GetComponent<BufferPanel>().gmBuffer = elem;
+        //    taskObj.name = elem.name;
+        //    taskObj.GetComponent<BufferPanel>().gmBuffer = elem;
 
-            listBufferPanels.Add(taskObj.GetComponent<BufferPanel>());
-        }
+        //    listBufferPanels.Add(taskObj.GetComponent<BufferPanel>());
+        //}
     }
 
-    private List<BufferPanel> listBufferPanels = new List<BufferPanel>();
+    //private List<BufferPanel> listBufferPanels = new List<BufferPanel>();
 
     //private List<Buffer> listBufferObj = new List<Buffer>();
 }

@@ -500,7 +500,8 @@ MonoBehaviour:
   type: {fileID: 8640684374455847515}
   family: {fileID: 5678218660695795440}
   num: {fileID: 5908973529427068844}
-  popPrefabs: {fileID: 0}
+  popPrefabs: {fileID: 3615867478292115009, guid: e2306cc1aafe67848b17c414ef8c003b,
+    type: 3}
 --- !u!114 &4406716297573516016
 MonoBehaviour:
   m_ObjectHideFlags: 0
