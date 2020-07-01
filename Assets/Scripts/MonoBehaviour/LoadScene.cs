@@ -29,11 +29,13 @@ public class LoadScene : MonoBehaviour
         try
         {
             Directory.CreateDirectory(GMSerialize.savePath);
-            //ModVisitor.Visitor.InitReflect("init_data", typeof(InitData));
-            //ModVisitor.Visitor.InitReflect("gm", typeof(RunData));
 
-            InitData.AssocVisitor();
-            RunData.AssocVisitor();
+            Visitor.InitReflect("init", typeof(InitData));
+            Visitor.InitReflect("common", typeof(RunData));
+            Visitor.InitReflect("depart", typeof(Depart));
+
+            //InitData.AssocVisitor();
+            //RunData.AssocVisitor();
 
             Mod.Load();
         }

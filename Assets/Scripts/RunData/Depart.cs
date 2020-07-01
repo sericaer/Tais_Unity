@@ -78,6 +78,7 @@ namespace TaisEngine.Run
             }
         }
 
+
         //internal List<(string name, double value)> growSpeedDetail
         //{
         //    get

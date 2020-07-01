@@ -36,34 +36,25 @@ namespace TaisEngine.ModManager
             }
         }
 
-        internal List<EventDef.Element> commons = new List<Element>();
-        internal List<EventDef.Element> departs = new List<Element>();
-
-        internal void CreateCommons(List<SyntaxMod.Element> modElements)
+        internal static List<Element> Anaylize(List<SyntaxMod.Element> modElemnts)
         {
-            foreach (var modElem in modElements)
+            List<Element> rslt = new List<Element>();
+            foreach (var elem in modElemnts)
             {
-                var elem = new Element(modElem);
-                commons.Add(elem);
+                rslt.Add(new Element(elem));
             }
+
+            return rslt;
         }
 
-        static internal IEnumerable<EventDef.Element> Enumerate()
-        {
-            foreach(var mod in Mod.listMod.Where(x=>x.content != null))
-            {
-                foreach(var elem in mod.content.eventDef.commons)
-                {
-                    yield return elem;
-                }
-            }
-        }
+        internal List<EventDef.Element> common;
+        internal List<EventDef.Element> depart;
 
         static internal IEnumerable<EventDef.Element> Generate()
         {
             foreach (var mod in Mod.listMod.Where(x => x.content != null))
             {
-                foreach (var elem in mod.content.eventDef.commons)
+                foreach (var elem in mod.content.eventDef.common)
                 {
                     if(elem.trigger.Result())
                     {
@@ -71,6 +62,24 @@ namespace TaisEngine.ModManager
                         {
                             yield return elem;
                         }
+                    }
+                }
+
+                foreach (var elem in mod.content.eventDef.depart)
+                {
+                    foreach(var depart in Run.RunData.inst.departs)
+                    {
+                        Visitor.SetObj("depart", depart);
+
+                        if (elem.trigger.Result())
+                        {
+                            if (Tools.GRandom.isOccurDays((int)elem.occur_days.Result()))
+                            {
+                                yield return elem;
+                            }
+                        }
+
+                        Visitor.SetObj("depart", null);
                     }
                 }
             }

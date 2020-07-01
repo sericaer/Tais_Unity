@@ -17,12 +17,8 @@ namespace TaisEngine.Init
         {
             inst = new InitData();
         }
-
-        internal static void AssocVisitor()
-        {
-            Visitor.Add("init.taishou.background", () => inst.taishou.background, (obj) => inst.taishou.background = obj as string, typeof(string));
-        }
-                
+          
+        [VisitPropery]      
         public Taishou taishou;
 
         public InitData()
@@ -41,7 +37,7 @@ namespace TaisEngine.Init
 
     public class Taishou
     {
-
+        [VisitPropery("init.taishou.background")]
         public string background;
 
         public string name;

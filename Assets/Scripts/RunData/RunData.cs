@@ -20,17 +20,10 @@ namespace TaisEngine.Run
             inst = new RunData(init);
         }
 
-        internal static void AssocVisitor()
-        {
-            Visitor.Add("gm.day", () => (double)inst.date.day, null, typeof(double));
-            Visitor.Add("gm.year", () => (double)inst.date.year, null, typeof(double));
-            Visitor.Add("gm.month", () => (double)inst.date.month, null, typeof(double));
-        }
-
         [JsonProperty]
         public Taishou taishou;
 
-        [JsonProperty]
+        [JsonProperty, VisitPropery]
         public GMDate date;
 
         [JsonProperty]

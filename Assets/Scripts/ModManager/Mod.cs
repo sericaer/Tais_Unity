@@ -21,9 +21,11 @@ namespace TaisEngine.ModManager
             modStructDict = new Dictionary<string, Action<Content, List<SyntaxMod.Element>>>();
 
             modStructDict.Add("init_select",  (content, modElemnts) => { content.initSelectDef = new InitSelectDef(modElemnts); });
-            modStructDict.Add("event/common", (content, modElemnts) => { content.CreateCommonEvent(modElemnts); });
+            modStructDict.Add("event/common", (content, modElemnts) => { content.eventDef.common = EventDef.Anaylize(modElemnts); });
+            modStructDict.Add("event/depart", (content, modElemnts) => { content.eventDef.depart = EventDef.Anaylize(modElemnts); });
             modStructDict.Add("depart",       (content, modElemnts) => { content.departDef = new DepartDef(modElemnts); });
             modStructDict.Add("pop",          (content, modElemnts) => { content.popDef = new PopDef(modElemnts); });
+            modStructDict.Add("buffer/depart", (content, modElemnts) => { content.bufferDef.depart = BufferDef.Anaylize(modElemnts); });
         }
 
 
@@ -104,6 +106,7 @@ namespace TaisEngine.ModManager
             internal EventDef eventDef;
             internal DepartDef departDef;
             internal PopDef popDef;
+            internal BufferDef bufferDef;
 
             //internal BackgroundDef backgroundDef;
             //internal DepartDef departDef;
@@ -124,9 +127,12 @@ namespace TaisEngine.ModManager
 
                 localString = new LocalString($"{path}/lang/");
 
+                eventDef = new EventDef();
+                bufferDef = new BufferDef();
+
                 syntaxMod = new SyntaxMod(path);
 
-                foreach(var elem in Mod.modStructDict)
+                foreach (var elem in Mod.modStructDict)
                 {
                     elem.Value(this, syntaxMod.GetElements(elem.Key));
                 }
@@ -142,34 +148,6 @@ namespace TaisEngine.ModManager
                 //eventDef.Check();
                 departDef.Check();
             }
-
-            internal void CreateCommonEvent(List<SyntaxMod.Element> modElements)
-            {
-                if(eventDef == null)
-                {
-                    eventDef = new EventDef();
-                }
-
-                eventDef.CreateCommons(modElements);
-            }
-
-
-            //internal void Load(string mod, LuaEnv luaenv)
-            //{
-            //    popDef = new PopDef(mod, luaenv.Global);
-            //    departDef = new DepartDef(mod, luaenv.Global);
-            //    backgroundDef = new BackgroundDef(mod,luaenv.Global);
-            //    eventDef = new EventDef(mod, luaenv.Global.Get<LuaTable>("EVENT"));
-            //    taskDef = new TaskDef(mod, luaenv.Global);
-            //    bufferDef = new BufferDef(mod, luaenv.Global.Get<LuaTable>("BUFFER"));
-            //    defines = new Defines(mod, luaenv.Global.Get<LuaTable>("DEFINES"));
-            //}
-        }
-
-        enum MOD_STRUCT
-        {
-            INIT_SELECT,
-
         }
     }
 }

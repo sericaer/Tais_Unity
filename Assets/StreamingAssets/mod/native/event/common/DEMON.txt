@@ -1,6 +1,6 @@
 trigger = 
 {
-    is.equal = {gm.day, 10}
+    is.equal = {common.day, 10}
 }
 
 occur_days = 
