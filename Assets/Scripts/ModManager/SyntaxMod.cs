@@ -32,15 +32,18 @@ namespace TaisEngine.ModManager
             var subpath = $"{path}/{dir}/";
 
             List<Element> elements = new List<Element>();
-            foreach (var file in Directory.EnumerateFiles(subpath, "*.txt"))
+            if(Directory.Exists(subpath))
             {
-                Element element = new Element()
+                foreach (var file in Directory.EnumerateFiles(subpath, "*.txt"))
                 {
-                    filePath = file,
-                    multiItem = Syntax.Anaylize(file, File.ReadAllText(file))
-                };
+                    Element element = new Element()
+                    {
+                        filePath = file,
+                        multiItem = Syntax.Anaylize(file, File.ReadAllText(file))
+                    };
 
-                elements.Add(element);
+                    elements.Add(element);
+                }
             }
 
             dict.Add(dir, elements);

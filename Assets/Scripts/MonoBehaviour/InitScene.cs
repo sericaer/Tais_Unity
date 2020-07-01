@@ -15,6 +15,7 @@ public class InitScene : MonoBehaviour
     void Start()
     {
         InitData.Generate();
+        Visitor.SetObj("init", InitData.inst);
 
         CreateNameAgePanel();
     }
