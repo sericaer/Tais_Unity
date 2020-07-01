@@ -20,7 +20,7 @@ namespace TaisEngine.Run
             inst = new RunData(init);
         }
 
-        [JsonProperty]
+        [JsonProperty, VisitPropery]
         public Economy economy;
 
         [JsonProperty]

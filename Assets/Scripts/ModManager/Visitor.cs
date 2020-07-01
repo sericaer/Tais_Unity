@@ -108,7 +108,7 @@ namespace TaisEngine.ModManager
 
         internal static void SetObj(string key, object obj)
         {
-            GetElement(key).obj = obj;
+            dictRoot[key].obj = obj;
         }
 
         internal static void TryParse(string key, ref object staticReadValue, Visitor.VType vType)

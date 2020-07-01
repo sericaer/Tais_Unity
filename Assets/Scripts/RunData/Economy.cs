@@ -2,13 +2,14 @@
 using System.Linq;
 
 using Newtonsoft.Json;
+using TaisEngine.ModManager;
 
 namespace TaisEngine.Run
 {
     [JsonObject(MemberSerialization.OptIn)]
     public class Economy
     {
-        [JsonProperty]
+        [JsonProperty, VisitPropery("common.economy")]
         public double value;
 
         //public void currTaxChanged(float value)

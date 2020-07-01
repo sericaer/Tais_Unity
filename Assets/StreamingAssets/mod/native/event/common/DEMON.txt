@@ -12,6 +12,6 @@ option =
 {
     selected = 
     {
-        set.value = {gm.economy, 100}
+        set.value = {common.economy, 100}
     }
 }

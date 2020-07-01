@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using SyntaxAnaylize;
 
 namespace TaisEngine.ModManager
@@ -23,10 +24,18 @@ namespace TaisEngine.ModManager
             left = new Factor<object>(multiValue.elems[0], Visitor.VType.READ);
             right = new Factor<object>(multiValue.elems[1], Visitor.VType.READ);
 
-            if(left.GetValueType() != right.GetValueType())
+
+            if(left.GetValueType() == right.GetValueType())
             {
-                throw new Expr_Exception($"left type {left.GetValueType()} not same right {right.GetValueType()}", value);
+                return;
             }
+
+            if(IsNumericType(left.GetValueType()) && IsNumericType(right.GetValueType()))
+            {
+                return;
+            }
+
+            throw new Expr_Exception($"left type {left.GetValueType()} not same right {right.GetValueType()}", value);
         }
 
         internal override bool ResultImp()
@@ -39,5 +48,19 @@ namespace TaisEngine.ModManager
 
         Factor<object> left;
         Factor<object> right;
+
+        private static HashSet<Type> NumericTypes = new HashSet<Type>
+        {
+            typeof(int),
+            typeof(uint),
+            typeof(double),
+            typeof(decimal)
+        };
+
+        internal static bool IsNumericType(Type type)
+        {
+            return NumericTypes.Contains(type) ||
+                   NumericTypes.Contains(Nullable.GetUnderlyingType(type));
+        }
     }
 }
