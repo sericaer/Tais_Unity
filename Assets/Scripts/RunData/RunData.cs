@@ -25,7 +25,11 @@ namespace TaisEngine.Run
             Visitor.Add("gm.day", () => (double)inst.date.day, null, typeof(double));
             Visitor.Add("gm.year", () => (double)inst.date.year, null, typeof(double));
             Visitor.Add("gm.month", () => (double)inst.date.month, null, typeof(double));
+            Visitor.Add("gm.economy", () => (double)inst.economy.value, (value)=> inst.economy.value = (double)value, typeof(double));
         }
+
+        [JsonProperty]
+        public Economy economy;
 
         [JsonProperty]
         public Taishou taishou;
@@ -47,6 +51,8 @@ namespace TaisEngine.Run
         public RunData(InitData initData)
         {
             date = new GMDate();
+
+            economy = new Economy();
 
             taishou = new Taishou(initData.taishou);
 

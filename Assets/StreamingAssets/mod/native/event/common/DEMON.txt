@@ -12,6 +12,6 @@ option =
 {
     selected = 
     {
-        nop
+        set.value = {gm.economy, 100}
     }
 }
