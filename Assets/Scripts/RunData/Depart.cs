@@ -17,15 +17,12 @@ namespace TaisEngine.Run
     {
         //public static int growingdays = 250;
 
-        //internal static IEnumerable<EventDef.Interface> DaysInc()
-        //{
-        //    foreach(var depart in GMData.inst.departs)
-        //    {
-        //        depart.cropGrowingProcess();
-        //    }
+        internal IEnumerable<EventDef.Element> DaysInc()
+        {
+            cropGrowingProcess();
 
-        //    yield break;
-        //}
+            yield break;
+        }
 
         public IEnumerable<Pop> pops
         {
@@ -50,9 +47,6 @@ namespace TaisEngine.Run
         public string name;
 
         [JsonProperty]
-        public bool is_crop_growing;
-
-        [JsonProperty]
         public double crop_grow_percent;
 
         //[JsonProperty]
@@ -61,14 +55,50 @@ namespace TaisEngine.Run
         [JsonProperty]
         internal bool cancel_tax;
 
-        //internal double cropGrowingSpeed
-        //{
-        //    get
-        //    {
-        //        return growSpeedDetail.Sum(x => x.value);
-        //    }
-        //}
+        internal double cropGrowingSpeed
+        {
+            get
+            {
+                return growSpeedDetail.Sum(x => x.value);
+            }
+        }
 
+        internal bool cropGrowingValid
+        {
+            get
+            {
+                var startDate = CommonDef.getCropGrowingStartDate();
+                if (RunData.inst.date.month < startDate.month)
+                {
+                    return false;
+                }
+
+                if (RunData.inst.date.month == startDate.month)
+                {
+                    if (RunData.inst.date.day < startDate.day)
+                    {
+                        return false;
+                    }
+                }
+
+                var endDate = CommonDef.getCropGrowingEndDate();
+
+                if (RunData.inst.date.month > startDate.month)
+                {
+                    return false;
+                }
+
+                if (RunData.inst.date.month == startDate.month)
+                {
+                    if (RunData.inst.date.day > startDate.day)
+                    {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+        }
 
         internal DepartDef.Element def
         {
@@ -79,19 +109,19 @@ namespace TaisEngine.Run
         }
 
 
-        //internal List<(string name, double value)> growSpeedDetail
-        //{
-        //    get
-        //    {
-        //        var rslt = new List<(string name, double value)>();
+        internal List<(string name, double value)> growSpeedDetail
+        {
+            get
+            {
+                var rslt = new List<(string name, double value)>();
 
-        //        rslt.Add(("BASE_VALUE", 100.0 / growingdays));
-        //        rslt.AddRange(buffers.exist_crop_growing_effects()
-        //                             .Select(x => (x.name, x.value * 100.0 / growingdays)));
+                rslt.Add(("BASE_VALUE", CommonDef.getCropGrowingSpeed()));
+                //rslt.AddRange(buffers.exist_crop_growing_effects()
+                //                     .Select(x => (x.name, x.value * 100.0 / growingdays)));
 
-        //        return rslt;
-        //    }
-        //}
+                return rslt;
+            }
+        }
 
         internal Depart(DepartDef.Element def)
         {
@@ -115,22 +145,13 @@ namespace TaisEngine.Run
 
         }
 
-        //private void cropGrowingProcess()
-        //{
-        //    if(is_crop_growing)
-        //    {
-        //        crop_grow_percent += cropGrowingSpeed;
-        //    }
-        //    else
-        //    {
-        //        crop_grow_percent = 0;
-        //    }
-
-        //    if(crop_grow_percent < 0)
-        //    {
-        //        crop_grow_percent = 0;
-        //    }
-        //}
+        private void cropGrowingProcess()
+        {
+            if (is_crop_growing)
+            {
+                crop_grow_percent += cropGrowingSpeed;
+            }
+        }
 
         //internal void growStart()
         //{

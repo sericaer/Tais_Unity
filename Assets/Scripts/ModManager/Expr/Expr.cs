@@ -26,53 +26,58 @@ namespace TaisEngine.ModManager
         internal object defaultValue;
         internal Value modValue;
 
-        internal static T staticParse(SyntaxMod.Element modElem, string key)
+        internal static T staticParseMod(SyntaxMod.Element modElem, string key)
         {
             try
             {
-                if (typeof(T) == typeof(bool))
-                {
-                    var raw = modElem.multiItem.Find<SingleValue>(key);
-                    object obj = bool.Parse(raw.value);
-                    return (T)obj;
-                }
-                if (typeof(T) == typeof(Dictionary<string, string>))
-                {
-                    var rslt = new Dictionary<string, string>();
-                    var raw = modElem.multiItem.Find<MultiItem>(key);
-                    foreach (var elem in raw.elems)
-                    {
-                        rslt.Add(elem.key, elem.value.ToString());
-                    }
-
-                    object obj = rslt;
-                    return (T)obj;
-                }
-                if(typeof(T) == typeof(object[]))
-                {
-                    var rslt = new List<object>();
-                    var raw = modElem.multiItem.Find<MultiValue>(key);
-                    foreach (var elem in raw.elems)
-                    {
-                        var factor = new Factor<object>(elem, Visitor.VType.READ);
-                        if(factor.staticReadValue == null)
-                        {
-                            throw new Expr_Exception($"{key} must be static value", modElem.multiItem);
-                        }
-
-                        rslt.Add(factor.staticReadValue);
-                    }
-
-                    object obj = rslt.ToArray();
-                    return (T)obj;
-                }
-
-                throw new Exception($"not support type " + typeof(T));
+                return StaticParse(modElem.multiItem, key);
             }
             catch (Exception e)
             {
                 throw new Exception($"parse file faild! {modElem.filePath}", e);
             }
+        }
+
+        private static T StaticParse(MultiItem multiItem, string key)
+        {
+            if (typeof(T) == typeof(bool))
+            {
+                var raw = multiItem.TryFind<SingleValue>(key);
+                object obj = bool.Parse(raw.value);
+                return (T)obj;
+            }
+            if (typeof(T) == typeof(Dictionary<string, string>))
+            {
+                var rslt = new Dictionary<string, string>();
+                var raw = multiItem.Find<MultiItem>(key);
+                foreach (var elem in raw.elems)
+                {
+                    rslt.Add(elem.key, elem.value.ToString());
+                }
+
+                object obj = rslt;
+                return (T)obj;
+            }
+            if (typeof(T) == typeof(object[]))
+            {
+                var rslt = new List<object>();
+                var raw = multiItem.Find<MultiValue>(key);
+                foreach (var elem in raw.elems)
+                {
+                    var factor = new Factor<object>(elem, Visitor.VType.READ);
+                    if (factor.staticReadValue == null)
+                    {
+                        throw new Expr_Exception($"{key} must be static value", modElem.multiItem);
+                    }
+
+                    rslt.Add(factor.staticReadValue);
+                }
+
+                object obj = rslt.ToArray();
+                return (T)obj;
+            }
+
+            throw new Exception($"not support type " + typeof(T));
         }
     }
 

@@ -73,6 +73,14 @@ namespace TaisEngine.Run
                 await act(gevent);
             }
 
+            foreach (var depart in departs)
+            {
+                foreach (var gevent in depart.DaysInc())
+                {
+                    await act(gevent);
+                }
+            }
+
             date++;
         }
     }

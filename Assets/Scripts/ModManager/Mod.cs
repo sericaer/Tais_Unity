@@ -26,6 +26,7 @@ namespace TaisEngine.ModManager
             modStructDict.Add("depart",       (content, modElemnts) => { content.departDef = new DepartDef(modElemnts); });
             modStructDict.Add("pop",          (content, modElemnts) => { content.popDef = new PopDef(modElemnts); });
             modStructDict.Add("buffer/depart", (content, modElemnts) => { content.bufferDef.depart = BufferDef.Anaylize(modElemnts); });
+            modStructDict.Add("defines",       (content, modElemnts) => { content.commonDef = new CommonDef(modElemnts); });
         }
 
 
@@ -107,6 +108,7 @@ namespace TaisEngine.ModManager
             internal DepartDef departDef;
             internal PopDef popDef;
             internal BufferDef bufferDef;
+            internal CommonDef commonDef;
 
             //internal BackgroundDef backgroundDef;
             //internal DepartDef departDef;
