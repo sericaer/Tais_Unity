@@ -260,7 +260,14 @@ namespace TaisEngine.ModManager
             this.key = key;
         }
 
+
+        internal VisitPropery(string key, object ext)
+        {
+            this.key = key;
+        }
+
         internal string key;
         internal Visitor.VType vType;
+        internal object ext;
     }
 }

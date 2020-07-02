@@ -25,7 +25,7 @@ namespace TaisEngine.ModManager
             modStructDict.Add("event/depart", (content, modElemnts) => { content.eventDef.depart = EventDef.Anaylize(modElemnts); });
             modStructDict.Add("depart",       (content, modElemnts) => { content.departDef = new DepartDef(modElemnts); });
             modStructDict.Add("pop",          (content, modElemnts) => { content.popDef = new PopDef(modElemnts); });
-            modStructDict.Add("buffer/depart", (content, modElemnts) => { content.bufferDef.depart = BufferDef.Anaylize(modElemnts); });
+            modStructDict.Add("buffer/depart", (content, modElemnts) => { content.bufferDef.GetGroup("depart.buffer").AddRange(BufferDef.Anaylize(modElemnts)); });
         }
 
 
@@ -55,6 +55,11 @@ namespace TaisEngine.ModManager
                     throw new Exception($"load mod {path} failed!", e);
                 }
 
+            }
+
+            foreach(var mod in listMod.Where(x=>x.content != null))
+            {
+                mod.content.Check();
             }
         }
 
@@ -137,16 +142,14 @@ namespace TaisEngine.ModManager
                     elem.Value(this, syntaxMod.GetElements(elem.Key));
                 }
 
-                CheckMod();
-
                 Log.INFO("Load mod content finish");
             }
 
-            private void CheckMod()
+            internal void Check()
             {
                 //initSelectDef.Check();
-                //eventDef.Check();
-                departDef.Check();
+                eventDef.Check();
+                //departDef.Check();
             }
         }
     }

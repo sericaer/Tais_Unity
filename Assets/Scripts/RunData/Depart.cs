@@ -46,8 +46,11 @@ namespace TaisEngine.Run
         //    }
         //}
 
-        [JsonProperty]
+        [JsonProperty, VisitPropery("depart.name")]
         public string name;
+
+        [JsonProperty, VisitPropery("depart.buffer")]
+        public BufferManager bufferManager = new BufferManager();
 
         [JsonProperty]
         public bool is_crop_growing;
@@ -98,7 +101,6 @@ namespace TaisEngine.Run
             this.name = def.name;
             //this.buffers = new List<Buffer>();
             this.cancel_tax = false;
-
            //GMData.inst.allBuffers.Add(this.buffers);
 
 

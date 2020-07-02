@@ -32,7 +32,7 @@ public class LoadScene : MonoBehaviour
 
             Visitor.InitReflect("init", typeof(InitData));
             Visitor.InitReflect("common", typeof(RunData));
-            Visitor.InitReflect("depart", typeof(Depart));
+            Visitor.InitReflect("depart", typeof(TaisEngine.Run.Depart));
 
             //InitData.AssocVisitor();
             //RunData.AssocVisitor();

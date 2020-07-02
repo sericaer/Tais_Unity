@@ -1,0 +1,19 @@
+trigger = 
+{
+    is.equal = {common.day, 2}
+}
+
+desc = {DEMON_DEPART, depart.name}
+
+occur_days = 
+{
+    base = 1
+}
+
+option = 
+{
+    selected = 
+    {
+        set.buffer_valid = {depart.buffer, HUANGZAI}
+    }
+}

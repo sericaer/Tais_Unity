@@ -12,7 +12,7 @@ namespace TaisEngine.ModManager
 
         public Expr<object[]> desc;
 
-        public OptionSelected selected;
+        public Expr_OperationGroup selected;
 
         public NextSelect next;
 
@@ -30,7 +30,7 @@ namespace TaisEngine.ModManager
             object[] defValue = { name };
             this.desc = Expr_MultiValue.Parse(opRaw, "desc", defValue);
 
-            this.selected = new OptionSelected(opRaw, "selected");
+            this.selected = new Expr_OperationGroup(opRaw, "selected");
             this.next = new NextSelect(opRaw, "next");
 
         }
@@ -54,6 +54,11 @@ namespace TaisEngine.ModManager
                 throw new Exception($"parse file faild! {mod.filePath}", e);
             }
         }
+
+        internal void Check()
+        {
+            selected.Check();
+        }
     }
 
     public class NextSelect
@@ -68,88 +73,6 @@ namespace TaisEngine.ModManager
         internal string Get()
         {
             return "";
-        }
-    }
-
-    public class OptionSelected
-    {
-        internal List<Operation> operations = new List<Operation>();
-
-        public OptionSelected(MultiItem opRaw, string key)
-        {
-            var raw = opRaw.TryFind<MultiItem>(key);
-            if(raw == null)
-            {
-                return;
-            }
-
-            foreach(var elem in raw.elems)
-            {
-                operations.Add(Operation.Parse(elem));
-            }
-        }
-
-        internal void Run()
-        {
-            foreach (var op in operations)
-            {
-                op.Do();
-            }
-        }
-    }
-
-
-    internal abstract class Operation
-    {
-        protected Item opRaw;
-
-        internal static Operation Parse(Item item)
-        {
-            switch (item.key)
-            {
-                case "set.value":
-                    return new OperationSetValue(item);
-                default:
-                    throw new Expr_Exception($"not support operation {item.key}", item);
-            }
-        }
-
-        internal Operation(Item item)
-        {
-            this.opRaw = item;
-        }
-
-        internal abstract void Do();
-    }
-
-    internal class OperationSetValue : Operation
-    {
-        private Factor<object> left;
-        private Factor<object> right;
-
-        public OperationSetValue(Item item) : base(item)
-        {
-            if (!(item.value is MultiValue))
-            {
-                throw new Exception($"'set.value' not support {item.value}");
-            }
-
-            var multiValue = item.value as MultiValue;
-            if (multiValue.elems.Count() != 2)
-            {
-                throw new Expr_Exception("'SET' operation only support 2 element", multiValue);
-            }
-
-            var dest = multiValue.elems[0];
-            var src = multiValue.elems[1];
-
-            left = new Factor<object>(dest, Visitor.VType.WRITE);
-            right = new Factor<object>(src, Visitor.VType.READ);
-        }
-
-        internal override void Do()
-        {
-            left.Write(right.Read());
         }
     }
 }

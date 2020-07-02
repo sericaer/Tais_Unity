@@ -34,6 +34,14 @@ namespace TaisEngine.ModManager
 
                 this.options = OptionDef.ParseList(modElem, "option", name);
             }
+
+            internal void Check()
+            {
+                foreach(var option in options)
+                {
+                    option.Check();
+                }
+            }
         }
 
         internal static List<Element> Anaylize(List<SyntaxMod.Element> modElemnts)
@@ -82,6 +90,19 @@ namespace TaisEngine.ModManager
                         Visitor.SetObj("depart", null);
                     }
                 }
+            }
+        }
+
+        internal void Check()
+        {
+            foreach(var eventdef in common)
+            {
+                eventdef.Check();
+            }
+
+            foreach (var eventdef in depart)
+            {
+                eventdef.Check();
             }
         }
     }

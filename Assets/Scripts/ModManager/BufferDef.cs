@@ -36,6 +36,23 @@ namespace TaisEngine.ModManager
             }
         }
 
+        internal static Element FindByName(string name)
+        {
+            foreach(var elem in Mod.listMod.Where(x => x.content != null))
+            {
+                foreach(var list in elem.content.bufferDef.dictGroup.Values)
+                {
+                    var buffDef = list.Find(x => x.name == name);
+                    if(buffDef != null)
+                    {
+                        return buffDef;
+                    }
+                }
+            }
+
+            throw new Exception();
+        }
+
         internal static List<Element> Anaylize(List<SyntaxMod.Element> modElemnts)
         {
             List<Element> rslt = new List<Element>();
@@ -47,10 +64,27 @@ namespace TaisEngine.ModManager
             return rslt;
         }
 
+
+        internal static Dictionary<string, Element> GetGroupDict(string groupName)
+        {
+            return Mod.listMod.Where(x => x.content != null)
+                              .SelectMany(x => x.content.bufferDef.dictGroup[groupName])
+                              .ToDictionary(k => k.name, v => v);
+        }
+
+
         //internal List<BufferDef.Element> commons = new List<Element>();
-        internal List<Element> depart;
+        internal Dictionary<string, List<Element>> dictGroup = new Dictionary<string, List<Element>>();
 
+        internal List<Element> GetGroup(string groupName)
+        {
+            if(!dictGroup.ContainsKey(groupName))
+            {
+                dictGroup.Add(groupName, new List<Element>());
+            }
 
+            return dictGroup[groupName];
+        }
 
         //static internal IEnumerable<BufferDef.Element> Enumerate()
         //{

@@ -20,8 +20,7 @@ public class Depart : MonoBehaviour
     public GameObject popPrefabs;
     public GameObject popContent;
 
-    public GameObject buffPrefabs;
-    public GameObject buffContent;
+    public BufferContent bufferContent;
 
     internal TaisEngine.Run.Depart gmDepart;
 
@@ -45,6 +44,8 @@ public class Depart : MonoBehaviour
             departPop.gmPop = pop;
             departPop.gameObject.SetActive(false);
         }
+
+        bufferContent.buffmgr = gmDepart.bufferManager;
 
         //var cropGrowingToolTip = cropGrowing.transform.GetComponent<TooltipTrigger>();
         //cropGrowingToolTip.funcGetTooltipStr = () =>
