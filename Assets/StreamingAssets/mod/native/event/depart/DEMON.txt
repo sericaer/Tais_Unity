@@ -7,7 +7,7 @@ desc = {DEMON_DEPART, depart.name}
 
 occur_days = 
 {
-    base = 1
+    base = 30
 }
 
 option = 

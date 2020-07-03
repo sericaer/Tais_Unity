@@ -5,7 +5,7 @@ trigger =
 
 occur_days = 
 {
-    base = 1
+    base = 100
 }
 
 option = 

@@ -86,14 +86,14 @@ namespace TaisEngine.Run
 
                 var endDate = CommonDef.getCropGrowingEndDate();
 
-                if (RunData.inst.date.month > startDate.month)
+                if (RunData.inst.date.month > endDate.month)
                 {
                     return false;
                 }
 
-                if (RunData.inst.date.month == startDate.month)
+                if (RunData.inst.date.month == endDate.month)
                 {
-                    if (RunData.inst.date.day > startDate.day)
+                    if (RunData.inst.date.day > endDate.day)
                     {
                         return false;
                     }

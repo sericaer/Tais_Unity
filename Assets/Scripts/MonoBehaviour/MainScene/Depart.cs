@@ -70,7 +70,7 @@ public class Depart : MonoBehaviour
                                     gmDepart.pops.Where(x => x.def.is_tax).Sum(x => x.num),
                                     gmDepart.pops.Sum(x => x.num));
 
-        //cropGrowing.transform.Find("value").GetComponent<Text>().text = gmDepart.is_crop_growing ? gmDepart.crop_grow_percent.ToString("N2") : "--";
+        cropGrowing.transform.Find("value").GetComponent<Text>().text = gmDepart.crop_grow_percent.ToString("N2");
 
         foreach (var pop in listDepartPops)
         {
