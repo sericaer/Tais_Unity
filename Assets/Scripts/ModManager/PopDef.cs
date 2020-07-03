@@ -19,7 +19,7 @@ namespace TaisEngine.ModManager
 
             internal bool is_tax;
 
-            public Element(SyntaxMod.Element modElem)
+            public Element(SyntaxMod.MultiItem modElem)
             {
                 this.name = Path.GetFileNameWithoutExtension(modElem.filePath).ToUpper();
                 this.is_tax = Expr<bool>.staticParseMod(modElem, "is_tax");
@@ -66,7 +66,7 @@ namespace TaisEngine.ModManager
 
         internal List<Element> lists = new List<Element>();
 
-        internal PopDef(List<SyntaxMod.Element> modElements)
+        internal PopDef(List<SyntaxMod.MultiItem> modElements)
         {
             if(modElements == null)
             {

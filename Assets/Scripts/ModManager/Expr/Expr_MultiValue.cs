@@ -11,7 +11,7 @@ namespace TaisEngine.ModManager
         {
         }
 
-        internal static Expr_MultiValue Parse(SyntaxMod.Element mod, string name, object[] defValue)
+        internal static Expr_MultiValue Parse(SyntaxMod.MultiItem mod, string name, object[] defValue)
         {
             try
             {

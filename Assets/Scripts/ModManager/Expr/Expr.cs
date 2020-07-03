@@ -26,7 +26,7 @@ namespace TaisEngine.ModManager
         internal object defaultValue;
         internal Value modValue;
 
-        internal static T staticParseMod(SyntaxMod.Element modElem, string key)
+        internal static T staticParseMod(SyntaxMod.MultiItem modElem, string key)
         {
             try
             {

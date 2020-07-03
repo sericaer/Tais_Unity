@@ -21,7 +21,7 @@ namespace TaisEngine.ModManager
 
             internal Dictionary<string, int> popInitDict;
 
-            public Element(SyntaxMod.Element modElem)
+            public Element(SyntaxMod.MultiItem modElem)
             {
                 this.name = Path.GetFileNameWithoutExtension(modElem.filePath).ToUpper();
 
@@ -69,7 +69,7 @@ namespace TaisEngine.ModManager
 
         internal List<Element> lists = new List<Element>();
 
-        internal DepartDef(List<SyntaxMod.Element> modElements)
+        internal DepartDef(List<SyntaxMod.MultiItem> modElements)
         {
             if(modElements == null)
             {

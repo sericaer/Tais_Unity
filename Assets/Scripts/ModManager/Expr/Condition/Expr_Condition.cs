@@ -9,7 +9,7 @@ namespace TaisEngine.ModManager
         {
         }
 
-        internal static Expr<bool> Parse(SyntaxMod.Element mod, string name, bool? defValue)
+        internal static Expr<bool> Parse(SyntaxMod.MultiItem mod, string name, bool? defValue)
         {
             try
             {

@@ -18,7 +18,7 @@ namespace TaisEngine.ModManager
 
         static Mod()
         {
-            modStructDict = new Dictionary<string, Action<Content, List<SyntaxMod.Element>>>();
+            modStructDict = new Dictionary<string, Action<Content, List<SyntaxMod.MultiItem>>>();
 
             modStructDict.Add("init_select",  (content, modElemnts) => { content.initSelectDef = new InitSelectDef(modElemnts); });
             modStructDict.Add("event/common", (content, modElemnts) => { content.eventDef.common = EventDef.Anaylize(modElemnts); });
@@ -31,7 +31,7 @@ namespace TaisEngine.ModManager
 
 
         internal static string modRootPath = Application.streamingAssetsPath + "/mod/";
-        internal static Dictionary<string, Action<Content, List<SyntaxMod.Element>>> modStructDict;
+        internal static Dictionary<string, Action<Content, List<SyntaxMod.MultiItem>>> modStructDict;
 
         internal static List<Mod> listMod = new List<Mod>();
 

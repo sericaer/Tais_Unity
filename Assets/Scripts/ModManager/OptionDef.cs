@@ -35,7 +35,7 @@ namespace TaisEngine.ModManager
 
         }
 
-        internal static List<OptionDef> ParseList(SyntaxMod.Element mod, string key, string parent)
+        internal static List<OptionDef> ParseList(SyntaxMod.MultiItem mod, string key, string parent)
         {
             try
             {
