@@ -1002,6 +1002,7 @@ GameObject:
   - component: {fileID: 8858921772786843573}
   - component: {fileID: 4295473709065228535}
   - component: {fileID: 1330455663376235747}
+  - component: {fileID: 538421291671824703}
   m_Layer: 5
   m_Name: buffcontent
   m_TagString: Untagged
@@ -1090,6 +1091,20 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
+--- !u!114 &538421291671824703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976499275068900887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46a628b1fb0aa4b6f91954b889ecf98d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buffPrefabs: {fileID: 5037811727827105404, guid: 21b45a30164d1e84a9238f130d0f4bee,
+    type: 3}
 --- !u!1 &3099705243347206686
 GameObject:
   m_ObjectHideFlags: 0
@@ -3400,8 +3415,7 @@ MonoBehaviour:
   popPrefabs: {fileID: 7003351842002278686, guid: e5e7cd53750cd4c5cb3e4c9cd0f32403,
     type: 3}
   popContent: {fileID: 7227523827765936357}
-  buffPrefabs: {fileID: 0}
-  buffContent: {fileID: 0}
+  bufferContent: {fileID: 538421291671824703}
 --- !u!1 &7078100566191627734
 GameObject:
   m_ObjectHideFlags: 0
