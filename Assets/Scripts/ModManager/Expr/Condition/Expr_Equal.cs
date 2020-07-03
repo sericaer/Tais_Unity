@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using SyntaxAnaylize;
+using TaisEngine.Extensions;
 
 namespace TaisEngine.ModManager
 {
@@ -30,7 +31,7 @@ namespace TaisEngine.ModManager
                 return;
             }
 
-            if(IsNumericType(left.GetValueType()) && IsNumericType(right.GetValueType()))
+            if(left.GetValueType().IsNumericType() && right.GetValueType().IsNumericType())
             {
                 return;
             }
@@ -48,19 +49,5 @@ namespace TaisEngine.ModManager
 
         Factor<object> left;
         Factor<object> right;
-
-        private static HashSet<Type> NumericTypes = new HashSet<Type>
-        {
-            typeof(int),
-            typeof(uint),
-            typeof(double),
-            typeof(decimal)
-        };
-
-        internal static bool IsNumericType(Type type)
-        {
-            return NumericTypes.Contains(type) ||
-                   NumericTypes.Contains(Nullable.GetUnderlyingType(type));
-        }
     }
 }

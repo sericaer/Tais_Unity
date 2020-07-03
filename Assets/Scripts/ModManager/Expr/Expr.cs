@@ -67,7 +67,7 @@ namespace TaisEngine.ModManager
                     var factor = new Factor<object>(elem, Visitor.VType.READ);
                     if (factor.staticReadValue == null)
                     {
-                        throw new Expr_Exception($"{key} must be static value", modElem.multiItem);
+                        throw new Expr_Exception($"{key} must be static value", multiItem);
                     }
 
                     rslt.Add(factor.staticReadValue);

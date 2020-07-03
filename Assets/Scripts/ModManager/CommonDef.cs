@@ -11,10 +11,10 @@ namespace TaisEngine.ModManager
 
         public CommonDef(List<SyntaxMod.Element> modElemnts)
         {
-            var defines = modElemnts.SingleOrDefault(x => x.filePath.EndsWith("defines.txt"));
-            if(defines != null)
+            var cropMod = modElemnts.SingleOrDefault(x => x.filePath.EndsWith("crop_growing.txt"));
+            if(cropMod != null)
             {
-                this.cropGrowingInfo = new CropGrowingInfo(defines.multiItem.TryFind<MultiItem>("crop_growing"));
+                this.cropGrowingInfo = ModAnaylize.Parse<CropGrowingInfo>(cropMod.multiItem);
             }
         }
 
@@ -22,9 +22,10 @@ namespace TaisEngine.ModManager
         {
             foreach (var mod in Mod.listMod.Where(x => x.content != null && x.content.commonDef != null))
             {
-                if (mod.content.commonDef.cropGrowingInfo.startDate != null)
+                var startData = mod.content.commonDef.cropGrowingInfo.startDate;
+                if (startData != null)
                 {
-                    return (mod.content.commonDef.cropGrowingInfo.startDate.month, mod.content.commonDef.cropGrowingInfo.startDate.day);
+                    return (startData.month.Value, startData.day.Value);
                 }
             }
 
@@ -35,9 +36,10 @@ namespace TaisEngine.ModManager
         {
             foreach (var mod in Mod.listMod.Where(x => x.content != null && x.content.commonDef != null))
             {
-                if (mod.content.commonDef.cropGrowingInfo.endDate != null)
+                var endData = mod.content.commonDef.cropGrowingInfo.endDate;
+                if (endData != null)
                 {
-                    return (mod.content.commonDef.cropGrowingInfo.endDate.month, mod.content.commonDef.cropGrowingInfo.endDate.day);
+                    return (endData.month.Value, endData.day.Value);
                 }
             }
 
@@ -59,23 +61,22 @@ namespace TaisEngine.ModManager
 
         internal class CropGrowingInfo
         {
+            [ModProperty("full_grow_days")]
             internal int? fullGrowDays;
+
+            [ModProperty("start")]
             internal Date startDate;
+
+            [ModProperty("end")]
             internal Date endDate;
-
-            public CropGrowingInfo(MultiItem multiItem)
-            {
-                var rawFullGrowDays = multiItem.TryFind<SingleValue>("full_grow_days");
-                if(rawFullGrowDays != null)
-                {
-
-                }
-            }
 
             internal class Date
             {
-                internal int month;
-                internal int day;
+                [ModProperty("month")]
+                internal int? month;
+
+                [ModProperty("day")]
+                internal int? day;
             }
 
         }

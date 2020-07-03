@@ -149,7 +149,7 @@ namespace TaisEngine.Run
 
         private void cropGrowingProcess()
         {
-            if (is_crop_growing)
+            if (cropGrowingValid)
             {
                 crop_grow_percent += cropGrowingSpeed;
             }

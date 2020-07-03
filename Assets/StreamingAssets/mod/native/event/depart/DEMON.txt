@@ -1,11 +1,6 @@
 trigger = 
 {
-    and = 
-    {
-        is.equal = {common.day, 2}
-        is.buffer_invalid = {depart.buffer, HUANGZAI}
-    }
-    
+    is.equal = {common.day, 2}
 }
 
 desc = {DEMON_DEPART, depart.name}

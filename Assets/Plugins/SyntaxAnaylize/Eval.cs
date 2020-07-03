@@ -265,42 +265,4 @@ namespace SyntaxAnaylize
     //        return !evals.Any(x => !((bool)x.Result()));
     //    }
     //}
-
-    public class Converter
-    {
-        public static void Convert(string raw, out bool ret)
-        {
-            if (raw == "true")
-            {
-                ret = true;
-            }
-            else if (raw == "false")
-            {
-                ret = false;
-            }
-            else
-            {
-                throw new Exception($"{raw} must be 'true' or 'false'");
-            }
-        }
-
-
-        public static Func<T> GetFunc<T>(string value)
-        {
-            Type[] paramTypes = { typeof(string), typeof(T).MakeByRefType() };
-
-            var method = typeof(Converter).GetMethod("Convert", BindingFlags.Static | BindingFlags.Public, null, paramTypes, null);
-            if (method == null)
-            {
-                throw new Exception();
-            }
-
-            return () =>
-            {
-                var args = new object[] { value, null };
-                method.Invoke(null, args);
-                return (T)args[1];
-            };
-        }
-    }
 }

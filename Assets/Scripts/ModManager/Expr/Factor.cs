@@ -1,5 +1,6 @@
 ﻿using System;
 using SyntaxAnaylize;
+using TaisEngine.Extensions;
 
 namespace TaisEngine.ModManager
 {
@@ -16,7 +17,7 @@ namespace TaisEngine.ModManager
         {
             if (staticReadValue != null)
             {
-                return (T)staticReadValue;
+                return Convert<T>(staticReadValue);
             }
 
             return Visitor.Read<T>(raw);
@@ -39,6 +40,26 @@ namespace TaisEngine.ModManager
 
         public object staticReadValue;
         public string raw;
+
+        T1 Convert<T1>(object obj)
+        {
+            if(typeof(T1) == typeof(int?))
+            {
+                if(obj is int)
+                {
+                    return (T1)obj;
+                }
+                if (obj is double || obj is float)
+                {
+                    object temp = System.Convert.ToInt32(obj);
+                    return (T1)(temp);
+                }
+
+                throw new Exception();
+            }
+
+            return (T1)obj;
+        }
     }
 
     //public class EvalExpr_ModifierGroup : Eval<double>
