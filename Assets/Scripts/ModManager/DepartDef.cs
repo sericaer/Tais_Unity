@@ -25,7 +25,7 @@ namespace TaisEngine.ModManager
             {
                 this.name = Path.GetFileNameWithoutExtension(modElem.filePath).ToUpper();
 
-                var colorObj = Expr<object[]>.staticParse(modElem, "color");
+                var colorObj = Expr<object[]>.staticParseMod(modElem, "color");
                 if(colorObj.Count() !=3)
                 {
                     throw new Exception();
@@ -33,7 +33,7 @@ namespace TaisEngine.ModManager
 
                 color = string.Join(",", colorObj);
 
-                popInitDict = Expr<Dictionary<string, string>>.staticParse(modElem, "pop_init").ToDictionary(k => k.Key, v => int.Parse(v.Value));
+                popInitDict = Expr<Dictionary<string, string>>.staticParseMod(modElem, "pop_init").ToDictionary(k => k.Key, v => int.Parse(v.Value));
             }
 
             internal void Check()

@@ -22,7 +22,7 @@ namespace TaisEngine.ModManager
             public Element(SyntaxMod.Element modElem)
             {
                 this.name = Path.GetFileNameWithoutExtension(modElem.filePath).ToUpper();
-                this.is_tax = Expr<bool>.staticParse(modElem, "is_tax");
+                this.is_tax = Expr<bool>.staticParseMod(modElem, "is_tax");
 
                 //var colorObj = Expr_MultiValue.Parse(modElem, "color", null).Result();
                 //if(colorObj.Count() !=3)

@@ -13,7 +13,7 @@ public class Depart : MonoBehaviour
 {
     public LocalText name;
 
-    public Text popNum;
+    public GameObject popNum;
     //public Text cropGrowing;
 
     public GameObject cropGrowing;
@@ -66,9 +66,9 @@ public class Depart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //popNum.text = string.Format("{0:N0}/{1:N0}",
-        //                            gmDepart.pops.Where(x => x.def.is_tax).Sum(x => x.num),
-        //                            gmDepart.pops.Sum(x => x.num));
+        popNum.transform.Find("value").GetComponent<Text>().text = string.Format("{0:N0}/{1:N0}",
+                                    gmDepart.pops.Where(x => x.def.is_tax).Sum(x => x.num),
+                                    gmDepart.pops.Sum(x => x.num));
 
         //cropGrowing.transform.Find("value").GetComponent<Text>().text = gmDepart.is_crop_growing ? gmDepart.crop_grow_percent.ToString("N2") : "--";
 

@@ -3395,8 +3395,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: {fileID: 1263403268967003239}
-  popNum: {fileID: 0}
-  cropGrowing: {fileID: 0}
+  popNum: {fileID: 697659657231843086}
+  cropGrowing: {fileID: 7029064349799023069}
   popPrefabs: {fileID: 7003351842002278686, guid: e5e7cd53750cd4c5cb3e4c9cd0f32403,
     type: 3}
   popContent: {fileID: 7227523827765936357}
