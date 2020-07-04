@@ -11,81 +11,95 @@ using ModVisitor;
 
 namespace TaisEngine.ModManager
 {
-    internal class PopDef
+    internal class PopDef : BaseDef<PopDef>
     {
-        internal class Element
+        [ModProperty("name")]
+        internal string name;
+
+        [ModProperty("is_tax")]
+        internal bool? is_tax;
+
+        internal void SetDefault()
         {
-            internal string name;
-
-            internal bool is_tax;
-
-            public Element(SyntaxMod.MultiItem modElem)
+            if(is_tax == null)
             {
-                this.name = Path.GetFileNameWithoutExtension(modElem.filePath).ToUpper();
-                this.is_tax = Expr<bool>.staticParseMod(modElem, "is_tax");
-
-                //var colorObj = Expr_MultiValue.Parse(modElem, "color", null).Result();
-                //if(colorObj.Count() !=3)
-                //{
-                //    throw new Exception();
-                //}
-
-                //color = string.Join(",", colorObj);
-            }
-
-            internal void Check()
-            {
-
+                is_tax = false;
             }
         }
 
-        static internal Element Find(string name)
-        {
-            foreach (var mod in Mod.listMod.Where(x => x.content != null))
-            {
-                var finded = mod.content.popDef.lists.Find(x => x.name == name);
-                if(finded != null)
-                {
-                    return finded;
-                }
-            }
+        //internal class Element
+        //{
+        //    internal string name;
 
-            throw new Exception("can not find INIT_SELECT:" + name);
-        }
+        //    internal bool is_tax;
 
-        static internal IEnumerable<Element> Enumerate()
-        {
-            foreach(var mod in Mod.listMod.Where(x=>x.content != null))
-            {
-                foreach(var elem in mod.content.popDef.lists)
-                {
-                    yield return elem;
-                }
-            }
-        }
+        //    public Element(SyntaxMod.MultiItem modElem)
+        //    {
+        //        this.name = Path.GetFileNameWithoutExtension(modElem.filePath).ToUpper();
+        //        this.is_tax = Expr<bool>.staticParseMod(modElem, "is_tax");
 
-        internal List<Element> lists = new List<Element>();
+        //        //var colorObj = Expr_MultiValue.Parse(modElem, "color", null).Result();
+        //        //if(colorObj.Count() !=3)
+        //        //{
+        //        //    throw new Exception();
+        //        //}
 
-        internal PopDef(List<SyntaxMod.MultiItem> modElements)
-        {
-            if(modElements == null)
-            {
-                return;
-            }
+        //        //color = string.Join(",", colorObj);
+        //    }
 
-            foreach(var modElem in modElements)
-            {
-                var elem = new Element(modElem);
-                lists.Add(elem);
-            }
-        }
+        //    internal void Check()
+        //    {
 
-        internal void Check()
-        {
-            foreach(var curr in lists)
-            {
-                curr.Check();
-            }
-        }
+        //    }
+        //}
+
+        //static internal Element Find(string name)
+        //{
+        //    foreach (var mod in Mod.listMod.Where(x => x.content != null))
+        //    {
+        //        var finded = mod.content.popDef.lists.Find(x => x.name == name);
+        //        if(finded != null)
+        //        {
+        //            return finded;
+        //        }
+        //    }
+
+        //    throw new Exception("can not find INIT_SELECT:" + name);
+        //}
+
+        //static internal IEnumerable<Element> Enumerate()
+        //{
+        //    foreach(var mod in Mod.listMod.Where(x=>x.content != null))
+        //    {
+        //        foreach(var elem in mod.content.popDef.lists)
+        //        {
+        //            yield return elem;
+        //        }
+        //    }
+        //}
+
+        //internal List<Element> lists = new List<Element>();
+
+        //internal PopDef(List<SyntaxMod.MultiItem> modElements)
+        //{
+        //    if(modElements == null)
+        //    {
+        //        return;
+        //    }
+
+        //    foreach(var modElem in modElements)
+        //    {
+        //        var elem = new Element(modElem);
+        //        lists.Add(elem);
+        //    }
+        //}
+
+        //internal void Check()
+        //{
+        //    foreach(var curr in lists)
+        //    {
+        //        curr.Check();
+        //    }
+        //}
     }
 }

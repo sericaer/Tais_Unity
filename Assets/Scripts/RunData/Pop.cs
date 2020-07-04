@@ -39,7 +39,7 @@ namespace TaisEngine.Run
             }
         }
 
-        internal PopDef.Element def
+        internal PopDef def
         {
             get
             {
@@ -113,7 +113,7 @@ namespace TaisEngine.Run
         //}
 
 
-        internal Pop(PopDef.Element popDef, string depart, double num)
+        internal Pop(PopDef popDef, string depart, double num)
         {
             this.name = popDef.name;
             this.depart_name = depart;

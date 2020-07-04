@@ -12,7 +12,7 @@ public class SelectPanel : MonoBehaviour
     public LocalText textDesc;
     public List<Button> btns;
 
-    internal InitSelectDef.Element initSelectDef;
+    internal InitSelectDef initSelectDef;
 
     // Use this for initialization
     void Start()

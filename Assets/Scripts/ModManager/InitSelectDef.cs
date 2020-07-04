@@ -11,25 +11,43 @@ using ModVisitor;
 
 namespace TaisEngine.ModManager
 {
-    internal class InitSelectDef : BaseDef<InitSelectDef.Element>
+    internal class InitSelectDef : BaseDef<InitSelectDef>
     {
-        public InitSelectDef(string modName, List<MultiItem> modItems) : base(modName, modItems)
+        [ModProperty("name")]
+        public string name;
+
+        [ModProperty("is_first")]
+        public bool? is_first;
+
+        [ModProperty("desc")]
+        public Expr_MultiValue desc;
+
+        [ModPropertyList("option")]
+        public List<OptionDef> options;
+
+        internal void SetDefault()
         {
-        }
+            if (is_first == null)
+            {
+                is_first = false;
+            }
 
-        internal class Element
-        {
-            [ModProperty("name")]
-            public string name;
+            if(desc == null)
+            {
+                desc = new Expr_MultiValue(name + "_DESC");
+            }
 
-            [ModProperty("is_first")]
-            public bool? is_first;
+            for(int i=0; i<options.Count(); i++)
+            {
+                var op = options[i];
 
-            [ModProperty("desc")]
-            public Expr_MultiValue desc;
+                if (op.desc == null)
+                {
+                    op.desc = new Expr_MultiValue($"{name}_OPTION_{i+1}_DESC");
+                }
+            }
 
-            [ModPropertyList("option")]
-            public List<OptionDef> options;
+            //options.ForEach(x => x.CheckDefault());
         }
     }
 }

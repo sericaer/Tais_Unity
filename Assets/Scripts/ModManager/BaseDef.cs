@@ -12,44 +12,41 @@ namespace TaisEngine.ModManager
 {
     internal class BaseDef<T> where T:new()
     {
-        static Dictionary<string, List<T>> dict = new Dictionary<string, List<T>>();
+        static Dictionary<string, List<(T def, string mod)>> dict = new Dictionary<string, List<(T, string)>>();
 
         static internal T Find(string name)
         {
-            foreach (var mod in Mod.listMod.Where(x => x.content != null))
+            if (!dict.ContainsKey(name))
             {
-                var finded = mod.content.initSelectDef.lists.Find(x => x.name == name);
-                if (finded != null)
-                {
-                    return finded;
-                }
+                throw new Exception("can not find INIT_SELECT:" + name);
             }
 
-            throw new Exception("can not find INIT_SELECT:" + name);
+            return dict[name].First().def;
         }
 
         static internal IEnumerable<T> Enumerate()
         {
-            foreach (var mod in Mod.listMod.Where(x => x.content != null))
-            {
-                foreach (var elem in mod.content.initSelectDef.lists)
-                {
-                    yield return elem;
-                }
-            }
+            return dict.Values.Select(x => x.First().def);
         }
 
-        internal List<T> list = new List<T>();
-
-        public BaseDef(string modName, IEnumerable<MultiItem> enumerable)
+        static internal List<T> ParseList(string modName, IEnumerable<MultiItem> enumerable)
         {
-            foreach(var multi in enumerable)
+            var rslt = new List<T>();
+
+            foreach (var multi in enumerable)
             {
-                var elem = ModAnaylize.Parse<T>(multi);
-                list.Add(elem);
+                dynamic elem = ModAnaylize.Parse<T>(multi);
+                elem.SetDefault();
+
+                if (!dict.ContainsKey(elem.name))
+                {
+                    dict[elem.name] = new List<(T def, string mod)>();
+                }
+
+                dict[elem.name].Add(((T)elem, modName));
             }
 
-            dict.Add(modName, list);
+            return rslt;
         }
     }
 }

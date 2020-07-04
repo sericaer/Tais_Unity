@@ -21,6 +21,19 @@ namespace TaisEngine.ModManager
             }
         }
 
+        internal static Expr_Condition Parse(Value modValue)
+        {
+            switch (modValue)
+            {
+                case MultiItem multi:
+                    return ParseMulti(multi);
+                case SingleValue single:
+                    return ParseSingle(single);
+                default:
+                    throw new Exception($"EvalExpr_Condition not support {modValue} ");
+            }
+        }
+
         internal static Expr<bool> Parse(MultiItem multiItem, string name, bool? defValue)
         {
             var modValue = multiItem.TryFind(name);

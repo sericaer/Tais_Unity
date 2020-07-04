@@ -19,21 +19,22 @@ public class DialogCommon : Dialog
 
     public List<Button> btns;
 
-    internal EventDef.Element gEvent;
+    internal EventInterface gEvent;
 
     void Start ()
     {
-        object[] eventTitleParams = gEvent.title.Result();
+        object[] eventTitleParams = gEvent.GetTitle();
         title.format = LocalString.Get(eventTitleParams[0] as string, eventTitleParams.Skip(1).ToArray());
 
-        object[] eventDescParams = gEvent.desc.Result();
+        object[] eventDescParams = gEvent.GetDesc();
         content.format = LocalString.Get(eventDescParams[0] as string, eventDescParams.Skip(1).ToArray());
 
-        for (int i = 0; i < gEvent.options.Count(); i++)
+        var options = gEvent.GetOption();
+        for (int i = 0; i < options.Count(); i++)
         {
             var btn = btns[i];
 
-            var opt = gEvent.options[i];
+            var opt = options[i];
             
             btn.gameObject.SetActive(true);
             //btn.interactable = opt.isVaild();

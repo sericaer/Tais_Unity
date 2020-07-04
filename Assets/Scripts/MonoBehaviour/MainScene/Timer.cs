@@ -102,7 +102,7 @@ public class Timer : MonoBehaviour
         });
     }
 
-    internal async UniTask CreateDialog(EventDef.Element gevent)
+    internal async UniTask CreateDialog(EventInterface gevent)
     {
         if (gevent != null)
         {

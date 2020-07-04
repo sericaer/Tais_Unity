@@ -50,7 +50,7 @@ namespace TaisEngine.ModManager
             return factors.Select(x => x.Read()).ToArray();
         }
 
-        internal Expr_MultiValue(object[] defaultValue) : base(null)
+        internal Expr_MultiValue(params object[] defaultValue) : base(null)
         {
             this.defaultValue = defaultValue;
         }

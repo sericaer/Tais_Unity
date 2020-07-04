@@ -46,9 +46,9 @@ public class MainScene : MonoBehaviour
     //    panelDialog.GetComponentInChildren<Text>().text = error;
     //}
 
-    internal async UniTask CreateEventDialogAsync(EventDef.Element eventobj)
+    internal async UniTask CreateEventDialogAsync(EventInterface eventobj)
     {
-        object[] eventTitleParams = eventobj.title.Result();
+        object[] eventTitleParams = eventobj.GetTitle();
         msgPanel.AddMessage(LocalString.Get(eventTitleParams[0] as string, eventTitleParams.Skip(1).ToArray()));
 
         //if (eventobj.hide.Result())

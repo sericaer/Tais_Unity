@@ -11,84 +11,98 @@ using ModVisitor;
 
 namespace TaisEngine.ModManager
 {
-    internal class DepartDef
+    internal class DepartDef : BaseDef<DepartDef>
     {
-        internal class Element
+        [ModProperty("name")]
+        internal string name;
+
+        [ModProperty("color")]
+        internal Expr_MultiValue color;
+
+        [ModProperty("pop_init")]
+        internal Dictionary<string, double> popInitDict;
+
+        internal void SetDefault()
         {
-            internal string name;
 
-            internal string color;
-
-            internal Dictionary<string, int> popInitDict;
-
-            public Element(SyntaxMod.MultiItem modElem)
-            {
-                this.name = Path.GetFileNameWithoutExtension(modElem.filePath).ToUpper();
-
-                var colorObj = Expr<object[]>.staticParseMod(modElem, "color");
-                if(colorObj.Count() !=3)
-                {
-                    throw new Exception();
-                }
-
-                color = string.Join(",", colorObj);
-
-                popInitDict = Expr<Dictionary<string, string>>.staticParseMod(modElem, "pop_init").ToDictionary(k => k.Key, v => int.Parse(v.Value));
-            }
-
-            internal void Check()
-            {
-
-            }
         }
 
-        static internal Element Find(string name)
-        {
-            foreach (var mod in Mod.listMod.Where(x => x.content != null))
-            {
-                var finded = mod.content.departDef.lists.Find(x => x.name == name);
-                if(finded != null)
-                {
-                    return finded;
-                }
-            }
+        //internal class Element
+        //{
+        //    internal string name;
 
-            throw new Exception("can not find INIT_SELECT:" + name);
-        }
+        //    internal string color;
 
-        static internal IEnumerable<Element> Enumerate()
-        {
-            foreach(var mod in Mod.listMod.Where(x=>x.content != null))
-            {
-                foreach(var elem in mod.content.departDef.lists)
-                {
-                    yield return elem;
-                }
-            }
-        }
+        //    internal Dictionary<string, int> popInitDict;
 
-        internal List<Element> lists = new List<Element>();
+        //    public Element(SyntaxMod.MultiItem modElem)
+        //    {
+        //        this.name = Path.GetFileNameWithoutExtension(modElem.filePath).ToUpper();
 
-        internal DepartDef(List<SyntaxMod.MultiItem> modElements)
-        {
-            if(modElements == null)
-            {
-                return;
-            }
+        //        var colorObj = Expr<object[]>.staticParseMod(modElem, "color");
+        //        if(colorObj.Count() !=3)
+        //        {
+        //            throw new Exception();
+        //        }
 
-            foreach(var modElem in modElements)
-            {
-                var elem = new Element(modElem);
-                lists.Add(elem);
-            }
-        }
+        //        color = string.Join(",", colorObj);
 
-        internal void Check()
-        {
-            foreach(var curr in lists)
-            {
-                curr.Check();
-            }
-        }
+        //        popInitDict = Expr<Dictionary<string, string>>.staticParseMod(modElem, "pop_init").ToDictionary(k => k.Key, v => int.Parse(v.Value));
+        //    }
+
+        //    internal void Check()
+        //    {
+
+        //    }
+        //}
+
+        //static internal Element Find(string name)
+        //{
+        //    foreach (var mod in Mod.listMod.Where(x => x.content != null))
+        //    {
+        //        var finded = mod.content.departDef.lists.Find(x => x.name == name);
+        //        if(finded != null)
+        //        {
+        //            return finded;
+        //        }
+        //    }
+
+        //    throw new Exception("can not find INIT_SELECT:" + name);
+        //}
+
+        //static internal IEnumerable<Element> Enumerate()
+        //{
+        //    foreach(var mod in Mod.listMod.Where(x=>x.content != null))
+        //    {
+        //        foreach(var elem in mod.content.departDef.lists)
+        //        {
+        //            yield return elem;
+        //        }
+        //    }
+        //}
+
+        //internal List<Element> lists = new List<Element>();
+
+        //internal DepartDef(List<SyntaxMod.MultiItem> modElements)
+        //{
+        //    if(modElements == null)
+        //    {
+        //        return;
+        //    }
+
+        //    foreach(var modElem in modElements)
+        //    {
+        //        var elem = new Element(modElem);
+        //        lists.Add(elem);
+        //    }
+        //}
+
+        //internal void Check()
+        //{
+        //    foreach(var curr in lists)
+        //    {
+        //        curr.Check();
+        //    }
+        //}
     }
 }

@@ -18,20 +18,19 @@ namespace TaisEngine.ModManager
 
         static Mod()
         {
-            modStructDict = new Dictionary<string, Action<Content, List<SyntaxMod.MultiItem>>>();
+            modStructDict = new Dictionary<string, Action<Mod, IEnumerable<MultiItem>>>();
 
-            modStructDict.Add("init_select",  (content, modElemnts) => { content.initSelectDef = new InitSelectDef(modElemnts); });
-            modStructDict.Add("event/common", (content, modElemnts) => { content.eventDef.common = EventDef.Anaylize(modElemnts); });
-            modStructDict.Add("event/depart", (content, modElemnts) => { content.eventDef.depart = EventDef.Anaylize(modElemnts); });
-            modStructDict.Add("depart",       (content, modElemnts) => { content.departDef = new DepartDef(modElemnts); });
-            modStructDict.Add("pop",          (content, modElemnts) => { content.popDef = new PopDef(modElemnts); });
-            modStructDict.Add("buffer/depart", (content, modElemnts) => { content.bufferDef.GetGroup("depart.buffer").AddRange(BufferDef.Anaylize(modElemnts)); });
-            modStructDict.Add("defines",       (content, modElemnts) => { content.commonDef = new CommonDef(modElemnts); });
+            modStructDict.Add("init_select",  (mod, modElemnts) => { mod.content.initSelectDefs.AddRange(InitSelectDef.ParseList(mod.info.name, modElemnts)); });
+            modStructDict.Add("event/common", (mod, modElemnts) => { mod.content.eventGroup.common.AddRange(EventDefCommon.ParseList(mod.info.name, modElemnts)); });
+            modStructDict.Add("depart",       (mod, modElemnts) => { mod.content.departDefs.AddRange(DepartDef.ParseList(mod.info.name, modElemnts)); });
+            modStructDict.Add("pop",          (mod, modElemnts) => { mod.content.popDefs.AddRange(PopDef.ParseList(mod.info.name, modElemnts)); });
+            //modStructDict.Add("buffer/depart", (mod, modElemnts) => { mod.content.bufferDef.GetGroup("depart.buffer").AddRange(BufferDef.Anaylize(modElemnts)); });
+            //modStructDict.Add("defines",       (mod, modElemnts) => { mod.content.commonDef = new CommonDef(modElemnts); });
         }
 
 
         internal static string modRootPath = Application.streamingAssetsPath + "/mod/";
-        internal static Dictionary<string, Action<Content, List<SyntaxMod.MultiItem>>> modStructDict;
+        internal static Dictionary<string, Action<Mod, IEnumerable<MultiItem>>> modStructDict;
 
         internal static List<Mod> listMod = new List<Mod>();
 
@@ -66,7 +65,25 @@ namespace TaisEngine.ModManager
 
         internal string path;
         internal Info info;
-        internal Content content;
+        internal Content content
+        {
+            get
+            {
+                if(!info.isloadMod)
+                {
+                    return null;
+                }
+
+                if(_content == null)
+                {
+                    _content = new Content();
+                }
+
+                return _content;
+            }
+        }
+
+        internal Content _content;
 
         internal Mod(string modPath)
         {
@@ -76,7 +93,17 @@ namespace TaisEngine.ModManager
 
             if(info.isloadMod)
             {
-                content = new Content(path);
+                Log.INFO("Load mod content start");
+
+                content.localString = new LocalString($"{path}/lang/");
+
+                var syntaxMod = new SyntaxMod(path);
+                foreach (var elem in Mod.modStructDict)
+                {
+                    elem.Value(this, syntaxMod.GetElements(elem.Key).Select(x => x.multiItem));
+                }
+
+                Log.INFO("Load mod content finish");
             }
         }
 
@@ -108,10 +135,10 @@ namespace TaisEngine.ModManager
             SyntaxMod syntaxMod;
 
             internal LocalString localString;
-            internal InitSelectDef initSelectDef;
-            internal EventDef eventDef;
-            internal DepartDef departDef;
-            internal PopDef popDef;
+            internal List<InitSelectDef> initSelectDefs;
+            internal EventGroup eventGroup;
+            internal List<DepartDef> departDefs;
+            internal List<PopDef> popDefs;
             internal BufferDef bufferDef;
             internal CommonDef commonDef;
 
@@ -128,29 +155,20 @@ namespace TaisEngine.ModManager
             //internal Dictionary<string, Dictionary<string, string>> dictlang = new Dictionary<string, Dictionary<string, string>>();
             //
 
-            internal Content(string path)
-            {
-                Log.INFO("Load mod content start");
+            internal Content()
+            { 
+                initSelectDefs = new List<InitSelectDef>();
+                departDefs = new List<DepartDef>();
+                popDefs = new List<PopDef>();
 
-                localString = new LocalString($"{path}/lang/");
-
-                eventDef = new EventDef();
-                bufferDef = new BufferDef();
-
-                syntaxMod = new SyntaxMod(path);
-
-                foreach (var elem in Mod.modStructDict)
-                {
-                    elem.Value(this, syntaxMod.GetElements(elem.Key));
-                }
-
-                Log.INFO("Load mod content finish");
+                eventGroup = new EventGroup();
+                bufferDef = new BufferDef();          
             }
 
             internal void Check()
             {
-                //initSelectDef.Check();
-                eventDef.Check();
+                //initSelectDefs.ForEach(x=>x.CheckDefault());
+                //eventDef.Check();
                 //departDef.Check();
             }
         }

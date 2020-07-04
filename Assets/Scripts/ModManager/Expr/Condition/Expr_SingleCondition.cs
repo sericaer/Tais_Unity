@@ -10,6 +10,11 @@ namespace TaisEngine.ModManager
             return factor.Read();
         }
 
+        internal Expr_SingleCondition(bool rslt) : base(null)
+        {
+            defaultValue = rslt;
+        }
+
         internal Expr_SingleCondition(SingleValue modValue) : base(modValue)
         {
             factor = new Factor<bool>(modValue, Visitor.VType.READ);
