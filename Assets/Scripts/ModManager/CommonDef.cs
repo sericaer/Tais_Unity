@@ -9,12 +9,14 @@ namespace TaisEngine.ModManager
     {
         internal CropGrowingInfo cropGrowingInfo;
 
-        public CommonDef(List<SyntaxMod.MultiItem> modElemnts)
+        public CommonDef(IEnumerable<MultiItem> modElemnts)
         {
-            var cropMod = modElemnts.SingleOrDefault(x => x.filePath.EndsWith("crop_growing.txt"));
-            if(cropMod != null)
+            foreach(var modElem in modElemnts)
             {
-                this.cropGrowingInfo = ModAnaylize.Parse<CropGrowingInfo>(cropMod.multiItem);
+                if(modElem.Find<SingleValue>("name").value == "CROP_GROWING")
+                {
+                    this.cropGrowingInfo = ModAnaylize.Parse<CropGrowingInfo>(modElem);
+                }
             }
         }
 

@@ -25,7 +25,7 @@ namespace TaisEngine.ModManager
             modStructDict.Add("depart",       (mod, modElemnts) => { mod.content.departDefs.AddRange(DepartDef.ParseList(mod.info.name, modElemnts)); });
             modStructDict.Add("pop",          (mod, modElemnts) => { mod.content.popDefs.AddRange(PopDef.ParseList(mod.info.name, modElemnts)); });
             //modStructDict.Add("buffer/depart", (mod, modElemnts) => { mod.content.bufferDef.GetGroup("depart.buffer").AddRange(BufferDef.Anaylize(modElemnts)); });
-            //modStructDict.Add("defines",       (mod, modElemnts) => { mod.content.commonDef = new CommonDef(modElemnts); });
+            modStructDict.Add("defines",       (mod, modElemnts) => { mod.content.commonDef = new CommonDef(modElemnts); });
         }
 
 

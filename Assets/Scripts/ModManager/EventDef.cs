@@ -116,6 +116,15 @@ namespace TaisEngine.ModManager
                 occur_days = new Expr_ModifierGroup(1);
             }
 
+            for (int i = 0; i < options.Count(); i++)
+            {
+                var op = options[i];
+
+                if (op.desc == null)
+                {
+                    op.desc = new Expr_MultiValue($"{name}_OPTION_{i + 1}_DESC");
+                }
+            }
         }
 
         //internal class Element
