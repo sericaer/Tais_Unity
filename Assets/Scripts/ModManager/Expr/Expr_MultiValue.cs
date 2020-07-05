@@ -11,7 +11,7 @@ namespace TaisEngine.ModManager
         {
         }
 
-        internal static Expr_MultiValue Parse(SyntaxMod.Element mod, string name, object[] defValue)
+        internal static Expr_MultiValue Parse(SyntaxMod.MultiItem mod, string name, object[] defValue)
         {
             try
             {
@@ -50,7 +50,7 @@ namespace TaisEngine.ModManager
             return factors.Select(x => x.Read()).ToArray();
         }
 
-        internal Expr_MultiValue(object[] defaultValue) : base(null)
+        internal Expr_MultiValue(params object[] defaultValue) : base(null)
         {
             this.defaultValue = defaultValue;
         }

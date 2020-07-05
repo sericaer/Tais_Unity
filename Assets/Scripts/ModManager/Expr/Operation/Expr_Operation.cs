@@ -38,15 +38,9 @@ namespace TaisEngine.ModManager
     {
         internal List<Expr_Operation> operations = new List<Expr_Operation>();
 
-        public Expr_OperationGroup(MultiItem opRaw, string key)
+        public Expr_OperationGroup(MultiItem opRaw)
         {
-            var raw = opRaw.TryFind<MultiItem>(key);
-            if(raw == null)
-            {
-                return;
-            }
-
-            foreach(var elem in raw.elems)
+            foreach(var elem in opRaw.elems)
             {
                 operations.Add(Expr_Operation.Parse(elem));
             }

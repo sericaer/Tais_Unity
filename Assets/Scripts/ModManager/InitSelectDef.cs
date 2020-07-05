@@ -11,75 +11,43 @@ using ModVisitor;
 
 namespace TaisEngine.ModManager
 {
-    internal class InitSelectDef
+    internal class InitSelectDef : BaseDef<InitSelectDef>
     {
-        internal class Element
+        [ModProperty("name")]
+        public string name;
+
+        [ModProperty("is_first")]
+        public bool? is_first;
+
+        [ModProperty("desc")]
+        public Expr_MultiValue desc;
+
+        [ModPropertyList("option")]
+        public List<OptionDef> options;
+
+        internal void SetDefault()
         {
-            public string name;
-
-            public Expr<bool> is_first;
-            public Expr<object[]> desc;
-
-            public List<OptionDef> options;
-
-            public Element(SyntaxMod.Element modElem)
+            if (is_first == null)
             {
-                this.name = Path.GetFileNameWithoutExtension(modElem.filePath).ToUpper();
-
-                this.is_first = Expr_Condition.Parse(modElem, "is_first", false);
-
-                object[] defDesc = { this.name + "_DESC" };
-                this.desc = Expr_MultiValue.Parse(modElem, "desc", defDesc);
-
-                this.options = OptionDef.ParseList(modElem, "option", name); 
-                //new List<OptionDef>();
-                //var rawOptions = modElem.multiItem.elems.Where(x => x.key == "option").ToArray();
-                //for (int i=0; i< rawOptions.Count(); i++)
-                //{
-                //    this.options.Add(new OptionDef($"{name}_OPTION_{i+1}_DESC", rawOptions[i].value as MultiItem));
-                //}
+                is_first = false;
             }
-        }
 
-        static internal Element Find(string name)
-        {
-            foreach (var mod in Mod.listMod.Where(x => x.content != null))
+            if(desc == null)
             {
-                var finded = mod.content.initSelectDef.lists.Find(x => x.name == name);
-                if(finded != null)
+                desc = new Expr_MultiValue(name + "_DESC");
+            }
+
+            for(int i=0; i<options.Count(); i++)
+            {
+                var op = options[i];
+
+                if (op.desc == null)
                 {
-                    return finded;
+                    op.desc = new Expr_MultiValue($"{name}_OPTION_{i+1}_DESC");
                 }
             }
 
-            throw new Exception("can not find INIT_SELECT:" + name);
-        }
-
-        static internal IEnumerable<Element> Enumerate()
-        {
-            foreach(var mod in Mod.listMod.Where(x=>x.content != null))
-            {
-                foreach(var elem in mod.content.initSelectDef.lists)
-                {
-                    yield return elem;
-                }
-            }
-        }
-
-        internal List<Element> lists = new List<Element>();
-
-        public InitSelectDef(List<SyntaxMod.Element> modElements)
-        {
-            if(modElements == null)
-            {
-                return;
-            }
-
-            foreach(var modElem in modElements)
-            {
-                var elem = new Element(modElem);
-                lists.Add(elem);
-            }
+            //options.ForEach(x => x.CheckDefault());
         }
     }
 }

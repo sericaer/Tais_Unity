@@ -20,7 +20,7 @@ public class InitScene : MonoBehaviour
         CreateNameAgePanel();
     }
 
-    internal void CreateSelectPanel(InitSelectDef.Element selectDef)
+    internal void CreateSelectPanel(InitSelectDef selectDef)
     {
         var panelSelect = Instantiate(selectPanel, this.transform) as GameObject;
         panelSelect.GetComponentInChildren<SelectPanel>().initSelectDef = selectDef;

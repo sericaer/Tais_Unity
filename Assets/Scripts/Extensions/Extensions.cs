@@ -9,7 +9,7 @@ namespace TaisEngine.Extensions
     {
         public static TaisEngine.Run.Depart FindByColor(this List<TaisEngine.Run.Depart> departs, string color)
         {
-            return departs.SingleOrDefault(x => x.def.color == color);
+            return departs.SingleOrDefault(x => x.color == color);
         }
 
         private static HashSet<Type> NumericTypes = new HashSet<Type>

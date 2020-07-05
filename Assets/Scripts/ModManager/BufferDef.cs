@@ -19,7 +19,7 @@ namespace TaisEngine.ModManager
 
             //public List<OptionDef> options;
 
-            public Element(SyntaxMod.Element modElem)
+            public Element(SyntaxMod.MultiItem modElem)
             {
                 this.name = Path.GetFileNameWithoutExtension(modElem.filePath).ToUpper();
 
@@ -53,7 +53,7 @@ namespace TaisEngine.ModManager
             throw new Exception();
         }
 
-        internal static List<Element> Anaylize(List<SyntaxMod.Element> modElemnts)
+        internal static List<Element> Anaylize(List<SyntaxMod.MultiItem> modElemnts)
         {
             List<Element> rslt = new List<Element>();
             foreach(var elem in modElemnts)

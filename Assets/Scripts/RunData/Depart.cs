@@ -17,7 +17,7 @@ namespace TaisEngine.Run
     {
         //public static int growingdays = 250;
 
-        internal IEnumerable<EventDef.Element> DaysInc()
+        internal IEnumerable<EventInterface> DaysInc()
         {
             cropGrowingProcess();
 
@@ -29,6 +29,16 @@ namespace TaisEngine.Run
             get
             {
                 return RunData.inst.pops.Where(x=>x.depart_name == name);
+            }
+        }
+
+        public string color
+        {
+            get
+            {
+                var colorDef = def.color.Result();
+
+                return string.Format("{0:0},{1:0},{2:0}", colorDef[0], colorDef[1], colorDef[2]);
             }
         }
 
@@ -103,7 +113,7 @@ namespace TaisEngine.Run
             }
         }
 
-        internal DepartDef.Element def
+        internal DepartDef def
         {
             get
             {
@@ -126,7 +136,7 @@ namespace TaisEngine.Run
             }
         }
 
-        internal Depart(DepartDef.Element def)
+        internal Depart(DepartDef def)
         {
             this.name = def.name;
             //this.buffers = new List<Buffer>();

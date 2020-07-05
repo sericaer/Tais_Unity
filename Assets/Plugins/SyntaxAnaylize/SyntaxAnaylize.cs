@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace SyntaxAnaylize
 {
@@ -15,6 +16,7 @@ namespace SyntaxAnaylize
             try
             {
                 MultiItem rslt = new MultiItem(0);
+                rslt.Add("name", Path.GetFileNameWithoutExtension(filename).ToUpper());
 
                 int charIndex = 0;
 
@@ -363,9 +365,19 @@ namespace SyntaxAnaylize
             return "\n{\n    " + string.Join("\n", elems.Select(x => x.ToString())).Replace("\n", "\n    ") + "\n}";
         }
 
+        internal void Add(string key, string value)
+        {
+            elems.Add(new Item(key, value, 0));
+        }
+
         internal void AddRange(IEnumerable<Item> list)
         {
             elems.AddRange(list);
+        }
+
+        public IEnumerable<Value> TryFinds(string key)
+        {
+            return elems.Where(x => x.key == key).Select(x=>x.value);
         }
     }
 

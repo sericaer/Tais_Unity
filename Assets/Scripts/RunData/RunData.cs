@@ -53,7 +53,7 @@ namespace TaisEngine.Run
             pops = new List<Pop>();
             foreach (var depart in departs)
             {
-                foreach(var def in PopDef.Enumerate())
+                foreach (var def in PopDef.Enumerate())
                 {
                     var num = depart.def.popInitDict.ContainsKey(def.name) ? depart.def.popInitDict[def.name] : 0;
                     pops.Add(new Pop(def, depart.name, num));
@@ -66,9 +66,9 @@ namespace TaisEngine.Run
         {
         }
 
-        async internal UniTask DaysInc(Func<EventDef.Element, UniTask> act)
+        async internal UniTask DaysInc(Func<EventInterface, UniTask> act)
         {
-            foreach (var gevent in EventDef.Generate())
+            foreach (var gevent in EventGroup.Generate())
             {
                 await act(gevent);
             }

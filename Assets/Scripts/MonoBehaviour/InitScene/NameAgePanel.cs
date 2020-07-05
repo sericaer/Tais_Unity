@@ -53,7 +53,7 @@ public class NameAgePanel : MonoBehaviour
 
         gameObject.SetActive(false);
 
-        var select1st = InitSelectDef.Enumerate().Single(x => x.is_first.Result());
+        var select1st = InitSelectDef.Enumerate().Single(x => x.is_first.Value);
         GetComponentInParent<InitScene>().CreateSelectPanel(select1st);
     }
 

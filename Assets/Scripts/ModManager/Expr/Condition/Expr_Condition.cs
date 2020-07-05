@@ -9,7 +9,7 @@ namespace TaisEngine.ModManager
         {
         }
 
-        internal static Expr<bool> Parse(SyntaxMod.Element mod, string name, bool? defValue)
+        internal static Expr<bool> Parse(SyntaxMod.MultiItem mod, string name, bool? defValue)
         {
             try
             {
@@ -18,6 +18,19 @@ namespace TaisEngine.ModManager
             catch (Exception e)
             {
                 throw new Exception($"parse file faild! {mod.filePath}", e);
+            }
+        }
+
+        internal static Expr_Condition Parse(Value modValue)
+        {
+            switch (modValue)
+            {
+                case MultiItem multi:
+                    return ParseMulti(multi);
+                case SingleValue single:
+                    return ParseSingle(single);
+                default:
+                    throw new Exception($"EvalExpr_Condition not support {modValue} ");
             }
         }
 
