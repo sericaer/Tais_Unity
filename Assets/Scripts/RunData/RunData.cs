@@ -30,6 +30,9 @@ namespace TaisEngine.Run
         public GMDate date;
 
         [JsonProperty]
+        public Chaoting chaoting;
+
+        [JsonProperty]
         internal List<Depart> departs;
 
         [JsonProperty]
@@ -44,11 +47,13 @@ namespace TaisEngine.Run
         {
             date = new GMDate();
 
-            economy = new Economy();
+            economy = new Economy(Economy.TAX_LEVEL.level2);
 
             taishou = new Taishou(initData.taishou);
 
             departs = DepartDef.Enumerate().Select(x => new Depart(x)).ToList();
+
+            chaoting = new Chaoting("", pops.Where(x=>x.def.is_tax.Value).Sum(x=>(int)x.num), 100);
 
             pops = new List<Pop>();
             foreach (var depart in departs)
