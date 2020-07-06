@@ -78,13 +78,13 @@ namespace TaisEngine.Run
             }
         }
 
-        //internal bool local_tax_change_valid
-        //{
-        //    get
-        //    {
-        //        return GMData.inst.days >= validTaxChangedDays;
-        //    }
-        //}
+        internal bool local_tax_change_valid
+        {
+            get
+            {
+                return RunData.inst.date.total_days >= validTaxChangedDays;
+            }
+        }
 
         internal Economy()
         {
@@ -103,9 +103,9 @@ namespace TaisEngine.Run
             }
         }
 
-        //internal double getExpectTaxValue(float level)
-        //{
-        //    return Defines.getExpectTax(level) * taxed_pop_num;
-        //}
+        internal double getExpectTaxValue(float level)
+        {
+            return TaisEngine.ModManager.CommonDef.TaxLevel.getInCome(level) * taxed_pop_num;
+        }
     }
 }
