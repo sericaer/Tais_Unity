@@ -53,8 +53,6 @@ namespace TaisEngine.Run
 
             departs = DepartDef.Enumerate().Select(x => new Depart(x)).ToList();
 
-            chaoting = new Chaoting("", pops.Where(x=>x.def.is_tax.Value).Sum(x=>(int)x.num), 100);
-
             pops = new List<Pop>();
             foreach (var depart in departs)
             {
@@ -65,6 +63,7 @@ namespace TaisEngine.Run
                 }
             }
 
+            chaoting = new Chaoting("", pops.Where(x => x.def.is_tax.Value).Sum(x => (int)x.num), 100);
         }
 
         public RunData()
@@ -85,6 +84,8 @@ namespace TaisEngine.Run
                     await act(gevent);
                 }
             }
+
+            economy.DayInc();
 
             date++;
         }

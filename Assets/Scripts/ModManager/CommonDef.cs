@@ -18,12 +18,11 @@ namespace TaisEngine.ModManager
                 {
                     this.cropGrowingInfo = ModAnaylize.Parse<CropGrowingInfo>(modElem);
                 }
-            }
 
-            var taxLevelMod = modElemnts.SingleOrDefault(x => x.filePath.EndsWith("tax_level.txt"));
-            if (taxLevelMod != null)
-            {
-                this.taxLevel = ModAnaylize.Parse<TaxLevel>(taxLevelMod.multiItem);
+                if (modElem.Find<SingleValue>("name").value == "TAX_LEVEL")
+                {
+                    this.taxLevel = ModAnaylize.Parse<TaxLevel>(modElem);
+                }
             }
         }
 
@@ -107,13 +106,13 @@ namespace TaisEngine.ModManager
             private double getInComeImp(float curr_tax_level)
             {
                 var levelbase = (int)curr_tax_level;
-                var valueBase = popInitDict[levelbase.ToString()].income.Value;
+                var valueBase = levels.Single(x => x.value == levelbase).income.Value;
                 if(levelbase == (int)Run.Economy.TAX_LEVEL.levelmax)
                 {
                     return valueBase;
                 }
 
-                var valueNext = popInitDict[(levelbase+1).ToString()].income.Value;
+                var valueNext = levels.Single(x => x.value == levelbase+1).income.Value;
                 var leveloffset = curr_tax_level - levelbase;
 
                 return valueBase + leveloffset * (valueNext - valueBase);
@@ -133,11 +132,14 @@ namespace TaisEngine.ModManager
             [ModProperty("tax_change_intervl")]
             int? tax_change_intervl;
 
-            [ModProperty("level")]
-            internal Dictionary<string, LEVEL_INFO> popInitDict;
+            [ModPropertyList("level")]
+            internal List<LEVEL_INFO> levels;
 
             internal class LEVEL_INFO
             {
+                [ModProperty("value")]
+                internal int? value;
+
                 [ModProperty("income")]
                 internal double? income;
 
