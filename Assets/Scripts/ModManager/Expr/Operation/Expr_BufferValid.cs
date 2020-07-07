@@ -36,10 +36,19 @@ namespace TaisEngine.ModManager
 
         internal override void Check()
         {
-            if(!BufferDef.GetGroupDict(left.raw).ContainsKey(right.raw))
+            switch(left.raw)
             {
-                throw new Expr_Exception($"'{right.raw}' not in '{left.raw}'", base.opRaw);
+                case "depart.buffer":
+                    if(BufferGroup.BufferDefDepart.Find(right.raw) == null)
+                    {
+                        throw new Expr_Exception($"'{right.raw}' not in '{left.raw}'", base.opRaw);
+                    }
+                    break;
+                default:
+                    throw new Exception();
             }
+
+
         }
 
         internal override void Do()

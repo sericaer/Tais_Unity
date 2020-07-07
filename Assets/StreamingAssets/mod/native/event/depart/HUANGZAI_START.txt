@@ -1,13 +1,18 @@
 trigger = 
 {
-    is.equal = {common.day, 2}
+    and = 
+    {
+        is.equal = {common.day, 2}
+        not = { is.buffer_valid = {depart.buffer, HUANGZAI} }
+    }
+    
 }
 
 desc = {DEMON_DEPART, depart.name}
 
 occur_days = 
 {
-    base = 30
+    base = 1
 }
 
 option = 

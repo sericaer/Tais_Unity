@@ -19,7 +19,7 @@ namespace TaisEngine.Run
             this.name = buffName;
         }
 
-        internal BufferDef.Element def
+        internal BufferGroup.BufferInterface def
         {
             get
             {
@@ -36,6 +36,11 @@ namespace TaisEngine.Run
             buffers.Add(new Buffer(buffName));
         }
 
+        internal bool IsValid(string name)
+        {
+            return buffers.Find(x => x.name == name) != null;
+        }
+
         public IEnumerator<Buffer> GetEnumerator()
         {
             return ((IEnumerable<Buffer>)buffers).GetEnumerator();
@@ -48,6 +53,5 @@ namespace TaisEngine.Run
 
         [JsonProperty]
         internal List<Buffer> buffers = new List<Buffer>();
-
     }
 }

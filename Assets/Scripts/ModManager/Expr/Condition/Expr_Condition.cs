@@ -74,6 +74,12 @@ namespace TaisEngine.ModManager
             {
                 case "is.equal":
                     return new Expr_Equal(items.elems[0].value);
+                case "and":
+                    return new Expr_And(items);
+                case "not":
+                    return new Expr_Not(items);
+                case "is.buffer_valid":
+                    return new Expr_IsBufferValid(items);
                 default:
                     throw new Exception();
             }
