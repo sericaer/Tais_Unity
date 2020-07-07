@@ -7,11 +7,11 @@ using TaisEngine.Extensions;
 
 namespace TaisEngine.ModManager
 {
-    internal class Expr_And : Expr_Condition
+    internal class Expr_Not : Expr_Condition
     {
-        internal static string key = "and";
+        internal static string key = "not";
 
-        internal Expr_And(Value value) : base(value)
+        internal Expr_Not(Value value) : base(value)
         {
             if(!(value is MultiItem))
             {
@@ -19,38 +19,19 @@ namespace TaisEngine.ModManager
             }
 
             var multiItem = value as MultiItem;
-            if (multiItem.elems.Count < 2)
+            if (multiItem.elems.Count != 1)
             {
-                throw new Expr_Exception($"{key} must support > 2 element", value);
+                throw new Expr_Exception($"{key} must support 1 element", value);
             }
 
-            foreach(var elem in multiItem.elems)
-            {
-                list.Add(Expr_Condition.Parse(elem));
-            }
-
-            //left = new Factor<object>(multiValue.elems[0], Visitor.VType.READ);
-            //right = new Factor<object>(multiValue.elems[1], Visitor.VType.READ);
-
-
-            //if(left.GetValueType() == right.GetValueType())
-            //{
-            //    return;
-            //}
-
-            //if(left.GetValueType().IsNumericType() && right.GetValueType().IsNumericType())
-            //{
-            //    return;
-            //}
-
-            //throw new Expr_Exception($"left type {left.GetValueType()} not same right {right.GetValueType()}", value);
+            sub = Expr_Condition.Parse(multiItem.elems[0]);
         }
 
         internal override bool ResultImp()
         {
-            return list.All(x => x.ResultImp());
+            return !sub.Result();
         }
 
-        List<Expr_Condition> list = new List<Expr_Condition>();
+        Expr_Condition sub;
     }
 }

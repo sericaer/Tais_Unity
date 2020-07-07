@@ -86,7 +86,13 @@ namespace TaisEngine.ModManager
             }
 
             value = new Factor<double>(valueItem as SingleValue, Visitor.VType.READ);
-            condition = Expr_Condition.Parse(multiItem, "cond", null);
+
+            var condRaw = multiItem.TryFind("cond");
+            if (condRaw != null)
+            {
+                condition = Expr_Condition.Parse(condRaw);
+            }
+            
         }
 
         internal bool valid

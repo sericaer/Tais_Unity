@@ -18,6 +18,12 @@ namespace TaisEngine.ModManager
             {
                 if(mod.content.localString.dictlang[Config.inst.lang].ContainsKey(format))
                 {
+                    rslt = mod.content.localString.dictlang[Config.inst.lang][format];
+                    if(objs.Count() == 0)
+                    {
+                        return rslt;
+                    }
+
                     rslt = string.Format(mod.content.localString.dictlang[Config.inst.lang][format], 
                                             objs.Select(y => y is string ? Get(y as string) : y).ToArray());
                 }

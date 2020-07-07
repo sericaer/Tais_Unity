@@ -139,7 +139,7 @@ namespace TaisEngine.ModManager
             internal EventGroup eventGroup;
             internal List<DepartDef> departDefs;
             internal List<PopDef> popDefs;
-            internal BufferDef bufferDef;
+            internal BufferGroup bufferGroup;
             internal CommonDef commonDef;
 
             //internal BackgroundDef backgroundDef;
@@ -162,7 +162,7 @@ namespace TaisEngine.ModManager
                 popDefs = new List<PopDef>();
 
                 eventGroup = new EventGroup();
-                bufferDef = new BufferDef();          
+                bufferGroup = new BufferGroup();          
             }
 
             internal void Check()

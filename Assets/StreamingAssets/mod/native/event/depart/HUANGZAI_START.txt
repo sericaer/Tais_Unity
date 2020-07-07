@@ -8,7 +8,9 @@ trigger =
     
 }
 
-desc = {DEMON_DEPART, depart.name}
+title = {HUANGZAI_START_TITLE, depart.name}
+
+desc = {HUANGZAI_START_DESC, depart.name}
 
 occur_days = 
 {

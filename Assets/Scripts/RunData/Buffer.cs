@@ -23,7 +23,7 @@ namespace TaisEngine.Run
         {
             get
             {
-                return BufferDef.FindByName(name);
+                return BufferGroup.FindByName(name);
             }
         }
     }

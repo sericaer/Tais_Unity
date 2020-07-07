@@ -9,77 +9,74 @@ namespace TaisEngine.ModManager
         {
         }
 
-        internal static Expr<bool> Parse(SyntaxMod.MultiItem mod, string name, bool? defValue)
-        {
-            try
-            {
-                return Parse(mod.multiItem, name, defValue);
-            }
-            catch (Exception e)
-            {
-                throw new Exception($"parse file faild! {mod.filePath}", e);
-            }
-        }
+        //internal static Expr<bool> Parse(SyntaxMod.MultiItem mod, string name, bool? defValue)
+        //{
+        //    try
+        //    {
+        //        return Parse(mod.multiItem, name, defValue);
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        throw new Exception($"parse file faild! {mod.filePath}", e);
+        //    }
+        //}
 
         internal static Expr_Condition Parse(Value modValue)
         {
             switch (modValue)
             {
+                case Item item:
+                    return ParseItem(item);
                 case MultiItem multi:
-                    return ParseMulti(multi);
+                    return ParseItem(multi.elems[0]);
                 case SingleValue single:
                     return ParseSingle(single);
                 default:
-                    throw new Exception($"EvalExpr_Condition not support {modValue} ");
+                    throw new Exception($"Expr_Condition not support {modValue} ");
             }
         }
 
-        internal static Expr<bool> Parse(MultiItem multiItem, string name, bool? defValue)
-        {
-            var modValue = multiItem.TryFind(name);
-            if (modValue == null)
-            {
-                if (defValue != null)
-                {
-                    return new ExprDefault<bool>(defValue.Value);
-                }
+        //internal static Expr<bool> Parse(MultiItem multiItem, string name, bool? defValue)
+        //{
+        //    var modValue = multiItem.TryFind(name);
+        //    if (modValue == null)
+        //    {
+        //        if (defValue != null)
+        //        {
+        //            return new ExprDefault<bool>(defValue.Value);
+        //        }
 
-                throw new Exception();
-            }
+        //        throw new Exception();
+        //    }
 
-            switch (modValue)
-            {
-                case MultiItem multi:
-                    return ParseMulti(multi);
-                case SingleValue single:
-                    return ParseSingle(single);
-                default:
-                    throw new Exception($"EvalExpr_Condition not support {modValue} ");
-            }
-        }
+        //    switch (modValue)
+        //    {
+        //        case MultiItem multi:
+        //            return ParseMulti(multi);
+        //        case SingleValue single:
+        //            return ParseSingle(single);
+        //        default:
+        //            throw new Exception($"EvalExpr_Condition not support {modValue} ");
+        //    }
+        //}
 
         private static Expr_Condition ParseSingle(SingleValue single)
         {
             return new Expr_SingleCondition(single);
         }
 
-        private static Expr_Condition ParseMulti(MultiItem items)
+        private static Expr_Condition ParseItem(Item item)
         {
-            if (items.elems.Count != 1)
-            {
-                throw new Exception($"EvalExpr_Condition should only 1 element, but curr is {items.elems.Count}");
-            }
-
-            switch (items.elems[0].key)
+            switch (item.key)
             {
                 case "is.equal":
-                    return new Expr_Equal(items.elems[0].value);
+                    return new Expr_Equal(item.value);
                 case "and":
-                    return new Expr_And(items);
+                    return new Expr_And(item.value);
                 case "not":
-                    return new Expr_Not(items);
+                    return new Expr_Not(item.value);
                 case "is.buffer_valid":
-                    return new Expr_IsBufferValid(items);
+                    return new Expr_IsBufferValid(item.value);
                 default:
                     throw new Exception();
             }

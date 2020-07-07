@@ -17,9 +17,14 @@ namespace TaisEngine.ModManager
 
         internal List<BufferDefDepart> depart = new List<BufferDefDepart>();
 
-        internal class BufferDefDepart : BufferDef<EventDefDepart>
+        internal class BufferDefDepart : BufferDef<BufferDefDepart>
         {
 
+        }
+
+        internal static BufferInterface FindByName(string name)
+        {
+            return BufferDefDepart.Find(name);
         }
 
         internal interface BufferInterface
@@ -151,5 +156,5 @@ namespace TaisEngine.ModManager
         //        }
         //    }
         //}
-    }
+    //}
 }
