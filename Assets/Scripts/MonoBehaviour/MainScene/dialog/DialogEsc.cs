@@ -18,24 +18,23 @@ public class DialogEsc : MonoBehaviour
         //GMData.inst.end_flag = true;
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         SceneManager.LoadSceneAsync("StartScene");
-        
-        
     }
 
     public void onClickCancel()
     {
-        //gameObject.SetActive(false);
         toggle.isOn = false;
+        gameObject.SetActive(false);
     }
 
     void OnEnable()
     {
         this.transform.SetAsLastSibling();
-        //Timer.Pause();
+
+        Timer.Pause();
     }
 
     void OnDisable()
     {
-        //Timer.unPause();
+        Timer.unPause();
     }
 }
