@@ -27,7 +27,7 @@ public class EconomyDetail : MonoBehaviour
 
     public void OnConfirm()
     {
-        if(changedCurrTax != 0.0)
+        if (changedCurrTax.Equals(0.0))
         {
             economy.currTaxChanged(changedCurrTax);
         }
@@ -101,7 +101,8 @@ public class EconomyDetail : MonoBehaviour
     {
         LocalCurrTaxText.text = economy.getExpectTaxValue(LocalCurrTaxSlider.value).ToString();
 
-        surplusText.text = economy.surplus.ToString();
+        var surplus = double.Parse(LocalCurrTaxText.text) - double.Parse(ChaotingExpectTaxText.text);
+        surplusText.text = surplus.ToString();
         //consumeText.text = TaisEngine.Defines.getExpectConsume(LocalCurrTaxSlider.value).ToString();
     }
 
