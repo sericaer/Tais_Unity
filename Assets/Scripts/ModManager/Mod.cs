@@ -23,6 +23,7 @@ namespace TaisEngine.ModManager
             modStructDict.Add("init_select",  (mod, modElemnts) => { mod.content.initSelectDefs.AddRange(InitSelectDef.ParseList(mod.info.name, modElemnts)); });
             modStructDict.Add("event/common", (mod, modElemnts) => { mod.content.eventGroup.common.AddRange(EventDefCommon.ParseList(mod.info.name, modElemnts)); });
             modStructDict.Add("event/depart", (mod, modElemnts) => { mod.content.eventGroup.depart.AddRange(EventDefDepart.ParseList(mod.info.name, modElemnts)); });
+            modStructDict.Add("buffer/depart", (mod, modElemnts) => { mod.content.bufferGroup.depart.AddRange(BufferDefDepart.ParseList(mod.info.name, modElemnts)); });
             modStructDict.Add("depart",       (mod, modElemnts) => { mod.content.departDefs.AddRange(DepartDef.ParseList(mod.info.name, modElemnts)); });
             modStructDict.Add("pop",          (mod, modElemnts) => { mod.content.popDefs.AddRange(PopDef.ParseList(mod.info.name, modElemnts)); });
             modStructDict.Add("defines",       (mod, modElemnts) => { mod.content.commonDef = new CommonDef(modElemnts); });

@@ -42,11 +42,23 @@ namespace TaisEngine.ModManager
                 }
             }
         }
+
+        internal void Check()
+        {
+            foreach (var elem in EventDefCommon.Enumerate())
+            {
+                elem.Check();
+            }
+
+            foreach (var elem in EventDefDepart.Enumerate())
+            {
+                elem.Check();
+            }
+        }
     }
 
     internal class EventDefCommon : EventDef<EventDefCommon>
     {
-
     }
 
     internal class EventDefDepart : EventDef<EventDefDepart>
@@ -124,6 +136,17 @@ namespace TaisEngine.ModManager
                 {
                     op.desc = new Expr_MultiValue($"{name}_OPTION_{i + 1}_DESC");
                 }
+            }
+        }
+
+        internal void Check()
+        {
+            //trigger.Check();
+            //occur_days.Check();
+
+            foreach (var op in options)
+            {
+                op.Check();
             }
         }
 

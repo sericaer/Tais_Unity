@@ -32,6 +32,8 @@ namespace TaisEngine.ModManager
             {
                 throw new Expr_Exception("1srt param in set.buffer_valid must be buffers", item);
             }
+
+            //Check();
         }
 
         internal override void Check()
@@ -39,7 +41,7 @@ namespace TaisEngine.ModManager
             switch(left.raw)
             {
                 case "depart.buffer":
-                    if(BufferGroup.BufferDefDepart.Find(right.raw) == null)
+                    if(BufferDefDepart.Find(right.raw) == null)
                     {
                         throw new Expr_Exception($"'{right.raw}' not in '{left.raw}'", base.opRaw);
                     }

@@ -18,7 +18,7 @@ namespace TaisEngine.ModManager
         {
             if (!dict.ContainsKey(name))
             {
-                throw new Exception("can not find INIT_SELECT:" + name);
+                throw new Exception("can not find:" + name);
             }
 
             return dict[name].First().def;

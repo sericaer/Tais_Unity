@@ -19,7 +19,7 @@ namespace TaisEngine.Run
             this.name = buffName;
         }
 
-        internal BufferGroup.BufferInterface def
+        internal BufferInterface def
         {
             get
             {

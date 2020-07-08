@@ -212,7 +212,7 @@ namespace SyntaxAnaylize
                 return ELEM_TYPE.BRACE_CLOSE;
             }
 
-            rslt = Regex.Match(curr, @"([ ]*[A-Za-z0-9_\.\+\-\*/]+)+");
+            rslt = Regex.Match(curr, @"([ ]*[A-Za-z0-9_\.\+\-\*/%]+)+");
             if (rslt.Success)
             {
                 endIndex = charIndex + rslt.Length;
