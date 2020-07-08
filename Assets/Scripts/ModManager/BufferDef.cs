@@ -33,13 +33,13 @@ namespace TaisEngine.ModManager
         public string name;
 
         [ModProperty("effect")]
-        public Dictionary<string, string> effect;
+        public Dictionary<string, EffectDef> effect;
 
         internal void SetDefault()
         {
             if (effect == null)
             {
-                effect = new Dictionary<string, string>();
+                effect = new Dictionary<string, EffectDef>();
             }
         }
     }
@@ -47,6 +47,12 @@ namespace TaisEngine.ModManager
     internal class BufferDefDepart : BufferDef<BufferDefDepart>
     {
 
+    }
+
+    internal class EffectDef
+    {
+        string raw;
+        Func<double, double> func;
     }
 
     //internal class EventDefCommon : BufferDef<EventDefCommon>

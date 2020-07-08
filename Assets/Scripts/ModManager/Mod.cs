@@ -169,7 +169,7 @@ namespace TaisEngine.ModManager
             internal void Check()
             {
                 //initSelectDefs.ForEach(x=>x.CheckDefault());
-                //eventDef.Check();
+                eventGroup.Check();
                 //departDef.Check();
             }
         }
