@@ -9,6 +9,11 @@ namespace Tools
     {
         public static bool isOccurDays(int days)
         {
+            if (days < 1)
+            {
+                throw new Exception("isOccurDays must >= 1, curr" + days);
+            }
+
             if (days == 1)
             {
                 return true;

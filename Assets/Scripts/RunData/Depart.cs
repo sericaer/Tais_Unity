@@ -59,7 +59,7 @@ namespace TaisEngine.Run
         [JsonProperty, VisitPropery("depart.buffer")]
         public BufferManager bufferManager = new BufferManager();
 
-        [JsonProperty]
+        [JsonProperty, VisitPropery("depart.crop_grown")]
         public double crop_grow_percent;
 
         //[JsonProperty]

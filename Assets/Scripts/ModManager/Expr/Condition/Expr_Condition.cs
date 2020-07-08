@@ -28,6 +28,10 @@ namespace TaisEngine.ModManager
                 case Item item:
                     return ParseItem(item);
                 case MultiItem multi:
+                    if(multi.elems.Count != 1)
+                    {
+                        throw new Expr_Exception("Expr_Condition must have 1 element", multi);
+                    }
                     return ParseItem(multi.elems[0]);
                 case SingleValue single:
                     return ParseSingle(single);
@@ -71,6 +75,10 @@ namespace TaisEngine.ModManager
             {
                 case "is.equal":
                     return new Expr_Equal(item.value);
+                case "is.less":
+                    return new Expr_Less(item.value);
+                case "is.greater":
+                    return new Expr_Greater(item.value);
                 case "and":
                     return new Expr_And(item.value);
                 case "not":

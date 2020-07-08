@@ -16,6 +16,8 @@ namespace TaisEngine.ModManager
                     return new Expr_SetValue(item);
                 case "set.buffer_valid":
                     return new Expr_BufferValid(item);
+                case "set.buffer_invalid":
+                    return new Expr_BufferInvalid(item);
                 default:
                     throw new Expr_Exception($"not support operation {item.key}", item);
             }

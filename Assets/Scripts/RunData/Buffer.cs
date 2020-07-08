@@ -36,6 +36,11 @@ namespace TaisEngine.Run
             buffers.Add(new Buffer(buffName));
         }
 
+        internal void SetInvalid(string name)
+        {
+            buffers.RemoveAll(x => x.name == name);
+        }
+
         internal bool IsValid(string name)
         {
             return buffers.Find(x => x.name == name) != null;
@@ -53,5 +58,7 @@ namespace TaisEngine.Run
 
         [JsonProperty]
         internal List<Buffer> buffers = new List<Buffer>();
+
+
     }
 }

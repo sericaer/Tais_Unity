@@ -35,6 +35,9 @@ namespace TaisEngine.ModManager
         {
             [ModProperty("name")]
             public string name;
+
+            [ModProperty("effect")]
+            public Dictionary<string, string> effects;
         }
     }
 

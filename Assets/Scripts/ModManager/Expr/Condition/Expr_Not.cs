@@ -24,7 +24,7 @@ namespace TaisEngine.ModManager
                 throw new Expr_Exception($"{key} must support 1 element", value);
             }
 
-            sub = Expr_Condition.Parse(multiItem.elems[0]);
+            sub = Expr_Condition.Parse(multiItem);
         }
 
         internal override bool ResultImp()

@@ -1,0 +1,54 @@
+trigger = 
+{
+    is.buffer_valid = {depart.buffer, HUANGZAI}   
+}
+
+title = {HUANGZAI_STOP_TITLE, depart.name}
+
+desc = {HUANGZAI_STOP_DESC, depart.name}
+
+occur_days = 
+{
+    base = 100
+
+    modifier = 
+    {
+        value = -90
+        cond =
+        {
+            is.less = {depart.crop_grown, 20}
+        }
+    }
+    modifier = 
+    {
+        value = -80
+        cond =
+        {
+            and = 
+            {
+                is.less = {depart.crop_grown, 20}
+                is.greater = {depart.crop_grown, 40}
+            }
+        }
+    }
+    modifier = 
+    {
+        value = -60
+        cond =
+        {
+            and = 
+            {
+                is.less = {depart.crop_grown, 40}
+                is.greater = {depart.crop_grown, 60}
+            }
+        }
+    }
+}
+
+option = 
+{
+    selected = 
+    {
+        set.buffer_invalid = {depart.buffer, HUANGZAI}
+    }
+}
