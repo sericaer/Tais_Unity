@@ -2,7 +2,7 @@ trigger =
 {
     and = 
     {
-        is.equal = {common.day, 2}
+        is.greater = {depart.crop_grown, 50}
         not = { is.buffer_valid = {depart.buffer, HUANGZAI} }
     }
     
