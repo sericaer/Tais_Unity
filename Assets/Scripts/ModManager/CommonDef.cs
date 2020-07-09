@@ -58,9 +58,9 @@ namespace TaisEngine.ModManager
         {
             foreach(var mod in Mod.listMod.Where(x=>x.content != null))
             {
-                if(mod.content.commonDef.cropGrowingInfo.fullGrowDays != null)
+                if(mod.content.commonDef.cropGrowingInfo.base_speed != null)
                 {
-                    return 100.0 / mod.content.commonDef.cropGrowingInfo.fullGrowDays.Value;
+                    return mod.content.commonDef.cropGrowingInfo.base_speed.Value;
                 }
             }
 
@@ -69,8 +69,8 @@ namespace TaisEngine.ModManager
 
         internal class CropGrowingInfo
         {
-            [ModProperty("full_grow_days")]
-            internal int? fullGrowDays;
+            [ModProperty("base_speed")]
+            internal double? base_speed;
 
             [ModProperty("start")]
             internal Date startDate;

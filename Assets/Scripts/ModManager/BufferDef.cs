@@ -25,6 +25,7 @@ namespace TaisEngine.ModManager
 
     internal interface BufferInterface
     {
+        Tuple<string, double> effect_crop_growing_speed { get; }
     }
 
     internal class BufferDef<T> : BaseDef<T>, BufferInterface where T : new()
@@ -33,13 +34,25 @@ namespace TaisEngine.ModManager
         public string name;
 
         [ModProperty("effect")]
-        public Dictionary<string, EffectDef> effect;
+        public Dictionary<string, double> effect;
+
+        public Tuple<string, double> effect_crop_growing_speed
+        {
+            get
+            {
+                if(effect.ContainsKey("crop_growing_speed"))
+                {
+                    return new Tuple<string, double>(name, effect["crop_growing_speed"]);
+                }
+                return null;
+            }
+        }
 
         internal void SetDefault()
         {
             if (effect == null)
             {
-                effect = new Dictionary<string, EffectDef>();
+                effect = new Dictionary<string, double>();
             }
         }
     }
@@ -49,11 +62,11 @@ namespace TaisEngine.ModManager
 
     }
 
-    internal class EffectDef
-    {
-        string raw;
-        Func<double, double> func;
-    }
+    //internal class EffectDef
+    //{
+    //    string raw;
+    //    Func<double, double> func;
+    //}
 
     //internal class EventDefCommon : BufferDef<EventDefCommon>
     //{

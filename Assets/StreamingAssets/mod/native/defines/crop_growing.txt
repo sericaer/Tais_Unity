@@ -10,4 +10,4 @@ end =
     day = 30
 }
 
-full_grow_days = 250
+grow_base_speed = 0.4

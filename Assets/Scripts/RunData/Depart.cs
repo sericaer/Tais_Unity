@@ -129,8 +129,7 @@ namespace TaisEngine.Run
                 var rslt = new List<(string name, double value)>();
 
                 rslt.Add(("BASE_VALUE", CommonDef.getCropGrowingSpeed()));
-                //rslt.AddRange(buffers.exist_crop_growing_effects()
-                //                     .Select(x => (x.name, x.value * 100.0 / growingdays)));
+                rslt.AddRange(bufferManager.crop_growing_effects().Select(x => (x.name, x.value)));
 
                 return rslt;
             }
