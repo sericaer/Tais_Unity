@@ -14,24 +14,25 @@ trigger =
 option = 
 {
     selected = nop
-}
 
-next =
-{
-    CROP_HARVEST_START_LESS = 
+    next =
     {
-        is.less = {depart.crop_grown, 50}
-    }
-    CROP_HARVEST_START_NORMAL = 
-    {
-        and = 
+        CROP_HARVEST_START_LESS = 
         {
-            is.less_equal = {depart.crop_grown, 95}
-            is.greater_equal = {depart.crop_grown, 50}
+            is.less = {depart.crop_grown, 50}
+        }
+        CROP_HARVEST_START_NORMAL = 
+        {
+            and = 
+            {
+                is.less_equal = {depart.crop_grown, 95}
+                is.greater_equal = {depart.crop_grown, 50}
+            }
+        }
+        CROP_HARVEST_START_BETTER = 
+        {
+            is.greater = {depart.crop_grown, 95}
         }
     }
-    CROP_HARVEST_START_BETTER = 
-    {
-        is.greater = {depart.crop_grown, 95}
-    }
 }
+
