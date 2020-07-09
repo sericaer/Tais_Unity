@@ -7,7 +7,7 @@ namespace TaisEngine.ModManager
 {
     internal class Expr_ModifierGroup : Expr<double>
     {
-        internal static Expr_ModifierGroup Parse(SyntaxMod.MultiItem modElem, string name, double? defValue)
+        internal static Expr_ModifierGroup Parse(SyntaxMod.ModItem modElem, string name, double? defValue)
         {
             try
             {
