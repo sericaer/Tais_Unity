@@ -79,6 +79,10 @@ namespace TaisEngine.ModManager
                     return new Expr_Less(item.value);
                 case "is.greater":
                     return new Expr_Greater(item.value);
+                case "is.less_equal":
+                    return new Expr_LessEqual(item.value);
+                case "is.greater_equal":
+                    return new Expr_GreaterEqual(item.value);
                 case "and":
                     return new Expr_And(item.value);
                 case "not":
@@ -86,7 +90,7 @@ namespace TaisEngine.ModManager
                 case "is.buffer_valid":
                     return new Expr_IsBufferValid(item.value);
                 default:
-                    throw new Exception();
+                    throw new Expr_Exception($" not support '{item.key}' in 'condition'", item);
             }
         }
     }

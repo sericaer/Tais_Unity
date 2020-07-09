@@ -17,11 +17,11 @@ option =
 
     next =
     {
-        CROP_HARVEST_START_LESS = 
+        CROP_HARVEST_LESS = 
         {
             is.less = {depart.crop_grown, 50}
         }
-        CROP_HARVEST_START_NORMAL = 
+        CROP_HARVEST_NORMAL = 
         {
             and = 
             {
@@ -29,7 +29,7 @@ option =
                 is.greater_equal = {depart.crop_grown, 50}
             }
         }
-        CROP_HARVEST_START_BETTER = 
+        CROP_HARVEST_BETTER = 
         {
             is.greater = {depart.crop_grown, 95}
         }

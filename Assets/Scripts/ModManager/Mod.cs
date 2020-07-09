@@ -99,6 +99,7 @@ namespace TaisEngine.ModManager
                 content.localString = new LocalString($"{path}/lang/");
 
                 var syntaxMod = new SyntaxMod(path);
+
                 foreach (var elem in Mod.modStructDict)
                 {
                     elem.Value(this, syntaxMod.GetElements(elem.Key).Select(x => x.multiItem));

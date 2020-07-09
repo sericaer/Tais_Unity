@@ -16,9 +16,20 @@ namespace TaisEngine.ModManager
 
         static internal T Find(string name)
         {
-            if (!dict.ContainsKey(name))
+            var rslt = TryFind(name);
+            if (rslt == null)
             {
                 throw new Exception("can not find:" + name);
+            }
+
+            return rslt;
+        }
+
+        static internal T TryFind(string name)
+        {
+            if (!dict.ContainsKey(name))
+            {
+                return default(T);
             }
 
             return dict[name].First().def;

@@ -27,7 +27,7 @@ public class EconomyDetail : MonoBehaviour
 
     public void OnConfirm()
     {
-        if (changedCurrTax.Equals(0.0))
+        if (!changedCurrTax.Equals(0.0))
         {
             economy.currTaxChanged(changedCurrTax);
         }
