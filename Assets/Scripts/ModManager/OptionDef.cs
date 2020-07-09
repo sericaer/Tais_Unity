@@ -14,7 +14,8 @@ namespace TaisEngine.ModManager
         [ModProperty("selected")]
         public Expr_OperationGroup selected;
 
-        public NextSelect next = new NextSelect();
+        [ModProperty("next")]
+        public Dictionary<string, Expr_Condition> next;
 
         //public OptionDef(string name, Value raw)
         //{
@@ -57,7 +58,30 @@ namespace TaisEngine.ModManager
 
         internal void Check()
         {
+            if(selected == null)
+            {
+                throw new Exception($"OptionDef must have element selected");
+            }
+
             selected.Check();
+        }
+
+        internal string getNextEvent()
+        {
+            if(next == null)
+            {
+                return null;
+            }
+
+            foreach (var elem in next)
+            {
+                if(elem.Value.Result())
+                {
+                    return elem.Key;
+                }
+            }
+
+            return null;
         }
     }
 

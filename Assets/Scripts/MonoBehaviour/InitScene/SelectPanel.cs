@@ -34,15 +34,15 @@ public class SelectPanel : MonoBehaviour
 
                 Destroy(this.gameObject);
 
-                var next = opt.next.Get();
-                if (next != "")
-                {
-                    GetComponentInParent<InitScene>().CreateSelectPanel(InitSelectDef.Find(next));
-                }
-                else
-                {
-                    GetComponentInParent<InitScene>().CreateReportPanel();
-                }
+                //var next = opt.next.Get();
+                //if (next != "")
+                //{
+                //    GetComponentInParent<InitScene>().CreateSelectPanel(InitSelectDef.Find(next));
+                //}
+                //else
+                //{
+                //    GetComponentInParent<InitScene>().CreateReportPanel();
+                //}
             });
         }
     }

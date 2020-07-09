@@ -75,12 +75,12 @@ public class DialogCommon : Dialog
 
                 Destroy(this.gameObject);
 
-                string next_event = opt.next.Get();
+                string next_event = opt.getNextEvent();
 
-                //if(next_event != "" && next_event != null)
-                //{
-                //    await GetComponentInParent<Timer>().CreateDialog(EventDef.find(next_event));
-                //}
+                if(next_event != "" && next_event != null)
+                {
+                    await GetComponentInParent<Timer>().CreateDialog(EventGroup.Find(next_event));
+                }
 
                 //gEvent.DestroyAction?.Invoke();
 

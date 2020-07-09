@@ -1,7 +1,4 @@
-trigger = 
-{
-    is.equal = {common.day, 10}
-}
+
 
 occur_days = 
 {

@@ -13,7 +13,7 @@ trigger =
 
 option = 
 {
-
+    selected = nop
 }
 
 next =

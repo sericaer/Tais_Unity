@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using SyntaxAnaylize;
 
@@ -44,11 +45,21 @@ namespace TaisEngine.ModManager
         {
         }
 
-        public Expr_OperationGroup(MultiItem opRaw)
+        public Expr_OperationGroup(Value value)
         {
-            foreach(var elem in opRaw.elems)
+            switch(value)
             {
-                operations.Add(Expr_Operation.Parse(elem));
+                case MultiItem multi:
+                    operations.AddRange(multi.elems.Select(x => Expr_Operation.Parse(x)));
+                    break;
+                case SingleValue single:
+                    if(single.value != "nop")
+                    {
+                        throw new Expr_Exception("single operation only support 'nop'", value);
+                    }
+                    break;
+                default:
+                    throw new Expr_Exception("operation only support 'MultiItem', 'SingleValue'", value);
             }
         }
 

@@ -86,7 +86,7 @@ namespace TaisEngine.ModManager
 
             if (type == typeof(Expr_OperationGroup))
             {
-                return new Expr_OperationGroup(modValue as MultiItem);
+                return new Expr_OperationGroup(modValue);
             }
             if (type == typeof(Expr_MultiValue))
             {

@@ -43,6 +43,22 @@ namespace TaisEngine.ModManager
             }
         }
 
+        internal static EventInterface Find(string next_event)
+        {
+            EventInterface rslt = EventDefDepart.Find(next_event);
+            if(rslt != null)
+            {
+                return rslt;
+            }
+            rslt = EventDefCommon.Find(next_event);
+            if (rslt != null)
+            {
+                return rslt;
+            }
+
+            return null;
+        }
+
         internal void Check()
         {
             foreach (var elem in EventDefCommon.Enumerate())
@@ -135,10 +151,6 @@ namespace TaisEngine.ModManager
                 if (op.desc == null)
                 {
                     op.desc = new Expr_MultiValue($"{name}_OPTION_{i + 1}_DESC");
-                }
-                if(op.selected == null)
-                {
-                    op.selected = new Expr_OperationGroup();
                 }
             }
         }
