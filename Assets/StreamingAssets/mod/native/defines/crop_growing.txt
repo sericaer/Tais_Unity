@@ -10,4 +10,4 @@ end =
     day = 30
 }
 
-grow_base_speed = 0.4
+base_speed = 0.4
