@@ -1,1 +1,2 @@
 is_tax = true
+consume = 100

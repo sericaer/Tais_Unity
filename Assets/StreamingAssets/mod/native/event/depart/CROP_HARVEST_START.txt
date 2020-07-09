@@ -1,0 +1,37 @@
+title = {CROP_HARVEST_START_TITLE, depart.name}
+
+desc = {CROP_HARVEST_START_TITLE, depart.name}
+
+trigger = 
+{
+    and = 
+    {
+        is.equal = {common.month, 9}
+        is.equal = {common.day, 1}
+    }
+}
+
+option = 
+{
+
+}
+
+next =
+{
+    CROP_HARVEST_START_LESS = 
+    {
+        is.less = {depart.crop_grown, 50}
+    }
+    CROP_HARVEST_START_NORMAL = 
+    {
+        and = 
+        {
+            is.less_equal = {depart.crop_grown, 95}
+            is.greater_equal = {depart.crop_grown, 50}
+        }
+    }
+    CROP_HARVEST_START_BETTER = 
+    {
+        is.greater = {depart.crop_grown, 95}
+    }
+}

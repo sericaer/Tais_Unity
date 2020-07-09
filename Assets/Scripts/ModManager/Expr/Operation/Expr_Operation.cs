@@ -40,6 +40,10 @@ namespace TaisEngine.ModManager
     {
         internal List<Expr_Operation> operations = new List<Expr_Operation>();
 
+        public Expr_OperationGroup()
+        {
+        }
+
         public Expr_OperationGroup(MultiItem opRaw)
         {
             foreach(var elem in opRaw.elems)

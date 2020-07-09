@@ -1,0 +1,12 @@
+title = {CROP_HARVEST_LESS_TITLE, depart.name}
+
+desc = {CROP_HARVEST_LESS_TITLE, depart.name}
+
+option = 
+{
+    selected = 
+    {
+        set.value = {depart.crop_grown, 0}
+        set.buffer_valid = {depart.buffer, HARVEST_LESS}
+    }
+}

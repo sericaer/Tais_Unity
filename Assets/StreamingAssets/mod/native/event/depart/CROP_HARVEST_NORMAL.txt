@@ -1,0 +1,11 @@
+title = {CROP_HARVEST_NORMAL_TITLE, depart.name}
+
+desc = {CROP_HARVEST_NORMAL_TITLE, depart.name}
+
+option = 
+{
+    selected = 
+    {
+        set.value = {depart.crop_grown, 0}
+    }
+}

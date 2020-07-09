@@ -93,14 +93,14 @@ public class Pop : MonoBehaviour
     {
         num.format = gmPop.num.ToString("N0");
 
-        //if(gmPop.is_consume)
-        //{
-        //    consume.transform.Find("value").GetComponent<LocalText>().format = gmPop.consume.ToString();
-        //}
-        //else
-        //{
-        //    consume.SetActive(false);
-        //}
+        if(gmPop.is_consume)
+        {
+            consume.transform.Find("value").GetComponent<LocalText>().format = gmPop.consume.ToString();
+        }
+        else
+        {
+            consume.SetActive(false);
+        }
 
         //if(pop.farmVaild)
         //{

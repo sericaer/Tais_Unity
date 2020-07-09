@@ -19,6 +19,9 @@ namespace TaisEngine.ModManager
         [ModProperty("is_tax")]
         internal bool? is_tax;
 
+        [ModProperty("consume")]
+        internal double? consume;
+
         internal void SetDefault()
         {
             if(is_tax == null)

@@ -103,6 +103,17 @@ namespace TaisEngine.ModManager
                 throw new Exception();
             }
 
+            internal static double getConsume(float curr_tax_level)
+            {
+                foreach (var mod in Mod.listMod.Where(x => x.content != null && x.content.commonDef != null))
+                {
+                    var taxLevel = mod.content.commonDef.taxLevel;
+                    return taxLevel.getConsumeImp(curr_tax_level);
+                }
+
+                throw new Exception();
+            }
+
             private double getInComeImp(float curr_tax_level)
             {
                 var levelbase = (int)curr_tax_level;
@@ -113,6 +124,21 @@ namespace TaisEngine.ModManager
                 }
 
                 var valueNext = levels.Single(x => x.value == levelbase+1).income.Value;
+                var leveloffset = curr_tax_level - levelbase;
+
+                return valueBase + leveloffset * (valueNext - valueBase);
+            }
+
+            private double getConsumeImp(float curr_tax_level)
+            {
+                var levelbase = (int)curr_tax_level;
+                var valueBase = levels.Single(x => x.value == levelbase).consume.Value;
+                if (levelbase == (int)Run.Economy.TAX_LEVEL.levelmax)
+                {
+                    return valueBase;
+                }
+
+                var valueNext = levels.Single(x => x.value == levelbase + 1).consume.Value;
                 var leveloffset = curr_tax_level - levelbase;
 
                 return valueBase + leveloffset * (valueNext - valueBase);

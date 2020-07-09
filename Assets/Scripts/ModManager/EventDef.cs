@@ -136,6 +136,10 @@ namespace TaisEngine.ModManager
                 {
                     op.desc = new Expr_MultiValue($"{name}_OPTION_{i + 1}_DESC");
                 }
+                if(op.selected == null)
+                {
+                    op.selected = new Expr_OperationGroup();
+                }
             }
         }
 

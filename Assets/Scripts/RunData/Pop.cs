@@ -55,26 +55,26 @@ namespace TaisEngine.Run
             }
         }
 
-        //public bool is_consume
-        //{
-        //    get
-        //    {
-        //        return def.consume != null;
-        //    }
-        //}
+        public bool is_consume
+        {
+            get
+            {
+                return def.consume != null;
+            }
+        }
 
-        //public double? consume
-        //{
-        //    get
-        //    {
-        //        if(consumeDetail == null)
-        //        {
-        //            return null;
-        //        }
+        public double? consume
+        {
+            get
+            {
+                if(consumeDetail == null)
+                {
+                    return null;
+                }
 
-        //        return consumeDetail.Sum(x => x.value);
-        //    }
-        //}
+                return consumeDetail.Sum(x => x.value);
+            }
+        }
 
         //public Family family
         //{
@@ -89,28 +89,28 @@ namespace TaisEngine.Run
         //    }
         //}
 
-        //internal IEnumerable<(string name, double value)> consumeDetail
-        //{
-        //    get
-        //    {
-        //        if (!is_consume)
-        //        {
-        //            return null;
-        //        }
+        internal IEnumerable<(string name, double value)> consumeDetail
+        {
+            get
+            {
+                if (!is_consume)
+                {
+                    return null;
+                }
 
-        //        List<(string name, double value)> rslt = new List<(string name, double value)>();
-        //        rslt.Add(("BASE_VALUE", def.consume.Value));
-        //        if(def.is_tax)
-        //        {
-        //            rslt.Add(("CURR_TAX_EFFECT", Defines.getExpectConsume(GMData.inst.economy.curr_tax_level)));
-        //        }
+                List<(string name, double value)> rslt = new List<(string name, double value)>();
+                rslt.Add(("BASE_VALUE", def.consume.Value));
+                if(def.is_tax.Value)
+                {
+                    rslt.Add(("CURR_TAX_EFFECT", CommonDef.TaxLevel.getConsume(RunData.inst.economy.curr_tax_level)));
+                }
 
-        //        rslt.AddRange(buffers.exist_consume_effects().Select(x => (x.name, x.value * def.consume.Value)));
-        //        rslt.AddRange(depart.buffers.exist_consume_effects().Select(x => (x.name, x.value * def.consume.Value)));
+                //rslt.AddRange(buffers.exist_consume_effects().Select(x => (x.name, x.value * def.consume.Value)));
+                //rslt.AddRange(depart.buffers.exist_consume_effects().Select(x => (x.name, x.value * def.consume.Value)));
 
-        //        return rslt;
-        //    }
-        //}
+                return rslt;
+            }
+        }
 
 
         internal Pop(PopDef popDef, string depart, double num)
