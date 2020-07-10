@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using TaisEngine.ModManager;
+
 //using ModelShark;
 
 public class EconomyDetail : MonoBehaviour
@@ -103,7 +105,8 @@ public class EconomyDetail : MonoBehaviour
 
         var surplus = double.Parse(LocalCurrTaxText.text) - double.Parse(ChaotingExpectTaxText.text);
         surplusText.text = surplus.ToString();
-        //consumeText.text = TaisEngine.Defines.getExpectConsume(LocalCurrTaxSlider.value).ToString();
+
+        consumeText.text = CommonDef.TaxLevel.getConsume(LocalCurrTaxSlider.value).ToString();
     }
 
 }
