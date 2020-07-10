@@ -96,6 +96,13 @@ namespace TaisEngine.Run
             }
         }
 
+        internal double ReportTax(double value)
+        {
+            var currReport = value < expect_tax ? value : expect_tax;
+            year_real_tax += currReport;
+            return value - currReport;
+        }
+
         public double max_tax
         {
             get
@@ -109,6 +116,12 @@ namespace TaisEngine.Run
 
         //[JsonProperty]
         //internal List<(int days, double report_tax_value)> year_expect_tax_list = new List<(int days, double report_tax_value)>();
+
+        [JsonProperty]
+        internal double year_real_tax;
+
+        //[JsonProperty]
+        //internal int year_expect_tax;
 
         [JsonProperty]
         internal int _year_report_pop;

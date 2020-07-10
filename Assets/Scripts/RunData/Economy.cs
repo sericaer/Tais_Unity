@@ -12,6 +12,9 @@ namespace TaisEngine.Run
         [JsonProperty, VisitPropery("common.economy")]
         public double value;
 
+        [JsonProperty, VisitPropery("common.economy.tax_level_limit")]
+        public int tax_level_limit;
+
         public void currTaxChanged(float value)
         {
             curr_tax_level += value;
@@ -99,7 +102,7 @@ namespace TaisEngine.Run
         {
             if(RunData.inst.date.day == 30)
             {
-                value += surplus;
+                value = RunData.inst.chaoting.ReportTax(value);
             }
         }
 
