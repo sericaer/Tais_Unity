@@ -3,6 +3,11 @@ using SyntaxAnaylize;
 
 internal class Expr_Exception : Exception
 {
+    internal Expr_Exception(string info) : base(info)
+    {
+
+    }
+
     internal Expr_Exception(string info, Value value) : base(info)
     {
 

@@ -10,7 +10,7 @@ using SyntaxAnaylize;
 
 namespace TaisEngine.ModManager
 {
-    internal class BaseDef<T> where T:new()
+    internal abstract class BaseDefMulti<T> : ModAbstractNamed where T: ModAbstractNamed, new()
     {
         static Dictionary<string, List<(T def, string mod)>> dict = new Dictionary<string, List<(T, string)>>();
 
@@ -40,24 +40,72 @@ namespace TaisEngine.ModManager
             return dict.Values.Select(x => x.First().def);
         }
 
-        static internal List<T> ParseList(string modName, IEnumerable<MultiItem> enumerable)
+        static internal T Parse(string modName, SyntaxModElement syntaxModElem)
         {
-            var rslt = new List<T>();
+            var rslt = ModAnaylize.Parse<T>(syntaxModElem.multiItem);
+            rslt.SetDefault();
 
-            foreach (var multi in enumerable)
+            if (!dict.ContainsKey(rslt.GetName()))
             {
-                dynamic elem = ModAnaylize.Parse<T>(multi);
-                elem.SetDefault();
+                dict[rslt.GetName()] = new List<(T def, string mod)>();
+            }
 
-                if (!dict.ContainsKey(elem.name))
-                {
-                    dict[elem.name] = new List<(T def, string mod)>();
-                }
+            dict[rslt.GetName()].Add(((T)rslt, modName));
 
-                dict[elem.name].Add(((T)elem, modName));
+            return rslt;
+        }
+    }
+
+    internal abstract class BaseDef<T> : ModAbstract where T : BaseDef<T>, new()
+    {
+        static List<(T def, string mod)> list = new List<(T def, string mod)>();
+
+        static internal T Get()
+        {
+            var rslt = TryGet();
+            if (rslt.Equals(default(T)))
+            {
+                throw new Exception($"{typeof(T)} can is empty !");
             }
 
             return rslt;
         }
+
+        static internal T TryGet()
+        {
+            if (list.Count() == 0)
+            {
+                return default(T);
+            }
+
+            return list.First().def;
+        }
+
+        static internal T Parse(string modName, SyntaxModElement syntaxModElem)
+        {
+            try
+            {
+                var rslt = ModAnaylize.Parse<T>(syntaxModElem.multiItem);
+                rslt.SetDefault();
+
+                list.Add(((T)rslt, modName));
+
+                return rslt;
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"parse error in {syntaxModElem.filePath}", e);
+            }
+        }
+    }
+
+    internal abstract class ModAbstract
+    {
+        internal abstract void SetDefault();
+    }
+
+    internal abstract class ModAbstractNamed : ModAbstract
+    {
+        internal abstract string GetName();
     }
 }

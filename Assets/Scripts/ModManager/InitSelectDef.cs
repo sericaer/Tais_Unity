@@ -11,7 +11,7 @@ using ModVisitor;
 
 namespace TaisEngine.ModManager
 {
-    internal class InitSelectDef : BaseDef<InitSelectDef>
+    internal class InitSelectDef : BaseDefMulti<InitSelectDef>
     {
         [ModProperty("name")]
         public string name;
@@ -25,7 +25,17 @@ namespace TaisEngine.ModManager
         [ModPropertyList("option")]
         public List<OptionDef> options;
 
-        internal void SetDefault()
+        internal static void AnaylzeMod(Mod mod, SyntaxModElement modElemnts)
+        {
+            mod.content.initSelectDefs.Add(InitSelectDef.Parse(mod.info.name, modElemnts));
+        }
+
+        internal override string GetName()
+        {
+            return name;
+        }
+
+        internal override void SetDefault()
         {
             if (is_first == null)
             {

@@ -42,17 +42,6 @@ namespace TaisEngine.Run
             }
         }
 
-
-        ////public List<Buffer> buffers = new List<Buffer>();
-
-        //internal string color
-        //{
-        //    get
-        //    {
-        //        return string.Format("({0:0}, {1:0}, {2:0})", def.color[0], def.color[1], def.color[2]);
-        //    }
-        //}
-
         [JsonProperty, VisitPropery("depart.name")]
         public string name;
 
@@ -80,7 +69,7 @@ namespace TaisEngine.Run
         {
             get
             {
-                var startDate = CommonDef.getCropGrowingStartDate();
+                var startDate = CommonDef.CropGrowingInfo.Get().startDate;
                 if (RunData.inst.date.month < startDate.month)
                 {
                     return false;
@@ -94,7 +83,7 @@ namespace TaisEngine.Run
                     }
                 }
 
-                var endDate = CommonDef.getCropGrowingEndDate();
+                var endDate = CommonDef.CropGrowingInfo.Get().endDate;
 
                 if (RunData.inst.date.month > endDate.month)
                 {
@@ -128,7 +117,7 @@ namespace TaisEngine.Run
             {
                 var rslt = new List<(string name, double value)>();
 
-                rslt.Add(("BASE_VALUE", CommonDef.getCropGrowingSpeed()));
+                rslt.Add(("BASE_VALUE", CommonDef.CropGrowingInfo.Get().base_speed.Value));
                 rslt.AddRange(bufferManager.crop_growing_effects().Select(x => (x.name, x.value)));
 
                 return rslt;
@@ -138,17 +127,8 @@ namespace TaisEngine.Run
         internal Depart(DepartDef def)
         {
             this.name = def.name;
-            //this.buffers = new List<Buffer>();
             this.cancel_tax = false;
-           //GMData.inst.allBuffers.Add(this.buffers);
 
-
-            //foreach (var elem in BufferDef.BufferDepartDef.Enumerate())
-            //{
-            //    buffers.Add(new Buffer(elem));
-            //}
-
-            //this.def.mod.AddBuffersPyObj(this.def, buffers);
         }
 
         internal Depart()

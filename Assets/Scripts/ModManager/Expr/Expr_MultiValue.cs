@@ -11,18 +11,6 @@ namespace TaisEngine.ModManager
         {
         }
 
-        internal static Expr_MultiValue Parse(SyntaxMod.ModItem mod, string name, object[] defValue)
-        {
-            try
-            {
-                return Parse(mod.multiItem, name, defValue);
-            }
-            catch (Exception e)
-            {
-                throw new Exception($"parse file faild! {mod.filePath}", e);
-            }
-        }
-
         internal static Expr_MultiValue Parse(MultiItem multiItem, string name, object[] defValue)
         {
             var modValue = multiItem.TryFind(name);

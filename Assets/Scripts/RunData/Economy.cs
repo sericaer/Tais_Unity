@@ -16,7 +16,7 @@ namespace TaisEngine.Run
         {
             curr_tax_level += value;
 
-            validTaxChangedDays = RunData.inst.date.total_days + CommonDef.TaxLevel.getTaxChangedIntervlDays();
+            validTaxChangedDays = RunData.inst.date.total_days + CommonDef.TaxLevel.Get().tax_change_intervl.Value;
         }
 
         [JsonProperty]

@@ -24,7 +24,7 @@ namespace TaisEngine.ModManager
             var multiItem = value as MultiItem;
             if (multiItem == null)
             {
-                throw new Exception();
+                throw new Expr_Exception("value must be MultiItem", value);
             }
 
             T rslt = new T();
@@ -121,7 +121,7 @@ namespace TaisEngine.ModManager
             Type[] listParameters = type.GetGenericArguments();
             if(listParameters[0] != typeof(string))
             {
-                throw new Exception();
+                throw new Expr_Exception("dict key must be string");
             }
 
             dynamic dict = Activator.CreateInstance(type);
@@ -131,7 +131,7 @@ namespace TaisEngine.ModManager
                 var item = (Item)subValue;
                 if (item == null)
                 {
-                    throw new Exception();
+                    throw new Expr_Exception("dict value must be Item", subValue);
                 }
 
                 dict.Add(item.key, AnaylizeSubValue(listParameters[1], item.value));
@@ -170,13 +170,13 @@ namespace TaisEngine.ModManager
             var singleValue = modvalue as SingleValue;
             if (singleValue == null)
             {
-                throw new Exception();
+                throw new Expr_Exception("must be SingleValue", modvalue);
             }
 
             var factor = new Factor<T>(singleValue, Visitor.VType.READ);
             if(factor.staticReadValue == null)
             {
-                throw new Exception();
+                throw new Expr_Exception("must be static value", modvalue);
             }
 
             

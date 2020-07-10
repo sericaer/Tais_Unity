@@ -11,7 +11,7 @@ using ModVisitor;
 
 namespace TaisEngine.ModManager
 {
-    internal class DepartDef : BaseDef<DepartDef>
+    internal class DepartDef : BaseDefMulti<DepartDef>
     {
         [ModProperty("name")]
         internal string name;
@@ -22,7 +22,17 @@ namespace TaisEngine.ModManager
         [ModProperty("pop_init")]
         internal Dictionary<string, double> popInitDict;
 
-        internal void SetDefault()
+        internal static void AnaylzeMod(Mod mod, SyntaxModElement modElemnts)
+        {
+            mod.content.departDefs.Add(DepartDef.Parse(mod.info.name, modElemnts));
+        }
+
+        internal override string GetName()
+        {
+            return name;
+        }
+
+        internal override void SetDefault()
         {
 
         }

@@ -28,7 +28,7 @@ namespace TaisEngine.ModManager
         Tuple<string, double> effect_crop_growing_speed { get; }
     }
 
-    internal class BufferDef<T> : BaseDef<T>, BufferInterface where T : new()
+    internal class BufferDef<T> : BaseDefMulti<T>, BufferInterface where T : ModAbstractNamed, new()
     {
         [ModProperty("name")]
         public string name;
@@ -40,7 +40,7 @@ namespace TaisEngine.ModManager
         {
             get
             {
-                if(effect.ContainsKey("crop_growing_speed"))
+                if (effect.ContainsKey("crop_growing_speed"))
                 {
                     return new Tuple<string, double>(name, effect["crop_growing_speed"]);
                 }
@@ -48,7 +48,12 @@ namespace TaisEngine.ModManager
             }
         }
 
-        internal void SetDefault()
+        internal override string GetName()
+        {
+            return name;
+        }
+
+        internal override void SetDefault()
         {
             if (effect == null)
             {
@@ -59,7 +64,10 @@ namespace TaisEngine.ModManager
 
     internal class BufferDefDepart : BufferDef<BufferDefDepart>
     {
-
+        internal static void AnaylzeMod(Mod mod, SyntaxModElement modElemnts)
+        {
+            mod.content.bufferGroup.depart.Add(BufferDefDepart.Parse(mod.info.name, modElemnts));
+        }
     }
 
     //internal class EffectDef

@@ -9,17 +9,11 @@ namespace TaisEngine.ModManager
     {
         internal string path;
 
-        internal class ModItem
-        {
-            internal string filePath;
-            internal SyntaxAnaylize.MultiItem multiItem;
-        }
-
         internal SyntaxMod(string path)
         {
             this.path = path;
 
-            dict = new Dictionary<string, List<ModItem>>();
+            dict = new Dictionary<string, List<SyntaxModElement>>();
 
             foreach(var dir in Mod.modStructDict.Keys)
             {
@@ -31,12 +25,12 @@ namespace TaisEngine.ModManager
         {
             var subpath = $"{path}/{dir}/";
 
-            List<ModItem> elements = new List<ModItem>();
+            List<SyntaxModElement> elements = new List<SyntaxModElement>();
             if(Directory.Exists(subpath))
             {
                 foreach (var file in Directory.EnumerateFiles(subpath, "*.txt"))
                 {
-                    ModItem element = new ModItem()
+                    SyntaxModElement element = new SyntaxModElement()
                     {
                         filePath = file,
                         multiItem = Syntax.Anaylize(file, File.ReadAllText(file))
@@ -49,9 +43,9 @@ namespace TaisEngine.ModManager
             dict.Add(dir, elements);
         }
 
-        internal List<ModItem> GetElements(string name)
+        internal List<SyntaxModElement> GetElements(string name)
         {
-            List<ModItem> rslt;
+            List<SyntaxModElement> rslt;
 
             if(dict.TryGetValue(name, out rslt))
             {
@@ -61,6 +55,12 @@ namespace TaisEngine.ModManager
             return null;
         }
 
-        Dictionary<string, List<ModItem>> dict;
+        Dictionary<string, List<SyntaxModElement>> dict;
+    }
+
+    internal class SyntaxModElement
+    {
+        internal string filePath;
+        internal SyntaxAnaylize.MultiItem multiItem;
     }
 }

@@ -7,29 +7,6 @@ namespace TaisEngine.ModManager
 {
     internal class Expr_ModifierGroup : Expr<double>
     {
-        internal static Expr_ModifierGroup Parse(SyntaxMod.ModItem modElem, string name, double? defValue)
-        {
-            try
-            {
-                var modValue = modElem.multiItem.TryFind<MultiItem>(name);
-                if (modValue == null)
-                {
-                    if (defValue != null)
-                    {
-                        return new Expr_ModifierGroup(defValue.Value);
-                    }
-
-                    throw new Expr_Exception($"can not find {name}", modElem.multiItem);
-                }
-
-                return new Expr_ModifierGroup(modValue);
-            }
-            catch(Exception e)
-            {
-                throw new Exception($"parse file faild! {modElem.filePath}", e);
-            }
-        }
-
         internal Expr_ModifierGroup(double defValue) : base(null)
         {
             defaultValue = defValue;

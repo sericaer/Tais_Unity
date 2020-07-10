@@ -11,7 +11,7 @@ using ModVisitor;
 
 namespace TaisEngine.ModManager
 {
-    internal class PopDef : BaseDef<PopDef>
+    internal class PopDef : BaseDefMulti<PopDef>
     {
         [ModProperty("name")]
         internal string name;
@@ -22,7 +22,17 @@ namespace TaisEngine.ModManager
         [ModProperty("consume")]
         internal double? consume;
 
-        internal void SetDefault()
+        internal static void AnaylizeMod(Mod mod, SyntaxModElement modElemnts)
+        {
+            mod.content.popDefs.Add(PopDef.Parse(mod.info.name, modElemnts));
+        }
+
+        internal override string GetName()
+        {
+            return name;
+        }
+
+        internal override void SetDefault()
         {
             if(is_tax == null)
             {

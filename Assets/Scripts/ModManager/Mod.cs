@@ -18,20 +18,20 @@ namespace TaisEngine.ModManager
 
         static Mod()
         {
-            modStructDict = new Dictionary<string, Action<Mod, IEnumerable<MultiItem>>>();
+            modStructDict = new Dictionary<string, Action<Mod, SyntaxModElement>>();
 
-            modStructDict.Add("init_select",  (mod, modElemnts) => { mod.content.initSelectDefs.AddRange(InitSelectDef.ParseList(mod.info.name, modElemnts)); });
-            modStructDict.Add("event/common", (mod, modElemnts) => { mod.content.eventGroup.common.AddRange(EventDefCommon.ParseList(mod.info.name, modElemnts)); });
-            modStructDict.Add("event/depart", (mod, modElemnts) => { mod.content.eventGroup.depart.AddRange(EventDefDepart.ParseList(mod.info.name, modElemnts)); });
-            modStructDict.Add("buffer/depart", (mod, modElemnts) => { mod.content.bufferGroup.depart.AddRange(BufferDefDepart.ParseList(mod.info.name, modElemnts)); });
-            modStructDict.Add("depart",       (mod, modElemnts) => { mod.content.departDefs.AddRange(DepartDef.ParseList(mod.info.name, modElemnts)); });
-            modStructDict.Add("pop",          (mod, modElemnts) => { mod.content.popDefs.AddRange(PopDef.ParseList(mod.info.name, modElemnts)); });
-            modStructDict.Add("defines",       (mod, modElemnts) => { mod.content.commonDef = new CommonDef(modElemnts); });
+            modStructDict.Add("init_select",   (mod, modElemnts) => InitSelectDef.AnaylzeMod(mod, modElemnts));
+            modStructDict.Add("event/common",  (mod, modElemnts) => EventDefCommon.AnaylzeMod(mod, modElemnts));
+            modStructDict.Add("event/depart",  (mod, modElemnts) => EventDefDepart.AnaylzeMod(mod, modElemnts));
+            modStructDict.Add("buffer/depart", (mod, modElemnts) => BufferDefDepart.AnaylzeMod(mod, modElemnts));
+            modStructDict.Add("depart",        (mod, modElemnts) => DepartDef.AnaylzeMod(mod, modElemnts));
+            modStructDict.Add("pop",           (mod, modElemnts) => PopDef.AnaylizeMod(mod, modElemnts));
+            modStructDict.Add("defines",       (mod, modElemnts) => CommonDef.AnaylizeMod(mod, modElemnts));
         }
 
 
         internal static string modRootPath = Application.streamingAssetsPath + "/mod/";
-        internal static Dictionary<string, Action<Mod, IEnumerable<MultiItem>>> modStructDict;
+        internal static Dictionary<string, Action<Mod, SyntaxModElement>> modStructDict;
 
         internal static List<Mod> listMod = new List<Mod>();
 
@@ -102,7 +102,10 @@ namespace TaisEngine.ModManager
 
                 foreach (var elem in Mod.modStructDict)
                 {
-                    elem.Value(this, syntaxMod.GetElements(elem.Key).Select(x => x.multiItem));
+                    foreach(var syntaxModElem in syntaxMod.GetElements(elem.Key))
+                    {
+                        elem.Value(this, syntaxModElem);
+                    }
                 }
 
                 Log.INFO("Load mod content finish");
@@ -134,8 +137,6 @@ namespace TaisEngine.ModManager
 
         internal class Content
         {
-            SyntaxMod syntaxMod;
-
             internal LocalString localString;
             internal List<InitSelectDef> initSelectDefs;
             internal EventGroup eventGroup;

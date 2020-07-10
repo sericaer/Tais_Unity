@@ -75,11 +75,18 @@ namespace TaisEngine.ModManager
 
     internal class EventDefCommon : EventDef<EventDefCommon>
     {
+        internal static void AnaylzeMod(Mod mod, SyntaxModElement modElemnts)
+        {
+            mod.content.eventGroup.depart.Add(EventDefDepart.Parse(mod.info.name, modElemnts));
+        }
     }
 
     internal class EventDefDepart : EventDef<EventDefDepart>
     {
-
+        internal static void AnaylzeMod(Mod mod, SyntaxModElement modElemnts)
+        {
+            mod.content.eventGroup.depart.Add(EventDefDepart.Parse(mod.info.name, modElemnts));
+        }
     }
 
     internal interface EventInterface
@@ -90,7 +97,7 @@ namespace TaisEngine.ModManager
         List<OptionDef> GetOption();
     }
 
-    internal class EventDef<T> : BaseDef<T>, EventInterface where T : new()
+    internal class EventDef<T> : BaseDefMulti<T>, EventInterface where T : ModAbstractNamed, new()
     {
         [ModProperty("name")]
         public string name;
@@ -125,7 +132,12 @@ namespace TaisEngine.ModManager
             return options;
         }
 
-        internal void SetDefault()
+        internal override string GetName()
+        {
+            return name;
+        }
+
+        internal override void SetDefault()
         {
             if (title == null)
             {
@@ -135,11 +147,11 @@ namespace TaisEngine.ModManager
             {
                 desc = new Expr_MultiValue(name + "_DESC");
             }
-            if(trigger == null)
+            if (trigger == null)
             {
                 trigger = new Expr_SingleCondition(false);
             }
-            if(occur_days == null)
+            if (occur_days == null)
             {
                 occur_days = new Expr_ModifierGroup(1);
             }
