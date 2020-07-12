@@ -7,6 +7,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UI.Extensions;
 using System;
+using ModelShark;
+using TaisEngine.ModManager;
 //using ModelShark;
 
 public class Depart : MonoBehaviour
@@ -47,19 +49,19 @@ public class Depart : MonoBehaviour
 
         bufferContent.buffmgr = gmDepart.bufferManager;
 
-        //var cropGrowingToolTip = cropGrowing.transform.GetComponent<TooltipTrigger>();
-        //cropGrowingToolTip.funcGetTooltipStr = () =>
-        //{
-        //    if (gmDepart.is_crop_growing)
-        //    {
-        //        return ("CROP_GROWING",
-        //               string.Join("\n", gmDepart.growSpeedDetail.Select(x => $"<color={(x.value < 0 ? "red" : "green")}>{TaisEngine.Mod.GetLocalString(x.name)} {x.value.ToString("N2")} </color>")));
-        //    }
-        //    else
-        //    {
-        //        return ("CROP_GROWING", "NOT_CROP_GROW_SEASON");
-        //    }
-        //};
+        var cropGrowingToolTip = cropGrowing.transform.GetComponent<TooltipTrigger>();
+        cropGrowingToolTip.funcGetTooltipStr = () =>
+        {
+            if (gmDepart.cropGrowingValid)
+            {
+                return ("CROP_GROWING",
+                       string.Join("\n", gmDepart.growSpeedDetail.Select(x => $"<color={(x.value < 0 ? "red" : "green")}>{ TaisEngine.ModManager.LocalString.Get(x.name)} {x.value.ToString("N2")} </color>")));
+            }
+            else
+            {
+                return ("CROP_GROWING", "NOT_CROP_GROW_SEASON");
+            }
+        };
 
     }
 

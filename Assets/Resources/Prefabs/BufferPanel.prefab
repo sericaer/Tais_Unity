@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6772999887269299110}
   - component: {fileID: 2980227605987899050}
   - component: {fileID: 4403566286381371714}
+  - component: {fileID: 5640364270385158175}
   m_Layer: 5
   m_Name: BufferPanel
   m_TagString: Untagged
@@ -89,6 +90,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: {fileID: 8946833987420064225}
+--- !u!114 &5640364270385158175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5037811727827105404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f99a9e0f405bff84884c4884261df263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltipStyle: {fileID: 11455346, guid: 695a132482827d54da1e2b158f79b1c4, type: 3}
+  parameterizedTextFields:
+  - name: BodyText
+    placeholder: '%BodyText%'
+    value: 
+  - name: TitleText
+    placeholder: '%TitleText%'
+    value: 
+  dynamicImageFields: []
+  dynamicSectionFields: []
+  isRemotelyActivated: 0
+  remoteTrigger: {fileID: 0}
+  backgroundTint: {r: 1, g: 1, b: 1, a: 1}
+  tipPosition: 5
+  minTextWidth: 100
+  maxTextWidth: 200
+  staysOpen: 0
+  isBlocking: 0
 --- !u!1 &5376085776163416862
 GameObject:
   m_ObjectHideFlags: 0

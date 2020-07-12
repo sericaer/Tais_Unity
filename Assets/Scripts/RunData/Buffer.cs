@@ -62,7 +62,7 @@ namespace TaisEngine.Run
         internal IEnumerable<(string name, double value)> crop_growing_effects()
         {
             return buffers.Select(x => x.def.effect_crop_growing_speed)
-                          .Distinct(null)
+                          .Where(x=>x != null)
                           .Select(x => (x.Item1, x.Item2));
         }
     }

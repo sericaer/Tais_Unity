@@ -3226,6 +3226,7 @@ GameObject:
   - component: {fileID: 5704179074902826100}
   - component: {fileID: 6143828051046628805}
   - component: {fileID: 1882287965167827685}
+  - component: {fileID: 5958706731718798815}
   m_Layer: 5
   m_Name: cropGrow
   m_TagString: Untagged
@@ -3316,6 +3317,36 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
+--- !u!114 &5958706731718798815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7029064349799023069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f99a9e0f405bff84884c4884261df263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltipStyle: {fileID: 11455346, guid: 695a132482827d54da1e2b158f79b1c4, type: 3}
+  parameterizedTextFields:
+  - name: TitleText
+    placeholder: '%TitleText%'
+    value: 
+  - name: BodyText
+    placeholder: '%BodyText%'
+    value: 
+  dynamicImageFields: []
+  dynamicSectionFields: []
+  isRemotelyActivated: 0
+  remoteTrigger: {fileID: 0}
+  backgroundTint: {r: 1, g: 1, b: 1, a: 1}
+  tipPosition: 5
+  minTextWidth: 100
+  maxTextWidth: 200
+  staysOpen: 0
+  isBlocking: 0
 --- !u!1 &7078100565816160634
 GameObject:
   m_ObjectHideFlags: 0
