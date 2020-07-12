@@ -97,6 +97,11 @@ namespace TaisEngine.ModManager
                 Log.INFO("Load mod content start");
 
                 content.localString = new LocalString($"{path}/lang/");
+                content.commonDef = new CommonDef();
+                content.bufferGroup = new BufferGroup();
+                content.eventGroup = new EventGroup();
+                content.initSelectDefs = new List<InitSelectDef>();
+                content.popDefs = new List<PopDef>();
 
                 var syntaxMod = new SyntaxMod(path);
 
