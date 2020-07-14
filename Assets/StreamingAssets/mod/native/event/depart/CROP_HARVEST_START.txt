@@ -6,8 +6,8 @@ trigger =
 {
     and = 
     {
-        is.equal = {common.month, 9}
-        is.equal = {common.day, 1}
+        is.equal = {date.month, 9}
+        is.equal = {date.day, 1}
     }
 }
 

@@ -183,7 +183,7 @@ namespace TaisEngine.ModManager
             }
 
             var rootkey = rslt.Value.TrimEnd('.');
-            return dictRoot.ContainsKey(rootkey)? dictRoot[rootkey] : null;
+            return dictRoot.ContainsKey(rootkey)? dictRoot[rootkey] : dictRoot["common"];
         }
 
         private static bool TryParseDigitCalc(string script, ref object obj)

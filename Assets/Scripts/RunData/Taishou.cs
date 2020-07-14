@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TaisEngine.ModManager;
 
 namespace TaisEngine.Run
 {
@@ -43,7 +45,41 @@ namespace TaisEngine.Run
 
         }
 
+        [VisitPropery("bad_appraise_count")]
+        public int bad_appraise_count
+        {
+            get
+            {
+                return appraises.Count(x => x == enumAppraise.BAD);
+            }
+        }
+
+        [VisitPropery("player.year_apprasie")]
+        public string year_apprasie
+        {
+            set
+            {
+                enumAppraise enumValue;
+                if(!Enum.TryParse<enumAppraise>(value, out enumValue))
+                {
+                    throw new Exception();
+                }
+
+                appraises.Add(enumValue);
+            }
+        }
+
         [JsonProperty]
         public string background;
+
+        [JsonProperty]
+        public List<enumAppraise> appraises = new List<enumAppraise>();
+
+        public enum enumAppraise
+        {
+            BAD,
+            NORMAL,
+            GOOD,
+        }
     }
 }

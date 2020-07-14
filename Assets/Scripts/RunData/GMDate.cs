@@ -10,13 +10,13 @@ namespace TaisEngine.Run
     [JsonObject(MemberSerialization.OptIn)]
     public class GMDate
     {
-        [JsonProperty, VisitPropery("common.year")]
+        [JsonProperty, VisitPropery("date.year")]
         public int year;
 
-        [JsonProperty, VisitPropery("common.month")]
+        [JsonProperty, VisitPropery("date.month")]
         public int month;
 
-        [JsonProperty, VisitPropery("common.day")]
+        [JsonProperty, VisitPropery("date.day")]
         public int day;
 
         public static GMDate operator++(GMDate date)

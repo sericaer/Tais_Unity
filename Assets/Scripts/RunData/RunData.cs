@@ -23,13 +23,13 @@ namespace TaisEngine.Run
         [JsonProperty, VisitPropery]
         public Economy economy;
 
-        [JsonProperty]
+        [JsonProperty, VisitPropery]
         public Taishou taishou;
 
         [JsonProperty, VisitPropery]
         public GMDate date;
 
-        [JsonProperty]
+        [JsonProperty, VisitPropery]
         public Chaoting chaoting;
 
         [JsonProperty]
