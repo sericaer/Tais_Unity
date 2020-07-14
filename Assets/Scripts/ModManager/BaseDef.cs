@@ -42,17 +42,24 @@ namespace TaisEngine.ModManager
 
         static internal T Parse(string modName, SyntaxModElement syntaxModElem)
         {
-            var rslt = ModAnaylize.Parse<T>(syntaxModElem.multiItem);
-            rslt.SetDefault();
-
-            if (!dict.ContainsKey(rslt.GetName()))
+            try
             {
-                dict[rslt.GetName()] = new List<(T def, string mod)>();
+                var rslt = ModAnaylize.Parse<T>(syntaxModElem.multiItem);
+                rslt.SetDefault();
+
+                if (!dict.ContainsKey(rslt.GetName()))
+                {
+                    dict[rslt.GetName()] = new List<(T def, string mod)>();
+                }
+
+                dict[rslt.GetName()].Add(((T)rslt, modName));
+
+                return rslt;
             }
-
-            dict[rslt.GetName()].Add(((T)rslt, modName));
-
-            return rslt;
+            catch (Exception e)
+            {
+                throw new Exception($"parse error in {syntaxModElem.filePath}", e);
+            }
         }
     }
 
