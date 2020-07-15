@@ -1,7 +1,4 @@
 option = 
 {
-    selected = 
-    {
-        nop
-    }
+    selected = nop
 }

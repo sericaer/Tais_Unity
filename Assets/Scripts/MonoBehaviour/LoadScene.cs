@@ -12,6 +12,7 @@ using Tools;
 using TaisEngine.Init;
 using TaisEngine.Serialize;
 using TaisEngine.Run;
+using System.Reflection;
 
 public class LoadScene : MonoBehaviour
 {
@@ -46,12 +47,15 @@ public class LoadScene : MonoBehaviour
 
             while (e.InnerException != null)
             {
-                errDetail += e.InnerException.Message;
+                if (!(e.InnerException is TargetInvocationException))
+                {
+                    errDetail += "\n" + e.InnerException.Message;
+                }
+
                 e = e.InnerException;
             }
 
-            Log.ERRO(errTitle);
-            Log.ERRO(errDetail + e.StackTrace);
+            Log.ERRO(errTitle + "\n" + errDetail + "\n" + e.StackTrace);
 
 
             loadErrorPanel.SetActive(true);

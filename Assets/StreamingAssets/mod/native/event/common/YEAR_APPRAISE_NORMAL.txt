@@ -1,7 +1,4 @@
 option = 
 {
-    selected = 
-    {
-        set.value = {player.year_apprasie, NORMAL}
-    }
+    selected = nop
 }

@@ -122,10 +122,10 @@ namespace TaisEngine.Run
         //internal List<(int days, double report_tax_value)> year_expect_tax_list = new List<(int days, double report_tax_value)>();
 
         [JsonProperty, VisitPropery("chaoting.year_real_tax")]
-        internal double year_real_tax;
+        public double year_real_tax;
 
         [JsonProperty, VisitPropery("chaoting.year_expect_tax")]
-        internal double year_expect_tax;
+        public double year_expect_tax;
 
         [JsonProperty]
         internal int _year_report_pop;

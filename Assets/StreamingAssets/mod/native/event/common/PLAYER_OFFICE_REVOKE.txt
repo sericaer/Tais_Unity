@@ -1,7 +1,4 @@
 option = 
 {
-    selected = 
-    {
-        set.value = {player.office.revoked, true}
-    }
+    selected = nop
 }

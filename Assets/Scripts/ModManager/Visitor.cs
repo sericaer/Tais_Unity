@@ -45,10 +45,10 @@ namespace TaisEngine.ModManager
 
                     if (visitPropery.key != null)
                     {
-                        if(!visitPropery.key.StartsWith(rootKey))
-                        {
-                            throw new Exception($"{visitPropery.key} must start with {rootKey}");
-                        }
+                        //if(!visitPropery.key.StartsWith(rootKey))
+                        //{
+                        //    throw new Exception($"{visitPropery.key} must start with {rootKey}");
+                        //}
 
                         rslt.Add(visitPropery.key, list.ToArray());
                     }
@@ -89,6 +89,11 @@ namespace TaisEngine.ModManager
 
             internal Type GetFieldType(string raw)
             {
+                if(!dict.ContainsKey(raw))
+                {
+                    throw new Exception($"can not find '{raw}' in data visitor");
+                }
+
                 return dict[raw].Last().FieldType;
             }
         }

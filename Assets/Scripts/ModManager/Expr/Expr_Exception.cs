@@ -10,12 +10,12 @@ internal class Expr_Exception : Exception
 
     internal Expr_Exception(string info, Value value) : base(info)
     {
-
+        this.value = value;
     }
 
     internal Expr_Exception(string info, Value value, Exception parent) : base(info, parent)
     {
-
+        this.value = value;
     }
 
     public override string Message

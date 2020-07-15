@@ -8,12 +8,15 @@ trigger =
     
 }
 
+desc = 
+{
+    YEAR_APPRAISE_START_DESC, 
+    chaoting.year_expect_tax, chaoting.year_real_tax
+}
+
 option = 
 {
-    selected = 
-    {
-        nop
-    }
+    selected = nop
 
     next = 
     {
