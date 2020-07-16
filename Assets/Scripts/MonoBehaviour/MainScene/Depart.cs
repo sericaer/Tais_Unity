@@ -13,7 +13,7 @@ using TaisEngine.ModManager;
 
 public class Depart : MonoBehaviour
 {
-    public LocalText name;
+    public new LocalText name;
 
     public GameObject popNum;
     //public Text cropGrowing;

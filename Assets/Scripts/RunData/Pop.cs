@@ -14,7 +14,7 @@ namespace TaisEngine.Run
     {
         //internal Family family;
         [JsonProperty]
-        public string name;
+        public string pop_name;
 
         [JsonProperty]
         public string depart_name;
@@ -35,7 +35,7 @@ namespace TaisEngine.Run
         {
             get
             {
-                return $"{depart_name}|{name}";
+                return $"{depart_name}|{pop_name}";
             }
         }
 
@@ -43,7 +43,7 @@ namespace TaisEngine.Run
         {
             get
             {
-                return PopDef.Find(name);
+                return PopDef.Find(pop_name);
             }
         }
 
@@ -115,7 +115,7 @@ namespace TaisEngine.Run
 
         internal Pop(PopDef popDef, string depart, double num)
         {
-            this.name = popDef.name;
+            this.pop_name = popDef.name;
             this.depart_name = depart;
             this.num = num;
             this.family_name = "";

@@ -28,7 +28,7 @@ public class DepartPop : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        type.format = gmPop.name;
+        type.format = gmPop.pop_name;
 
         family.gameObject.SetActive(false);
         //if (gmPop.family != null)

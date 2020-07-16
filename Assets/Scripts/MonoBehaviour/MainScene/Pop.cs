@@ -55,7 +55,7 @@ public class Pop : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        name.format = gmPop.name;
+        name.format = gmPop.pop_name;
         depart.format = gmPop.depart.name;
 
         //if (gmPop.is_consume)

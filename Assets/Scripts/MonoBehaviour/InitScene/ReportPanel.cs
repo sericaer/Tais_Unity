@@ -8,7 +8,7 @@ using TaisEngine.Run;
 
 public class ReportPanel : MonoBehaviour
 {
-    public LocalText name;
+    public new LocalText name;
     public LocalText age;
     public LocalText background;
 
