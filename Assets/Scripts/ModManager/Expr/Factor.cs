@@ -20,7 +20,35 @@ namespace TaisEngine.ModManager
                 return Convert<T>(staticReadValue);
             }
 
-            return Visitor.Read<T>(raw);
+            var split = raw.Split("+-*/".ToCharArray());
+            if (split.Length == 1)
+            {
+                return Visitor.Read<T>(raw.Trim(' '));
+            }
+            else if (split.Length == 2)
+            {
+                dynamic p1 = Visitor.Read<T>(split[0].Trim(' '));
+                dynamic p2 = Visitor.Read<T>(split[1].Trim(' '));
+
+                if (raw.Contains("+"))
+                {
+                    return p1 + p2;
+                }
+                if (raw.Contains("-"))
+                {
+                    return p1 - p2;
+                }
+                if (raw.Contains("*"))
+                {
+                    return p1 * p2;
+                }
+                if (raw.Contains("/"))
+                {
+                    return p1 / p2;
+                }
+            }
+
+            throw new Exception($"not support {raw}");
         }
 
         internal void Write(T obj)
@@ -35,7 +63,20 @@ namespace TaisEngine.ModManager
                 return staticReadValue.GetType();
             }
 
-            return Visitor.GetValueType(raw);
+            var split = raw.Split("+-*/".ToCharArray());
+            if(split.Length == 1)
+            {
+                return Visitor.GetValueType(raw.Trim(' '));
+            }
+            else if (split.Length == 2)
+            {
+                if(Visitor.GetValueType(split[0].Trim(' ')).IsNumericType() && Visitor.GetValueType(split[1].Trim(' ')).IsNumericType())
+                {
+                    return Visitor.GetValueType(split[0].Trim(' '));
+                }
+            }
+
+            throw new Exception($"not support {raw}");
         }
 
         public object staticReadValue;

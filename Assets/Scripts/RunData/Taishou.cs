@@ -54,20 +54,20 @@ namespace TaisEngine.Run
         //    }
         //}
 
-        //[VisitPropery("player.year_apprasie")]
-        //public string year_apprasie
-        //{
-        //    set
-        //    {
-        //        enumAppraise enumValue;
-        //        if(!Enum.TryParse<enumAppraise>(value, out enumValue))
-        //        {
-        //            throw new Exception();
-        //        }
+        [VisitPropery("player.year_apprasie")]
+        public string year_apprasie
+        {
+            set
+            {
+                enumAppraise enumValue;
+                if(!Enum.TryParse<enumAppraise>(value, out enumValue))
+                {
+                    throw new Exception();
+                }
 
-        //        appraises.Add(enumValue);
-        //    }
-        //}
+                appraises.Add(enumValue);
+            }
+        }
 
         [JsonProperty]
         public string background;

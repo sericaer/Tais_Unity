@@ -17,17 +17,66 @@ namespace TaisEngine.ModManager
         internal class Element
         {
             internal object obj;
-            internal Dictionary<string, FieldInfo[] > dict;
+            internal Dictionary<string, ReflectionInfo[]> dict;
+            //internal Dictionary<string, FieldInfo[]> dict;
 
             internal Element(Type type, string rootKey)
             {
-                FieldInfo[] root = { };
+                ReflectionInfo[] root = { };
                 dict = AnaylizeVisitPropery(type, root, rootKey);
             }
 
-            private Dictionary<string, FieldInfo[] > AnaylizeVisitPropery(Type type, FieldInfo[] parent, string rootKey)
+            private Dictionary<string, ReflectionInfo[]> AnaylizeVisitPropery(Type type, ReflectionInfo[] parent, string rootKey)
             {
-                var rslt = new Dictionary<string, FieldInfo[] >();
+                var rslt = new Dictionary<string, ReflectionInfo[]>();
+
+                var fieldVisitDict = AnaylizeFields(type, parent, rootKey);
+                var propertyVisitDict = AnaylizeProperties(type, parent, rootKey);
+
+                foreach(var elem in fieldVisitDict)
+                {
+                    rslt.Add(elem.Key, elem.Value);
+                }
+
+                foreach (var elem in propertyVisitDict)
+                {
+                    rslt.Add(elem.Key, elem.Value);
+                }
+
+                return rslt;
+            }
+
+            private Dictionary<string, ReflectionInfo[]> AnaylizeProperties(Type type, ReflectionInfo[] parent, string rootKey)
+            {
+                var rslt = new Dictionary<string, ReflectionInfo[]>();
+
+                var properties = type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance);
+                foreach (var property in properties)
+                {
+                    var visitPropery = (VisitPropery)Attribute.GetCustomAttribute(property, typeof(VisitPropery));
+                    if (visitPropery == null)
+                    {
+                        continue;
+                    }
+
+                    var list = new List<ReflectionInfo>();
+                    list.AddRange(parent);
+                    list.Add(new PropertyReflectionInfo(property));
+
+                    if (visitPropery.key == null)
+                    {
+                        throw new Exception();
+                    }
+
+                    rslt.Add(visitPropery.key, list.ToArray());
+                }
+
+                return rslt;
+            }
+
+            private Dictionary<string, ReflectionInfo[]> AnaylizeFields(Type type, ReflectionInfo[] parent, string rootKey)
+            {
+                var rslt = new Dictionary<string, ReflectionInfo[]>();
 
                 var fields = type.GetFields(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance);
 
@@ -39,9 +88,9 @@ namespace TaisEngine.ModManager
                         continue;
                     }
 
-                    var list = new List<FieldInfo>();
+                    var list = new List<ReflectionInfo>();
                     list.AddRange(parent);
-                    list.Add(field);
+                    list.Add(new FieldReflectionInfo(field));
 
                     if (visitPropery.key != null)
                     {
@@ -55,7 +104,7 @@ namespace TaisEngine.ModManager
                     else
                     {
                         var subDict = AnaylizeVisitPropery(field.FieldType, list.ToArray(), rootKey);
-                        foreach(var set in subDict)
+                        foreach (var set in subDict)
                         {
                             rslt.Add(set.Key, set.Value);
                         }
@@ -79,7 +128,7 @@ namespace TaisEngine.ModManager
             internal void SetValue<T>(string raw, T value)
             {
                 var rslt = obj;
-                for (int i=0; i<dict[raw].Count()-1; i++)
+                for (int i = 0; i < dict[raw].Count() - 1; i++)
                 {
                     rslt = dict[raw][i].GetValue(rslt);
                 }
@@ -89,12 +138,12 @@ namespace TaisEngine.ModManager
 
             internal Type GetFieldType(string raw)
             {
-                if(!dict.ContainsKey(raw))
+                if (!dict.ContainsKey(raw))
                 {
                     throw new Exception($"can not find '{raw}' in data visitor");
                 }
 
-                return dict[raw].Last().FieldType;
+                return dict[raw].Last().GetDataType();
             }
         }
 
@@ -118,7 +167,7 @@ namespace TaisEngine.ModManager
 
         internal static void TryParse(string key, ref object staticReadValue, Visitor.VType vType)
         {
-            if(vType == VType.READ)
+            if (vType == VType.READ)
             {
                 var elem = GetElement(key);
                 if (elem != null)
@@ -130,7 +179,7 @@ namespace TaisEngine.ModManager
                 {
                     return;
                 }
-                
+
                 if (key == "true")
                 {
                     staticReadValue = true;
@@ -142,7 +191,7 @@ namespace TaisEngine.ModManager
                     return;
                 }
 
-                if(key.Contains('.'))
+                if (key.Contains('.'))
                 {
                     throw new Exception($"can not find '{key}' in data visitor");
                 }
@@ -163,6 +212,12 @@ namespace TaisEngine.ModManager
 
         internal static Type GetValueType(string raw)
         {
+            var rslt = Regex.Match(raw, @"^[0-9]+(\.?[0-9]+)*");
+            if (rslt.Success)
+            {
+                return typeof(double);
+            }
+
             var elem = GetElement(raw);
             return elem.GetFieldType(raw);
         }
@@ -175,20 +230,26 @@ namespace TaisEngine.ModManager
 
         internal static T Read<T>(string raw)
         {
+            var rslt = Regex.Match(raw, @"^[0-9]+(\.?[0-9]+)*");
+            if (rslt.Success)
+            {
+                return (dynamic)double.Parse(raw);
+            }
+
             var elem = GetElement(raw);
             return (T)elem.GetValue(raw);
         }
 
         private static Element GetElement(string key)
         {
-            var rslt = Regex.Match(key, @"^[A-Za-z]?[A-Za-z0-9_]*\.");
+            var rslt = Regex.Match(key, @"^[A-Za-z]+[A-Za-z0-9_]*\.");
             if (!rslt.Success)
             {
                 return null;
             }
 
             var rootkey = rslt.Value.TrimEnd('.');
-            return dictRoot.ContainsKey(rootkey)? dictRoot[rootkey] : dictRoot["common"];
+            return dictRoot.ContainsKey(rootkey) ? dictRoot[rootkey] : dictRoot["common"];
         }
 
         private static bool TryParseDigitCalc(string script, ref object obj)
@@ -252,7 +313,7 @@ namespace TaisEngine.ModManager
         }
     }
 
-    [AttributeUsage(AttributeTargets.Field)]
+    [AttributeUsage(AttributeTargets.Field|AttributeTargets.Property)]
     internal class VisitPropery : System.Attribute
     {
         internal VisitPropery()
@@ -274,5 +335,64 @@ namespace TaisEngine.ModManager
         internal string key;
         internal Visitor.VType vType;
         internal object ext;
+    }
+
+    internal abstract class ReflectionInfo
+    {
+        internal abstract object GetValue(object rslt);
+
+        internal abstract void SetValue(object rslt, object value);
+
+        internal abstract Type GetDataType();
+    }
+
+    internal class FieldReflectionInfo : ReflectionInfo
+    {
+        internal FieldReflectionInfo(FieldInfo field)
+        {
+            this.field = field;
+        }
+
+        internal override object GetValue(object obj)
+        {
+            return field.GetValue(obj);
+        }
+
+        internal override void SetValue(object obj, object value)
+        {
+            field.SetValue(obj, value);
+        }
+
+        internal override Type GetDataType()
+        {
+            return field.FieldType;
+        }
+
+        private FieldInfo field;
+    }
+
+    internal class PropertyReflectionInfo : ReflectionInfo
+    {
+        internal PropertyReflectionInfo(PropertyInfo property)
+        {
+            this.property = property;
+        }
+
+        internal override object GetValue(object obj)
+        {
+            return property.GetValue(obj);
+        }
+
+        internal override void SetValue(object obj, object value)
+        {
+            property.SetValue(obj, value);
+        }
+
+        internal override Type GetDataType()
+        {
+            return property.PropertyType;
+        }
+
+        private PropertyInfo property;
     }
 }
