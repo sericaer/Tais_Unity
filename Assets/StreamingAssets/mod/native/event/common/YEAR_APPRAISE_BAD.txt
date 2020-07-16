@@ -1,4 +1,16 @@
 option = 
 {
-    selected = nop
+    selected = 
+    {
+        set.value = {player.year_apprasie, BAD}
+    }
+
+    next = 
+    {
+        PLAYER_OFFICE_REVOKE = 
+        {
+            is.greater_equal = {player.bad_appraise_count, 2}
+        } 
+    }
+
 }

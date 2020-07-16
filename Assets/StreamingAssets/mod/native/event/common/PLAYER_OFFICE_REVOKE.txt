@@ -1,4 +1,7 @@
 option = 
 {
-    selected = nop
+    selected = 
+    {
+        set.value = {player.is_revoked, true}
+    }
 }

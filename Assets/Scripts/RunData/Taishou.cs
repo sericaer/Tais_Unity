@@ -45,14 +45,17 @@ namespace TaisEngine.Run
 
         }
 
-        //[VisitPropery("bad_appraise_count")]
-        //public int bad_appraise_count
-        //{
-        //    get
-        //    {
-        //        return appraises.Count(x => x == enumAppraise.BAD);
-        //    }
-        //}
+        [VisitPropery("player.is_revoked")]
+        public bool is_revoked = false;
+
+        [VisitPropery("player.bad_appraise_count")]
+        public int bad_appraise_count
+        {
+            get
+            {
+                return appraises.Count(x => x == enumAppraise.BAD);
+            }
+        }
 
         [VisitPropery("player.year_apprasie")]
         public string year_apprasie
