@@ -45,12 +45,12 @@ namespace TaisEngine.ModManager
 
         internal static EventInterface Find(string next_event)
         {
-            EventInterface rslt = EventDefDepart.Find(next_event);
+            EventInterface rslt = EventDefDepart.TryFind(next_event);
             if(rslt != null)
             {
                 return rslt;
             }
-            rslt = EventDefCommon.Find(next_event);
+            rslt = EventDefCommon.TryFind(next_event);
             if (rslt != null)
             {
                 return rslt;
@@ -77,7 +77,7 @@ namespace TaisEngine.ModManager
     {
         internal static void AnaylzeMod(Mod mod, SyntaxModElement modElemnts)
         {
-            mod.content.eventGroup.depart.Add(EventDefDepart.Parse(mod.info.name, modElemnts));
+            mod.content.eventGroup.common.Add(EventDefCommon.Parse(mod.info.name, modElemnts));
         }
     }
 

@@ -102,6 +102,7 @@ namespace TaisEngine.Run
         {
             if(RunData.inst.date.day == 30)
             {
+                value += currTax;
                 value = RunData.inst.chaoting.ReportTax(value);
             }
         }

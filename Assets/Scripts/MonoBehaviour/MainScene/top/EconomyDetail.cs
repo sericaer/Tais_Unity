@@ -79,7 +79,7 @@ public class EconomyDetail : MonoBehaviour
         ChaotingExpectTaxSlider.value = (float)chaoting.tax_level;
         LocalCurrTaxSlider.value = (float)economy.curr_tax_level;
 
-        ChaotingExpectTaxText.text = "-" + chaoting.expect_tax.ToString();
+        ChaotingExpectTaxText.text =  chaoting.expect_tax.ToString();
         LocalCurrTaxText.text = economy.currTax.ToString();
 
         LocalCurrTaxSlider.interactable = economy.local_tax_change_valid;
