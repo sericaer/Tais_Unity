@@ -59,6 +59,11 @@ namespace TaisEngine.Run
         [JsonProperty]
         internal List<Buffer> buffers = new List<Buffer>();
 
+        internal IEnumerable<(string name, double value)> getValid(Func<BufferInterface, Tuple<string, double>> seletor)
+        {
+            return buffers.Where(x=> seletor(x.def) != null).Select(x => seletor(x.def).ToValueTuple());
+        }
+
         internal IEnumerable<(string name, double value)> crop_growing_effects()
         {
             return buffers.Select(x => x.def.effect_crop_growing_speed)

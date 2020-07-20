@@ -106,7 +106,7 @@ namespace TaisEngine.Run
                 }
 
                 //rslt.AddRange(buffers.exist_consume_effects().Select(x => (x.name, x.value * def.consume.Value)));
-                //rslt.AddRange(depart.buffers.exist_consume_effects().Select(x => (x.name, x.value * def.consume.Value)));
+                rslt.AddRange(depart.bufferManager.getValid(x=>x.effect_consume));
 
                 return rslt;
             }

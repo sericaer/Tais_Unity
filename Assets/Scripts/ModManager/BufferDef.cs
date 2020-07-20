@@ -26,6 +26,7 @@ namespace TaisEngine.ModManager
     internal interface BufferInterface
     {
         Tuple<string, double> effect_crop_growing_speed { get; }
+        Tuple<string, double> effect_consume { get; }
     }
 
     internal class BufferDef<T> : BaseDefMulti<T>, BufferInterface where T : ModAbstractNamed, new()
@@ -43,6 +44,18 @@ namespace TaisEngine.ModManager
                 if (effect.ContainsKey("crop_growing_speed"))
                 {
                     return new Tuple<string, double>(name, effect["crop_growing_speed"]);
+                }
+                return null;
+            }
+        }
+
+        public Tuple<string, double> effect_consume
+        {
+            get
+            {
+                if (effect.ContainsKey("consume"))
+                {
+                    return new Tuple<string, double>(name, effect["consume"]);
                 }
                 return null;
             }

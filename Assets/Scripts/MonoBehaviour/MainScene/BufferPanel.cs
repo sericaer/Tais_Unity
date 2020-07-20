@@ -38,18 +38,12 @@ public class BufferPanel : MonoBehaviour
 
             desc += $"<color={(effect.Item2 < 0 ? "red" : "green")}>" + TaisEngine.ModManager.LocalString.Get("CROP_GROWING_EFFECT", effect.Item2.ToString("N1")) + "</color> \n";
         }
-        //if (gmBuffer.def.crop_growing_effect != null)
-        //{
-        //    var effect = gmBuffer.def.crop_growing_effect();
+        if (gmBuffer.def.effect_consume != null)
+        {
+            var effect = gmBuffer.def.effect_consume;
 
-        //    desc += $"<color={(effect < 0 ? "red" : "green")}>" + TaisEngine.ModManager.LocalString.Get("CROP_GROWING_EFFECT", effect.ToString("P1")) + "</color> \n";
-        //}
-        //if (gmBuffer.def.consume_effect != null)
-        //{
-        //    var effect = gmBuffer.def.consume_effect();
-
-        //    desc += $"<color={(effect < 0 ? "red" : "green")}>" + TaisEngine.ModManager.LocalString.Get("CONSUME_EFFECT", effect.ToString("P1")) + "</color> \n";
-        //}
+            desc += $"<color={(effect.Item2 < 0 ? "red" : "green")}>" + TaisEngine.ModManager.LocalString.Get("CONSUME_EFFECT", effect.ToString("P1")) + "</color> \n";
+        }
 
         return (title, desc);
     }
