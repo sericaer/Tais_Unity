@@ -1,0 +1,4 @@
+effect = 
+{
+    tax_percent = -50
+}
