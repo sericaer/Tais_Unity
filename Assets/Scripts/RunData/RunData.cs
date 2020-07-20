@@ -41,7 +41,13 @@ namespace TaisEngine.Run
         [JsonProperty]
         internal List<string> recordMsg = new List<string>();
 
-        internal bool end_flag;
+        internal bool end_flag
+        {
+            get
+            {
+                return taishou.is_revoked;
+            }
+        }
 
         public RunData(InitData initData)
         {
