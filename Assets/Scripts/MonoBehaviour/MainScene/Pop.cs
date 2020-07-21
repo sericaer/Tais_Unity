@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI.Extensions;
 
-//using ModelShark;
+using ModelShark;
 using Tools;
 //using UnityUITable;
 using System;
@@ -17,15 +17,17 @@ public class Pop : MonoBehaviour
     public LocalText num;
     public LocalText farm;
 
-    //public LocalText expcetTax;
     //public LocalText attitude;
     //public LocalText background;
 
+    public GameObject expcetTax;
     public GameObject consume;
     public GameObject familyPanel;
 
-    public GameObject buffContent;
-    public GameObject buffPrefabs;
+    public BufferContent bufferContent;
+
+    //public GameObject buffContent;
+    //public GameObject buffPrefabs;
 
     //public Buffer bufferPrefabs;
 
@@ -58,14 +60,26 @@ public class Pop : MonoBehaviour
         name.format = gmPop.pop_name;
         depart.format = gmPop.depart.name;
 
-        //if (gmPop.is_consume)
-        //{
-        //    consume.GetComponent<TooltipTrigger>().funcGetTooltipStr = () =>
-        //    {
-        //        var detail = string.Join("\n", gmPop.consumeDetail.Select(x => $"<color={(x.value < 0 ? "red" : "green")}>{TaisEngine.Mod.GetLocalString(x.name)} {x.value.ToString("N2")} </color>"));
-        //        return ("consume", detail);
-        //    };
-        //}
+        bufferContent.buffmgr = gmPop.buffMgr;
+
+        if (gmPop.is_consume)
+        {
+            consume.GetComponent<TooltipTrigger>().funcGetTooltipStr = () =>
+            {
+                var detail = string.Join("\n", gmPop.consumeDetail.Select(x => $"<color={(x.value < 0 ? "red" : "green")}>{TaisEngine.ModManager.LocalString.Get(x.name)} {x.value.ToString("N2")} </color>"));
+                return ("consume", detail);
+            };
+        }
+
+        if (gmPop.is_tax)
+        {
+            expcetTax.GetComponent<TooltipTrigger>().funcGetTooltipStr = () =>
+            {
+                var baseTaxValue = $"{TaisEngine.ModManager.LocalString.Get("BASE_VALUE")} {gmPop.taxBaseValue}"
+                var detail = string.Join("\n", gmPop.taxEffects.Select(x => $"<color={(x.value < 0 ? "red" : "green")}>{TaisEngine.ModManager.LocalString.Get(x.name)} {x.value.ToString("N2")}% </color>"));
+                return ("tax", detail);
+            };
+        }
 
         //if (gmPop.family != null)
         //{
@@ -100,6 +114,15 @@ public class Pop : MonoBehaviour
         else
         {
             consume.SetActive(false);
+        }
+
+        if(gmPop.is_tax)
+        {
+            expcetTax.transform.Find("value").GetComponent<LocalText>().format = gmPop.tax.ToString();
+        }
+        else
+        {
+            expcetTax.SetActive(false);
         }
 
         //if(pop.farmVaild)
@@ -145,30 +168,6 @@ public class Pop : MonoBehaviour
         //    bufferObj.name = buffer.getName();
 
         //    listBufferObj.Add(bufferObj);
-        //}
-
-        UpdateBuffers();
-    }
-
-    private void UpdateBuffers()
-    {
-        //var needDestroys = listBufferPanels.Where(x => gmPop.buffers.All(y=>y!= x.gmBuffer)).ToArray();
-        //foreach (var elem in needDestroys)
-        //{
-        //    Destroy(elem.gameObject);
-
-        //    listBufferPanels.Remove(elem);
-        //}
-
-        //var needCreate = gmPop.buffers.Where(x => listBufferPanels.All(y => y.gmBuffer != x)).ToArray();
-        //foreach (var elem in needCreate)
-        //{
-        //    var taskObj = Instantiate(buffPrefabs, buffContent.transform);
-
-        //    taskObj.name = elem.name;
-        //    taskObj.GetComponent<BufferPanel>().gmBuffer = elem;
-
-        //    listBufferPanels.Add(taskObj.GetComponent<BufferPanel>());
         //}
     }
 

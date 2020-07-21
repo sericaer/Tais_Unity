@@ -25,13 +25,13 @@ namespace TaisEngine.Run
         [JsonProperty]
         internal float curr_tax_level;
 
-        internal double curr_tax_per
-        {
-            get
-            {
-                return CommonDef.TaxLevel.getInCome(curr_tax_level);
-            }
-        }
+        //internal double curr_tax_per
+        //{
+        //    get
+        //    {
+        //        return CommonDef.TaxLevel.getInCome(curr_tax_level);
+        //    }
+        //}
 
         [JsonProperty]
         internal int validTaxChangedDays = 0;
@@ -53,7 +53,7 @@ namespace TaisEngine.Run
         {
             get
             {
-                return curr_tax_per * taxed_pop_num;
+                return RunData.inst.pops.Where(x => x.is_tax).Sum(x => x.tax);
             }
         }
 
@@ -65,13 +65,13 @@ namespace TaisEngine.Run
         //    }
         //}
 
-        internal int taxed_pop_num
-        {
-            get
-            {
-                return RunData.inst.pops.Where(x => x.def.is_tax.Value && !x.depart.cancel_tax).Sum(x => (int)x.num);
-            }
-        }
+        //internal int taxed_pop_num
+        //{
+        //    get
+        //    {
+        //        return RunData.inst.pops.Where(x => x.def.is_tax.Value && !x.depart.cancel_tax).Sum(x => (int)x.num);
+        //    }
+        //}
 
         internal double surplus
         {
@@ -109,7 +109,7 @@ namespace TaisEngine.Run
 
         internal double getExpectTaxValue(float level)
         {
-            return TaisEngine.ModManager.CommonDef.TaxLevel.getInCome(level) * taxed_pop_num;
+            return RunData.inst.pops.Where(x => x.is_tax).Sum(x => x.GetExpectTax(level));
         }
     }
 }

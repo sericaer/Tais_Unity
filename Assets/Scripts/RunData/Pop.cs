@@ -64,6 +64,15 @@ namespace TaisEngine.Run
             }
         }
 
+        [VisitPropery("pop.is_tax")]
+        public bool is_tax
+        {
+            get
+            {
+                return def.is_tax.Value;
+            }
+        }
+
         [VisitPropery("pop.consume")]
         public double consume
         {
@@ -75,6 +84,22 @@ namespace TaisEngine.Run
                 }
 
                 return consumeDetail.Sum(x => x.value);
+            }
+        }
+
+        [VisitPropery("pop.tax")]
+        public double tax
+        {
+            get
+            {
+                if (!is_tax)
+                {
+                    throw new Exception();
+                }
+
+                var percent = taxEffects.Sum(x => x.value)/100;
+
+                return taxBaseValue * percent;
             }
         }
 
@@ -108,12 +133,47 @@ namespace TaisEngine.Run
                 }
 
                 rslt.AddRange(buffMgr.getValid(x=>x.effect_consume));
-                //rslt.AddRange(depart.bufferManager.getValid(x=>x.effect_consume));
+                rslt.AddRange(depart.bufferManager.getValid(x=>x.effect_consume));
 
                 return rslt;
             }
         }
 
+        internal double GetExpectTax(float level)
+        {
+            if (!is_tax)
+            {
+                throw new Exception();
+            }
+
+            var taxbaseExpcet = CommonDef.TaxLevel.getInCome(RunData.inst.economy.curr_tax_level) * (int)num;
+
+            var percent = taxEffects.Sum(x => x.value) / 100;
+
+            return taxbaseExpcet * percent;
+
+        }
+
+        internal double taxBaseValue
+        {
+            get
+            {
+                return CommonDef.TaxLevel.getInCome(RunData.inst.economy.curr_tax_level) * (int)num;
+            }
+        }
+
+
+        internal IEnumerable<(string name, double value)> taxEffects
+        {
+            get
+            {
+                var effects = new List<(string name, double value)>();
+                effects.AddRange(buffMgr.getValid(x => x.effect_tax));
+                effects.AddRange(depart.bufferManager.getValid(x => x.effect_tax));
+
+                return effects;
+            }
+        }
 
         internal Pop(PopDef popDef, string depart, double num)
         {
