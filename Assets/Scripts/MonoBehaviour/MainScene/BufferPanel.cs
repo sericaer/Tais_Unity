@@ -44,7 +44,12 @@ public class BufferPanel : MonoBehaviour
 
             desc += $"<color={(effect.Item2 < 0 ? "red" : "green")}>" + TaisEngine.ModManager.LocalString.Get("CONSUME_EFFECT", effect.Item2.ToString("N1")) + "</color> \n";
         }
+        if (gmBuffer.def.effect_tax != null)
+        {
+            var effect = gmBuffer.def.effect_tax;
 
+            desc += $"<color={(effect.Item2 < 0 ? "red" : "green")}>" + TaisEngine.ModManager.LocalString.Get("TAX_EFFECT", effect.Item2.ToString("N1")+"%") + "</color> \n";
+        }
         return (title, desc);
     }
 }

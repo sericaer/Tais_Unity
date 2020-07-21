@@ -75,9 +75,9 @@ public class Pop : MonoBehaviour
         {
             expcetTax.GetComponent<TooltipTrigger>().funcGetTooltipStr = () =>
             {
-                var baseTaxValue = $"{TaisEngine.ModManager.LocalString.Get("BASE_VALUE")} {gmPop.taxBaseValue}"
-                var detail = string.Join("\n", gmPop.taxEffects.Select(x => $"<color={(x.value < 0 ? "red" : "green")}>{TaisEngine.ModManager.LocalString.Get(x.name)} {x.value.ToString("N2")}% </color>"));
-                return ("tax", detail);
+                var baseTaxValue = $"<color=green>{TaisEngine.ModManager.LocalString.Get("BASE_VALUE")} {gmPop.taxBaseValue}</color>";
+                var effects = string.Join("\n", gmPop.taxEffects.Select(x => $"<color={(x.value < 0 ? "red" : "green")}>{TaisEngine.ModManager.LocalString.Get(x.name)} {x.value.ToString("N2")}% </color>"));
+                return ("tax", baseTaxValue + "\n" + effects);
             };
         }
 

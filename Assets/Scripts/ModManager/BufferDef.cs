@@ -73,9 +73,9 @@ namespace TaisEngine.ModManager
         {
             get
             {
-                if (effect.ContainsKey("tax"))
+                if (effect.ContainsKey("tax_percent"))
                 {
-                    return new Tuple<string, double>(name, effect["tax"]);
+                    return new Tuple<string, double>(name, effect["tax_percent"]);
                 }
                 return null;
             }

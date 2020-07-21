@@ -97,7 +97,7 @@ namespace TaisEngine.Run
                     throw new Exception();
                 }
 
-                var percent = taxEffects.Sum(x => x.value)/100;
+                var percent = (100 + taxEffects.Sum(x => x.value))/100;
 
                 return taxBaseValue * percent;
             }
@@ -146,9 +146,9 @@ namespace TaisEngine.Run
                 throw new Exception();
             }
 
-            var taxbaseExpcet = CommonDef.TaxLevel.getInCome(RunData.inst.economy.curr_tax_level) * (int)num;
+            var taxbaseExpcet = CommonDef.TaxLevel.getInCome(level) * (int)num;
 
-            var percent = taxEffects.Sum(x => x.value) / 100;
+            var percent =(100 + taxEffects.Sum(x => x.value)) / 100;
 
             return taxbaseExpcet * percent;
 
