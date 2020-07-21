@@ -32,11 +32,11 @@ public class MsgPanel : MonoBehaviour
 
     internal void AddMessage(string title)
     {
-        if(this.gameObject.activeInHierarchy)
-        {
-            var item = RunData.inst.date + " " + title;
-            RunData.inst.recordMsg.Add(item);
+        var item = RunData.inst.date + " " + title;
+        RunData.inst.recordMsg.Add(item);
 
+        if (this.gameObject.activeInHierarchy)
+        {
             var gmObj = Instantiate(msgElemtPrefabs, this.transform) as GameObject;
             gmObj.GetComponent<LocalText>().format = item;
             gmObj.transform.SetAsFirstSibling();
