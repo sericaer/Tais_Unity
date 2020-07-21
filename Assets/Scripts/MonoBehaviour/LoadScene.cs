@@ -31,10 +31,10 @@ public class LoadScene : MonoBehaviour
         {
             Directory.CreateDirectory(GMSerialize.savePath);
 
-            Visitor.InitReflect("init", typeof(InitData));
+            Visitor.InitReflect("init",   typeof(InitData));
             Visitor.InitReflect("common", typeof(RunData));
             Visitor.InitReflect("depart", typeof(TaisEngine.Run.Depart));
-
+            Visitor.InitReflect("pop",    typeof(TaisEngine.Run.Pop));
             //InitData.AssocVisitor();
             //RunData.AssocVisitor();
 

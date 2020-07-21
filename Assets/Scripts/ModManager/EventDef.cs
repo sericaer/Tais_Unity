@@ -10,6 +10,7 @@ namespace TaisEngine.ModManager
     {
         internal List<EventDefCommon> common = new List<EventDefCommon>();
         internal List<EventDefDepart> depart = new List<EventDefDepart>();
+        internal List<EventDefPop> pop = new List<EventDefPop>();
 
         static internal IEnumerable<EventInterface> Generate()
         {
@@ -39,6 +40,24 @@ namespace TaisEngine.ModManager
                     }
 
                     Visitor.SetObj("depart", null);
+                }
+            }
+
+            foreach (var elem in EventDefPop.Enumerate())
+            {
+                foreach (var pop in Run.RunData.inst.pops)
+                {
+                    Visitor.SetObj("pop", pop);
+
+                    if (elem.trigger.Result())
+                    {
+                        if (Tools.GRandom.isOccurDays((int)elem.occur_days.Result()))
+                        {
+                            yield return elem;
+                        }
+                    }
+
+                    Visitor.SetObj("pop", null);
                 }
             }
         }
@@ -86,6 +105,14 @@ namespace TaisEngine.ModManager
         internal static void AnaylzeMod(Mod mod, SyntaxModElement modElemnts)
         {
             mod.content.eventGroup.depart.Add(EventDefDepart.Parse(mod.info.name, modElemnts));
+        }
+    }
+
+    internal class EventDefPop : EventDef<EventDefPop>
+    {
+        internal static void AnaylzeMod(Mod mod, SyntaxModElement modElemnts)
+        {
+            mod.content.eventGroup.pop.Add(EventDefPop.Parse(mod.info.name, modElemnts));
         }
     }
 

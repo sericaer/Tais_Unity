@@ -2,6 +2,8 @@ trigger =
 {
     and = 
     {
+        is.equal = {pop.is_consume, true}
+
         is.less = {pop.consume, 70}
 
         not = 
@@ -28,10 +30,7 @@ occur_days =
         value = -4*60
         cond =
         {
-            and = 
-            {
-                is.less_equal = {pop.consume, 40}
-            }
+            is.less_equal = {pop.consume, 40}
         }
     }
     modifier = 

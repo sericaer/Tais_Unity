@@ -23,7 +23,9 @@ namespace TaisEngine.ModManager
             modStructDict.Add("init_select",   (mod, modElemnts) => InitSelectDef.AnaylzeMod(mod, modElemnts));
             modStructDict.Add("event/common",  (mod, modElemnts) => EventDefCommon.AnaylzeMod(mod, modElemnts));
             modStructDict.Add("event/depart",  (mod, modElemnts) => EventDefDepart.AnaylzeMod(mod, modElemnts));
+            modStructDict.Add("event/pop",     (mod, modElemnts) => EventDefPop.AnaylzeMod(mod, modElemnts));
             modStructDict.Add("buffer/depart", (mod, modElemnts) => BufferDefDepart.AnaylzeMod(mod, modElemnts));
+            modStructDict.Add("buffer/pop",    (mod, modElemnts) => BufferDefPop.AnaylzeMod(mod, modElemnts));
             modStructDict.Add("depart",        (mod, modElemnts) => DepartDef.AnaylzeMod(mod, modElemnts));
             modStructDict.Add("pop",           (mod, modElemnts) => PopDef.AnaylizeMod(mod, modElemnts));
             modStructDict.Add("defines",       (mod, modElemnts) => CommonDef.AnaylizeMod(mod, modElemnts));

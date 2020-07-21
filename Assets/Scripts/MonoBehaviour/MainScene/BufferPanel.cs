@@ -42,7 +42,7 @@ public class BufferPanel : MonoBehaviour
         {
             var effect = gmBuffer.def.effect_consume;
 
-            desc += $"<color={(effect.Item2 < 0 ? "red" : "green")}>" + TaisEngine.ModManager.LocalString.Get("CONSUME_EFFECT", effect.ToString("P1")) + "</color> \n";
+            desc += $"<color={(effect.Item2 < 0 ? "red" : "green")}>" + TaisEngine.ModManager.LocalString.Get("CONSUME_EFFECT", effect.Item2.ToString("N1")) + "</color> \n";
         }
 
         return (title, desc);

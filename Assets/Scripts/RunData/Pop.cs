@@ -13,7 +13,7 @@ namespace TaisEngine.Run
     public class Pop
     {
         //internal Family family;
-        [JsonProperty]
+        [JsonProperty, VisitPropery("pop.name")]
         public string pop_name;
 
         [JsonProperty]
@@ -22,8 +22,8 @@ namespace TaisEngine.Run
         [JsonProperty]
         public double num;
 
-        //[JsonProperty]
-        //public List<Buffer> buffers = new List<Buffer>();
+        [JsonProperty, VisitPropery("pop.buffer")]
+        public BufferManager buffMgr = new BufferManager();
 
         [JsonProperty]
         public string family_name;
@@ -55,6 +55,7 @@ namespace TaisEngine.Run
             }
         }
 
+        [VisitPropery("pop.is_consume")]
         public bool is_consume
         {
             get
@@ -63,13 +64,14 @@ namespace TaisEngine.Run
             }
         }
 
-        public double? consume
+        [VisitPropery("pop.consume")]
+        public double consume
         {
             get
             {
                 if(consumeDetail == null)
                 {
-                    return null;
+                    return -1;
                 }
 
                 return consumeDetail.Sum(x => x.value);
@@ -105,8 +107,8 @@ namespace TaisEngine.Run
                     rslt.Add(("CURR_TAX_EFFECT", CommonDef.TaxLevel.getConsume(RunData.inst.economy.curr_tax_level)));
                 }
 
-                //rslt.AddRange(buffers.exist_consume_effects().Select(x => (x.name, x.value * def.consume.Value)));
-                rslt.AddRange(depart.bufferManager.getValid(x=>x.effect_consume));
+                rslt.AddRange(buffMgr.getValid(x=>x.effect_consume));
+                //rslt.AddRange(depart.bufferManager.getValid(x=>x.effect_consume));
 
                 return rslt;
             }

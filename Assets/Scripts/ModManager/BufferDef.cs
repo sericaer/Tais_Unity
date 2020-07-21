@@ -16,10 +16,17 @@ namespace TaisEngine.ModManager
         }
 
         internal List<BufferDefDepart> depart = new List<BufferDefDepart>();
+        internal List<BufferDefPop> pop = new List<BufferDefPop>();
 
         internal static BufferInterface FindByName(string name)
         {
-            return BufferDefDepart.Find(name);
+            BufferInterface rslt = BufferDefDepart.TryFind(name);
+            if(rslt != null)
+            {
+                return rslt;
+            }
+
+            return BufferDefPop.TryFind(name);
         }
     }
 
@@ -27,6 +34,7 @@ namespace TaisEngine.ModManager
     {
         Tuple<string, double> effect_crop_growing_speed { get; }
         Tuple<string, double> effect_consume { get; }
+        Tuple<string, double> effect_tax { get; }
     }
 
     internal class BufferDef<T> : BaseDefMulti<T>, BufferInterface where T : ModAbstractNamed, new()
@@ -61,6 +69,18 @@ namespace TaisEngine.ModManager
             }
         }
 
+        public Tuple<string, double> effect_tax
+        {
+            get
+            {
+                if (effect.ContainsKey("tax"))
+                {
+                    return new Tuple<string, double>(name, effect["tax"]);
+                }
+                return null;
+            }
+        }
+
         internal override string GetName()
         {
             return name;
@@ -80,6 +100,14 @@ namespace TaisEngine.ModManager
         internal static void AnaylzeMod(Mod mod, SyntaxModElement modElemnts)
         {
             mod.content.bufferGroup.depart.Add(BufferDefDepart.Parse(mod.info.name, modElemnts));
+        }
+    }
+
+    internal class BufferDefPop : BufferDef<BufferDefPop>
+    {
+        internal static void AnaylzeMod(Mod mod, SyntaxModElement modElemnts)
+        {
+            mod.content.bufferGroup.pop.Add(BufferDefPop.Parse(mod.info.name, modElemnts));
         }
     }
 
