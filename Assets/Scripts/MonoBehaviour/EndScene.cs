@@ -23,6 +23,6 @@ public class EndScene : MonoBehaviour
 
     public void onConfirm()
     {
-        SceneManager.LoadScene("StarScene");
+        SceneManager.LoadScene("StartScene");
     }
 }

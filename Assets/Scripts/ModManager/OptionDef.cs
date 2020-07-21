@@ -15,46 +15,7 @@ namespace TaisEngine.ModManager
         public Expr_OperationGroup selected;
 
         [ModProperty("next")]
-        public Dictionary<string, Expr_Condition> next;
-
-        //public OptionDef(string name, Value raw)
-        //{
-        //    if(!(raw is MultiItem))
-        //    {
-        //        throw new Exception($"option not support {raw}");
-        //    }
-
-        //    this.name = name;
-
-        //    var opRaw = raw as MultiItem;
-
-        //    object[] defValue = { name };
-        //    this.desc = Expr_MultiValue.Parse(opRaw, "desc", defValue);
-
-        //    this.selected = new Expr_OperationGroup(opRaw, "selected");
-        //    this.next = new NextSelect(opRaw, "next");
-
-        //}
-
-        //internal static List<OptionDef> ParseList(SyntaxMod.MultiItem mod, string key, string parent)
-        //{
-        //    try
-        //    {
-        //        var rslt = new List<OptionDef>();
-
-        //        var rawElems = mod.multiItem.elems.Where(x => x.key == key).ToArray();
-        //        for (int i = 0; i < rawElems.Count(); i++)
-        //        {
-        //            rslt.Add(new OptionDef($"{parent}_OPTION_{i + 1}_DESC", rawElems[i].value));
-        //        }
-
-        //        return rslt;
-        //    }
-        //    catch(Exception e)
-        //    {
-        //        throw new Exception($"parse file faild! {mod.filePath}", e);
-        //    }
-        //}
+        public NextDef next;
 
         internal void Check()
         {
@@ -64,6 +25,8 @@ namespace TaisEngine.ModManager
             }
 
             selected.Check();
+
+            next?.Check();
         }
 
         internal string getNextEvent()
@@ -73,7 +36,48 @@ namespace TaisEngine.ModManager
                 return null;
             }
 
-            foreach (var elem in next)
+            return next.Get();
+        }
+    }
+
+    public class NextDef
+    {
+        internal Dictionary<string, Expr_Condition> group;
+        internal string single = null;
+
+        public NextDef(Value value)
+        {
+            group = new Dictionary<string, Expr_Condition>();
+
+            switch (value)
+            {
+                case MultiItem multi:
+                    foreach(var elem in multi.elems)
+                    {
+                        group.Add(elem.key, Expr_Condition.Parse(elem.value));
+                    }
+                    break;
+                case SingleValue single:
+                    this.single = single.value;
+                    break;
+                default:
+                    throw new Expr_Exception("operation only support 'MultiItem', 'SingleValue'", value);
+            }
+        }
+
+        internal void Check()
+        {
+
+        }
+
+        internal string Get()
+        {
+            if(single != null)
+            {
+                return single;
+            }
+
+            foreach(var elem in group)
             {
                 if(elem.Value.Result())
                 {
@@ -82,21 +86,6 @@ namespace TaisEngine.ModManager
             }
 
             return null;
-        }
-    }
-
-    public class NextSelect
-    {
-        //private MultiItem opRaw;
-
-        //public NextSelect(MultiItem opRaw, string key)
-        //{
-        //    this.opRaw = opRaw;
-        //}
-
-        internal string Get()
-        {
-            return "";
         }
     }
 }
