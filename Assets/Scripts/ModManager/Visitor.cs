@@ -306,6 +306,8 @@ namespace TaisEngine.ModManager
                 {
                     value /= double.Parse(matched.Value.Replace("/", ""));
                 }
+
+                start += matched.Length;
             }
 
             obj = value;

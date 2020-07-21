@@ -6,7 +6,7 @@ using TaisEngine.Run;
 
 public class EndScene : MonoBehaviour
 {
-    Text histroyRecord;
+    public Text histroyRecord;
 
     // Use this for initialization
     void Start()
@@ -23,6 +23,6 @@ public class EndScene : MonoBehaviour
 
     public void onConfirm()
     {
-        SceneManager.LoadScene("StarScene");
+        SceneManager.LoadScene("StartScene");
     }
 }

@@ -104,6 +104,10 @@ namespace TaisEngine.ModManager
             {
                 return new Expr_EffectGroup(modValue);
             }
+            if (type == typeof(NextDef))
+            {
+                return new NextDef(modValue);
+            }
 
             if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Dictionary<,>))
             {
