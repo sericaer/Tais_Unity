@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1694238832506885239}
   - component: {fileID: 6907636644005370462}
   - component: {fileID: 9028912150181502321}
+  - component: {fileID: 6407911833770220204}
   m_Layer: 5
   m_Name: Button4
   m_TagString: Untagged
@@ -119,6 +120,36 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6407911833770220204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705095462017216915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f99a9e0f405bff84884c4884261df263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltipStyle: {fileID: 11455346, guid: 695a132482827d54da1e2b158f79b1c4, type: 3}
+  parameterizedTextFields:
+  - name: TitleText
+    placeholder: '%TitleText%'
+    value: 
+  - name: BodyText
+    placeholder: '%BodyText%'
+    value: 
+  dynamicImageFields: []
+  dynamicSectionFields: []
+  isRemotelyActivated: 0
+  remoteTrigger: {fileID: 0}
+  backgroundTint: {r: 1, g: 1, b: 1, a: 1}
+  tipPosition: 5
+  minTextWidth: 100
+  maxTextWidth: 200
+  staysOpen: 0
+  isBlocking: 0
 --- !u!1 &2112840262367535043
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,6 +481,7 @@ GameObject:
   - component: {fileID: 4253968041303812195}
   - component: {fileID: 3625777047879363739}
   - component: {fileID: 4606406458424401386}
+  - component: {fileID: 7044858268841522859}
   m_Layer: 5
   m_Name: Button2
   m_TagString: Untagged
@@ -557,6 +589,36 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7044858268841522859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2606420885943558335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f99a9e0f405bff84884c4884261df263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltipStyle: {fileID: 11455346, guid: 695a132482827d54da1e2b158f79b1c4, type: 3}
+  parameterizedTextFields:
+  - name: TitleText
+    placeholder: '%TitleText%'
+    value: 
+  - name: BodyText
+    placeholder: '%BodyText%'
+    value: 
+  dynamicImageFields: []
+  dynamicSectionFields: []
+  isRemotelyActivated: 0
+  remoteTrigger: {fileID: 0}
+  backgroundTint: {r: 1, g: 1, b: 1, a: 1}
+  tipPosition: 5
+  minTextWidth: 100
+  maxTextWidth: 200
+  staysOpen: 0
+  isBlocking: 0
 --- !u!1 &3157158436743625427
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,6 +716,7 @@ GameObject:
   - component: {fileID: 8778390881574659894}
   - component: {fileID: 5597289544988666516}
   - component: {fileID: 2009532089668025876}
+  - component: {fileID: 1383384383279862183}
   m_Layer: 5
   m_Name: Button3
   m_TagString: Untagged
@@ -761,6 +824,36 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1383384383279862183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3772531847151281040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f99a9e0f405bff84884c4884261df263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltipStyle: {fileID: 11455346, guid: 695a132482827d54da1e2b158f79b1c4, type: 3}
+  parameterizedTextFields:
+  - name: TitleText
+    placeholder: '%TitleText%'
+    value: 
+  - name: BodyText
+    placeholder: '%BodyText%'
+    value: 
+  dynamicImageFields: []
+  dynamicSectionFields: []
+  isRemotelyActivated: 0
+  remoteTrigger: {fileID: 0}
+  backgroundTint: {r: 1, g: 1, b: 1, a: 1}
+  tipPosition: 5
+  minTextWidth: 100
+  maxTextWidth: 200
+  staysOpen: 0
+  isBlocking: 0
 --- !u!1 &4336496583370955433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1181,6 +1274,7 @@ GameObject:
   - component: {fileID: 5792610243231282915}
   - component: {fileID: 7520423425397945048}
   - component: {fileID: 2158178165922859302}
+  - component: {fileID: 2288013320943103063}
   m_Layer: 5
   m_Name: Button0
   m_TagString: Untagged
@@ -1288,6 +1382,36 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2288013320943103063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5620849348688965915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f99a9e0f405bff84884c4884261df263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltipStyle: {fileID: 11455346, guid: 695a132482827d54da1e2b158f79b1c4, type: 3}
+  parameterizedTextFields:
+  - name: TitleText
+    placeholder: '%TitleText%'
+    value: 
+  - name: BodyText
+    placeholder: '%BodyText%'
+    value: 
+  dynamicImageFields: []
+  dynamicSectionFields: []
+  isRemotelyActivated: 0
+  remoteTrigger: {fileID: 0}
+  backgroundTint: {r: 1, g: 1, b: 1, a: 1}
+  tipPosition: 5
+  minTextWidth: 100
+  maxTextWidth: 200
+  staysOpen: 0
+  isBlocking: 0
 --- !u!1 &5941489628299551468
 GameObject:
   m_ObjectHideFlags: 0
@@ -1603,6 +1727,7 @@ GameObject:
   - component: {fileID: 6944967914700498346}
   - component: {fileID: 5583465300016009172}
   - component: {fileID: 8393147193689985527}
+  - component: {fileID: 4600596360258077549}
   m_Layer: 5
   m_Name: Button1
   m_TagString: Untagged
@@ -1710,6 +1835,36 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4600596360258077549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7775981392199500329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f99a9e0f405bff84884c4884261df263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltipStyle: {fileID: 11455346, guid: 695a132482827d54da1e2b158f79b1c4, type: 3}
+  parameterizedTextFields:
+  - name: TitleText
+    placeholder: '%TitleText%'
+    value: 
+  - name: BodyText
+    placeholder: '%BodyText%'
+    value: 
+  dynamicImageFields: []
+  dynamicSectionFields: []
+  isRemotelyActivated: 0
+  remoteTrigger: {fileID: 0}
+  backgroundTint: {r: 1, g: 1, b: 1, a: 1}
+  tipPosition: 5
+  minTextWidth: 100
+  maxTextWidth: 200
+  staysOpen: 0
+  isBlocking: 0
 --- !u!1 &8102528892806429542
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,6 +1877,7 @@ GameObject:
   - component: {fileID: 375630260503089584}
   - component: {fileID: 8632096997697128136}
   - component: {fileID: 4575206301649326762}
+  - component: {fileID: 4439540246123089436}
   m_Layer: 5
   m_Name: Button5
   m_TagString: Untagged
@@ -1829,6 +1985,36 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4439540246123089436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8102528892806429542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f99a9e0f405bff84884c4884261df263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltipStyle: {fileID: 11455346, guid: 695a132482827d54da1e2b158f79b1c4, type: 3}
+  parameterizedTextFields:
+  - name: TitleText
+    placeholder: '%TitleText%'
+    value: 
+  - name: BodyText
+    placeholder: '%BodyText%'
+    value: 
+  dynamicImageFields: []
+  dynamicSectionFields: []
+  isRemotelyActivated: 0
+  remoteTrigger: {fileID: 0}
+  backgroundTint: {r: 1, g: 1, b: 1, a: 1}
+  tipPosition: 5
+  minTextWidth: 100
+  maxTextWidth: 200
+  staysOpen: 0
+  isBlocking: 0
 --- !u!1 &8222560132683504559
 GameObject:
   m_ObjectHideFlags: 0
@@ -1919,6 +2105,7 @@ GameObject:
   - component: {fileID: 4758236851013202138}
   - component: {fileID: 7961541832831665895}
   - component: {fileID: 7921336551014930072}
+  - component: {fileID: 5221425732207503751}
   m_Layer: 5
   m_Name: Button6
   m_TagString: Untagged
@@ -2026,3 +2213,33 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5221425732207503751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8544292119898423319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f99a9e0f405bff84884c4884261df263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltipStyle: {fileID: 11455346, guid: 695a132482827d54da1e2b158f79b1c4, type: 3}
+  parameterizedTextFields:
+  - name: TitleText
+    placeholder: '%TitleText%'
+    value: 
+  - name: BodyText
+    placeholder: '%BodyText%'
+    value: 
+  dynamicImageFields: []
+  dynamicSectionFields: []
+  isRemotelyActivated: 0
+  remoteTrigger: {fileID: 0}
+  backgroundTint: {r: 1, g: 1, b: 1, a: 1}
+  tipPosition: 5
+  minTextWidth: 100
+  maxTextWidth: 200
+  staysOpen: 0
+  isBlocking: 0
