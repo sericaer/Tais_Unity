@@ -24,10 +24,10 @@ public class DialogCommon : Dialog
     void Start ()
     {
         object[] eventTitleParams = gEvent.GetTitle();
-        title.format = LocalString.Get(eventTitleParams[0] as string, eventTitleParams.Skip(1).ToArray());
+        title.format = LocalString.GetWithColor(eventTitleParams[0] as string, eventTitleParams.Skip(1).ToArray());
 
         object[] eventDescParams = gEvent.GetDesc();
-        content.format = LocalString.Get(eventDescParams[0] as string, eventDescParams.Skip(1).ToArray());
+        content.format = LocalString.GetWithColor(eventDescParams[0] as string, eventDescParams.Skip(1).ToArray());
 
         var options = gEvent.GetOption();
         for (int i = 0; i < options.Count(); i++)

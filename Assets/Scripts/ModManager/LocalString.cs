@@ -32,6 +32,28 @@ namespace TaisEngine.ModManager
             return rslt;
         }
 
+        internal static string GetWithColor(string format, params object[] objs)
+        {
+
+            var rslt = format;
+            foreach (var mod in Mod.listMod.Where(x => x.content != null && x.content.localString.dictlang.ContainsKey(Config.inst.lang)))
+            {
+                if (mod.content.localString.dictlang[Config.inst.lang].ContainsKey(format))
+                {
+                    rslt = mod.content.localString.dictlang[Config.inst.lang][format];
+                    if (objs.Count() == 0)
+                    {
+                        return rslt;
+                    }
+
+                    rslt = string.Format(mod.content.localString.dictlang[Config.inst.lang][format],
+                                            objs.Select(y =>$"<color=blue>{ (y is string ? Get(y as string) : y) }</color>").ToArray());
+                }
+            }
+
+            return rslt;
+        }
+
         Dictionary<string, Dictionary<string, string>> dictlang;
         internal Dictionary<string, PersonName> dictlan2PersonName = new Dictionary<string, PersonName>();
 
