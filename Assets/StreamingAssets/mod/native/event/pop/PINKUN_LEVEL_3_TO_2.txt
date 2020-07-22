@@ -1,3 +1,6 @@
+title = {PINKUN_LEVEL_3_TO_2_TITLE, pop.depart_name, pop.name}
+desc = {PINKUN_LEVEL_3_TO_2_DESC, pop.depart_name, pop.name}
+
 trigger = 
 {
     and = 

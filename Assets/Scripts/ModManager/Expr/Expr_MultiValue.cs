@@ -46,8 +46,14 @@ namespace TaisEngine.ModManager
         internal Expr_MultiValue(MultiValue multi) : base(multi)
         {
             factors = multi.elems.Select(x => new Factor<object>(x, Visitor.VType.READ)).ToList();
+
+            foreach(var factor in factors.Skip(1))
+            {
+                factor.GetValueType();
+            }
+            
         }
 
-        List<Factor<object>> factors;
+        internal List<Factor<object>> factors;
     }
 }

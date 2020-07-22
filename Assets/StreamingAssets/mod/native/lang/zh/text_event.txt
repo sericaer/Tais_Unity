@@ -37,7 +37,7 @@ HUANGZAI_START_DESC:遮天蔽日的蝗虫飞入{0}，啃食着庄稼，{0}今年
 HUANGZAI_START_OPTION_1_DESC:确认
 CROP_HARVEST_NORMAL_TITLE:{0}普通的收获
 CROP_HARVEST_NORMAL_DESC:{0}秋收结果普通
-CROP_HARVEST_NORMAL_OPTION_1_DESC:{0}确认
+CROP_HARVEST_NORMAL_OPTION_1_DESC:确认
 CROP_HARVEST_START_TITLE:{0}秋收开始
 CROP_HARVEST_START_DESC:{0}秋收开始
 CROP_HARVEST_START_OPTION_1_DESC:确认
@@ -95,14 +95,18 @@ EVENT_CHAOTING_PARTY_REJECT_REPRIMAND_TAISHOU_TITLE:朝廷要闻！
 EVENT_CHAOTING_PARTY_REJECT_REPRIMAND_TAISHOU_DESC:据悉, 幸亏朝廷中你的同党——{0}派系据理力争，终于使申斥政令未能在朝中通过。
 EVENT_POP_MINHU_FARM_LESS_START_TITLE:{0}土地兼并严重
 EVENT_POP_MINHU_FARM_LESS_START_DESC:{0}土地兼并严重，民户的耕地太少了，平均每人只有{1}，耕地缺乏会导致秋收无法支持民户的口粮消耗，请密切关注。
-EVENT_POP_MINHU_PINKUN_START_TITLE:{0}{1}生活贫困
-EVENT_POP_MINHU_PINKUN_START_DESC:{0}{1}长时间的处于口粮匮乏状态，导致生活贫困，后续税收会下降很多。
-EVENT_POP_MINHU_PINKUN_STOP_TITLE:{0}{1}不再处于贫困状态
-EVENT_POP_MINHU_PINKUN_STOP_DESC:{0}{1}长时间口粮充裕，不再处于贫困状态，后续税收会有所增长。
-EVENT_POP_MINHU_PINKUN_LEVEL_INC_TITLE:{0}{1}贫困加剧
-EVENT_POP_MINHU_PINKUN_LEVEL_INC_DESC:{0}{1}口粮越来越少了，更加的贫困潦倒，状态由<color=blue>{2}</color>转变为<color=blue>{3}</color>，后续税收会下降很多。
-EVENT_POP_MINHU_PINKUN_LEVEL_DEC_TITLE:{0}{1}贫困缓和
-EVENT_POP_MINHU_PINKUN_LEVEL_DEC_DESC:{0}{1}口粮增长了一些，民生逐渐的好转，状态由<color=blue>{2}</color>转变为<color=blue>{3}</color>，后续税收会有所增长。
+PINKUN_START_TITLE:{0}{1}生活贫困
+PINKUN_START_DESC:{0}{1}长时间的处于口粮匮乏状态，导致生活贫困，后续税收会下降很多。
+PINKUN_STOP_TITLE:{0}{1}不再处于贫困状态
+PINKUN_STOP_DESC:{0}{1}长时间口粮充裕，不再处于贫困状态，后续税收会有所增长。
+PINKUN_LEVEL_1_TO_2_TITLE:{0}{1}贫困加剧
+PINKUN_LEVEL_1_TO_2_DESC:{0}{1}口粮越来越少了，更加的贫困潦倒, 很多家庭破产，后续{0}税收会下降很多。
+PINKUN_LEVEL_2_TO_3_TITLE:{0}{1}贫困加剧
+PINKUN_LEVEL_2_TO_3_DESC:{0}{1}口粮越来越少了，更加的贫困潦倒, 很多家庭破产，后续{0}税收会下降很多。
+PINKUN_LEVEL_2_TO_1_TITLE:{0}{1}贫困缓和
+PINKUN_LEVEL_2_TO_1_DESC:{0}{1}口粮增长了一些，民生逐渐的好转， 后续{0}税收会有所增长。
+PINKUN_LEVEL_3_TO_2_TITLE:{0}{1}贫困缓和
+PINKUN_LEVEL_3_TO_2_DESC:{0}{1}口粮增长了一些，民生逐渐的好转， 后续{0}税收会有所增长。
 EVENT_DEPART_ZEIKOU_ATTACK_LEVEL1_TITLE:{0}的贼寇暗中抢劫过路的旅客
 EVENT_DEPART_ZEIKOU_ATTACK_LEVEL1_DESC:{0}的贼寇暗中抢劫过路的旅客，附近人心惶惶，地方稳定度下降。
 OPTION_COLLECT_TAX_SMALLEST_TITLE:最低（预计收入{0}）

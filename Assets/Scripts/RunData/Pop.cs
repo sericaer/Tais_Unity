@@ -16,7 +16,7 @@ namespace TaisEngine.Run
         [JsonProperty, VisitPropery("pop.name")]
         public string pop_name;
 
-        [JsonProperty]
+        [JsonProperty, VisitPropery("pop.depart_name")]
         public string depart_name;
 
         [JsonProperty]
