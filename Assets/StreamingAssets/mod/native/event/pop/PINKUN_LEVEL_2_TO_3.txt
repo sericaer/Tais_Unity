@@ -1,0 +1,46 @@
+trigger = 
+{
+    and = 
+    {
+        is.equal = {pop.is_consume, true}
+
+        is.less = {pop.consume, 45}
+
+        is.buffer_valid = { pop.buffer, PINKUN_LEVEL2}
+    }
+    
+}
+
+occur_days = 
+{
+    base = 3*30
+    modifier = 
+    {
+        value = -2*30
+        cond =
+        {
+            is.less = {pop.consume, 40}
+        }
+    }
+    modifier = 
+    {
+        value = -1*30
+        cond =
+        {
+            and = 
+            {
+                is.less_equal = {pop.consume, 45}
+                is.greater = {pop.consume, 40}
+            }
+        }
+    }
+}
+
+option = 
+{
+    selected = 
+    {
+        set.buffer_invalid = {pop.buffer, PINKUN_LEVEL2}
+        set.buffer_valid = {pop.buffer, PINKUN_LEVEL3}
+    }
+}

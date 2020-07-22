@@ -1,0 +1,45 @@
+trigger = 
+{
+    and = 
+    {
+        is.equal = {pop.is_consume, true}
+
+        is.greater_equal = {pop.consume, 80}
+
+        is.buffer_valid = { pop.buffer, PINKUN_LEVEL1}
+    }
+    
+}
+
+occur_days = 
+{
+    base = 8*30
+    modifier = 
+    {
+        value = -2*30
+        cond =
+        {
+            and = 
+            {
+                is.less = {pop.consume, 90}
+                is.greater = {pop.consume, 85}
+            }
+        }
+    }
+    modifier = 
+    {
+        value = -4*30
+        cond =
+        {
+            is.greater_equal = {pop.consume, 90}
+        }
+    }
+}
+
+option = 
+{
+    selected = 
+    {
+        set.buffer_invalid = {pop.buffer, PINKUN_LEVEL1}
+    }
+}
