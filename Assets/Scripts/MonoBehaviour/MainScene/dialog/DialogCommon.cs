@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.UI.Extensions;
 using TaisEngine;
-//using ModelShark;
+using ModelShark;
 using Tools;
 using TaisEngine.ModManager;
 
@@ -41,15 +41,12 @@ public class DialogCommon : Dialog
 
             object[] optDescParams = opt.desc.Result();
             btn.GetComponentInChildren<Text>().text = LocalString.Get(optDescParams[0] as string, optDescParams.Skip(1).ToArray());
-            //btn.GetComponent<TooltipTrigger>().funcGetTooltipStr = () =>
-            //{
-            //    List<List<object>> toolTipParams = opt.tooltip();
+            btn.GetComponent<TooltipTrigger>().funcGetTooltipStr = () =>
+            {
+                IEnumerable<string> toolTipParams = opt.selected.operations.Select(x => string.Join(" ", x.ToString().Split('|').Select(y => LocalString.Get(y.ToUpper()))));
 
-            //    return (string.Join("\n", toolTipParams.Select(x =>
-            //    {
-            //        return Mod.GetLocalString(x[0] as string, x.Skip(1).ToArray());
-            //    })), "");
-            //};
+                return (string.Join("\n", toolTipParams), "");
+            };
 
             btn.onClick.AddListener(async () =>
             {
