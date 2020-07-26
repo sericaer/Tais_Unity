@@ -926,6 +926,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f99a9e0f405bff84884c4884261df263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tooltipStyle: {fileID: 0}
+  parameterizedTextFields: []
+  dynamicImageFields: []
+  dynamicSectionFields: []
+  isRemotelyActivated: 0
+  remoteTrigger: {fileID: 0}
+  backgroundTint: {r: 1, g: 1, b: 1, a: 1}
+  tipPosition: 0
+  minTextWidth: 100
+  maxTextWidth: 200
+  staysOpen: 0
+  isBlocking: 0
 --- !u!1 &179463395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1892,6 +1904,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c63f5d6a18637a4d8735e0a145df409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  touchSupport: 0
+  tooltipDelay: 0.33
+  fadeDuration: 0.2
+  textFieldDelimiter: '%'
 --- !u!4 &349119414
 Transform:
   m_ObjectHideFlags: 0
@@ -7220,6 +7236,8 @@ MonoBehaviour:
   surplusText: {fileID: 622196705}
   consumeText: {fileID: 1582494608}
   btnConfirm: {fileID: 75680420}
+  prefabConfirmDialog: {fileID: 2448150586718246665, guid: 54929991c9c7c62478214933aba6bd3f,
+    type: 3}
 --- !u!1 &1199407192
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,16 @@ namespace TaisEngine.Run
     [JsonObject(MemberSerialization.OptIn)]
     public class GMDate
     {
+        internal static GMDate Parse(int days)
+        {
+            return new GMDate()
+            {
+                year = days / 360,
+                month = (days % 360) / 30,
+                day = (days % 360) % 30
+            };
+        }
+
         [JsonProperty, VisitPropery("date.year")]
         public int year;
 

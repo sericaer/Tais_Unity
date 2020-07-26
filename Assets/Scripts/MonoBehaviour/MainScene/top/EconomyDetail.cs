@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using TaisEngine.ModManager;
+using TaisEngine.Run;
 
 //using ModelShark;
 
@@ -18,6 +19,8 @@ public class EconomyDetail : MonoBehaviour
 
     public Button btnConfirm;
 
+    public GameObject prefabConfirmDialog;
+
     TaisEngine.Run.Economy economy;
     TaisEngine.Run.Chaoting chaoting;
 
@@ -29,12 +32,22 @@ public class EconomyDetail : MonoBehaviour
 
     public void OnConfirm()
     {
-        if (!changedCurrTax.Equals(0.0))
+        var confirmDialog = Instantiate(prefabConfirmDialog, this.transform) as GameObject;
+
+        var dialog = confirmDialog.GetComponent<DialogNextChangedConfirm>();
+
+        dialog.desc = LocalString.Get("NEXT_CHANGED_DESC", 
+                                      CommonDef.TaxLevel.Get().tax_change_intervl.Value, 
+                                      GMDate.Parse(RunData.inst.date.total_days + CommonDef.TaxLevel.Get().tax_change_intervl.Value).ToString());
+        dialog.act = () =>
         {
-            economy.currTaxChanged(changedCurrTax);
-        }
-        
-        this.gameObject.SetActive(false);
+            if (!changedCurrTax.Equals(0.0f))
+            {
+                economy.currTaxChanged(changedCurrTax);
+            }
+
+            this.gameObject.SetActive(false);
+        }; 
     }
 
     public void OnCancel()
@@ -107,6 +120,9 @@ public class EconomyDetail : MonoBehaviour
         surplusText.text = surplus.ToString();
 
         consumeText.text = CommonDef.TaxLevel.getConsume(LocalCurrTaxSlider.value).ToString();
+
+
+        btnConfirm.interactable = !changedCurrTax.Equals(0.0f);
     }
 
 }

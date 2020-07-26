@@ -34,3 +34,4 @@ buffer_percent:增益比
 buffer_value:增益值
 tax_effect:税收影响
 person_name:姓名
+NEXT_CHANGED_DESC:修改后{0}天内不允许再次修改，请确认。
