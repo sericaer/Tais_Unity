@@ -10,6 +10,8 @@ using UnityEngine.UI;
 
 public class MainScene : MonoBehaviour
 {
+    public GameObject Center;
+
     public GameObject dialogCommon;
     public GameObject reportCollectTax;
     public GameObject dialogException;

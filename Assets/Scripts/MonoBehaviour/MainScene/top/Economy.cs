@@ -10,7 +10,8 @@ public class Economy : MonoBehaviour
 
     public void onDetailClick()
     {
-        detail.SetActive(true);
+        var panelDialog = Instantiate(detail, GetComponentInParent<MainScene>().Center.transform) as GameObject;
+        //detail.SetActive(true);
     }
 
     // Use this for initialization

@@ -35,3 +35,11 @@ buffer_value:增益值
 tax_effect:税收影响
 person_name:姓名
 NEXT_CHANGED_DESC:修改后{0}天内不允许再次修改，请确认。
+income:收入
+expend:支出
+pop_tax:人头税
+level1:一级
+level2:二级
+level3:三级
+level4:四级
+level5:五级
