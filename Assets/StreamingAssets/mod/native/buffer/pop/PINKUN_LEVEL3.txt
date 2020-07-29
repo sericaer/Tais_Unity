@@ -1,4 +1,8 @@
 effect = 
 {
     tax_percent = -70
+
+    farm_lost_percent = -3
+
+    bankrupt_percent = -5
 }
