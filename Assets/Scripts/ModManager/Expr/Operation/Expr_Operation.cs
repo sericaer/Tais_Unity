@@ -7,7 +7,7 @@ namespace TaisEngine.ModManager
 {
     internal abstract class Expr_Operation
     {
-        protected Item opRaw;
+        internal Item opRaw;
 
         internal static Expr_Operation Parse(Item item)
         {

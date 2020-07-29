@@ -32,5 +32,11 @@ namespace TaisEngine.ModManager
         {
             left.Write(right.Read());
         }
+
+        public override string ToString()
+        {
+            return $"{left.raw.Replace(".", "|")}|assign|{right.Read()}";
+        }
+
     }
 }
