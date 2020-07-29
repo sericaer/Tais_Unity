@@ -715,8 +715,8 @@ MonoBehaviour:
   m_HandleRect: {fileID: 7828096319741847413}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
+  m_MaxValue: 10
+  m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -732,6 +732,7 @@ GameObject:
   - component: {fileID: 7828096319363391052}
   - component: {fileID: 7828096319363391042}
   - component: {fileID: 7828096319363391043}
+  - component: {fileID: 854655511045350}
   m_Layer: 5
   m_Name: economyDetail
   m_TagString: Untagged
@@ -796,6 +797,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &854655511045350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7828096319363391053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 620b04d6e9ca97543880a70b29df562e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7828096319422970724
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,7 +1058,7 @@ GameObject:
   - component: {fileID: 7828096319568481441}
   - component: {fileID: 7828096319568481442}
   m_Layer: 5
-  m_Name: Text
+  m_Name: value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1538,7 +1551,7 @@ GameObject:
   - component: {fileID: 7828096319821599386}
   - component: {fileID: 7828096319821599387}
   m_Layer: 5
-  m_Name: LocalText
+  m_Name: Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1781,7 +1794,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7828096319838057911}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 854655511045350}
+        m_MethodName: OnCancel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7828096319893260419
 GameObject:
   m_ObjectHideFlags: 0
@@ -2496,7 +2520,7 @@ GameObject:
   - component: {fileID: 7828096320244876569}
   - component: {fileID: 7828096320244876570}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: pop_tax
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
