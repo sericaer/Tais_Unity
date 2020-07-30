@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 using Newtonsoft.Json;
@@ -12,8 +13,14 @@ namespace TaisEngine.Run
         [JsonProperty, VisitPropery("common.economy")]
         public double value;
 
-        [JsonProperty, VisitPropery("common.economy.tax_level_limit")]
-        public int tax_level_limit;
+        [JsonProperty]
+        public InComePopTax popTax;
+
+        [JsonProperty]
+        public ExpendCountryTax countryTax;
+        
+        //[JsonProperty, VisitPropery("common.economy.tax_level_limit")]
+        //public int tax_level_limit;
 
         public void currTaxChanged(float value)
         {
@@ -95,15 +102,18 @@ namespace TaisEngine.Run
 
         internal Economy(TAX_LEVEL level)
         {
-            this.curr_tax_level = (int)level;
+            //this.curr_tax_level = (int)level;
+            popTax = new InComePopTax() { currLevel = (int)level };
+            countryTax = new ExpendCountryTax() { currLevel = 10 };
         }
 
         internal void DayInc()
         {
-            if(RunData.inst.date.day == 30)
+            if (RunData.inst.date.day == 30)
             {
-                value += currTax;
-                value = RunData.inst.chaoting.ReportTax(value);
+                //value += currTax;
+                //value = RunData.inst.chaoting.ReportTax(value);
+                value += InCome.all.Sum(x => x.CalcCurrValue()) - Expend.all.Sum(x => x.CalcCurrValue());
             }
         }
 
@@ -111,5 +121,89 @@ namespace TaisEngine.Run
         {
             return RunData.inst.pops.Where(x => x.is_tax).Sum(x => x.GetExpectTax(level));
         }
+    }
+
+    public abstract class InCome
+    {
+        public static List<InCome> all = new List<InCome>();
+
+        public InCome()
+        {
+            all.Add(this);
+        }
+
+        public double CalcCurrValue()
+        {
+            return CalcExpandValue(GetCurrLevel());
+        }
+
+        public abstract int GetCurrLevel();
+
+        public abstract double CalcExpandValue(int level);
+
+        public abstract void SetLevel(int level);
+    }
+
+    public abstract class Expend
+    {
+        public static List<Expend> all = new List<Expend>();
+
+        public Expend()
+        {
+            all.Add(this);
+        }
+
+        public double CalcCurrValue()
+        {
+            return CalcExpandValue(GetCurrLevel());
+        }
+
+        public abstract void SetLevel(int level);
+
+        public abstract int GetCurrLevel();
+
+        public abstract double CalcExpandValue(int level);
+
+
+    }
+
+    public class InComePopTax : InCome
+    {
+        public override double CalcExpandValue(int level)
+        {
+            return RunData.inst.pops.Where(x => x.is_tax).Sum(x => x.GetExpectTax(level));
+        }
+
+        public override int GetCurrLevel()
+        {
+            return currLevel;
+        }
+
+        public override void SetLevel(int level)
+        {
+            currLevel = level;
+        }
+
+        internal int currLevel;
+    }
+
+    public class ExpendCountryTax : Expend
+    {
+        public override double CalcExpandValue(int level)
+        {
+            return RunData.inst.chaoting.expect_tax * level / 10;
+        }
+
+        public override int GetCurrLevel()
+        {
+            return currLevel;
+        }
+
+        public override void SetLevel(int level)
+        {
+            currLevel = level;
+        }
+
+        internal int currLevel;
     }
 }

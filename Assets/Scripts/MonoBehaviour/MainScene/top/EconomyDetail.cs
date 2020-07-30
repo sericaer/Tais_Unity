@@ -8,6 +8,9 @@ using TaisEngine.Run;
 
 public class EconomyDetail : MonoBehaviour
 {
+    public ExpendDetail expendCountryTax;
+    public InComeDetail incomePopTax;
+
     //public Slider LocalCurrTaxSlider;
     //public Text LocalCurrTaxText;
 
@@ -17,9 +20,9 @@ public class EconomyDetail : MonoBehaviour
     //public Text surplusText;
     //public Text consumeText;
 
-    //public Button btnConfirm;
+    public Button btnConfirm;
 
-    //public GameObject prefabConfirmDialog;
+    public GameObject prefabConfirmDialog;
 
     //TaisEngine.Run.Economy economy;
     //TaisEngine.Run.Chaoting chaoting;
@@ -30,25 +33,31 @@ public class EconomyDetail : MonoBehaviour
     //    changedCurrTax = value - (float)economy.curr_tax_level;
     //}
 
-    //public void OnConfirm()
-    //{
-    //    var confirmDialog = Instantiate(prefabConfirmDialog, this.transform) as GameObject;
+    public void OnConfirm()
+    {
+        //var confirmDialog = Instantiate(prefabConfirmDialog, this.transform) as GameObject;
 
-    //    var dialog = confirmDialog.GetComponent<DialogNextChangedConfirm>();
+        //var dialog = confirmDialog.GetComponent<DialogNextChangedConfirm>();
 
-    //    dialog.desc = LocalString.Get("NEXT_CHANGED_DESC", 
-    //                                  CommonDef.TaxLevel.Get().tax_change_intervl.Value, 
-    //                                  GMDate.Parse(RunData.inst.date.total_days + CommonDef.TaxLevel.Get().tax_change_intervl.Value).ToString());
-    //    dialog.act = () =>
-    //    {
-    //        if (!changedCurrTax.Equals(0.0f))
-    //        {
-    //            economy.currTaxChanged(changedCurrTax);
-    //        }
+        //dialog.desc = LocalString.Get("NEXT_CHANGED_DESC", 
+        //                              CommonDef.TaxLevel.Get().tax_change_intervl.Value, 
+        //                              GMDate.Parse(RunData.inst.date.total_days + CommonDef.TaxLevel.Get().tax_change_intervl.Value).ToString());
+        //dialog.act = () =>
+        //{
+        //    if (!changedCurrTax.Equals(0.0f))
+        //    {
+        //        economy.currTaxChanged(changedCurrTax);
+        //    }
 
-    //        this.gameObject.SetActive(false);
-    //    }; 
-    //}
+        //    this.gameObject.SetActive(false);
+        //}; 
+
+        expendCountryTax.Confirm();
+        incomePopTax.Confirm();
+
+        Destroy(this.gameObject);
+    }
+
 
     public void OnCancel()
     {
@@ -70,22 +79,24 @@ public class EconomyDetail : MonoBehaviour
     //    Timer.unPause();
     //}
 
-    //private void Awake()
-    //{
-        
-    //    economy = TaisEngine.Run.RunData.inst.economy;
-    //    chaoting = TaisEngine.Run.RunData.inst.chaoting;
+    private void Awake()
+    {
+        expendCountryTax.gmExpend = RunData.inst.economy.countryTax;
+        incomePopTax.gmIncome = RunData.inst.economy.popTax;
 
-    //    LocalCurrTaxSlider.minValue = 0;
-    //    LocalCurrTaxSlider.maxValue = (float)TaisEngine.Run.Economy.TAX_LEVEL.levelmax;
+        //economy = TaisEngine.Run.RunData.inst.economy;
+        //chaoting = TaisEngine.Run.RunData.inst.chaoting;
 
-    //    ChaotingExpectTaxSlider.minValue = 0;
-    //    ChaotingExpectTaxSlider.maxValue = (float)TaisEngine.Run.Economy.TAX_LEVEL.levelmax;
+        //LocalCurrTaxSlider.minValue = 0;
+        //LocalCurrTaxSlider.maxValue = (float)TaisEngine.Run.Economy.TAX_LEVEL.levelmax;
 
-    //    changedCurrTax = 0;
+        //ChaotingExpectTaxSlider.minValue = 0;
+        //ChaotingExpectTaxSlider.maxValue = (float)TaisEngine.Run.Economy.TAX_LEVEL.levelmax;
 
-    //    ChaotingExpectTaxSlider.interactable = false;
-    //}
+        //changedCurrTax = 0;
+
+        //ChaotingExpectTaxSlider.interactable = false;
+    }
 
     //private void RefreshData()
     //{
@@ -112,17 +123,17 @@ public class EconomyDetail : MonoBehaviour
     //    //}
     //}
 
-    //private void Update()
-    //{
-    //    LocalCurrTaxText.text = economy.getExpectTaxValue(LocalCurrTaxSlider.value).ToString();
+    private void Update()
+    {
+        //LocalCurrTaxText.text = economy.getExpectTaxValue(LocalCurrTaxSlider.value).ToString();
 
-    //    var surplus = double.Parse(LocalCurrTaxText.text) - double.Parse(ChaotingExpectTaxText.text);
-    //    surplusText.text = surplus.ToString();
+        //var surplus = double.Parse(LocalCurrTaxText.text) - double.Parse(ChaotingExpectTaxText.text);
+        //surplusText.text = surplus.ToString();
 
-    //    consumeText.text = CommonDef.TaxLevel.getConsume(LocalCurrTaxSlider.value).ToString();
+        //consumeText.text = CommonDef.TaxLevel.getConsume(LocalCurrTaxSlider.value).ToString();
 
 
-    //    btnConfirm.interactable = !changedCurrTax.Equals(0.0f);
-    //}
+        btnConfirm.interactable = expendCountryTax.isChanged || incomePopTax.isChanged;
+    }
 
 }

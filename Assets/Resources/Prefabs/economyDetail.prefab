@@ -809,6 +809,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 620b04d6e9ca97543880a70b29df562e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  expendCountryTax: {fileID: 8179020529959785426}
+  incomePopTax: {fileID: 4409943376444728528}
+  btnConfirm: {fileID: 7828096320868064438}
+  prefabConfirmDialog: {fileID: 0}
 --- !u!1 &7828096319422970724
 GameObject:
   m_ObjectHideFlags: 0
@@ -2239,9 +2243,9 @@ GameObject:
   - component: {fileID: 7828096320119645324}
   - component: {fileID: 7828096320119645325}
   - component: {fileID: 7828096320119645326}
-  - component: {fileID: 7828096320119645327}
+  - component: {fileID: 8179020529959785426}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: country_tax
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2331,7 +2335,7 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
---- !u!114 &7828096320119645327
+--- !u!114 &8179020529959785426
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2340,10 +2344,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7828096320119645321}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ae00459d2c494ab496453a76c0c538d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AllowSwitchOff: 0
+  slider: {fileID: 7828096319343533934}
+  value: {fileID: 7828096319825598611}
 --- !u!1 &7828096320180238350
 GameObject:
   m_ObjectHideFlags: 0
@@ -2519,6 +2524,7 @@ GameObject:
   - component: {fileID: 7828096320244876568}
   - component: {fileID: 7828096320244876569}
   - component: {fileID: 7828096320244876570}
+  - component: {fileID: 4409943376444728528}
   m_Layer: 5
   m_Name: pop_tax
   m_TagString: Untagged
@@ -2627,6 +2633,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AllowSwitchOff: 0
+--- !u!114 &4409943376444728528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7828096320244876548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fcbbb12488c7403c8a52d84a4ee09c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggles:
+  - {fileID: 7828096320180238348}
+  - {fileID: 7828096319218386463}
+  - {fileID: 7828096320754411896}
+  - {fileID: 7828096319167654198}
+  - {fileID: 7828096319452537367}
+  value: {fileID: 7828096319568481442}
 --- !u!1 &7828096320272893131
 GameObject:
   m_ObjectHideFlags: 0
@@ -3939,7 +3964,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7828096320868064437}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 854655511045350}
+        m_MethodName: OnConfirm
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7828096320895015001
 GameObject:
   m_ObjectHideFlags: 0
