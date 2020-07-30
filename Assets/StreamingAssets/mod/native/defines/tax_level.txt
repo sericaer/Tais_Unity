@@ -1,50 +1,36 @@
 tax_change_intervl = 120
 
 level = 
-{   
-    value = 0
-    income = 0.0
-    consume = 0.0
-}
-
-level = 
 {
     value = 1
-    income = 0.0005
+    income = 0.001
     consume = -5
 }
 
 level = 
 {
     value = 2
-    income = 0.001
+    income = 0.002
     consume = -10
 }
 
 level = 
 {
     value = 3
-    income = 0.002
+    income = 0.003
     consume = -20
 }
 
 level = 
 {
     value = 4
-    income = 0.0025
+    income = 0.004
     consume = -30
 }
 
 level = 
 {
     value = 5
-    income = 0.0028
+    income = 0.005
     consume = -40
-}
-
-level = 
-{
-    value = 6
-    income = 0.003
-    consume = -50
 }

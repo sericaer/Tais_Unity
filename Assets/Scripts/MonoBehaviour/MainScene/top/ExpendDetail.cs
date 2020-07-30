@@ -14,6 +14,8 @@ public class ExpendDetail : MonoBehaviour
     public Text value;
     public Expend gmExpend;
 
+    public double Num;
+
     public bool isChanged
     {
         get
@@ -26,7 +28,8 @@ public class ExpendDetail : MonoBehaviour
 
     private void Start()
     {
-        value.text = gmExpend.CalcCurrValue().ToString();
+        Num = gmExpend.CalcCurrValue();
+        value.text = Num.ToString();
         slider.value = gmExpend.GetCurrLevel();
 
         newLevel = (int)slider.value;
@@ -34,7 +37,9 @@ public class ExpendDetail : MonoBehaviour
         slider.onValueChanged.AddListener((curr) =>
         {
             newLevel = (int)curr;
-            value.text = gmExpend.CalcExpandValue(newLevel).ToString();
+
+            Num = gmExpend.CalcExpandValue(newLevel);
+            value.text = Num.ToString();
         });
     }
 

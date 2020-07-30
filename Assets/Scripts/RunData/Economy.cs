@@ -22,15 +22,15 @@ namespace TaisEngine.Run
         //[JsonProperty, VisitPropery("common.economy.tax_level_limit")]
         //public int tax_level_limit;
 
-        public void currTaxChanged(float value)
-        {
-            curr_tax_level += value;
+        //public void currTaxChanged(float value)
+        //{
+        //    curr_tax_level += value;
 
-            validTaxChangedDays = RunData.inst.date.total_days + CommonDef.TaxLevel.Get().tax_change_intervl.Value;
-        }
+        //    validTaxChangedDays = RunData.inst.date.total_days + CommonDef.TaxLevel.Get().tax_change_intervl.Value;
+        //}
 
-        [JsonProperty]
-        internal float curr_tax_level;
+        //[JsonProperty]
+        //internal float curr_tax_level;
 
         //internal double curr_tax_per
         //{

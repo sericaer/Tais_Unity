@@ -14,6 +14,8 @@ public class InComeDetail : MonoBehaviour
     public Text value;
     public InCome gmIncome;
 
+    public double Num;
+
     public bool isChanged
     {
         get
@@ -26,7 +28,8 @@ public class InComeDetail : MonoBehaviour
 
     private void Start()
     {
-        value.text = gmIncome.CalcCurrValue().ToString();
+        Num = gmIncome.CalcCurrValue();
+        value.text = Num.ToString();
 
         var level = gmIncome.GetCurrLevel();
         if (level < 1 || level > toggles.Count)
@@ -45,7 +48,9 @@ public class InComeDetail : MonoBehaviour
                 if(curr)
                 {
                     newLevel = toggles.FindIndex(x => x.isOn) + 1;
-                    value.text = gmIncome.CalcExpandValue(newLevel).ToString();
+
+                    Num = gmIncome.CalcExpandValue(newLevel);
+                    value.text = Num.ToString();
                 }
             });
         }

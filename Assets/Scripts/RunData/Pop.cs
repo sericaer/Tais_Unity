@@ -129,7 +129,7 @@ namespace TaisEngine.Run
                 rslt.Add(("BASE_VALUE", def.consume.Value));
                 if(def.is_tax.Value)
                 {
-                    rslt.Add(("CURR_TAX_EFFECT", CommonDef.TaxLevel.getConsume(RunData.inst.economy.curr_tax_level)));
+                    rslt.Add(("CURR_TAX_EFFECT", CommonDef.TaxLevel.getConsume(RunData.inst.economy.popTax.currLevel)));
                 }
 
                 rslt.AddRange(buffMgr.getValid(x=>x.effect_consume));

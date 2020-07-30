@@ -11,6 +11,7 @@ public class EconomyDetail : MonoBehaviour
     public ExpendDetail expendCountryTax;
     public InComeDetail incomePopTax;
 
+    public Text surplus;
     //public Slider LocalCurrTaxSlider;
     //public Text LocalCurrTaxText;
 
@@ -22,7 +23,7 @@ public class EconomyDetail : MonoBehaviour
 
     public Button btnConfirm;
 
-    public GameObject prefabConfirmDialog;
+    //public GameObject prefabConfirmDialog;
 
     //TaisEngine.Run.Economy economy;
     //TaisEngine.Run.Chaoting chaoting;
@@ -132,7 +133,7 @@ public class EconomyDetail : MonoBehaviour
 
         //consumeText.text = CommonDef.TaxLevel.getConsume(LocalCurrTaxSlider.value).ToString();
 
-
+        surplus.text = (incomePopTax.Num - expendCountryTax.Num).ToString();
         btnConfirm.interactable = expendCountryTax.isChanged || incomePopTax.isChanged;
     }
 
