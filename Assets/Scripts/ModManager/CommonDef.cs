@@ -56,6 +56,9 @@ namespace TaisEngine.ModManager
             [ModProperty("tax_change_intervl")]
             internal int? tax_change_intervl;
 
+            [ModProperty("max_tax_level")]
+            internal MAX_LEVEL_INFO max;
+
             [ModPropertyList("level")]
             internal List<LEVEL_INFO> levels;
 
@@ -71,38 +74,50 @@ namespace TaisEngine.ModManager
                 internal double? consume;
             }
 
-            internal static double getInCome(double curr_tax_level)
+            internal class MAX_LEVEL_INFO
             {
-                var levels = Get().levels;
+                [ModProperty("income")]
+                internal double? income;
 
-                var levelbase = (int)curr_tax_level;
-                var valueBase = levels.Single(x => x.value == levelbase).income.Value;
-                if (levelbase == (int)Run.Economy.TAX_LEVEL.levelmax)
-                {
-                    return valueBase;
-                }
-
-                var valueNext = levels.Single(x => x.value == levelbase + 1).income.Value;
-                var leveloffset = curr_tax_level - levelbase;
-
-                return valueBase + leveloffset * (valueNext - valueBase);
+                [ModProperty("consume")]
+                internal double? consume;
             }
 
-            internal static double getConsume(double curr_tax_level)
+            internal static double getInCome(int curr_tax_level)
             {
-                var levels = Get().levels;
+                return Get().max.income.Value * curr_tax_level / 10;
+                //var levels = Get().levels;
 
-                var levelbase = (int)curr_tax_level;
-                var valueBase = levels.Single(x => x.value == levelbase).consume.Value;
-                if (levelbase == (int)Run.Economy.TAX_LEVEL.levelmax)
-                {
-                    return valueBase;
-                }
+                //var levelbase = (int)curr_tax_level;
+                //var valueBase = levels.Single(x => x.value == levelbase).income.Value;
+                //if (levelbase == (int)Run.Economy.TAX_LEVEL.levelmax)
+                //{
+                //    return valueBase;
+                //}
 
-                var valueNext = levels.Single(x => x.value == levelbase + 1).consume.Value;
-                var leveloffset = curr_tax_level - levelbase;
+                //var valueNext = levels.Single(x => x.value == levelbase + 1).income.Value;
+                //var leveloffset = curr_tax_level - levelbase;
 
-                return valueBase + leveloffset * (valueNext - valueBase);
+                //return valueBase + leveloffset * (valueNext - valueBase);
+            }
+
+            internal static double getConsume(int curr_tax_level)
+            {
+                return Get().max.consume.Value * curr_tax_level / 10;
+
+                //var levels = Get().levels;
+
+                //var levelbase = (int)curr_tax_level;
+                //var valueBase = levels.Single(x => x.value == levelbase).consume.Value;
+                //if (levelbase == (int)Run.Economy.TAX_LEVEL.levelmax)
+                //{
+                //    return valueBase;
+                //}
+
+                //var valueNext = levels.Single(x => x.value == levelbase + 1).consume.Value;
+                //var leveloffset = curr_tax_level - levelbase;
+
+                //return valueBase + leveloffset * (valueNext - valueBase);
             }
 
             internal override void SetDefault()

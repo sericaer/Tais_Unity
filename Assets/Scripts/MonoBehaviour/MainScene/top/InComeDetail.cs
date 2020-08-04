@@ -10,7 +10,7 @@ using System;
 
 public class InComeDetail : MonoBehaviour
 {
-    public List<Toggle> toggles;
+    public Slider slider;
     public Text value;
     public InCome gmIncome;
 
@@ -32,28 +32,21 @@ public class InComeDetail : MonoBehaviour
         value.text = Num.ToString();
 
         var level = gmIncome.GetCurrLevel();
-        if (level < 1 || level > toggles.Count)
+        if (level > slider.maxValue)
         {
             throw new System.Exception();
         }
 
+        slider.value = level;
         newLevel = level;
 
-        toggles[level - 1].isOn = true;
-
-        for(int i=0; i<toggles.Count; i++)
+        slider.onValueChanged.AddListener((curr) =>
         {
-            toggles[i].onValueChanged.AddListener((curr) =>
-            {
-                if(curr)
-                {
-                    newLevel = toggles.FindIndex(x => x.isOn) + 1;
+            newLevel = (int)curr;
 
-                    Num = gmIncome.CalcExpandValue(newLevel);
-                    value.text = Num.ToString();
-                }
-            });
-        }
+            Num = gmIncome.CalcExpandValue(newLevel);
+            value.text = Num.ToString();
+        });
     }
 
     internal void Confirm()

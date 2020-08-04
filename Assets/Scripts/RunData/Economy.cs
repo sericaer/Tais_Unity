@@ -117,10 +117,10 @@ namespace TaisEngine.Run
             }
         }
 
-        internal double getExpectTaxValue(float level)
-        {
-            return RunData.inst.pops.Where(x => x.is_tax).Sum(x => x.GetExpectTax(level));
-        }
+        //internal double getExpectTaxValue(float level)
+        //{
+        //    return RunData.inst.pops.Where(x => x.is_tax).Sum(x => x.GetExpectTax(level));
+        //}
     }
 
     public abstract class InCome

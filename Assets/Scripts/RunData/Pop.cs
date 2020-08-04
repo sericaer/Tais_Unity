@@ -139,7 +139,7 @@ namespace TaisEngine.Run
             }
         }
 
-        internal double GetExpectTax(float level)
+        internal double GetExpectTax(int level)
         {
             if (!is_tax)
             {
@@ -158,7 +158,7 @@ namespace TaisEngine.Run
         {
             get
             {
-                return CommonDef.TaxLevel.getInCome(RunData.inst.economy.curr_tax_level) * (int)num;
+                return CommonDef.TaxLevel.getInCome(RunData.inst.economy.popTax.currLevel) * (int)num;
             }
         }
 

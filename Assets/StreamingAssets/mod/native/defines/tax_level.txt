@@ -34,3 +34,9 @@ level =
     income = 0.005
     consume = -40
 }
+
+max_tax_level = 
+{
+    income = 0.001
+    consume = -40
+}
