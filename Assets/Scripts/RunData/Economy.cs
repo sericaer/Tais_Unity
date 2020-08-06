@@ -113,7 +113,12 @@ namespace TaisEngine.Run
             {
                 //value += currTax;
                 //value = RunData.inst.chaoting.ReportTax(value);
-                value += InCome.all.Sum(x => x.CalcCurrValue()) - Expend.all.Sum(x => x.CalcCurrValue());
+                value += InCome.all.Sum(x => x.CalcCurrValue());
+
+                foreach(var elem in Expend.all)
+                {
+                    value = elem.Do(value);
+                }
             }
         }
 
@@ -164,7 +169,7 @@ namespace TaisEngine.Run
 
         public abstract double CalcExpandValue(int level);
 
-
+        internal abstract double Do(double income);
     }
 
     public class InComePopTax : InCome
@@ -202,6 +207,21 @@ namespace TaisEngine.Run
         public override void SetLevel(int level)
         {
             currLevel = level;
+        }
+
+        internal override double Do(double income)
+        {
+            double need = CalcCurrValue();
+            if (income > need)
+            {
+                RunData.inst.chaoting.year_real_tax += need;
+                return income - need;
+            }
+            else
+            {
+                RunData.inst.chaoting.year_real_tax += income;
+                return 0;
+            }
         }
 
         internal int currLevel;

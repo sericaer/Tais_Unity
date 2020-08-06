@@ -97,23 +97,23 @@ namespace TaisEngine.Run
             }
         }
 
-        internal double ReportTax(double value)
-        {
-            year_expect_tax += expect_tax;
+        //internal double ReportTax(double value)
+        //{
+        //    year_expect_tax += expect_tax;
 
-            var currReport = value < expect_tax ? value : expect_tax;
-            year_real_tax += currReport;
+        //    var currReport = value < expect_tax ? value : expect_tax;
+        //    year_real_tax += currReport;
 
-            return value - currReport;
-        }
+        //    return value - currReport;
+        //}
 
-        public double max_tax
-        {
-            get
-            {
-                return TaisEngine.ModManager.CommonDef.TaxLevel.getInCome((int)Economy.TAX_LEVEL.level5) * year_report_pop;
-            }
-        }
+        //public double max_tax
+        //{
+        //    get
+        //    {
+        //        return TaisEngine.ModManager.CommonDef.TaxLevel.getInCome((int)Economy.TAX_LEVEL.level5) * year_report_pop;
+        //    }
+        //}
 
         //[JsonProperty]
         //internal List<(int days, double report_tax_value)> year_report_tax_list = new List<(int days, double report_tax_value)>();
