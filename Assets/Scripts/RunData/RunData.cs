@@ -91,7 +91,10 @@ namespace TaisEngine.Run
                 }
             }
 
-            economy.DayInc();
+            foreach(var elem in DaysUpdate.all)
+            {
+                elem.DaysUpdateProcess();
+            }
 
             date++;
         }

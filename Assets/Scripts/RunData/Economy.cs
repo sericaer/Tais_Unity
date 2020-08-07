@@ -8,7 +8,7 @@ using TaisEngine.ModManager;
 namespace TaisEngine.Run
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class Economy
+    public class Economy : DaysUpdate
     {
         [JsonProperty, VisitPropery("common.economy")]
         public double value;
@@ -105,9 +105,19 @@ namespace TaisEngine.Run
             //this.curr_tax_level = (int)level;
             popTax = new InComePopTax() { currLevel = (int)level };
             countryTax = new ExpendCountryTax() { currLevel = 10 };
+
+            daysTimer.Set((null, null, 30), () =>
+            {
+                value += InCome.all.Sum(x => x.CalcCurrValue());
+
+                foreach (var elem in Expend.all)
+                {
+                    value = elem.Do(value);
+                }
+            });
         }
 
-        internal void DayInc()
+        public override void DaysUpdateProcess()
         {
             if (RunData.inst.date.day == 30)
             {
@@ -115,7 +125,7 @@ namespace TaisEngine.Run
                 //value = RunData.inst.chaoting.ReportTax(value);
                 value += InCome.all.Sum(x => x.CalcCurrValue());
 
-                foreach(var elem in Expend.all)
+                foreach (var elem in Expend.all)
                 {
                     value = elem.Do(value);
                 }
@@ -212,6 +222,9 @@ namespace TaisEngine.Run
         internal override double Do(double income)
         {
             double need = CalcCurrValue();
+
+            RunData.inst.chaoting.year_expect_tax += need;
+
             if (income > need)
             {
                 RunData.inst.chaoting.year_real_tax += need;
