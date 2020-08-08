@@ -8,6 +8,8 @@ using TaisEngine.Run;
 
 public class EconomyDetail : MonoBehaviour
 {
+    public static string prefabsName = "Prefabs/EconomyDetail";
+
     public ExpendDetail expendCountryTax;
     public InComeDetail incomePopTax;
 
@@ -24,6 +26,11 @@ public class EconomyDetail : MonoBehaviour
     //public Text consumeText;
 
     public Button btnConfirm;
+    public Button btnCancel;
+
+    public double surplusValue;
+
+    public bool canCancel = true;
 
     //public GameObject prefabConfirmDialog;
 
@@ -54,10 +61,10 @@ public class EconomyDetail : MonoBehaviour
 
         //    this.gameObject.SetActive(false);
         //}; 
-        if(surplus.text.StartsWith("-"))
+        if(surplusValue + RunData.inst.economy.value < 0)
         {
-            var gameObject = Instantiate(prefabMessageBox, this.transform) as GameObject;
-            gameObject.GetComponent<MessageBox>().desc.text = "111";
+            var gameObject = Instantiate(Resources.Load(MessageBox.prefabsName), this.transform) as GameObject;
+            gameObject.GetComponent<MessageBox>().desc.text = LocalString.Get("ECONOMY_NOT_SUPPORT_CURR_DEFICILT");
             return;
         }
 
@@ -75,18 +82,19 @@ public class EconomyDetail : MonoBehaviour
 
     //private float changedCurrTax;
 
-    //private void OnEnable()
-    //{
-    //    Timer.Pause();
+    private void OnEnable()
+    {
+        //Timer.Pause();
 
-    //    RefreshData();
-    //}
+        //RefreshData();
 
-    //private void OnDisable()
-    //{
-    //    changedCurrTax = 0;
-    //    Timer.unPause();
-    //}
+        btnCancel.interactable = canCancel;
+    }
+
+    private void OnDisable()
+    {
+        canCancel = true;
+    }
 
     private void Awake()
     {
@@ -106,6 +114,8 @@ public class EconomyDetail : MonoBehaviour
 
         //ChaotingExpectTaxSlider.interactable = false;
     }
+
+
 
     //private void RefreshData()
     //{
@@ -140,8 +150,8 @@ public class EconomyDetail : MonoBehaviour
         //surplusText.text = surplus.ToString();
 
         //consumeText.text = CommonDef.TaxLevel.getConsume(LocalCurrTaxSlider.value).ToString();
-
-        surplus.text = (incomePopTax.Num - expendCountryTax.Num).ToString();
+        surplusValue = incomePopTax.Num - expendCountryTax.Num;
+        surplus.text = (surplusValue).ToString();
         //btnConfirm.interactable = expendCountryTax.isChanged || incomePopTax.isChanged;
     }
 

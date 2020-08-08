@@ -997,8 +997,9 @@ GameObject:
   - component: {fileID: 7828096319363391042}
   - component: {fileID: 7828096319363391043}
   - component: {fileID: 854655511045350}
+  - component: {fileID: 2892684975979561459}
   m_Layer: 5
-  m_Name: economyDetail
+  m_Name: EconomyDetail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1079,6 +1080,21 @@ MonoBehaviour:
     type: 3}
   surplus: {fileID: 5904576036913760208}
   btnConfirm: {fileID: 7828096320868064438}
+  btnCancel: {fileID: 7828096319838057904}
+  surplusValue: 0
+  canCancel: 1
+--- !u!114 &2892684975979561459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7828096319363391053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 983eb0558df0f1c47ab15304ab3207ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7828096319422970724
 GameObject:
   m_ObjectHideFlags: 0

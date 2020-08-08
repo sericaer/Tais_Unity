@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using TaisEngine;
 using TaisEngine.ModManager;
 using TaisEngine.Run;
@@ -69,6 +71,27 @@ public class MainScene : MonoBehaviour
         var panelDialog = Instantiate(dialogCommon, this.transform) as GameObject;
         panelDialog.GetComponentInChildren<DialogCommon>().gEvent = eventobj;
     }
+
+    internal async UniTask CreateInterDialogAsync(string interEventName)
+    {
+        switch(interEventName)
+        {
+            case "ECONOMY_NOT_SUPPORT_CURR_DEFICILT":
+                {
+                    var panelDialog = Instantiate(Resources.Load(MessageBox.prefabsName), this.transform) as GameObject;
+                    var msgbox = panelDialog.GetComponent<MessageBox>();
+                    msgbox.desc.text = LocalString.Get("ECONOMY_NOT_SUPPORT_CURR_DEFICILT");
+                    msgbox.Act = () =>
+                    {
+                        Instantiate(Resources.Load(EconomyDetail.prefabsName), this.transform);
+                    };
+                }
+                break;
+            default:
+                throw new Exception("can not find inter event:" + interEventName);
+        }
+    }
+
 
     //internal void CreateTaskCollectTaxReport()
     //{

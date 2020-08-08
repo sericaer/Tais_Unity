@@ -76,7 +76,7 @@ namespace TaisEngine.Run
         {
         }
 
-        async internal UniTask DaysInc(Func<EventInterface, UniTask> act)
+        async internal UniTask DaysInc(Func<EventInterface, UniTask> act, Func<string, UniTask> actInter)
         {
             foreach (var gevent in EventGroup.Generate())
             {
@@ -100,7 +100,10 @@ namespace TaisEngine.Run
             {
                 if(date.IsEqual(elem.date))
                 {
-                    elem.OnTimer();
+                    foreach (var interEvent in elem.OnTimer())
+                    {
+                        await actInter(interEvent);
+                    }
                 }
             }
 

@@ -10,7 +10,7 @@ namespace TaisEngine.Run
     {
         internal static List<DaysTimer> all = new List<DaysTimer>();
 
-        internal static void Set((int? year, int? month, int?day) date, Action act)
+        internal static void Set((int? year, int? month, int?day) date, Func<string> act)
         {
             var finded = all.SingleOrDefault(x => x.isSameDate(date));
             if(finded != null)
@@ -21,17 +21,21 @@ namespace TaisEngine.Run
             all.Add(new DaysTimer(date, act));
         }
 
-        internal DaysTimer((int? year, int? month, int? day) date, Action act)
+        internal DaysTimer((int? year, int? month, int? day) date, Func<string> act)
         {
             this.date = date;
             this.actions.Add(act);
         }
 
-        internal void OnTimer()
+        internal IEnumerable<string> OnTimer()
         {
             foreach(var act in actions)
             {
-                act();
+                var interEvent = act();
+                if(interEvent != null)
+                {
+                    yield return interEvent;
+                }
             }
         }
 
@@ -54,6 +58,6 @@ namespace TaisEngine.Run
         }
 
         internal (int? year, int? month, int? day) date;
-        List<Action> actions = new List<Action>();
+        List<Func<string>> actions = new List<Func<string>>();
     }
 }

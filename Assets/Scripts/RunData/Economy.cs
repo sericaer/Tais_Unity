@@ -80,13 +80,13 @@ namespace TaisEngine.Run
         //    }
         //}
 
-        //internal double surplus
-        //{
-        //    get
-        //    {
-        //        return currTax - RunData.inst.chaoting.expect_tax;
-        //    }
-        //}
+        internal double surplus
+        {
+            get
+            {
+                return InCome.all.Sum(x=>x.CalcCurrValue()) - Expend.all.Sum(x=>x.CalcCurrValue());
+            }
+        }
 
         //internal bool local_tax_change_valid
         //{
@@ -113,12 +113,19 @@ namespace TaisEngine.Run
         {
             DaysTimer.Set((null, null, 30), () =>
             {
+                if(surplus+value < 0)
+                {
+                    return "ECONOMY_NOT_SUPPORT_CURR_DEFICILT";
+                }
+
                 value += InCome.all.Sum(x => x.CalcCurrValue());
 
                 foreach (var elem in Expend.all)
                 {
                     value = elem.Do(value);
                 }
+
+                return null;
             });
         }
 

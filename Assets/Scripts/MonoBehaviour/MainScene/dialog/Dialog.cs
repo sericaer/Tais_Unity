@@ -14,15 +14,15 @@ public class Dialog : MonoBehaviour
     {
         Timer.Pause();
 
-        if(isQueue)
-        {
-            if (listDialog.Count != 0)
-            {
-                this.gameObject.SetActive(false);
-            }
+        //if(isQueue)
+        //{
+        //    if (listDialog.Count != 0)
+        //    {
+        //        this.gameObject.SetActive(false);
+        //    }
 
-            listDialog.Enqueue(this);
-        }
+        //    listDialog.Enqueue(this);
+        //}
 
     }
 
@@ -30,17 +30,17 @@ public class Dialog : MonoBehaviour
     {
         Timer.unPause();
 
-        if (isQueue)
-        {
-            listDialog.Dequeue();
-        }
+        //if (isQueue)
+        //{
+        //    listDialog.Dequeue();
+        //}
 
-        if (listDialog.Count != 0)
-        {
-            var panel = listDialog.Peek();
-            panel.gameObject.SetActive(true);
-        }
+        //if (listDialog.Count != 0)
+        //{
+        //    var panel = listDialog.Peek();
+        //    panel.gameObject.SetActive(true);
+        //}
     }
 
-    private static Queue<Dialog> listDialog = new Queue<Dialog>();
+    //private static Queue<Dialog> listDialog = new Queue<Dialog>();
 }

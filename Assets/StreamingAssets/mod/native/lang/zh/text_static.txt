@@ -43,3 +43,4 @@ level2:二级
 level3:三级
 level4:四级
 level5:五级
+ECONOMY_NOT_SUPPORT_CURR_DEFICILT:当前月盈余过低，府库中的物资无法支持到下个月，请重新调整收入和支出。

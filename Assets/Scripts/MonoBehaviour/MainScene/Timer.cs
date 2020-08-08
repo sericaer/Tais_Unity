@@ -85,7 +85,7 @@ public class Timer : MonoBehaviour
                 {
                     await UniTask.WaitUntil(() => !isPaused);
 
-                    await RunData.inst.DaysInc(CreateDialog);
+                    await RunData.inst.DaysInc(CreateDialog, CreateInterDialog);
 
                     await UniTask.Delay(1000/currSpeed, true);
 
@@ -110,6 +110,19 @@ public class Timer : MonoBehaviour
             {
                 await UniTask.SwitchToMainThread();
                 await GetComponentInParent<MainScene>().CreateEventDialogAsync(gevent);
+            }
+
+            await UniTask.WaitUntil(() => !isPaused);
+        }
+    }
+
+    internal async UniTask CreateInterDialog(string interEventName)
+    {
+        if (interEventName != null)
+        {
+
+            {
+                await GetComponentInParent<MainScene>().CreateInterDialogAsync(interEventName);
             }
 
             await UniTask.WaitUntil(() => !isPaused);
