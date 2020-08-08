@@ -85,7 +85,7 @@ public class Timer : MonoBehaviour
                 {
                     await UniTask.WaitUntil(() => !isPaused);
 
-                    await RunData.inst.DaysInc(CreateDialog, CreateInterDialog);
+                    await RunData.inst.DaysInc(CreateDialog, CreateInterDialog, WarnProcess);
 
                     await UniTask.Delay(1000/currSpeed, true);
 
@@ -127,6 +127,11 @@ public class Timer : MonoBehaviour
 
             await UniTask.WaitUntil(() => !isPaused);
         }
+    }
+
+    internal async UniTask WarnProcess(string warnName, bool value)
+    {
+        await GetComponentInParent<MainScene>().ProcessWarn(warnName, value);
     }
 
     private bool isPaused

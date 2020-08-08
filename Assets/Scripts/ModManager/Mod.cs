@@ -29,6 +29,7 @@ namespace TaisEngine.ModManager
             modStructDict.Add("depart",        (mod, modElemnts) => DepartDef.AnaylzeMod(mod, modElemnts));
             modStructDict.Add("pop",           (mod, modElemnts) => PopDef.AnaylizeMod(mod, modElemnts));
             modStructDict.Add("defines",       (mod, modElemnts) => CommonDef.AnaylizeMod(mod, modElemnts));
+            modStructDict.Add("warning",       (mod, modElemnts) => WarningDef.AnaylizeMod(mod, modElemnts));
         }
 
 
@@ -149,6 +150,7 @@ namespace TaisEngine.ModManager
             internal EventGroup eventGroup;
             internal List<DepartDef> departDefs;
             internal List<PopDef> popDefs;
+            internal List<WarningDef> warningDefs;
             internal BufferGroup bufferGroup;
             internal CommonDef commonDef;
 
@@ -170,9 +172,11 @@ namespace TaisEngine.ModManager
                 initSelectDefs = new List<InitSelectDef>();
                 departDefs = new List<DepartDef>();
                 popDefs = new List<PopDef>();
+                warningDefs = new List<WarningDef>();
 
                 eventGroup = new EventGroup();
-                bufferGroup = new BufferGroup();          
+                bufferGroup = new BufferGroup();
+
             }
 
             internal void Check()

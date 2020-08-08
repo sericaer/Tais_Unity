@@ -10,7 +10,7 @@ namespace TaisEngine.Run
     [JsonObject(MemberSerialization.OptIn)]
     public class Economy //: DaysUpdate
     {
-        [JsonProperty, VisitPropery("common.economy")]
+        [JsonProperty, VisitPropery("economy.value")]
         public double value;
 
         [JsonProperty, VisitPropery]
@@ -80,7 +80,8 @@ namespace TaisEngine.Run
         //    }
         //}
 
-        internal double surplus
+        [JsonProperty, VisitPropery("economy.surplus")]
+        public double surplus
         {
             get
             {

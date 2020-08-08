@@ -19,7 +19,7 @@ public class MainScene : MonoBehaviour
     public GameObject dialogException;
 
     public MsgPanel msgPanel;
-
+    public WarnContent warnContent;
     //public FamilyTop familyTop;
     //public GameObject familyContent;
 
@@ -90,6 +90,11 @@ public class MainScene : MonoBehaviour
             default:
                 throw new Exception("can not find inter event:" + interEventName);
         }
+    }
+
+    internal async UniTask ProcessWarn(string warnName, bool value)
+    {
+        warnContent.Process(warnName, value);
     }
 
 

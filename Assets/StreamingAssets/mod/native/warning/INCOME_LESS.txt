@@ -1,0 +1,9 @@
+trigger = 
+{
+    is.less = {economy.surplus, 0}
+}
+
+desc = {INCOME_LESS_DESC, economy.surplus}
+
+
+

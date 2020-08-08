@@ -39,7 +39,11 @@ namespace TaisEngine.Run
         internal List<Pop> pops;
 
         [JsonProperty]
+        internal List<string> warns;
+
+        [JsonProperty]
         internal List<string> recordMsg = new List<string>();
+
 
         internal bool end_flag
         {
@@ -59,6 +63,8 @@ namespace TaisEngine.Run
 
             departs = DepartDef.Enumerate().Select(x => new Depart(x)).ToList();
 
+            warns = new List<string>();
+
             pops = new List<Pop>();
             foreach (var depart in departs)
             {
@@ -76,7 +82,7 @@ namespace TaisEngine.Run
         {
         }
 
-        async internal UniTask DaysInc(Func<EventInterface, UniTask> act, Func<string, UniTask> actInter)
+        async internal UniTask DaysInc(Func<EventInterface, UniTask> act, Func<string, UniTask> actInter, Func<string, bool, UniTask> actWarn)
         {
             foreach (var gevent in EventGroup.Generate())
             {
@@ -107,6 +113,10 @@ namespace TaisEngine.Run
                 }
             }
 
+            foreach(var warnDef in WarningDef.Enumerate())
+            {
+                await actWarn(warnDef.name, warnDef.trigger.Result());
+            }
             date++;
         }
     }
