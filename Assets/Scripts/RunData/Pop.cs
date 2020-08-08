@@ -150,7 +150,7 @@ namespace TaisEngine.Run
 
             var percent =(100 + taxEffects.Sum(x => x.value)) / 100;
 
-            return taxbaseExpcet * percent;
+            return Math.Round(taxbaseExpcet * percent, 1);
 
         }
 

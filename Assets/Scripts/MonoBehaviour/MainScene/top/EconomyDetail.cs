@@ -151,7 +151,7 @@ public class EconomyDetail : MonoBehaviour
 
         //consumeText.text = CommonDef.TaxLevel.getConsume(LocalCurrTaxSlider.value).ToString();
         surplusValue = incomePopTax.Num - expendCountryTax.Num;
-        surplus.text = (surplusValue).ToString();
+        surplus.text = (surplusValue).ToString("N1");
         //btnConfirm.interactable = expendCountryTax.isChanged || incomePopTax.isChanged;
     }
 

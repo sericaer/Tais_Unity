@@ -29,7 +29,6 @@ public class ExpendDetail : MonoBehaviour
     private void Start()
     {
         Num = gmExpend.CalcCurrValue();
-        value.text = Num.ToString();
         slider.value = gmExpend.GetCurrLevel();
 
         newLevel = (int)slider.value;
@@ -39,8 +38,12 @@ public class ExpendDetail : MonoBehaviour
             newLevel = (int)curr;
 
             Num = gmExpend.CalcExpandValue(newLevel);
-            value.text = Num.ToString();
         });
+    }
+
+    private void Update()
+    {
+        value.text = Num.ToString("N1");
     }
 
     internal void Confirm()

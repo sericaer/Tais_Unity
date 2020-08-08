@@ -198,7 +198,7 @@ namespace TaisEngine.Run
     {
         public override double CalcExpandValue(int level)
         {
-            return RunData.inst.pops.Where(x => x.is_tax).Sum(x => x.GetExpectTax(level));
+            return Math.Round(RunData.inst.pops.Where(x => x.is_tax).Sum(x => x.GetExpectTax(level)), 1);
         }
 
         public override int GetCurrLevel()
@@ -218,7 +218,7 @@ namespace TaisEngine.Run
     {
         public override double CalcExpandValue(int level)
         {
-            return RunData.inst.chaoting.expect_tax * level / 10;
+            return Math.Round(RunData.inst.chaoting.expect_tax * level / 10, 1);
         }
 
         public override int GetCurrLevel()

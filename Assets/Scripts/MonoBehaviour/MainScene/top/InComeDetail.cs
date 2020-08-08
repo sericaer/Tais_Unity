@@ -29,7 +29,6 @@ public class InComeDetail : MonoBehaviour
     private void Start()
     {
         Num = gmIncome.CalcCurrValue();
-        value.text = Num.ToString();
 
         var level = gmIncome.GetCurrLevel();
         if (level > slider.maxValue)
@@ -45,8 +44,13 @@ public class InComeDetail : MonoBehaviour
             newLevel = (int)curr;
 
             Num = gmIncome.CalcExpandValue(newLevel);
-            value.text = Num.ToString();
+            
         });
+    }
+
+    private void Update()
+    {
+        value.text = Num.ToString("N1");
     }
 
     internal void Confirm()

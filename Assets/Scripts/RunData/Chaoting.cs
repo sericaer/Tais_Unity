@@ -93,7 +93,7 @@ namespace TaisEngine.Run
         {
             get
             {
-                return TaisEngine.ModManager.CommonDef.TaxLevel.getInCome((int)tax_level) * year_report_pop;
+                return Math.Round(TaisEngine.ModManager.CommonDef.TaxLevel.getInCome((int)tax_level) * year_report_pop, 1);
             }
         }
 
