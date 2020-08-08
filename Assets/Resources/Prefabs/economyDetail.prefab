@@ -1075,6 +1075,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   expendCountryTax: {fileID: 8179020529959785426}
   incomePopTax: {fileID: 4409943376444728528}
+  prefabMessageBox: {fileID: 5492627825564403015, guid: de20617869be3ad4782187b894403dc9,
+    type: 3}
   surplus: {fileID: 5904576036913760208}
   btnConfirm: {fileID: 7828096320868064438}
 --- !u!1 &7828096319422970724

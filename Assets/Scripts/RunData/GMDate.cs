@@ -20,6 +20,24 @@ namespace TaisEngine.Run
             };
         }
 
+        internal bool IsEqual((int? year, int? month, int? day) date)
+        {
+            if(date.year != null && date.year != year)
+            {
+                return false;
+            }
+            if (date.month != null && date.month != month)
+            {
+                return false;
+            }
+            if (date.day != null && date.day != day)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         [JsonProperty, VisitPropery("date.year")]
         public int year;
 

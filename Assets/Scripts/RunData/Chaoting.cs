@@ -16,7 +16,7 @@ namespace TaisEngine.Run
             pre_report_pop = reg_pop_num;
 
             //this.prestige = prestige;
-            this.tax_level = Economy.TAX_LEVEL.level2;
+            this.tax_level = 2;
         }
 
         public Chaoting()
@@ -134,6 +134,6 @@ namespace TaisEngine.Run
         internal string power_party_background;
 
         [JsonProperty]
-        internal Economy.TAX_LEVEL tax_level;
+        internal int tax_level;
     }
 }

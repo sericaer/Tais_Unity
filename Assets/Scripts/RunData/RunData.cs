@@ -53,7 +53,7 @@ namespace TaisEngine.Run
         {
             date = new GMDate();
 
-            economy = new Economy(Economy.TAX_LEVEL.level2);
+            economy = new Economy(2);
 
             taishou = new Taishou(initData.taishou);
 
@@ -91,9 +91,17 @@ namespace TaisEngine.Run
                 }
             }
 
-            foreach(var elem in DaysUpdate.all)
+            //foreach(var elem in DaysUpdate.all)
+            //{
+            //    elem.DaysUpdateProcess();
+            //}
+
+            foreach (var elem in DaysTimer.all)
             {
-                elem.DaysUpdateProcess();
+                if(date.IsEqual(elem.date))
+                {
+                    elem.OnTimer();
+                }
             }
 
             date++;

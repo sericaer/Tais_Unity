@@ -11,6 +11,8 @@ public class EconomyDetail : MonoBehaviour
     public ExpendDetail expendCountryTax;
     public InComeDetail incomePopTax;
 
+    public GameObject prefabMessageBox;
+
     public Text surplus;
     //public Slider LocalCurrTaxSlider;
     //public Text LocalCurrTaxText;
@@ -52,6 +54,12 @@ public class EconomyDetail : MonoBehaviour
 
         //    this.gameObject.SetActive(false);
         //}; 
+        if(surplus.text.StartsWith("-"))
+        {
+            var gameObject = Instantiate(prefabMessageBox, this.transform) as GameObject;
+            gameObject.GetComponent<MessageBox>().desc.text = "111";
+            return;
+        }
 
         expendCountryTax.Confirm();
         incomePopTax.Confirm();
@@ -134,7 +142,7 @@ public class EconomyDetail : MonoBehaviour
         //consumeText.text = CommonDef.TaxLevel.getConsume(LocalCurrTaxSlider.value).ToString();
 
         surplus.text = (incomePopTax.Num - expendCountryTax.Num).ToString();
-        btnConfirm.interactable = expendCountryTax.isChanged || incomePopTax.isChanged;
+        //btnConfirm.interactable = expendCountryTax.isChanged || incomePopTax.isChanged;
     }
 
 }

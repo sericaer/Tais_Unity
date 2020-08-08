@@ -7230,6 +7230,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 620b04d6e9ca97543880a70b29df562e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  expendCountryTax: {fileID: 0}
+  incomePopTax: {fileID: 0}
+  prefabMessageBox: {fileID: 0}
+  surplus: {fileID: 0}
+  btnConfirm: {fileID: 0}
 --- !u!1 &1199407192
 GameObject:
   m_ObjectHideFlags: 0

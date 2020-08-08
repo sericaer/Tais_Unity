@@ -8,15 +8,15 @@ using TaisEngine.ModManager;
 namespace TaisEngine.Run
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class Economy : DaysUpdate
+    public class Economy //: DaysUpdate
     {
         [JsonProperty, VisitPropery("common.economy")]
         public double value;
 
-        [JsonProperty]
+        [JsonProperty, VisitPropery]
         public InComePopTax popTax;
 
-        [JsonProperty]
+        [JsonProperty, VisitPropery]
         public ExpendCountryTax countryTax;
         
         //[JsonProperty, VisitPropery("common.economy.tax_level_limit")]
@@ -40,21 +40,21 @@ namespace TaisEngine.Run
         //    }
         //}
 
-        [JsonProperty]
-        internal int validTaxChangedDays = 0;
+        //[JsonProperty]
+        //internal int validTaxChangedDays = 0;
 
 
-        internal enum TAX_LEVEL
-        {
-            level0,
-            level1,
-            level2,
-            level3,
-            level4,
-            level5,
-            level6,
-            levelmax = level6
-        }
+        //internal enum TAX_LEVEL
+        //{
+        //    level0,
+        //    level1,
+        //    level2,
+        //    level3,
+        //    level4,
+        //    level5,
+        //    level6,
+        //    levelmax = level6
+        //}
 
         internal double currTax
         {
@@ -80,33 +80,38 @@ namespace TaisEngine.Run
         //    }
         //}
 
-        internal double surplus
-        {
-            get
-            {
-                return currTax - RunData.inst.chaoting.expect_tax;
-            }
-        }
+        //internal double surplus
+        //{
+        //    get
+        //    {
+        //        return currTax - RunData.inst.chaoting.expect_tax;
+        //    }
+        //}
 
-        internal bool local_tax_change_valid
-        {
-            get
-            {
-                return RunData.inst.date.total_days >= validTaxChangedDays;
-            }
-        }
+        //internal bool local_tax_change_valid
+        //{
+        //    get
+        //    {
+        //        return RunData.inst.date.total_days >= validTaxChangedDays;
+        //    }
+        //}
 
         internal Economy()
         {
         }
 
-        internal Economy(TAX_LEVEL level)
+        internal Economy(int popTaxLevel)
         {
             //this.curr_tax_level = (int)level;
-            popTax = new InComePopTax() { currLevel = (int)level };
+            popTax = new InComePopTax() { currLevel = popTaxLevel };
             countryTax = new ExpendCountryTax() { currLevel = 10 };
 
-            daysTimer.Set((null, null, 30), () =>
+            Init();
+        }
+
+        internal void Init()
+        {
+            DaysTimer.Set((null, null, 30), () =>
             {
                 value += InCome.all.Sum(x => x.CalcCurrValue());
 
@@ -117,20 +122,20 @@ namespace TaisEngine.Run
             });
         }
 
-        public override void DaysUpdateProcess()
-        {
-            if (RunData.inst.date.day == 30)
-            {
-                //value += currTax;
-                //value = RunData.inst.chaoting.ReportTax(value);
-                value += InCome.all.Sum(x => x.CalcCurrValue());
+        //public override void DaysUpdateProcess()
+        //{
+        //    if (RunData.inst.date.day == 30)
+        //    {
+        //        //value += currTax;
+        //        //value = RunData.inst.chaoting.ReportTax(value);
+        //        value += InCome.all.Sum(x => x.CalcCurrValue());
 
-                foreach (var elem in Expend.all)
-                {
-                    value = elem.Do(value);
-                }
-            }
-        }
+        //        foreach (var elem in Expend.all)
+        //        {
+        //            value = elem.Do(value);
+        //        }
+        //    }
+        //}
 
         //internal double getExpectTaxValue(float level)
         //{
